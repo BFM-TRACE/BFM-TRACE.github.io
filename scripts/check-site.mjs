@@ -16,7 +16,8 @@ const media = JSON.parse(
 const resources = new Set(
   [...html.matchAll(/(?:src|href|data-src|poster)="([^"]+)"/g)]
     .map((m) => m[1])
-    .filter((x) => !x.startsWith("#") && !/^https?:/.test(x)),
+    .filter((x) => !x.startsWith("#") && !/^https?:/.test(x))
+    .map((x) => x.split(/[?#]/)[0]),
 );
 for (const item of media.items) {
   resources.add(item.src);

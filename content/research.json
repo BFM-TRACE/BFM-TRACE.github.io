@@ -104,17 +104,17 @@
     "Gallery task labels and benchmark task definitions are recorded separately."
   ],
   "downloads": {
-    "paper": "assets/trace-paper.pdf",
+    "paper": "assets/trace-paper.pdf?v=e32038752c7a",
     "video": "assets/trace-overview.mp4",
     "captions": "assets/trace-overview.vtt"
   },
   "sources": [
-    {"path": "main_en.tex", "role": "Current title and empty author field"},
+    {"path": "main_en.tex", "role": "Current title, authors, affiliations, corresponding-author legend, and project-page link"},
     {"path": "00_Abstract/abstract_en.tex", "role": "Headline claims and GPU-hour comparison boundary"},
     {"path": "03_Method/method_en.tex", "role": "Method and two-phase training design"},
     {"path": "04_Experiments/experiments_en.tex", "role": "Benchmark definitions, result tables, and hardware evaluation"},
     {"path": "05_Conclusion/conclusion_en.tex", "role": "Scope and limitations"},
-    {"path": "build/en/main_en.pdf", "role": "Current 8-page compiled paper; title and approximately-eight-hour claim verified against source"},
+    {"path": "build/en/main_en.pdf", "role": "Current 9-page compiled paper with author information and project-page link; title and approximately-eight-hour claim verified against source"},
     {"path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx", "role": "25 embedded source videos; selected hardware clips extracted for the site"},
     {"path": "demo_video/README.md", "role": "Approved privacy handling, speed, delivery version, and playback provenance"}
   ]
