@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-09",
+  "copied_folder_only": true,
+  "file_count": 97,
+  "total_bytes": 58723519,
+  "symlinks": 0,
+  "checks": "PASS: 46 assets, navigation anchors, 17 gallery clips, root/demo routes, video ranges, private paths, and simulation proxy.",
+  "macos_shell_launcher": "passed from copied folder with spaces and unrelated cwd",
+  "windows_launcher": "reviewed; not executed on Windows",
+  "runtime": "Node.js v22.20.0; no npm install",
+  "live_backend": "not required for portable static check; real control still requires server and SSH tunnel"
+}

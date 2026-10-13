@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>TRACE · Independent browser simulations</title>
+<style>
+body{margin:20px;font:14px system-ui;background:#f0f3f5;color:#234}
+main{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+iframe{width:100%;height:800px;border:0;background:white;border-radius:18px}
+</style>
+<h1>Two independent browser simulations</h1>
+<p>Pause, reset or change a motion on either side. The other instance keeps its own state.</p>
+<main>
+<section><h2>Visitor A</h2><iframe id="visitor-a" title="Visitor A simulation" src="../demo/index.html"></iframe></section>
+<section><h2>Visitor B</h2><iframe id="visitor-b" title="Visitor B simulation" src="../demo/index.html"></iframe></section>
+</main>

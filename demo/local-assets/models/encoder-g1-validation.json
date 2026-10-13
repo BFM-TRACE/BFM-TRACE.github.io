@@ -1,0 +1,168 @@
+{
+  "file": "encoder_g1.onnx",
+  "bytes": 16932124,
+  "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975",
+  "source": "sonic_h2_native_release/experiments/gpu3_20260907_stage2_step009450/model_encoder_full.onnx",
+  "sourceSha256": "a92f1703be9949b44d305997c32b622084a11580dd57e73e827506fee49d0710",
+  "sourceSelector": 3,
+  "globalStep": 9450,
+  "input": {
+    "name": "obs_dict",
+    "type": "float32",
+    "shape": [
+      1,
+      640
+    ]
+  },
+  "output": {
+    "name": "encoded_tokens",
+    "type": "float32",
+    "shape": [
+      1,
+      64
+    ]
+  },
+  "inputLayout": {
+    "jointPositions": [
+      0,
+      290
+    ],
+    "jointVelocities": [
+      290,
+      580
+    ],
+    "orientation6D": [
+      580,
+      640
+    ],
+    "jointOrder": "G1 semantic (mujoco_to_isaaclab), without G1-to-H2 hip projection",
+    "fullMapping": {
+      "selector": 3,
+      "qAndQd": [
+        4,
+        584
+      ],
+      "orientation": [
+        590,
+        650
+      ]
+    }
+  },
+  "irVersion": 7,
+  "opsets": [
+    {
+      "domain": "",
+      "version": 13
+    }
+  ],
+  "extraction": {
+    "kind": "Exact graph branch extraction",
+    "nodes": 41,
+    "retainedWeightTensors": 10,
+    "allWeightsByteIdentical": true,
+    "weightHashes": {
+      "module.encoders.g1.module.0.weight": "1d95461a9bd11ef46660de6e5d165deef5ae5aa1e052905e264142983d05e531",
+      "module.encoders.g1.module.0.bias": "97f14cd03376cdaa9bc2456f5be3cc94b1245b4ff6789b28a5cdd370fa6b77fc",
+      "module.encoders.g1.module.2.weight": "a7ac68f8b3c77724fafad01fd56e79e2e307e26b8cef9351f4a38a6fc2d28b26",
+      "module.encoders.g1.module.2.bias": "a92b027903386c71eebe00726cbab56515f0ae2fb5f632b2f5861abc4658a1fa",
+      "module.encoders.g1.module.4.weight": "43a3258e232271c1cffaa5d3d1c344c89f52e0b4f2c3fb4db94c7b0da50c4900",
+      "module.encoders.g1.module.4.bias": "b62047d841fefe1e14a129fbc3735df474402ac552bbc2d33302c115ad3e06a6",
+      "module.encoders.g1.module.6.weight": "3edcf93a7412ed47ffb03539115c5e3edb57138fb7af190dbf812bb236e00d42",
+      "module.encoders.g1.module.6.bias": "82e340b2fd8b8722831650d6f4714b05278ad19f5e1e88e427547706d0d82d08",
+      "module.encoders.g1.module.8.weight": "16a201aedfc81daf9b2d83022d2a9acca35875be225984d323460f78770d495b",
+      "module.encoders.g1.module.8.bias": "bf1ae88928536c31f4813781620630bd04f91b9ee0d609fb460adb695dc36762"
+    },
+    "tokenQuantizerRetained": true,
+    "checkpointReexport": false,
+    "reason": "The historical training checkpoint directory is not present; the validated deployed full ONNX is the source"
+  },
+  "validation": {
+    "status": "passed",
+    "onnxRuntime": "1.23.2",
+    "provider": "CPUExecutionProvider",
+    "onnx": "1.22.0",
+    "threads": 1,
+    "cases": 473,
+    "casesByCategory": {
+      "random": 161,
+      "real": 312
+    },
+    "maxAbsError": 0.0,
+    "realMaxAbsError": 0.0,
+    "nonBitExactCases": 0,
+    "atol": 1e-06,
+    "rtol": 1e-06,
+    "seconds": 1.516972526209429,
+    "referenceFiles": [
+      {
+        "file": "planner_idle_idle.json",
+        "sha256": "acfef5e72c7d107d1508eab201e59204be9f2c8f39ffbe11e7e7cd7d82970c73",
+        "frames": 106
+      },
+      {
+        "file": "planner_run_back.json",
+        "sha256": "f984070f37974f538114e9a59be88ac934d3ec6a82bc0227e730ff083c57d0ba",
+        "frames": 106
+      },
+      {
+        "file": "planner_run_forward.json",
+        "sha256": "f84b8631d4769a9d941f03013eeff6456912f3b0f064468c77138dfc648d677b",
+        "frames": 106
+      },
+      {
+        "file": "planner_run_left.json",
+        "sha256": "e969533f3649c8f15750118af4dacad76555d920e463ec36203098a9f473df3e",
+        "frames": 106
+      },
+      {
+        "file": "planner_run_right.json",
+        "sha256": "14125762fccae0779dda118dda0df710ca71950cae90e4864329a615c975d1b6",
+        "frames": 106
+      },
+      {
+        "file": "planner_slow_walk_back.json",
+        "sha256": "d64bb4c6696e0171c4e5d009fb96df130ecc5b4d8079c08de2bfd51af61ba58c",
+        "frames": 106
+      },
+      {
+        "file": "planner_slow_walk_forward.json",
+        "sha256": "736022fcf7ba3b5d4139eec7728b7a205ac50f88b9bcfad53edcd1db259bc429",
+        "frames": 106
+      },
+      {
+        "file": "planner_slow_walk_left.json",
+        "sha256": "26df877e4094cc6a2233d9a9a090406a04d24036a35e2db0fb473e1c4f18dee9",
+        "frames": 106
+      },
+      {
+        "file": "planner_slow_walk_right.json",
+        "sha256": "8b185dfac4f4b7dfa133e92895cc0450b20068ce0009d441a0fbfd1c3bd20446",
+        "frames": 106
+      },
+      {
+        "file": "planner_walk_back.json",
+        "sha256": "f75eaf6759d0497b0b1358cafb9b8e95ac097074a1052a4389e2735c8b6af16d",
+        "frames": 106
+      },
+      {
+        "file": "planner_walk_forward.json",
+        "sha256": "2b23d861ea3a21d42ed2c56b01ae74ec75a8e524eda43c25a61e675c27851a99",
+        "frames": 106
+      },
+      {
+        "file": "planner_walk_left.json",
+        "sha256": "f0c1b834b81def653fb7ba40c63e85aea685d26c13c51897ade90ea64cbd4c43",
+        "frames": 106
+      },
+      {
+        "file": "planner_walk_right.json",
+        "sha256": "59c048c391f93c9a8c79fcb4782bfbdcf157db3e2b032aca3838bae6b8c9fd6f",
+        "frames": 106
+      }
+    ],
+    "fixtureFile": "encoder-g1-fixtures.json",
+    "scope": "Finite sampled numerical equivalence to full selector 3; not a closed-loop stability or cross-platform guarantee"
+  },
+  "script": "export_g1_encoder.py",
+  "scriptSha256": "e8c6518b5ef0bf787816a8f031d0e58b5b48dba2e929d8482112f53251687372"
+}

@@ -1,0 +1,266 @@
+{
+  "schema": "trace_qa_local_archive_index_v1",
+  "archivedAt": "2026-10-10T17:07:09.851783+00:00",
+  "scope": "Packaging-only archival of historical per-step sample arrays. No simulation rerun and no new pass claim.",
+  "archivePathBase": "repository root",
+  "summaryPathBase": "repository root",
+  "localArchiveDirectory": ".work/archive/homepage-qa-20261011",
+  "localArchiveRequiredForRuntime": false,
+  "localArchiveRequiredForRerunningChecks": false,
+  "archiveContents": "Original full report bytes; also pre-edit copies of six report-reference documents under related-report-references/. The archive is local and is not intended for GitHub/Pages publication.",
+  "reports": [
+    {
+      "summaryPath": "homepage/qa/planner-quality.json",
+      "summarySHA256": "cc8d605e94bfea88d06c95067483fed5bb4580f747d5e18e887304093d545449",
+      "summaryBytes": 632372,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/planner-quality.json",
+      "rawReportSHA256": "0ea1dbfb408f33c216a0b3f66f0fd83b1cc4f591827f825f1f1d5e365ad3a063",
+      "rawReportBytes": 25238144,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 16,
+      "removedSampleRecordCount": 15950
+    },
+    {
+      "summaryPath": "homepage/qa/planner-boundaries.json",
+      "summarySHA256": "10693904ec277db568ab528c73d08dd842502331f41d4a50df8061edb6e55621",
+      "summaryBytes": 291747,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/planner-boundaries.json",
+      "rawReportSHA256": "15c5285922e5471dc5ac7022a7cc878719215602c84a07f8d794d14c65d73423",
+      "rawReportBytes": 12191605,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 20,
+      "removedSampleRecordCount": 15000
+    },
+    {
+      "summaryPath": "homepage/qa/stopping-blend-audit.json",
+      "summarySHA256": "746f17dd37e44160cbdf621340595409744af5a499aa5dd794ccff0b938f9e19",
+      "summaryBytes": 1187231,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/stopping-blend-audit.json",
+      "rawReportSHA256": "987cc084eb47c47f2c665ba7f3b81e0bafff9ea5f19ed771d0a9ffdbeaf2ae27",
+      "rawReportBytes": 11064554,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 12,
+      "removedSampleRecordCount": 7200
+    },
+    {
+      "summaryPath": "homepage/qa/g1-explore.json",
+      "summarySHA256": "371912edeb61aa5f9bbb14ee8a955476e2b898832af26bb847c2886c4fc9c03b",
+      "summaryBytes": 45720,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-explore.json",
+      "rawReportSHA256": "5c3485f4e8b188a0e7051f17d40da12a12c5ee69e1be5efd2159a3ec900c8ab5",
+      "rawReportBytes": 10672525,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 4,
+      "removedSampleRecordCount": 2352
+    },
+    {
+      "summaryPath": "homepage/qa/g1-standard.json",
+      "summarySHA256": "54e30d19315d95110de8d31938695d4c6ae32104eda35cd54b52fb6769a94b54",
+      "summaryBytes": 66105,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-standard.json",
+      "rawReportSHA256": "b4342c3d480c1651278dffb8f6e8def1f0988adc0ee1919cdcd99800ad881c6b",
+      "rawReportBytes": 5276207,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 3,
+      "removedSampleRecordCount": 1206
+    },
+    {
+      "summaryPath": "homepage/qa/g1-explore-h2-regression.json",
+      "summarySHA256": "97500f20ffed5366d901aa3eb475a86dc93482b4ff8887ba123b67e0ed9d2682",
+      "summaryBytes": 39731,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-explore-h2-regression.json",
+      "rawReportSHA256": "0fae7514803d34ed099ac1e6420864ab0e20fe897ed1a7436ceb8636cf831acf",
+      "rawReportBytes": 5053151,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 4,
+      "removedSampleRecordCount": 1526
+    },
+    {
+      "summaryPath": "homepage/qa/dynamic-motions.json",
+      "summarySHA256": "971cf464e1393c5f958ce87e2afffecf158724fa6241447996263dac65023cd4",
+      "summaryBytes": 38810,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/dynamic-motions.json",
+      "rawReportSHA256": "8b36437316e2a952b019db42c02db82d9613e624e5351194f3a2b60513bd7aa5",
+      "rawReportBytes": 5052239,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 4,
+      "removedSampleRecordCount": 1526
+    },
+    {
+      "summaryPath": "homepage/qa/planner-quality-before-fix.json",
+      "summarySHA256": "1ce2302ab97d9d9ee16867e63e06d784574fde0cfac964bce6eba2d9f19c4f12",
+      "summaryBytes": 184398,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/planner-quality-before-fix.json",
+      "rawReportSHA256": "c94a9b4c1b9d8bfe1236a40fb1983f3c8e353bf8fd31173fa8a49e7e4f148076",
+      "rawReportBytes": 4414784,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 9,
+      "removedSampleRecordCount": 4800
+    },
+    {
+      "summaryPath": "homepage/qa/slow-cadence-quality.json",
+      "summarySHA256": "1fa02d50119a88739c1998227124576727b0aefa5f8f54fb4ea44373b1e822d6",
+      "summaryBytes": 89306,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/slow-cadence-quality.json",
+      "rawReportSHA256": "155dc2071d750f3c50415f6b17ce67af9cb6b072170f156e2bf881846d7ae23a",
+      "rawReportBytes": 2489779,
+      "archivedLocationIsLocalOnly": true,
+      "requiredForRuntime": false,
+      "requiredToRerunChecks": false,
+      "removedSampleArrayCount": 5,
+      "removedSampleRecordCount": 4000
+    }
+  ],
+  "referenceDocumentsUpdated": [
+    {
+      "path": "homepage/qa/g1-explore-update.json",
+      "beforeSHA256": "7f66e3491a9d20a0468417695a692b21b5bc654e9f093eb9dc9e5cf589d656a1",
+      "afterSHA256": "7af6849425d26ece41312937f34881b3f932cbab9383a7f41506f1493b2d18e1",
+      "originalLocalArchivePath": ".work/archive/homepage-qa-20261011/related-report-references/g1-explore-update.json"
+    },
+    {
+      "path": "homepage/qa/g1-standard-update.json",
+      "beforeSHA256": "b474581fb33c9398b59eeaf83a3826360e5d53261981a0a80b4783849f68fd9b",
+      "afterSHA256": "21cd71a6517c8135a9891b16c41e4a4bb5b775c17417e9dac900f43fff4375ef",
+      "originalLocalArchivePath": ".work/archive/homepage-qa-20261011/related-report-references/g1-standard-update.json"
+    },
+    {
+      "path": "homepage/qa/g1-standard-selection.json",
+      "beforeSHA256": "e396d1aecf6583fbf16b07d4b7f659bcf8d959787161c26e70a0692a6947106e",
+      "afterSHA256": "fbda84fc63a74dbbf43246a52b50b9bfed45be899b6f555e3b7a09bad527ae50",
+      "originalLocalArchivePath": ".work/archive/homepage-qa-20261011/related-report-references/g1-standard-selection.json"
+    },
+    {
+      "path": "homepage/qa/g1-standard-hop-detail.json",
+      "beforeSHA256": "8c8eb66830e268c1942631a9b19c141abeedcdbff0c0bf19d46949bc04a1aff6",
+      "afterSHA256": "7d4d39223f111a9f0722de8d7a48855e43c959b814ae0e4480020385769557a8",
+      "originalLocalArchivePath": ".work/archive/homepage-qa-20261011/related-report-references/g1-standard-hop-detail.json"
+    },
+    {
+      "path": "homepage/qa/g1-explore-summary.json",
+      "beforeSHA256": "62fe7114ffc6ec20a1b2d042c87f2eb940c8dec28da6cfec458c3878bb3a6696",
+      "afterSHA256": "58b02db56a9a38d7ab3c12665df57c9dec194668f1f42bd1803b4e62637d8d73",
+      "originalLocalArchivePath": ".work/archive/homepage-qa-20261011/related-report-references/g1-explore-summary.json"
+    },
+    {
+      "path": "homepage/qa/planner-speed-fix-summary.json",
+      "beforeSHA256": "2dd852f9bc9459448ea2fc922430ec1e99521bde1190761ae9d0aee1539abc61",
+      "afterSHA256": "2fd18e069884424dbb54935184b49e0091b5fd866d73c5189c90c8bbf42635cf",
+      "originalLocalArchivePath": ".work/archive/homepage-qa-20261011/related-report-references/planner-speed-fix-summary.json"
+    }
+  ],
+  "totals": {
+    "rawReportBytes": 81452988,
+    "summaryReportBytes": 2575420,
+    "savedPublishedBytes": 78877568
+  },
+  "verification": {
+    "reports": [
+      {
+        "file": "planner-quality.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "planner-boundaries.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "stopping-blend-audit.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "g1-explore.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "g1-standard.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "g1-explore-h2-regression.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "dynamic-motions.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "planner-quality-before-fix.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      },
+      {
+        "file": "slow-cadence-quality.json",
+        "archivedBytesIdentical": true,
+        "rawSHA256Verified": true,
+        "summarySHA256Verified": true,
+        "allNonSampleEvidencePreserved": true
+      }
+    ],
+    "sourceMeasurementSidecarsUnchanged": {
+      "g1-standard-source-measurements/g1_standard_neutral_kick_R_001__A543.json": "6694e46ee84863fafb1404543aaedf4c8a7e024385c0168c652a6320f37c80e8",
+      "g1-standard-source-measurements/g1_standard_neutral_kick_R_001__A543_M.json": "885fd40a6227e74072fd5ad1e191ad8b2debd2741eff839aa2f9f822456d6c2c",
+      "g1-standard-source-measurements/g1_standard_tired_one_leg_jumping_R_001__A359.json": "4d87948f95e47256fdce91f13026a9169134f3c0bb809a19bf7dc44c2de628a8"
+    },
+    "sourceModelAndRuntimeFilesWritten": false,
+    "testResultValuesChanged": false,
+    "dependentReferenceDocumentHashesUpdated": [
+      {
+        "owner": "homepage/qa/g1-explore-update.json",
+        "target": "homepage/qa/g1-explore-summary.json",
+        "sha256": "58b02db56a9a38d7ab3c12665df57c9dec194668f1f42bd1803b4e62637d8d73"
+      },
+      {
+        "owner": "homepage/qa/g1-standard-update.json",
+        "target": "homepage/qa/g1-standard-selection.json",
+        "sha256": "fbda84fc63a74dbbf43246a52b50b9bfed45be899b6f555e3b7a09bad527ae50"
+      },
+      {
+        "owner": "homepage/qa/g1-standard-update.json",
+        "target": "homepage/qa/g1-standard-hop-detail.json",
+        "sha256": "7d4d39223f111a9f0722de8d7a48855e43c959b814ae0e4480020385769557a8"
+      }
+    ],
+    "rawAndSummaryReferencePairsVerified": 8
+  },
+  "reproduction": "Existing check scripts read runtime assets and source-measurement sidecars, not the archived report outputs. Future regenerated reports should use the separately configured ignored output directory."
+}

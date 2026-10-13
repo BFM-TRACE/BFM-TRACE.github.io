@@ -1,0 +1,65 @@
+{
+  "runtimeVersion": "1.30.0",
+  "provider": "wasm",
+  "environment": "Node.js 22 on local macOS, ORT Web WASM/Asyncify, one thread; browser benchmark pending",
+  "metadata": {
+    "encoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoded_tokens",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            64
+          ]
+        }
+      ],
+      "loadMs": 344.475958
+    },
+    "decoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            994
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "action",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            29
+          ]
+        }
+      ],
+      "loadMs": 60.766250000000014
+    }
+  },
+  "totalMs": 520.184,
+  "iterations": 20,
+  "combinedMeanMs": 3.660462600000005,
+  "combinedMedianMs": 3.543666999999971,
+  "combinedP95Ms": 4.723707999999988,
+  "combinedMinMs": 3.1032089999999926,
+  "combinedMaxMs": 4.723707999999988,
+  "boundary": "Zero observations validate model execution and timing only. Token placement here is for a synthetic timing probe, not evidence of correct observation assembly or physical control."
+}

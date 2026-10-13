@@ -1,0 +1,333 @@
+{
+  "generatedAt": "2026-10-10T15:59:28.738603+00:00",
+  "scope": "Original m21 G1 standard motions, evaluated with unchanged production H2 feedback policy and physics.",
+  "sourceDirectoryClarification": "The requested reference/example_g1 directory does not exist on the inspected m21 server. These original typed G1 bundles are from gear_sonic_deploy/reference/example, as documented by the source audit.",
+  "selected": [
+    "g1_standard_neutral_kick_R_001__A543",
+    "g1_standard_neutral_kick_R_001__A543_M",
+    "g1_standard_tired_one_leg_jumping_R_001__A359"
+  ],
+  "candidatePhysicalPasses": 4,
+  "candidateCount": 4,
+  "protocol": {
+    "policyHz": 50,
+    "physicsHz": 1000,
+    "holdSeconds": 2,
+    "startup": "Production LocalPolicy only; manifest startupHoldSeconds determines frame0/dq0 policy steps. No subclass or method replacement.",
+    "initialization": "Unchanged LocalPolicy.reset with controller.initialQpos/default qvel; no motion-specific initial state",
+    "fullReference": true
+  },
+  "limits": {
+    "minimumRootHeight": 0.28,
+    "minimumKickSupportFraction": 0.8,
+    "minimumSingleFootSupportSeconds": 0.06,
+    "minimumOtherFootClearance": 0.05,
+    "maximumTakeoffContactGapSeconds": 0.12,
+    "minimumKneelingSeconds": 0.1,
+    "kneeContactRadius": 0.15,
+    "kneelTerminalMinimumRootHeight": 0.9,
+    "kneelTerminalMinimumDoubleSupportFraction": 0.8,
+    "kneelTerminalMaximumKneeContactFraction": 0.05,
+    "maximumNonFootGroundContactSeconds": 0.04,
+    "maximumSustainedTorsoTiltDeg": 85,
+    "maximumSevereTiltSeconds": 0.2,
+    "terminalMinimumRootHeight": 0.9,
+    "terminalMaximumTorsoTiltDeg": 45,
+    "terminalMaximumHorizontalSpeedRMS": 0.25,
+    "terminalMaximumVerticalSpeedRMS": 0.2,
+    "minimumKickPoseSeconds": 0.06,
+    "minimumKickFootClearance": 0.25,
+    "minimumKickHorizontalReach": 0.35,
+    "minimumKickLegExcursionRad": 0.5,
+    "minimumFlightMeasurementTimeSeconds": 0.5,
+    "minimumFlightSeconds": 0.06,
+    "minimumFlightFootClearance": 0.015,
+    "minimumFlightForwardDisplacement": 0.12,
+    "minimumLongJumpForwardDisplacement": 0.35,
+    "maximumStandingJumpGroundedFootAdvance": 0.15,
+    "minimumPreFlightDoubleSupportSeconds": 0.06
+  },
+  "selectionRationale": "Choose both compact kicks and the original right-foot hop. Prefer clean raised-leg support over larger mirrored hops with intervening raised-foot contacts. Do not equate five source timing beats with five strict qualifying hops.",
+  "cases": [
+    {
+      "id": "g1_standard_neutral_kick_R_001__A543",
+      "kind": "kick",
+      "sourceSHA256": "65fedb3d75751db06afed13e8286e65c8fcc6316ed7ba25a922a7a45605e8a4d",
+      "referenceSeconds": 3.28,
+      "status": "pass",
+      "completedReference": true,
+      "completedHold": true,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.012814462307280868,
+        "verticalSpeed": 0.0034250075316513574,
+        "minRootHeight": 1.0185080173127978,
+        "maxTorsoTiltDeg": 7.089542055085494,
+        "groundContactFraction": 1
+      },
+      "actualForwardDisplacement": 0.21665980096530932,
+      "maxNonFootGroundContactSeconds": 0,
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 289,
+        "decoderCalls": 289,
+        "maxRawFeatureError": 2.135179477614959e-17
+      },
+      "selected": true,
+      "kickSide": "right",
+      "actualKick": {
+        "maximumClearance": 1.2141621742359134,
+        "maximumRootRelativeHorizontalReach": 1.0045726747634784,
+        "maximumRootRelativeForward": 0.5517818986781389,
+        "heightExcursion": 1.220996361094771,
+        "maximumContiguousKickPoseSeconds": 0.52,
+        "legExcursion": 1.765683254200046
+      },
+      "support": {
+        "qualifyingSamples": 26,
+        "oppositeFootGroundContactFraction": 0.8846153846153846,
+        "maximumTorsoTiltDeg": 31.95865611904607
+      },
+      "sourceFootTiming": {
+        "zeroLagCorrelation": 0.9871483850056681,
+        "bestLag": {
+          "correlation": 0.9871483850056681,
+          "lagSeconds": 0
+        },
+        "actualPeakReferenceTime": 1.0800000000000005,
+        "sourcePeakTime": 1.06,
+        "peakTimingDifferenceSeconds": 0.020000000000000462
+      },
+      "selectionReason": "Compact original 3.28s kick, without the long approach/departure of the earlier trash-kick variants; physical kick, support and final standing checks pass."
+    },
+    {
+      "id": "g1_standard_neutral_kick_R_001__A543_M",
+      "kind": "kick",
+      "sourceSHA256": "4e3ada3f00f373a95bee8c88c3931576eb0dfa4fd3898a41483c7a49daa0e579",
+      "referenceSeconds": 3.28,
+      "status": "pass",
+      "completedReference": true,
+      "completedHold": true,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.013517871356566073,
+        "verticalSpeed": 0.0031402694324601053,
+        "minRootHeight": 1.0198546604663132,
+        "maxTorsoTiltDeg": 7.200336436621686,
+        "groundContactFraction": 1
+      },
+      "actualForwardDisplacement": 0.07049282858547451,
+      "maxNonFootGroundContactSeconds": 0,
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 289,
+        "decoderCalls": 289,
+        "maxRawFeatureError": 2.1504578344010584e-17
+      },
+      "selected": true,
+      "kickSide": "left",
+      "actualKick": {
+        "maximumClearance": 1.1687547328405252,
+        "maximumRootRelativeHorizontalReach": 0.9862056296304269,
+        "maximumRootRelativeForward": 0.7014285433233127,
+        "heightExcursion": 1.1952118509433969,
+        "maximumContiguousKickPoseSeconds": 0.46,
+        "legExcursion": 1.936635949232893
+      },
+      "support": {
+        "qualifyingSamples": 23,
+        "oppositeFootGroundContactFraction": 0.8695652173913043,
+        "maximumTorsoTiltDeg": 36.12724705584775
+      },
+      "sourceFootTiming": {
+        "zeroLagCorrelation": 0.9856041976507991,
+        "bestLag": {
+          "correlation": 0.9856041976507991,
+          "lagSeconds": 0
+        },
+        "actualPeakReferenceTime": 1.0800000000000005,
+        "sourcePeakTime": 1.06,
+        "peakTimingDifferenceSeconds": 0.020000000000000462
+      },
+      "selectionReason": "Compact original 3.28s kick, without the long approach/departure of the earlier trash-kick variants; physical kick, support and final standing checks pass."
+    },
+    {
+      "id": "g1_standard_tired_one_leg_jumping_R_001__A359",
+      "kind": "single_leg_hop",
+      "sourceSHA256": "b7952b3f49e2579d3aa52afdda583dba51d05724a6f7b13e7d50fdf50c85e261",
+      "referenceSeconds": 9.98,
+      "status": "pass",
+      "completedReference": true,
+      "completedHold": true,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.006467359840102811,
+        "verticalSpeed": 0.0020282036706663455,
+        "minRootHeight": 1.0235678179024017,
+        "maxTorsoTiltDeg": 3.834726042988039,
+        "groundContactFraction": 1
+      },
+      "actualForwardDisplacement": 0.928323357245433,
+      "maxNonFootGroundContactSeconds": 0,
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 625,
+        "decoderCalls": 625,
+        "maxRawFeatureError": 4.393187202911264e-16
+      },
+      "selected": true,
+      "hopSide": "right",
+      "strictSameFootHopCount": 2,
+      "strictHopDurations": [
+        0.18,
+        0.08
+      ],
+      "sourceKinematicPeakCount": 5,
+      "hopEpisodeReferenceTime": [
+        1.46,
+        6.04
+      ],
+      "raisedFootContactSeconds": 0.0,
+      "raisedFootOnlySupportSeconds": 0.0,
+      "raisedFootContactIntervals": [],
+      "raisedFootWorldHeightCorrelation": 0.9823066280700407,
+      "supportFootRootRelativeHeightCorrelation": 0.9270788640952741,
+      "selectionReason": "Selected for cleaner lifted-leg tracking: no raised-foot floor contacts through the five-beat hop episode. All five source peaks have small same-foot contact-free liftoffs; only two meet the unchanged strict height/duration criteria."
+    },
+    {
+      "id": "g1_standard_tired_one_leg_jumping_R_001__A359_M",
+      "kind": "single_leg_hop",
+      "sourceSHA256": "279c8fd4d33b9ee79c85626a2f0e495ffbb781e85475ef3ddaaff823819a3192",
+      "referenceSeconds": 9.98,
+      "status": "pass",
+      "completedReference": true,
+      "completedHold": true,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.0204239388735495,
+        "verticalSpeed": 0.00371671628439605,
+        "minRootHeight": 1.0248431216695837,
+        "maxTorsoTiltDeg": 3.9123993001409643,
+        "groundContactFraction": 1
+      },
+      "actualForwardDisplacement": 1.1626874522198396,
+      "maxNonFootGroundContactSeconds": 0,
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 625,
+        "decoderCalls": 625,
+        "maxRawFeatureError": 4.423544863740858e-16
+      },
+      "selected": false,
+      "hopSide": "left",
+      "strictSameFootHopCount": 4,
+      "strictHopDurations": [
+        0.06,
+        0.16,
+        0.26,
+        0.18
+      ],
+      "sourceKinematicPeakCount": 5,
+      "hopEpisodeReferenceTime": [
+        1.46,
+        6.04
+      ],
+      "raisedFootContactSeconds": 0.32,
+      "raisedFootOnlySupportSeconds": 0.08,
+      "raisedFootContactIntervals": [
+        {
+          "startReferenceTime": 3.2200000000000024,
+          "endReferenceTime": 3.3600000000000025,
+          "sampledDuration": 0.16
+        },
+        {
+          "startReferenceTime": 4.259999999999997,
+          "endReferenceTime": 4.259999999999997,
+          "sampledDuration": 0.02
+        },
+        {
+          "startReferenceTime": 5.239999999999976,
+          "endReferenceTime": 5.359999999999974,
+          "sampledDuration": 0.14
+        }
+      ],
+      "raisedFootWorldHeightCorrelation": 0.9746852578211713,
+      "supportFootRootRelativeHeightCorrelation": 0.8957908901955952,
+      "selectionReason": "Not selected despite four strict same-foot hops: the raised foot contacts the floor between hops for 0.32s, including brief sole support. This is a quality-selection decision, not a retroactive change to physical pass/fail thresholds."
+    }
+  ],
+  "finalProductionVerification": {
+    "status": "pass",
+    "caseCount": 3,
+    "sourceChanges": [],
+    "engines": {
+      "mujoco": "3.10.0",
+      "ort": "1.30.0",
+      "provider": "wasm"
+    },
+    "testedAt": "2026-10-10T15:58:11.569Z",
+    "sources": {
+      "scripts/check-g1-standard-motions.mjs": {
+        "bytes": 37241,
+        "sha256": "f50d0d2f2194c397aa600d0ca2a756adf7f773574ff45e0cdebe579000bc37a2"
+      },
+      "demo/local-policy.js": {
+        "bytes": 9594,
+        "sha256": "2b16bc37395e3cbab985f787ad4c9308f3eeb100d5674916ba4dc2976837402b"
+      },
+      "demo/local-reference.js": {
+        "bytes": 3025,
+        "sha256": "c54401ba90d12e570b4de1e4735451d4b2c7c4913eeea8cd38b2a05892dc13f5"
+      },
+      "demo/local-physics.js": {
+        "bytes": 13376,
+        "sha256": "c0c138bf5f0a2fd559b4e8e1383de831c2f4d1eb129cee94ae22a007abb3f8a0"
+      },
+      "demo/local-inference.js": {
+        "bytes": 8606,
+        "sha256": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159"
+      },
+      "demo/local-assets/models/encoder_g1.onnx": {
+        "bytes": 16932124,
+        "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975"
+      },
+      "demo/local-assets/models/decoder.onnx": {
+        "bytes": 40743594,
+        "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+      }
+    },
+    "rawReportSHA256": "b4342c3d480c1651278dffb8f6e8def1f0988adc0ee1919cdcd99800ad881c6b",
+    "rawReportBytes": 5276207,
+    "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-standard.json",
+    "archivePathBase": "repository root",
+    "rawArchiveRequiredForRuntime": false,
+    "summaryPath": "g1-standard.json",
+    "summaryPathBase": "homepage/qa",
+    "summarySHA256": "54e30d19315d95110de8d31938695d4c6ae32104eda35cd54b52fb6769a94b54",
+    "summaryBytes": 66105
+  },
+  "candidateEvidence": {
+    "developmentReport": ".work/browser-port/g1-standard-qa/candidates.json",
+    "sha256": "847733c8b95257f2ac90ccc5e861f4a9ea27f3c8220553680559031ff9a590da",
+    "status": "pass",
+    "sourceChanges": [],
+    "fullReportIncludedInPortableHomepage": false
+  },
+  "limitations": [
+    "Bounded simulation QA, not a hardware safety guarantee or paper benchmark.",
+    "Measurements are at 50Hz policy boundaries. Contact constraints describe the last 1ms physics substep; current kinematics are refreshed without changing solver state.",
+    "Flight requires no active floor contacts and both collision-mesh sole minima above the floor. Reference labels or root trajectories alone cannot pass.",
+    "Default reset starts slightly above contact; the first .5s cannot count as flight. Standing takeoff is measured from grounded foot advance and double support, not root translation during crouch/push-off.",
+    "Kneeling permits shin contact or thigh-mesh contact within 0.15m of the knee joint; no pelvis, torso, head or hand floor contact is allowed. Kneeling torso inclination alone is not treated as falling.",
+    "The G1 reference joint angles are not H2 target angles; no cross-robot raw-angle tracking-error score is claimed.",
+    "Source foot-body positions are kinematic timing proxies, not source contact/flight measurements. Cross-embodiment distances and raw-angle MSE are not used as tracking metrics.",
+    "Status records physical semantic completion; source timing/correlation diagnostics support candidate comparison rather than a paper benchmark.",
+    "No browser rendering or scheduling is tested.",
+    "Candidate selection records bounded deterministic rollouts using one fixed 0.5s startup, not success across randomized initial conditions.",
+    "The unselected mirrored hop also passes the original basic physical-semantic thresholds; raised-foot contacts motivated the higher-quality selection."
+  ]
+}

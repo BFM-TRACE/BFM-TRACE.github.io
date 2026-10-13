@@ -1,0 +1,293 @@
+{
+  "generatedAt": "2026-10-09T17:32:01.242514+00:00",
+  "scope": "Raw learned planner candidate metrics, not H2 closed-loop validation",
+  "candidates": [
+    {
+      "seedBase": 20450,
+      "direction": "left",
+      "file": "candidates/seed_20450/planner_run_left.json",
+      "jsonSHA256": "809ccbd0166af5034754441468172da4341e21afe314b14ba0c043506ebc1183",
+      "rawSHA256": "09ebef5ae4ce9d56344e66e83cbfd4a1da1128b121971fd0172b3f52c08770cd",
+      "loop": {
+        "startFrame": 35,
+        "endFrame": 69,
+        "frames": 34,
+        "score": 0.004808069904913905,
+        "qMeanSquaredError": 0.0024462739386712645,
+        "dqMeanSquaredError": 0.221009758321301,
+        "orientationSeamRadians": 0.05508146385666056,
+        "yawMin": -0.09375681691337481,
+        "yawMax": 0.08366693506203005,
+        "maxAbsYaw": 0.09375681691337481,
+        "meanVelocity": [
+          -0.040937732247745155,
+          1.3023387684541547,
+          -0.005438941366532204
+        ],
+        "meanDirectionalSpeed": 1.3023387684541547
+      },
+      "fullWindowYawMin": -0.09375681691337481,
+      "fullWindowYawMax": 0.18350994549285407,
+      "selectedCall": 15
+    },
+    {
+      "seedBase": 20450,
+      "direction": "forward",
+      "file": "candidates/seed_20450/planner_run_forward.json",
+      "jsonSHA256": "97a67899e4c757241abdaaea45474e4d1a9503193c0078de8b99afeb5696b880",
+      "rawSHA256": "1b589d7a9c3fb318bb4242c7a09dbbe2d775062d0afaa92814c6672ad25adcfa",
+      "loop": {
+        "startFrame": 3,
+        "endFrame": 101,
+        "frames": 98,
+        "score": 0.003746161305188872,
+        "qMeanSquaredError": 0.001818600150796115,
+        "dqMeanSquaredError": 0.1840188773555496,
+        "orientationSeamRadians": 0.041802483380120194,
+        "yawMin": -0.06535082679998604,
+        "yawMax": 0.10275421443299684,
+        "maxAbsYaw": 0.10275421443299684,
+        "meanVelocity": [
+          1.4013850932218606,
+          -0.025841347417052917,
+          0.0009713245897877087
+        ],
+        "meanDirectionalSpeed": 1.4013850932218606
+      },
+      "fullWindowYawMin": -0.06535082679998604,
+      "fullWindowYawMax": 0.10275421443299684,
+      "selectedCall": 12
+    },
+    {
+      "seedBase": 21450,
+      "direction": "left",
+      "file": "candidates/seed_21450/planner_run_left.json",
+      "jsonSHA256": "4efec99c4565a1291bd1c3135ed383858c1d84cba54c567dbb28a3d44dfe024d",
+      "rawSHA256": "92de2395f081e08bf07a9dae5b8f600d5275128ab985416ef63f11894b6986e7",
+      "loop": {
+        "startFrame": 44,
+        "endFrame": 78,
+        "frames": 34,
+        "score": 0.0041669851162228055,
+        "qMeanSquaredError": 0.0017671279917678333,
+        "dqMeanSquaredError": 0.20023118006868562,
+        "orientationSeamRadians": 0.08916785561715791,
+        "yawMin": -0.1478063472395739,
+        "yawMax": -0.05479301926102256,
+        "maxAbsYaw": 0.1478063472395739,
+        "meanVelocity": [
+          -0.05796475445522979,
+          1.2514804391299965,
+          0.0002538281328538538
+        ],
+        "meanDirectionalSpeed": 1.2514804391299965
+      },
+      "fullWindowYawMin": -0.16624728323656557,
+      "fullWindowYawMax": 0.09771265190212514,
+      "selectedCall": 8
+    },
+    {
+      "seedBase": 21450,
+      "direction": "forward",
+      "file": "candidates/seed_21450/planner_run_forward.json",
+      "jsonSHA256": "1bba874e6e45c76c35c531b91c644739b3b58d0e5e4b640c71fa699f82926625",
+      "rawSHA256": "9896450e680d2df623c150e66186fb2bbb357fc1902b5d73cf3ccce2275bd1e4",
+      "loop": {
+        "startFrame": 0,
+        "endFrame": 98,
+        "frames": 98,
+        "score": 0.0026138405117153325,
+        "qMeanSquaredError": 0.00136605498006398,
+        "dqMeanSquaredError": 0.11085610712217446,
+        "orientationSeamRadians": 0.0527682594804126,
+        "yawMin": -0.08155930462580974,
+        "yawMax": 0.05295985213744002,
+        "maxAbsYaw": 0.08155930462580974,
+        "meanVelocity": [
+          1.4133433906399475,
+          0.0021209096422000694,
+          -0.0022203034284163496
+        ],
+        "meanDirectionalSpeed": 1.4133433906399475
+      },
+      "fullWindowYawMin": -0.08155930462580974,
+      "fullWindowYawMax": 0.05295985213744002,
+      "selectedCall": 13
+    },
+    {
+      "seedBase": 22450,
+      "direction": "left",
+      "file": "candidates/seed_22450/planner_run_left.json",
+      "jsonSHA256": "9b3b4ddf5de84a291cd81dd47c26ff4888b64c9bf68d213aa19eccf5f5cc6bf1",
+      "rawSHA256": "24e10d86c7a5673254496e9d5b6d236fc1a2a5994c7aa9d22c836a2220195de7",
+      "loop": {
+        "startFrame": 2,
+        "endFrame": 100,
+        "frames": 98,
+        "score": 0.00790917134864591,
+        "qMeanSquaredError": 0.003290023443092364,
+        "dqMeanSquaredError": 0.4303094575643222,
+        "orientationSeamRadians": 0.07950513567189538,
+        "yawMin": -0.13483170433705235,
+        "yawMax": 0.1518701734871652,
+        "maxAbsYaw": 0.1518701734871652,
+        "meanVelocity": [
+          0.0013338546363675318,
+          1.4266831534249442,
+          0.0017111459556890768
+        ],
+        "meanDirectionalSpeed": 1.4266831534249442
+      },
+      "fullWindowYawMin": -0.13483170433705235,
+      "fullWindowYawMax": 0.1518701734871652,
+      "selectedCall": 15
+    },
+    {
+      "seedBase": 22450,
+      "direction": "forward",
+      "file": "candidates/seed_22450/planner_run_forward.json",
+      "jsonSHA256": "40afcaa2b09903f1b1af9cdd854c41bf452107dc2cb2b5715e256d4f4b032fe2",
+      "rawSHA256": "cfe4fd95d4d8088478a624223461c260792b01d87f1265e79dfbf643af444cd0",
+      "loop": {
+        "startFrame": 0,
+        "endFrame": 98,
+        "frames": 98,
+        "score": 0.0036795448039923925,
+        "qMeanSquaredError": 0.0020560524820931484,
+        "dqMeanSquaredError": 0.15111845876480032,
+        "orientationSeamRadians": 0.04739361439081024,
+        "yawMin": -0.09138330547161665,
+        "yawMax": 0.10678641822429971,
+        "maxAbsYaw": 0.10678641822429971,
+        "meanVelocity": [
+          1.405205629309831,
+          -0.010970843081571618,
+          -0.0006000849665427355
+        ],
+        "meanDirectionalSpeed": 1.405205629309831
+      },
+      "fullWindowYawMin": -0.09138330547161665,
+      "fullWindowYawMax": 0.10678641822429971,
+      "selectedCall": 15
+    },
+    {
+      "seedBase": 23450,
+      "direction": "left",
+      "file": "candidates/seed_23450/planner_run_left.json",
+      "jsonSHA256": "a78aacd0e79d780f3b5882ce1f964150ed2f5ee6b5eb0606feac5f04d91abe45",
+      "rawSHA256": "73e9f5a8afb517158f7cc328b2d1acffd4b7dc01e0347fff595c0bcef14cead4",
+      "loop": {
+        "startFrame": 0,
+        "endFrame": 99,
+        "frames": 99,
+        "score": 0.01751390589838246,
+        "qMeanSquaredError": 0.01015025974120147,
+        "dqMeanSquaredError": 0.7139364533496559,
+        "orientationSeamRadians": 0.06697486449175184,
+        "yawMin": -0.17422513552897462,
+        "yawMax": 0.15506997761916785,
+        "maxAbsYaw": 0.17422513552897462,
+        "meanVelocity": [
+          0.054036884596853525,
+          1.4115104289970006,
+          -0.00034953608657372286
+        ],
+        "meanDirectionalSpeed": 1.4115104289970006
+      },
+      "fullWindowYawMin": -0.17422513552897462,
+      "fullWindowYawMax": 0.15506997761916785,
+      "selectedCall": 13
+    },
+    {
+      "seedBase": 23450,
+      "direction": "forward",
+      "file": "candidates/seed_23450/planner_run_forward.json",
+      "jsonSHA256": "4d87fb2b3153028bc958e1f94a5c993f94c9f78a3cf4ed31720d70ba650ccf8b",
+      "rawSHA256": "a9cac3271368fb812c14c54c3ac00feac5525ff23909d2a42c277b4a5308bd0e",
+      "loop": {
+        "startFrame": 2,
+        "endFrame": 100,
+        "frames": 98,
+        "score": 0.004623593229700312,
+        "qMeanSquaredError": 0.0019054006027010369,
+        "dqMeanSquaredError": 0.2558993123498757,
+        "orientationSeamRadians": 0.056426855928807265,
+        "yawMin": -0.0901554084063861,
+        "yawMax": 0.10995307120111587,
+        "maxAbsYaw": 0.10995307120111587,
+        "meanVelocity": [
+          1.3986887250627797,
+          -0.03867902317825628,
+          0.002642316477639312
+        ],
+        "meanDirectionalSpeed": 1.3986887250627797
+      },
+      "fullWindowYawMin": -0.0901554084063861,
+      "fullWindowYawMax": 0.10995307120111587,
+      "selectedCall": 11
+    },
+    {
+      "seedBase": 20450,
+      "direction": "back",
+      "file": "candidates/seed_20450/planner_run_back.json",
+      "jsonSHA256": "286c35fff02890ee4f012d7472c7761e04bc72558f7b8115c11b1cfe36ba5af3",
+      "rawSHA256": "0c1fee7d773e208ee38f1916df728a24cc8eb0b7677a0de8d86dfb32880f704c",
+      "loop": {
+        "startFrame": 47,
+        "endFrame": 81,
+        "frames": 34,
+        "score": 0.0035882389543850013,
+        "qMeanSquaredError": 0.0015498128661682149,
+        "dqMeanSquaredError": 0.14046052677523377,
+        "orientationSeamRadians": 0.11258959281074328,
+        "yawMin": -0.14984159870862185,
+        "yawMax": -0.009436729736186132,
+        "maxAbsYaw": 0.14984159870862185,
+        "meanVelocity": [
+          -1.2830190097584484,
+          0.03153414410703318,
+          0.01143839429406575
+        ],
+        "meanDirectionalSpeed": 1.2830190097584484
+      },
+      "fullWindowYawMin": -0.14984159870862185,
+      "fullWindowYawMax": 0.03362460891161227,
+      "selectedCall": 9
+    },
+    {
+      "seedBase": 21450,
+      "direction": "back",
+      "file": "candidates/seed_21450/planner_run_back.json",
+      "jsonSHA256": "f6a39a5b1ca55a5f7a2dc0c03026710f1e367593f258e208dc0a2340afe281ed",
+      "rawSHA256": "8280ec6d20ca8f7cc3e8303a4fc1581849a889b43fe27fb98bc33efcec166145",
+      "loop": {
+        "startFrame": 51,
+        "endFrame": 83,
+        "frames": 32,
+        "score": 0.0020828726789853835,
+        "qMeanSquaredError": 0.0009770136400697777,
+        "dqMeanSquaredError": 0.08570961619451364,
+        "orientationSeamRadians": 0.07053550552317173,
+        "yawMin": -0.13407713314979408,
+        "yawMax": 0.04879211199742017,
+        "maxAbsYaw": 0.13407713314979408,
+        "meanVelocity": [
+          -1.2663733959197954,
+          0.047500738874077776,
+          0.0012687779963015122
+        ],
+        "meanDirectionalSpeed": 1.2663733959197954
+      },
+      "fullWindowYawMin": -0.13407713314979408,
+      "fullWindowYawMax": 0.04879211199742017,
+      "selectedCall": 12
+    }
+  ],
+  "duplicateSeedGroups": {
+    "24450": 20450,
+    "25450": 21450,
+    "26450": 22450,
+    "27450": 23450
+  },
+  "updatedAt": "2026-10-09T17:37:18.979010+00:00"
+}

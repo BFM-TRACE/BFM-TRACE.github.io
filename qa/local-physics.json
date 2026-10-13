@@ -1,0 +1,58 @@
+{
+  "testedAt": "2026-10-09T16:56:43.514Z",
+  "host": "Node WebAssembly",
+  "checks": [
+    {
+      "name": "Real gravity integration",
+      "status": "pass",
+      "simTime": 0.10000000000000007,
+      "height": 0.9504595000000001,
+      "velocity": -0.9809999999999991
+    },
+    {
+      "name": "Real ground contact",
+      "status": "pass",
+      "simTime": 2.0999999999998797,
+      "height": 0.09963281815753991
+    },
+    {
+      "name": "Reset restores physical state",
+      "status": "pass"
+    },
+    {
+      "name": "Minimum-norm SVD, underdetermined and rank-deficient constraints",
+      "status": "pass"
+    },
+    {
+      "name": "Full H2 model and renderer body order",
+      "status": "pass",
+      "nq": 68,
+      "nv": 61,
+      "nu": 31,
+      "bodies": 45
+    },
+    {
+      "name": "Five closed-loop transmissions match Python fixtures",
+      "status": "pass",
+      "fixtures": 2,
+      "maximumJacobianError": 3.1086244689504383e-15,
+      "maximumTorqueError": 1.509903313490213e-14,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "Dense and sparse constraint storage agree",
+      "status": "pass",
+      "maximumTorqueError": 0
+    },
+    {
+      "name": "20 real PD steps produce finite, torque-limited state",
+      "status": "pass",
+      "trials": 50,
+      "p50Milliseconds": 3.5358750000000327,
+      "p95Milliseconds": 5.178584000000001,
+      "simulatedMilliseconds": 20
+    }
+  ],
+  "engine": "3.10.0",
+  "status": "pass"
+}

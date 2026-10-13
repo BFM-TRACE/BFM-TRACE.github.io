@@ -1,0 +1,117 @@
+WEBVTT
+
+1
+00:00:04.695 --> 00:00:08.377
+Humanoid behavior foundation models have recently made major advances in
+
+2
+00:00:08.389 --> 00:00:10.195
+enabling diverse whole-body control
+
+3
+00:00:11.766 --> 00:00:14.880
+but adapting a pretrained controller to a new embodiment remains
+
+4
+00:00:14.891 --> 00:00:17.675
+challenging because of kinematic and dynamic mismatch
+
+5
+00:00:21.895 --> 00:00:27.020
+TRACE preserves pretrained motion representations through physical pre-adaptation motion dataset
+
+6
+00:00:27.032 --> 00:00:31.520
+curation and parameter-efficient fine-tuning before deployment on the target robot
+
+7
+00:00:33.695 --> 00:00:37.695
+First paired poses and Jacobian priors initialize input and output
+
+8
+00:00:37.707 --> 00:00:43.305
+projections Action-scale and nominal joint-response alignment reduce initial tracking errors
+
+9
+00:00:46.695 --> 00:00:51.036
+Next we retarget paired motions screen physical validity balance ten
+
+10
+00:00:51.048 --> 00:00:55.025
+categories and select diverse commands using frozen-encoder features
+
+11
+00:00:57.195 --> 00:01:00.911
+This yields ten million synchronized frames with broader command coverage
+
+12
+00:01:03.695 --> 00:01:07.764
+Finally target-encoder adapters align latents and tokens with the frozen
+
+13
+00:01:07.775 --> 00:01:11.214
+source encoder The shared quantizer stays fixed
+
+14
+00:01:14.195 --> 00:01:18.184
+Decoder adapters then learn target dynamics through PPO with gradients
+
+15
+00:01:18.195 --> 00:01:19.570
+stopped at the token input
+
+16
+00:01:22.195 --> 00:01:26.702
+Phase one establishes stable tracking We merge and reset adapters
+
+17
+00:01:27.009 --> 00:01:29.998
+then refine precision and robustness on difficult motions
+
+18
+00:01:31.995 --> 00:01:35.143
+We now deploy the adapted controller on Unitree H2
+
+19
+00:01:36.345 --> 00:01:40.891
+Single-leg hops squats and single-knee recovery demonstrate control through changing
+
+20
+00:01:40.902 --> 00:01:46.939
+support alongside coordinated upper-body motion The same controller also performs
+
+21
+00:01:46.950 --> 00:01:47.643
+high kicks
+
+22
+00:01:54.245 --> 00:01:58.325
+The main view shows continuous multi-stage teleoperation opening a door
+
+23
+00:01:58.564 --> 00:02:03.230
+repositioning and walking through The surrounding views show everyday object
+
+24
+00:02:03.241 --> 00:02:05.923
+interaction through the same whole-body control interface
+
+25
+00:02:14.879 --> 00:02:18.333
+Opening a container and moving a chair demonstrate mobile interaction
+
+26
+00:02:18.345 --> 00:02:23.579
+under vision-language-action control Longer object-transfer trials use the same interface
+
+27
+00:02:23.590 --> 00:02:25.386
+to coordinate grasping and placement
+
+28
+00:02:37.662 --> 00:02:41.139
+At twenty times speed the full recording shows twenty consecutive
+
+29
+00:02:41.151 --> 00:02:46.135
+trials Nineteen succeed Trial seven is the only failure

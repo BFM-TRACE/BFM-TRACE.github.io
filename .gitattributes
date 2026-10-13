@@ -1,0 +1,12 @@
+* text=auto
+*.mp4 binary
+*.onnx binary
+*.wasm binary
+*.bin binary
+*.pdf binary
+*.webp binary
+*.jpg binary
+*.png binary
+*.npy binary
+*.command text eol=lf
+*.cmd text eol=crlf

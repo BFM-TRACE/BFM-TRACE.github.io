@@ -1,0 +1,86 @@
+{
+  "completedAt": "2026-10-10T15:15:18.357274+00:00",
+  "status": "pass",
+  "features": {
+    "turnRateCommand": {
+      "slowWalkAndWalk": [
+        0.1,
+        1.0
+      ],
+      "run": [
+        0.1,
+        0.3
+      ],
+      "step": 0.1,
+      "units": "rad/s",
+      "direction": "Q/E and pointer turn buttons",
+      "semantics": "Magnitude applied only while a direction is held; independent from linear command"
+    },
+    "motions": [
+      {
+        "id": "broad_jump_003__A360",
+        "label": "Standing long jump",
+        "referenceSHA256": "7027838525670878d695da6183e65016ef59e5ac9fccda2cd39dc19b4c2ebc7b",
+        "status": "pass",
+        "finalHorizontalSpeedRMS": 0.006979813495487188
+      },
+      {
+        "id": "high_jump_R_opt_2_001__A477",
+        "label": "High jump",
+        "referenceSHA256": "f732618a2ab0105b52a2902c61bbc6c674ecc00937356a3be9d95be8e28becb4",
+        "status": "pass",
+        "finalHorizontalSpeedRMS": 0.01051130846949852
+      },
+      {
+        "id": "neutral_kick_trash_R_003__A098",
+        "label": "Right high kick",
+        "referenceSHA256": "02d41c35a3b0ea6ca0d61620bead21a3d4fa77774f4b0b403ba089c52acf6bd4",
+        "status": "pass",
+        "finalHorizontalSpeedRMS": 0.006853453131284295
+      },
+      {
+        "id": "neutral_kick_trash_R_003__A098_M",
+        "label": "Left high kick",
+        "referenceSHA256": "fb10a96372b33afce115ee161cb02fb0a60273bed26928f3fc99711a0341f702",
+        "status": "pass",
+        "finalHorizontalSpeedRMS": 0.014422649814684742
+      }
+    ]
+  },
+  "checks": {
+    "site": "PASS: 64 assets, 9 complete local motion pairs, routes/ranges/private paths/proxy",
+    "ui": {
+      "passed": 33,
+      "report": "qa/planner-controls.json"
+    },
+    "turning": {
+      "passed": 24,
+      "report": "qa/planner-turn-rates.json",
+      "stopObservationSeconds": 6
+    },
+    "dynamic": {
+      "passed": 4,
+      "report": "qa/dynamic-motions.json",
+      "holdSeconds": 2
+    },
+    "browser": "qa/turning-and-dynamic-browser.json"
+  },
+  "limitations": [
+    "Six-second stopping observation is not a four-second settling guarantee. Earlier qa/planner-turn-rates-stop4s.json preserves one short yaw oscillation; original 0.4s Walk target blend remains unchanged.",
+    "Run turn candidates above 0.3 rad/s were excluded after failures at 4m/s. Bounded tests are not a universal stability guarantee.",
+    "Four dynamic motions use the unchanged initial state, full references and native H2 selector-0 encoder/step9450 decoder; observed success is simulation, not hardware."
+  ],
+  "sources": {
+    "demo/index.html": "e893a1c95b49f3f83d26609e68b8efc3e24253c04e8c793316bf0b1cc70d361c",
+    "demo/demo.js": "a4e03fdb919e5da94e96b6534805399d1f23764857d7b7a37609b9efa81dbea8",
+    "demo/local-policy.js": "0d6e9869e76f24c1674aee5f7381f229ce0e9d06a782b5d9b5dc51351771c8b4",
+    "demo/local-planner.js": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119",
+    "demo/local-assets/controller.json": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f",
+    "demo/local-assets/planner-bank/manifest.json": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea",
+    "demo/assets/motions.json": "4d618a92cead27b08eb5b11506b0b26105d0476dc35228dc9b030cbe1bb77315",
+    "demo/local-assets/references/manifest.json": "d92e20372c6f2c768ceb19366ead9be6cb36d963cabba61cfa46a5ca23097990",
+    "scripts/check-planner-controls.mjs": "c84ba3fd75f347a5ed0dae23260c63836d029b8adf2430c78c4c2691ccd0ac54",
+    "scripts/check-planner-turn-rates.mjs": "1031007951c62db05cca0feb560243c3105447a28856937eee549502dd5fe5c9",
+    "scripts/check-dynamic-motions.mjs": "3e0fe767f1c55521045dbf72ea95940e439ee28c0e8b66dd6ce0fbfcf95c46d7"
+  }
+}

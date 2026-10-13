@@ -1,0 +1,71 @@
+{
+  "provider": "wasm",
+  "runtimeVersion": "1.30.0",
+  "metadata": {
+    "encoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoded_tokens",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            64
+          ]
+        }
+      ],
+      "loadMs": 555.0999999046326
+    },
+    "decoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            994
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "action",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            29
+          ]
+        }
+      ],
+      "loadMs": 308.8000000715256
+    }
+  },
+  "first": {
+    "tokenLength": 64,
+    "actionLength": 29,
+    "ms": 31.399999976158142
+  },
+  "iterations": 20,
+  "totalMs": 987.2000000476837,
+  "combinedMeanMs": 3.2,
+  "combinedMedianMs": 2.899999976158142,
+  "combinedP95Ms": 5.800000071525574,
+  "wasmThreads": 1,
+  "crossOriginIsolated": false,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "environment": "Chrome dedicated module Web Worker, local macOS",
+  "boundary": "Zero observations test execution and latency only; not closed-loop correctness or cross-platform performance. Token placement here is synthetic timing input."
+}

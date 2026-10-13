@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "validatedAt": "2026-10-10T15:52:19.422938+00:00",
+  "scope": "Source-media and complete-frame visual/ffprobe validation. Responsive cover bounds below are CSS geometry calculations, not browser/device screenshots.",
+  "source": {
+    "path": "assets/teleop-door.mp4",
+    "sha256": "5ad646acef5a5d4b52dce318d80cdee99667d76552097e89aa817c0864103ee2",
+    "bytes": 5832597,
+    "deck": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+    "deckSHA256": "358bfca5fdc9534cc106389eb86378986ff6d90d5175460b41ea401e92b25f0a",
+    "slideNumber": 18,
+    "slidePart": "ppt/slides/slide14.xml",
+    "packagePart": "ppt/media/presenter_5ad646acef5a5d4b.mp4",
+    "embeddedBytesEqual": true,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "nb_frames": "619",
+          "nb_read_frames": "619"
+        }
+      ],
+      "format": {
+        "duration": "20.633008",
+        "size": "5832597"
+      }
+    }
+  },
+  "previousHero": {
+    "sourceIntervalSeconds": [
+      2,
+      14
+    ],
+    "frames": 360,
+    "files": [
+      {
+        "path": "assets/hero-loop.mp4",
+        "bytes": 1997619,
+        "sha256": "0c40394da37fc7d3f07cf3c969f279f9c3c38f97c37119f622bf413bd400f699"
+      },
+      {
+        "path": "assets/hero-poster.jpg",
+        "bytes": 202391,
+        "sha256": "c1d612dd789b466c6a5540b4b315ac63abc72d034f4558835beec6ca46f98f6f"
+      }
+    ]
+  },
+  "output": {
+    "path": "assets/hero-loop.mp4",
+    "sha256": "61260d2e73baf0a47d7d89f55d78144d035338dc1295aafa6d33abee45776a7a",
+    "bytes": 3390329,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "nb_frames": "619",
+          "nb_read_frames": "619"
+        }
+      ],
+      "format": {
+        "duration": "20.633008",
+        "size": "3390329"
+      }
+    },
+    "poster": {
+      "path": "assets/hero-poster.jpg",
+      "sha256": "8e5319aa40f41409aafd1846f196ad3bee581ee746e6d828f6378fc2b2ff93db",
+      "atSeconds": 4
+    }
+  },
+  "transformation": {
+    "sourceIntervalFrames": [
+      0,
+      619
+    ],
+    "sourceIntervalSeconds": [
+      0,
+      20.633008
+    ],
+    "temporalTrim": false,
+    "speed": 1,
+    "cropping": [
+      64,
+      64,
+      1152,
+      648
+    ],
+    "outputSize": [
+      1280,
+      720
+    ],
+    "silent": true,
+    "videoLoopAttributePreserved": true,
+    "autoplayMutedPlaysinlinePreserved": true,
+    "privacy": "Previously reviewed PPT embedded footage is the sole pixel source. Existing privacy processing is preserved through the same crop and resize; no unprocessed footage was introduced.",
+    "rebuildCommand": "python3 homepage/scripts/prepare_assets.py --hero-only",
+    "scriptSHA256": "5f2e74eb1b77fe15b2ba9993ea54b716b2e13ad7ce4c8ff8e75879707b0f48c4"
+  },
+  "validation": {
+    "fullDecode": "ffmpeg -xerror passed",
+    "sourceFrames": 619,
+    "outputFrames": 619,
+    "frameRate": "30/1",
+    "pairedSSIMFrames": 619,
+    "pairedSSIMMean": 0.9816874830371567,
+    "pairedSSIMMin": 0.978236,
+    "comparison": "Every output frame compared at the same timestamp against the identically cropped/resized reviewed source; differences are lossy H.264 encoding.",
+    "visualObservations": [
+      "Opening sequence retained from the first source frame.",
+      "The omitted 14–20.633 s section includes repositioning, approach and passage through the opened doorway.",
+      "The final original frame shows H2 at the doorway partially occluded by the door/frame. An unobstructed post-passage view is not present in the source and is not claimed."
+    ],
+    "finalFrameImage": "qa/screenshots/hero-full-last-frame.jpg",
+    "finalFrameImageSHA256": "3811007712cd3db5d295c0cded9ea6e4d31ce3e69afb9e8bb5980b82a92953a5"
+  },
+  "coverGeometry": {
+    "method": "For object-fit:cover scale=max(boxWidth/1280,boxHeight/720); visible left=(1280-boxWidth/scale)*horizontalObjectPosition. Existing hero min/max height rules still apply.",
+    "desktop": {
+      "heroBox": [
+        1365,
+        900
+      ],
+      "objectPosition": [
+        0.5,
+        0.45
+      ],
+      "visibleSourceRect": [
+        94.0,
+        0.0,
+        1092.0,
+        720.0
+      ]
+    },
+    "smallScreenBefore": {
+      "heroBox": [
+        390,
+        844
+      ],
+      "objectPosition": [
+        0.5,
+        0.45
+      ],
+      "visibleSourceRect": [
+        473.649,
+        0.0,
+        332.701,
+        720.0
+      ]
+    },
+    "smallScreenAfter": {
+      "heroBox": [
+        390,
+        844
+      ],
+      "objectPosition": [
+        0.33,
+        0.45
+      ],
+      "visibleSourceRect": [
+        312.609,
+        0.0,
+        332.701,
+        720.0
+      ]
+    },
+    "smallScreenRule": "Existing max-width:700px breakpoint: video object-position 33% 45%; poster background-position 33% center.",
+    "limitation": "Calculated example dimensions are not a claim of actual-device verification; the root task performs browser QA. The final visible robot region lies around source x420–515, retained by the shifted small-screen window.",
+    "stylesSHA256": "74d4f1c0a48bbf135ad376059fd2c9bb85a0fb9c68e08e4110581aab086765b2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "tunnel_pid": 67818,
+  "tunnel_parent_pid": 1,
+  "process": "67818     1 ssh -S /Users/eren/Workspace/BFM-Trace/.work/trace-homepage-tunnel/ssh.sock -p 8222 -M -fNT -o ControlMaster=yes -o ControlPersist=no -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o ConnectTimeout=15 -L 127.0.0.1:8766:127.0.0.1:8766 qingyul@120.79.230.50",
+  "startup_tool_session_exited": true,
+  "idempotent_start_reused_previous_pid": 67470,
+  "managed_stop_confirmed_previous_daemon_exited": true,
+  "restart_succeeded": true,
+  "homepage_http_status": 200,
+  "source": "live_mujoco_policy",
+  "status": "running",
+  "sim_time_before": 31126.831005882617,
+  "sim_time_after": 31127.987005882853,
+  "simulation_advances": true,
+  "body_pose_values": 315,
+  "remote_service_reused": true,
+  "remote_server_pid": 982671,
+  "remote_policy_pid": 983114,
+  "credentials_written": false,
+  "tunnel_process_group": 67818,
+  "controlling_terminal": null
+}

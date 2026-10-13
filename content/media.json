@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "hero": {
+    "src": "assets/hero-loop.mp4",
+    "poster": "assets/hero-poster.jpg",
+    "description": "The complete recorded H2 door-opening and passage sequence under VR teleoperation.",
+    "source": "teleop-door",
+    "sourceIntervalSeconds": [
+      0,
+      20.633008
+    ],
+    "sourceIntervalFrames": [
+      0,
+      619
+    ],
+    "sourceSHA256": "5ad646acef5a5d4b52dce318d80cdee99667d76552097e89aa817c0864103ee2",
+    "duration": 20.633008,
+    "frames": 619,
+    "crop": [
+      64,
+      64,
+      1152,
+      648
+    ],
+    "speed": 1,
+    "posterAtSeconds": 4
+  },
+  "overview": {
+    "src": "assets/trace-overview.mp4",
+    "captions": "assets/trace-overview.vtt",
+    "description": "Approved narrated project overview (2 min 50 sec).",
+    "poster": "assets/trace-overview.jpg"
+  },
+  "items": [
+    {
+      "id": "motion-coordination",
+      "title": "Whole-body coordination",
+      "category": "motion",
+      "description": "Coordinated arm, torso, and leg motion on the physical H2.",
+      "src": "assets/motion-coordination.mp4",
+      "poster": "assets/motion-coordination.jpg",
+      "duration": 10.066,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 15,
+        "packagePart": "ppt/media/presenter_b587bf5cd58e3a87.mp4",
+        "sha256": "b587bf5cd58e3a875df928d12d7c4896b7f3729d21f3393b3f296ebf4cc6ca1b"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-squat",
+      "title": "Squat & recover",
+      "category": "motion",
+      "description": "Large posture changes with a return to standing.",
+      "src": "assets/motion-squat.mp4",
+      "poster": "assets/motion-squat.jpg",
+      "duration": 9.266,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 15,
+        "packagePart": "ppt/media/presenter_b139d78046960c61.mp4",
+        "sha256": "b139d78046960c61e61fd9fd1032f9cc5524ff54113aebe559b4164854d1eef7"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-kneel",
+      "title": "Kneel & recover",
+      "category": "motion",
+      "description": "Single-knee kneeling followed by recovery.",
+      "src": "assets/motion-kneel.mp4",
+      "poster": "assets/motion-kneel.jpg",
+      "duration": 7.9,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 15,
+        "packagePart": "ppt/media/presenter_7c877d0ad864a6ab.mp4",
+        "sha256": "7c877d0ad864a6ab662c113bfb62959690240735c0b486486ec3a2490ecfb83c"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-hop",
+      "title": "Single-leg hops",
+      "category": "motion",
+      "description": "Dynamic hopping with single-leg support.",
+      "src": "assets/motion-hop.mp4",
+      "poster": "assets/motion-hop.jpg",
+      "duration": 4.1,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 15,
+        "packagePart": "ppt/media/presenter_eb019f06b53a8fa1.mp4",
+        "sha256": "eb019f06b53a8fa1ae296cd9c1673c73da343f3f7a6197b74aad2a6cb5e1744a"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-kick-left",
+      "title": "Left high kick",
+      "category": "motion",
+      "description": "High-amplitude kicking on H2 hardware.",
+      "src": "assets/motion-kick-left.mp4",
+      "poster": "assets/motion-kick-left.jpg",
+      "duration": 3.666,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 16,
+        "packagePart": "ppt/media/presenter_07ed18308acdf526.mp4",
+        "sha256": "07ed18308acdf526a4b4499fc5c7acc9362a2cd23211788e8a9865db74fbdf9d"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-kick-right",
+      "title": "Right high kick",
+      "category": "motion",
+      "description": "High-amplitude kicking on H2 hardware.",
+      "src": "assets/motion-kick-right.mp4",
+      "poster": "assets/motion-kick-right.jpg",
+      "duration": 4.6,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 16,
+        "packagePart": "ppt/media/presenter_eeb600d9477b0b02.mp4",
+        "sha256": "eeb600d9477b0b026c9d38fc94cd630ea72e9cf47a1fe6501ee44c96c4304d5a"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-sequence",
+      "title": "Whole-body sequence",
+      "category": "motion",
+      "description": "An excerpt of continuous whole-body motion tracking.",
+      "src": "assets/motion-sequence.mp4",
+      "poster": "assets/motion-sequence.jpg",
+      "duration": 10.0,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 16,
+        "packagePart": "ppt/media/presenter_3dbf56da13aa9e13.mp4",
+        "sha256": "3dbf56da13aa9e135750f245e1d1ecbba98d42df6e7f58a3b42f38804b8fb476"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "motion-transition",
+      "title": "Whole-body transitions",
+      "category": "motion",
+      "description": "Transitions between whole-body reference poses.",
+      "src": "assets/motion-transition.mp4",
+      "poster": "assets/motion-transition.jpg",
+      "duration": 11.0,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 16,
+        "packagePart": "ppt/media/presenter_0cc809545a700361.mp4",
+        "sha256": "0cc809545a7003614eaa0b4aac0e9c0c1e86ab351f38a1d3c47bb00dd99df410"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "teleop-soccer",
+      "title": "Play soccer",
+      "category": "teleoperation",
+      "description": "VR teleoperation coordinates approach and foot contact.",
+      "src": "assets/teleop-soccer.mp4",
+      "poster": "assets/teleop-soccer.jpg",
+      "duration": 20.633,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 17,
+        "packagePart": "ppt/media/r32_p15_tl.mp4",
+        "sha256": "53caa8f83bd3fe3e3d4b0b13e2808f2b780a13ac751391a93b6c01b835cae758"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "teleop-pillow",
+      "title": "Pick up a pillow",
+      "category": "teleoperation",
+      "description": "Whole-body reaching and object pickup through teleoperation.",
+      "src": "assets/teleop-pillow.mp4",
+      "poster": "assets/teleop-pillow.jpg",
+      "duration": 20.633,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 17,
+        "packagePart": "ppt/media/r32_p15_tr.mp4",
+        "sha256": "81f100c31fd3c9668ef1d72ff7496dda1df5837a68040f24b21e05c159d46e8a"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "teleop-packing",
+      "title": "Pack a toy",
+      "category": "teleoperation",
+      "description": "Teleoperated object placement into a bag.",
+      "src": "assets/teleop-packing.mp4",
+      "poster": "assets/teleop-packing.jpg",
+      "duration": 20.633,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 17,
+        "packagePart": "ppt/media/r32_p15_bl.mp4",
+        "sha256": "d767af6f210593ced2cb07432bdb04cced942207978857a058749db9fff9251c"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "teleop-trash",
+      "title": "Open a trash can",
+      "category": "teleoperation",
+      "description": "Foot contact and upper-body coordination through teleoperation.",
+      "src": "assets/teleop-trash.mp4",
+      "poster": "assets/teleop-trash.jpg",
+      "duration": 20.633,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 17,
+        "packagePart": "ppt/media/r32_p15_br.mp4",
+        "sha256": "e25b9038753593e12d272a0f603b1106c5c6232ced263600caad9a1a8e9652bf"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "teleop-door",
+      "title": "Open the door & walk through",
+      "category": "teleoperation",
+      "description": "A continuous teleoperated door-opening and passage sequence.",
+      "src": "assets/teleop-door.mp4",
+      "poster": "assets/teleop-door.jpg",
+      "duration": 20.633,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 18,
+        "packagePart": "ppt/media/presenter_5ad646acef5a5d4b.mp4",
+        "sha256": "5ad646acef5a5d4b52dce318d80cdee99667d76552097e89aa817c0864103ee2"
+      },
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "vla-large-toy",
+      "title": "Place a large toy",
+      "category": "vla",
+      "description": "An object-directed VLA demonstration with a large carrot toy.",
+      "src": "assets/vla-large-toy.mp4",
+      "poster": "assets/vla-large-toy.jpg",
+      "duration": 22.733,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 19,
+        "packagePart": "ppt/media/r32_p17_tl.mp4",
+        "sha256": "dd4e462be2d7dfea4f4988dc3206d204bba84fbabde713877d15f9463c5817d5"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "vla-small-toy",
+      "title": "Place a small toy",
+      "category": "vla",
+      "description": "An object-directed VLA demonstration with a small carrot toy.",
+      "src": "assets/vla-small-toy.mp4",
+      "poster": "assets/vla-small-toy.jpg",
+      "duration": 22.733,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 19,
+        "packagePart": "ppt/media/r32_p17_tr.mp4",
+        "sha256": "5b2c50c8d99cdd4d116ad46624a8fd5c940c7034bfc8426c5e76ef1fb9df553d"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "vla-trash",
+      "title": "Open a trash can",
+      "category": "vla",
+      "description": "VLA execution uses the adapted low-level motion interface.",
+      "src": "assets/vla-trash.mp4",
+      "poster": "assets/vla-trash.jpg",
+      "duration": 22.733,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 19,
+        "packagePart": "ppt/media/r32_p17_bl.mp4",
+        "sha256": "5e71bbd48844c2a9b3956aaaa5b2bd9bbd3f261337be7a9c58061608a9e5de70"
+      },
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "vla-chair",
+      "title": "Reposition a chair",
+      "category": "vla",
+      "description": "VLA-directed whole-body object interaction.",
+      "src": "assets/vla-chair.mp4",
+      "poster": "assets/vla-chair.jpg",
+      "duration": 22.733,
+      "speed": 1,
+      "source": {
+        "path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+        "slide": 19,
+        "packagePart": "ppt/media/r32_p17_br.mp4",
+        "sha256": "b17dcf7a9aa5cfd9ab3d319d9e821f4179872c7c8e3643e62d4164d5d402eb1c"
+      },
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "provenance": {
+    "deck": "demo_video/deliverables/TRACE_live_presentation_v33.pptx",
+    "deckSha256": "358bfca5fdc9534cc106389eb86378986ff6d90d5175460b41ea401e92b25f0a",
+    "privacy": "Privacy processing is inherited from the reviewed v33 embedded media. Non-VR faces are covered; VR wearers are exempt under the existing project policy.",
+    "galleryTransformation": "Bit-exact extraction of embedded MP4s. Posters are sampled at two seconds or 40% of a shorter clip.",
+    "speed": "All 17 gallery videos and the hero retain 1x playback.",
+    "benchmarkBoundary": "Gallery demonstrations are qualitative examples and do not define the paper's VLA evaluation sample or success rates.",
+    "paper": {
+      "source": "build/en/main_en.pdf",
+      "sha256": "79db04c363cf9b2dcc7b87376ab5974901c1dbaac251d5f77dfdcc675c867058",
+      "reason": "The current compiled English paper reports approximately eight hours; the root TRACE.pdf is an older six-hour draft."
+    }
+  }
+}

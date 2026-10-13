@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-09T18:36:56.023Z",
+  "status": "pass",
+  "scope": "Exact JS-number parity of q, qdot, and quaternion inputs for 10 future samples at every 50 Hz step through speeds, directions, transitions and stop. Physics/model code unchanged by packaging.",
+  "sourceManifestSHA256": "8518711178cf6e831530784242cbf0b04a259a42af326ff160b14c82108cfcbb",
+  "compactManifestSHA256": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea",
+  "sampledReferences": 10000,
+  "maxAbsoluteError": 0
+}

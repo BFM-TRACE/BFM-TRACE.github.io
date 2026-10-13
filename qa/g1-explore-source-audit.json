@@ -1,0 +1,196 @@
+{
+  "schema": "trace_g1_explore_source_audit_v1",
+  "machine": "ai-precog-machine21",
+  "remoteProject": "/home/qingyul/workspace/SONIC-H2",
+  "collection": "gear_sonic_deploy/reference/example_g1_explore",
+  "userConfirmedNumbering": "README 1-based",
+  "requestedReadmeNumbers": [
+    1,
+    2,
+    4,
+    5
+  ],
+  "selectedMotions": [
+    {
+      "id": "g1_explore_prayer_R_001__A430",
+      "file": "g1_explore_prayer_R_001__A430.json",
+      "sha256": "afbfab7251219aac5bfe4634b1d98d92631bbcab5b1d693714bb4083dc086f9e",
+      "sourceMotionId": "prayer_R_001__A430",
+      "label": "Single-knee prayer",
+      "description": "单膝下跪祈祷后站起",
+      "kind": "single_kneel",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "sourceMenuNumber1Based": 1,
+      "sourceRuntimeIndex0Based": 0,
+      "frames": 381,
+      "fps": 50,
+      "duration": 7.6,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/prayer_R_001__A430",
+      "sourceCSVSHA256": "1a87839c417a600f21f6065ce082c6a3d6f787f08275eba5c34cc9b74ecc8c63",
+      "requestedByReadmeNumber": true,
+      "requestedByRuntimeIndex": false,
+      "referenceOnlyPreview": null
+    },
+    {
+      "id": "g1_explore_dejection_R_001__A430",
+      "file": "g1_explore_dejection_R_001__A430.json",
+      "sha256": "76bcbb4a357a49dbe5d7ed4890f6d5627b44fbdc6380a4055653117052040d2e",
+      "sourceMotionId": "dejection_R_001__A430",
+      "label": "Double-knee kneel and rise",
+      "description": "双膝跪地后站起",
+      "kind": "double_kneel",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "sourceMenuNumber1Based": 2,
+      "sourceRuntimeIndex0Based": 1,
+      "frames": 764,
+      "fps": 50,
+      "duration": 15.26,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/dejection_R_001__A430",
+      "sourceCSVSHA256": "c6676136ea8f31ebca6e1fb9240c9abfe0fa200be3f495c120b4bd7a4e3864a6",
+      "requestedByReadmeNumber": true,
+      "requestedByRuntimeIndex": true,
+      "referenceOnlyPreview": null
+    },
+    {
+      "id": "g1_explore_jump_and_land_light_002__A001",
+      "file": "g1_explore_jump_and_land_light_002__A001.json",
+      "sha256": "07a4e883b536a2d264e92dbc7d633fe932cd6e5e7b5d3bfb2f643a68707f9055",
+      "sourceMotionId": "jump_and_land_light_002__A001",
+      "label": "Light jump and land",
+      "description": "站立、原地轻跳、落地站立",
+      "kind": "jump",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "sourceMenuNumber1Based": 4,
+      "sourceRuntimeIndex0Based": 3,
+      "frames": 439,
+      "fps": 50,
+      "duration": 8.76,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/jump_and_land_light_002__A001",
+      "sourceCSVSHA256": "5bfd1cd08f6bfcb77a9bac00bbed84895d113a343d6c86793110f2e902cf7f0f",
+      "requestedByReadmeNumber": true,
+      "requestedByRuntimeIndex": false,
+      "referenceOnlyPreview": null
+    },
+    {
+      "id": "g1_explore_broad_jump_002__A359",
+      "file": "g1_explore_broad_jump_002__A359.json",
+      "sha256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "sourceMotionId": "broad_jump_002__A359",
+      "label": "Standing broad jump",
+      "description": "站立、立定跳远、落地站立",
+      "kind": "long_jump",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "sourceMenuNumber1Based": 5,
+      "sourceRuntimeIndex0Based": 4,
+      "frames": 264,
+      "fps": 50,
+      "duration": 5.26,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/broad_jump_002__A359",
+      "sourceCSVSHA256": "e9f90fe2e843beb998ba649f520058fb3677ac7eddeddf14b39e1300815a214a",
+      "requestedByReadmeNumber": true,
+      "requestedByRuntimeIndex": true,
+      "referenceOnlyPreview": null
+    }
+  ],
+  "allLoadingOrder": [
+    {
+      "readmeNumber1Based": 1,
+      "runtimeIndex0Based": 0,
+      "sourceMotionId": "prayer_R_001__A430"
+    },
+    {
+      "readmeNumber1Based": 2,
+      "runtimeIndex0Based": 1,
+      "sourceMotionId": "dejection_R_001__A430"
+    },
+    {
+      "readmeNumber1Based": 3,
+      "runtimeIndex0Based": 2,
+      "sourceMotionId": "show_bicep_R_on_all_fours_360_start_R_idle_right_R_002__A474"
+    },
+    {
+      "readmeNumber1Based": 4,
+      "runtimeIndex0Based": 3,
+      "sourceMotionId": "jump_and_land_light_002__A001"
+    },
+    {
+      "readmeNumber1Based": 5,
+      "runtimeIndex0Based": 4,
+      "sourceMotionId": "broad_jump_002__A359"
+    },
+    {
+      "readmeNumber1Based": 6,
+      "runtimeIndex0Based": 5,
+      "sourceMotionId": "jump_twice_R_002__A533"
+    },
+    {
+      "readmeNumber1Based": 7,
+      "runtimeIndex0Based": 6,
+      "sourceMotionId": "high_jump_R_opt_2_001__A477"
+    }
+  ],
+  "sortEvidence": "motion_data_reader.hpp:735-777 reads manifest order; no alphabetical reordering when manifest order exists",
+  "runtimeNumberEvidence": "keyboard_handler.hpp:418 and :430 print zero-based current_motion_index_ in Playing motion / Reset motion messages",
+  "exactSim2simAlias": "Not found in command -v, ~/.bashrc/.bash_aliases/.profile/.zshrc or project shell scripts; the inspected H2 wrapper accepts only --print-command and fixes reference/example.",
+  "currentlyRunningCheckpoint": "No g1_deploy/sim2sim/run_h2_paper_sim process found during audit; historical user invocation cannot be established from a running process.",
+  "configuredH2Simulation": {
+    "script": "gear_sonic_deploy/scripts/run_h2_sim2sim.sh",
+    "checkpoint": "sonic_h2_native_release/experiments/gpu3_20260907_stage2_step009450",
+    "robotProfile": "h2_native",
+    "defaultMotionData": "reference/example",
+    "fullEncoderSHA256": "a92f1703be9949b44d305997c32b622084a11580dd57e73e827506fee49d0710",
+    "decoderSHA256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+  },
+  "otherDocumentedG1Launch": {
+    "document": "docs/report/g1_paper_sim2sim.md",
+    "robotProfile": "g1",
+    "motionData": "reference/example_g1_explore",
+    "encoder": "gear_sonic_deploy/policy/release/model_encoder.onnx",
+    "encoderSHA256": "013ab0287236aa2721e13f1e936d699db982302d0de0bfcdae76d5c3245362d3",
+    "decoder": "gear_sonic_deploy/policy/release/model_decoder.onnx",
+    "decoderSHA256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+    "boundary": "This command targets G1; it is not the H2 step9450 checkpoint."
+  },
+  "browserBranch": {
+    "input": "Native G1 IsaacLab semantic 29 q and qdot, unchanged, rootQuat wxyz",
+    "encoder": "encoder_g1.onnx",
+    "encoderSHA256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975",
+    "fullSourceSHA256": "a92f1703be9949b44d305997c32b622084a11580dd57e73e827506fee49d0710",
+    "selector": 3,
+    "decoder": "decoder.onnx",
+    "decoderSHA256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee",
+    "codeEvidence": "g1_deploy_onnx_ref.cpp:988-1078 direct copy for encode_mode3; 3120-3174 manifest preference sets mode3 and rejects missing 29D data.",
+    "jointProjection": "none",
+    "initialQposOverride": false
+  },
+  "validation": {
+    "sourceBundleFilesVerified": 42,
+    "selectedRawSourceCSVHashesVerified": 4,
+    "noResamplingInCandidateExporter": true,
+    "allFramesRetained": true,
+    "finite": true,
+    "quaternionNormSquaredMaxTolerance": 1e-07,
+    "physicalValidation": "Separate QA agent; not claimed by extraction audit"
+  },
+  "evidenceSHA256": {
+    "deploy.sh": "aec9b4949c92bb563a8bc7e5ef109268e38b80d3cecd80cc945611c6f56c6d64",
+    "export_bones_g1_deploy_reference.py": "8404f625510ee44cee7801e1964916759eb14eef2fc59730de720df0320d927d",
+    "g1_deploy_onnx_ref.cpp": "08f5d4da47e8d72c9e9056e8372f79177b7f05ff9d7d5726276f171e8d6cada5",
+    "g1_paper_sim2sim.md": "85aae1c8a0f04331253a91236cb206b5e49a64c4fe38415b7bffcbdd96032ab4",
+    "keyboard_handler.hpp": "e6067e5717c8bc7f92080ce045546d48f6eeb1b157fa5e446ca78c25bc8f5930",
+    "motion_data_reader.hpp": "83fa05328ac88e51159711f24ea79c7304f08002da9206c42f26850be8e89078",
+    "run_h2_sim2sim.sh": "f38c99013ca63fabf975921eb4eb59144aa6aaaf5f2aed4532c1d6b0bbcdcab1",
+    "verified-original-csv-sha256.txt": "61a1a141a08de186367dbc49d27b07fcb811d7ae13e6987f6ef3d42b78774c67"
+  },
+  "sourceManifestSHA256": "ee25dddbc6ebbbd8e9d84701a7ca06b51581c1e11fdd872ba12d521e5cbba952",
+  "candidateExporterSHA256": "9991a479e918e73ba3750930f29dbf22e0fb1aaa4a6e3857591d08f01239e865",
+  "changes": "Only isolated candidate/source/evidence files; no remote writes or process launch; no production asset/model/manifest changes."
+}

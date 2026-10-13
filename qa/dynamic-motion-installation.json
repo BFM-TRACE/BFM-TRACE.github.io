@@ -1,0 +1,40 @@
+{
+  "selected": [
+    {
+      "id": "high_jump_R_opt_2_001__A477",
+      "label": "High jump",
+      "referenceSHA256": "f732618a2ab0105b52a2902c61bbc6c674ecc00937356a3be9d95be8e28becb4",
+      "previewSHA256": "04e0b54d4462e45cf719798d5f4a8579cdc39d740521ef3a38c6f9de1297f826",
+      "referenceBytes": 227841,
+      "previewBytes": 98280
+    },
+    {
+      "id": "broad_jump_003__A360",
+      "label": "Standing long jump",
+      "referenceSHA256": "7027838525670878d695da6183e65016ef59e5ac9fccda2cd39dc19b4c2ebc7b",
+      "previewSHA256": "6934cf044a32ac7f23e10f735328cf9897f777333981db0d1745b827c862215e",
+      "referenceBytes": 488557,
+      "previewBytes": 210420
+    },
+    {
+      "id": "neutral_kick_trash_R_003__A098",
+      "label": "Right high kick",
+      "referenceSHA256": "02d41c35a3b0ea6ca0d61620bead21a3d4fa77774f4b0b403ba089c52acf6bd4",
+      "previewSHA256": "c651f916af57d90f31935bd03919dbeb3a1babc6329c1e080f0b78bf807579ae",
+      "referenceBytes": 459846,
+      "previewBytes": 200340
+    },
+    {
+      "id": "neutral_kick_trash_R_003__A098_M",
+      "label": "Left high kick",
+      "referenceSHA256": "fb10a96372b33afce115ee161cb02fb0a60273bed26928f3fc99711a0341f702",
+      "previewSHA256": "66b9261003d161767cb34c65ee1367d129730a01276f1eaaa8347eb032e394a3",
+      "referenceBytes": 459062,
+      "previewBytes": 200340
+    }
+  ],
+  "oldReferencesManifestSHA256": "efc52f02d9ea632c47f4394b7f631ded599a7475c1a901e0dbfa9ef73afbfb42",
+  "oldPreviewManifestSHA256": "fadc7cb74812b147cb381a00418c4b5229e05dc0202a6aba1d069a2656c84e8f",
+  "newReferencesManifestSHA256": "d92e20372c6f2c768ceb19366ead9be6cb36d963cabba61cfa46a5ca23097990",
+  "newPreviewManifestSHA256": "4d618a92cead27b08eb5b11506b0b26105d0476dc35228dc9b030cbe1bb77315"
+}

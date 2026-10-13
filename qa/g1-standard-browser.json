@@ -1,0 +1,73 @@
+{
+  "testedAt": "2026-10-10T16:00:44.504Z",
+  "status": "pass",
+  "browser": "Codex in-app browser",
+  "url": "http://127.0.0.1:4173/#demo",
+  "observations": [
+    {
+      "feature": "hero",
+      "check": "Local hero loaded full 20.633008 s video with muted/loop at 1x; observed and paused at 17.626707 s while H2 enters the doorway, later than old 12 s clip.",
+      "media": {
+        "currentTime": 17.626707,
+        "duration": 20.633008,
+        "loop": true,
+        "muted": true,
+        "paused": true,
+        "playbackRate": 1
+      },
+      "screenshot": "screenshots/hero-full-browser.jpg"
+    },
+    {
+      "feature": "right-kick",
+      "id": "g1_standard_neutral_kick_R_001__A543",
+      "check": "Full reference completed and robot remained upright after >2 s terminal hold",
+      "simulationTime": 10.8,
+      "measuredSpeed": 0
+    },
+    {
+      "feature": "left-kick",
+      "id": "g1_standard_neutral_kick_R_001__A543_M",
+      "check": "Visible high kick supported by the opposite foot; normal Pause control freezes physics",
+      "simulationTime": 1.6,
+      "screenshot": "screenshots/g1-standard-left-kick.jpg"
+    },
+    {
+      "feature": "left-kick",
+      "id": "g1_standard_neutral_kick_R_001__A543_M",
+      "check": "Resume continued the motion; completed and remained upright beyond the two-second hold",
+      "simulationTime": 48.2,
+      "measuredSpeed": 0.01
+    },
+    {
+      "feature": "right-foot-hops",
+      "id": "g1_standard_tired_one_leg_jumping_R_001__A359",
+      "check": "Preparing motion appeared, full 9.98 s reference completed, returned to upright stance and remained standing beyond two seconds",
+      "simulationTime": 34.8,
+      "measuredSpeed": 0
+    },
+    {
+      "feature": "right-foot-hops",
+      "id": "g1_standard_tired_one_leg_jumping_R_001__A359",
+      "check": "Restart and Pause work; visible lifted left knee and right support foot in midsequence",
+      "simulationTime": 5,
+      "screenshot": "screenshots/g1-standard-right-hop.jpg"
+    },
+    {
+      "feature": "right-foot-hops",
+      "check": "Second run completed after Pause/Resume, Restart motion visible, no fall/error",
+      "simulationTime": 44.4,
+      "measuredSpeed": 0.03
+    }
+  ],
+  "consoleWarningsOrErrors": [],
+  "limitations": [
+    "One desktop browser/device checked; no new mobile runtime-performance claim.",
+    "UI screenshots show physical renderer state; quantitative foot/contact metrics are in g1-standard.json.",
+    "The unchanged runtime slows simulated time when the device is slower than real time."
+  ],
+  "screenshots": [
+    "screenshots/hero-full-browser.jpg",
+    "screenshots/g1-standard-left-kick.jpg",
+    "screenshots/g1-standard-right-hop.jpg"
+  ]
+}

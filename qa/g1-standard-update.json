@@ -1,0 +1,255 @@
+{
+  "completedAt": "2026-10-10T16:01:23.990896+00:00",
+  "status": "pass",
+  "features": {
+    "tracking": [
+      {
+        "id": "g1_standard_neutral_kick_R_001__A543",
+        "label": "M21 · Right high kick",
+        "duration": 3.28,
+        "startupHoldSeconds": 0.5,
+        "referenceSHA256": "65fedb3d75751db06afed13e8286e65c8fcc6316ed7ba25a922a7a45605e8a4d"
+      },
+      {
+        "id": "g1_standard_neutral_kick_R_001__A543_M",
+        "label": "M21 · Left high kick",
+        "duration": 3.28,
+        "startupHoldSeconds": 0.5,
+        "referenceSHA256": "4e3ada3f00f373a95bee8c88c3931576eb0dfa4fd3898a41483c7a49daa0e579"
+      },
+      {
+        "id": "g1_standard_tired_one_leg_jumping_R_001__A359",
+        "label": "M21 · Right-foot hops",
+        "duration": 9.98,
+        "startupHoldSeconds": 0.5,
+        "referenceSHA256": "b7952b3f49e2579d3aa52afdda583dba51d05724a6f7b13e7d50fdf50c85e261"
+      }
+    ],
+    "hero": {
+      "originalInterval": [
+        2,
+        14
+      ],
+      "newInterval": [
+        0,
+        20.633008
+      ],
+      "frames": 619,
+      "speed": 1,
+      "muted": true,
+      "completeOriginalClip": true,
+      "mobileFramingAdjusted": true
+    }
+  },
+  "checks": {
+    "physical": {
+      "status": "pass",
+      "cases": 3,
+      "fullSourceSequence": true,
+      "holdSeconds": 2,
+      "sourceChanges": []
+    },
+    "site": {
+      "status": "pass",
+      "assets": 71,
+      "visibleMotions": 16
+    },
+    "uiControls": {
+      "status": "pass",
+      "checks": 44
+    },
+    "browser": {
+      "status": "pass",
+      "consoleWarningsOrErrors": 0,
+      "fullNewMotionsObserved": 3
+    },
+    "hero": {
+      "status": "pass",
+      "fullDecode": true,
+      "frameCountPreserved": true,
+      "browserObservedNewPassageFrames": true
+    },
+    "unchangedRuntimeAndModels": true
+  },
+  "selectionReason": "Original right-foot hopping variant keeps the lifted left foot off the ground throughout the measured hopping interval; five rhythm peaks have contact-free intervals, but only the last two meet the strict flight threshold. Mirrored version has four larger qualifying hops with intermittent opposite-foot contact and was not selected.",
+  "sourceLocation": "m21 gear_sonic_deploy/reference/example; requested example_g1 directory absent in inspected checkout.",
+  "limitations": [
+    "Single-foot hopping begins with shallow hops; not five equal-amplitude large jumps.",
+    "Source-foot correlations are timing/shape proxies, not full cross-robot tracking error.",
+    "Physical checks cover the fixed default reset and 0.5-second preparation; no arbitrary-initial-state or hardware guarantee.",
+    "The source door video ends with the robot partly occluded by the door frame; the entire recorded clip is retained.",
+    "Mobile cover placement was checked geometrically; browser verification used the existing desktop viewport."
+  ],
+  "reports": {
+    "qa/g1-standard.json": {
+      "rawReportSHA256": "b4342c3d480c1651278dffb8f6e8def1f0988adc0ee1919cdcd99800ad881c6b",
+      "rawReportBytes": 5276207,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-standard.json",
+      "archivePathBase": "repository root",
+      "rawArchiveRequiredForRuntime": false,
+      "summaryPath": "g1-standard.json",
+      "summaryPathBase": "homepage/qa",
+      "summarySHA256": "54e30d19315d95110de8d31938695d4c6ae32104eda35cd54b52fb6769a94b54",
+      "summaryBytes": 66105
+    },
+    "qa/g1-standard-selection.json": {
+      "sha256": "fbda84fc63a74dbbf43246a52b50b9bfed45be899b6f555e3b7a09bad527ae50",
+      "archivedPreviousSHA256": "e396d1aecf6583fbf16b07d4b7f659bcf8d959787161c26e70a0692a6947106e",
+      "archivedPreviousLocalPath": ".work/archive/homepage-qa-20261011/related-report-references/g1-standard-selection.json",
+      "bytes": 14098,
+      "hashMeaning": "Current published reference document; archivedPreviousSHA256 preserves the pre-archive document identity."
+    },
+    "qa/g1-standard-hop-detail.json": {
+      "sha256": "7d4d39223f111a9f0722de8d7a48855e43c959b814ae0e4480020385769557a8",
+      "archivedPreviousSHA256": "8c8eb66830e268c1942631a9b19c141abeedcdbff0c0bf19d46949bc04a1aff6",
+      "archivedPreviousLocalPath": ".work/archive/homepage-qa-20261011/related-report-references/g1-standard-hop-detail.json",
+      "bytes": 14660,
+      "hashMeaning": "Current published reference document; archivedPreviousSHA256 preserves the pre-archive document identity."
+    },
+    "qa/g1-standard-source-audit.json": {
+      "sha256": "3f32c3a01b6aa9c53310513a561802fbfcd50790b75b166ab64da87541b458d4"
+    },
+    "qa/g1-standard-installation.json": {
+      "sha256": "92c7f016b53f1ad52065d4de1bebd5d80e08f0f5a5101d73d439233d34426d3d"
+    },
+    "qa/g1-standard-browser.json": {
+      "sha256": "821ac3d58d10029ee596bfba1ab6dd3628742ff514147d788d361cc6c791ba0c"
+    },
+    "qa/hero-video.json": {
+      "sha256": "dd57bdccc348e59c1ad5590d6f1928d392581bef5f50da56660500d79ea2e96f"
+    },
+    "qa/planner-controls.json": {
+      "sha256": "05cd1e42e93fa1f6615e553783b60a8313c1696439137713b44d26e32d25e0e3"
+    }
+  },
+  "sources": {
+    "demo/local-reference.js": {
+      "bytes": 3025,
+      "sha256": "c54401ba90d12e570b4de1e4735451d4b2c7c4913eeea8cd38b2a05892dc13f5"
+    },
+    "demo/local-policy.js": {
+      "bytes": 9594,
+      "sha256": "2b16bc37395e3cbab985f787ad4c9308f3eeb100d5674916ba4dc2976837402b"
+    },
+    "demo/local-physics.js": {
+      "bytes": 13376,
+      "sha256": "c0c138bf5f0a2fd559b4e8e1383de831c2f4d1eb129cee94ae22a007abb3f8a0"
+    },
+    "demo/local-inference.js": {
+      "bytes": 8606,
+      "sha256": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159"
+    },
+    "demo/local-worker.js": {
+      "bytes": 4742,
+      "sha256": "64c341d1eedf8b24bf8f2d38c60abed5e0e2b7b8684c3390c13c47b13156f894"
+    },
+    "demo/local-planner.js": {
+      "bytes": 9667,
+      "sha256": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119"
+    },
+    "demo/demo.js": {
+      "bytes": 32456,
+      "sha256": "fd828d56bc1b1348ff0de507b5a22b6cf6cd7097416dd3d5985d716307b8ea16"
+    },
+    "demo/index.html": {
+      "bytes": 7526,
+      "sha256": "dc968a71d3cc4604939b633db68478a39a799dfa2015fe1f3f4aa74a866c49dd"
+    },
+    "demo/local-assets/controller.json": {
+      "bytes": 5978,
+      "sha256": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f"
+    },
+    "demo/local-assets/planner-bank/manifest.json": {
+      "bytes": 46519,
+      "sha256": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea"
+    },
+    "demo/local-assets/models/encoder_g1.onnx": {
+      "bytes": 16932124,
+      "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975"
+    },
+    "demo/local-assets/models/decoder.onnx": {
+      "bytes": 40743594,
+      "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+    },
+    "demo/local-assets/references/manifest.json": {
+      "bytes": 14597,
+      "sha256": "f902397c1ffd91ea152e1081705b0e7d2fb9374a790cd908618781491b9fea73"
+    },
+    "demo/assets/motions.json": {
+      "bytes": 11643,
+      "sha256": "142084f4c6bafb7b63c9fdd41e15667d63fda160ffd3b20a025110267f20119b"
+    },
+    "demo/export_g1_standard_candidates.py": {
+      "bytes": 9658,
+      "sha256": "713fe08e0d9c95a0dc1f0e63431e63067697f77f9ae8c9855b97011a9bf4050c"
+    },
+    "scripts/check-g1-standard-motions.mjs": {
+      "bytes": 37241,
+      "sha256": "f50d0d2f2194c397aa600d0ca2a756adf7f773574ff45e0cdebe579000bc37a2"
+    },
+    "scripts/prepare_assets.py": {
+      "bytes": 10734,
+      "sha256": "5f2e74eb1b77fe15b2ba9993ea54b716b2e13ad7ce4c8ff8e75879707b0f48c4"
+    },
+    "styles.css": {
+      "bytes": 21744,
+      "sha256": "74d4f1c0a48bbf135ad376059fd2c9bb85a0fb9c68e08e4110581aab086765b2"
+    },
+    "content/media.json": {
+      "bytes": 12369,
+      "sha256": "737f264bd02b25a10ff46172ee3ed6aed957466049a054954890fde518f76eaf"
+    },
+    "content/asset-validation.json": {
+      "bytes": 8503,
+      "sha256": "a032765f5b86cdf9294a64b702279a8eb2d041d87f7d89c7039ea7587d551659"
+    },
+    "assets/hero-loop.mp4": {
+      "bytes": 3390329,
+      "sha256": "61260d2e73baf0a47d7d89f55d78144d035338dc1295aafa6d33abee45776a7a"
+    },
+    "assets/hero-poster.jpg": {
+      "bytes": 203336,
+      "sha256": "8e5319aa40f41409aafd1846f196ad3bee581ee746e6d828f6378fc2b2ff93db"
+    },
+    "package.json": {
+      "bytes": 1646,
+      "sha256": "e5d4b2480a5ed15b66ead794a8b726ce75d5380cfad9bdf7d6e2665d076038fb"
+    },
+    "README.md": {
+      "bytes": 18528,
+      "sha256": "0825e29628c4e8ff603774ebfb961a5bf750ab053ab8f85e724eed9e059d9e2e"
+    },
+    "demo/README.md": {
+      "bytes": 26852,
+      "sha256": "158d531cd16268263ae5a95e09f32e96d54601cce7a2d6de1ae0837ce4a3b080"
+    },
+    "demo/local-assets/references/g1_standard_neutral_kick_R_001__A543.json": {
+      "bytes": 112919,
+      "sha256": "65fedb3d75751db06afed13e8286e65c8fcc6316ed7ba25a922a7a45605e8a4d"
+    },
+    "demo/local-assets/references/g1_standard_neutral_kick_R_001__A543_M.json": {
+      "bytes": 112833,
+      "sha256": "4e3ada3f00f373a95bee8c88c3931576eb0dfa4fd3898a41483c7a49daa0e579"
+    },
+    "demo/local-assets/references/g1_standard_tired_one_leg_jumping_R_001__A359.json": {
+      "bytes": 333988,
+      "sha256": "b7952b3f49e2579d3aa52afdda583dba51d05724a6f7b13e7d50fdf50c85e261"
+    },
+    "qa/g1-standard-source-measurements/g1_standard_neutral_kick_R_001__A543.json": {
+      "bytes": 16064,
+      "sha256": "6694e46ee84863fafb1404543aaedf4c8a7e024385c0168c652a6320f37c80e8"
+    },
+    "qa/g1-standard-source-measurements/g1_standard_neutral_kick_R_001__A543_M.json": {
+      "bytes": 16030,
+      "sha256": "885fd40a6227e74072fd5ad1e191ad8b2debd2741eff839aa2f9f822456d6c2c"
+    },
+    "qa/g1-standard-source-measurements/g1_standard_tired_one_leg_jumping_R_001__A359.json": {
+      "bytes": 46311,
+      "sha256": "4d87948f95e47256fdce91f13026a9169134f3c0bb809a19bf7dc44c2de628a8"
+    },
+    "demo/local-assets/models/encoder_native.onnx": {
+      "bytes": 16950929,
+      "sha256": "142b7fb729528c2c0f474d656266bac313a703d10021b3759d84f9cd2b72634f"
+    }
+  }
+}

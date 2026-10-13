@@ -1,0 +1,107 @@
+{
+  "schema": "trace_deployment_playback_semantics_audit_v1",
+  "scope": "Read-only comparison of m21 source and browser source. No rollout, service start, DDS initialization, model or reference edit.",
+  "cppSource": "evidence/g1_deploy_onnx_ref.cpp",
+  "cppSHA256": "08f5d4da47e8d72c9e9056e8372f79177b7f05ff9d7d5726276f171e8d6cada5",
+  "browserPolicySHA256AtRead": "8fe95ec7b2c3de765c45bb684ccbcb488215d90de654801cfdc30d6edd4d187e",
+  "findings": [
+    {
+      "topic": "Initial pose",
+      "m21": "DefaultEnv applies default qpos then projects closed loops and calibrates sole clearance 0.002 m; initial root z becomes 0.9982923789147422.",
+      "browser": "controller.initialQpos exactly matches previously extracted DefaultEnv initialQpos in all 68 entries (maximum absolute difference 0).",
+      "evidence": [
+        ".work/browser-port/model-chain-remote.json physics.initialQpos",
+        "homepage/demo/local-assets/controller.json initialQpos",
+        "base_sim.py _apply_default_pose"
+      ]
+    },
+    {
+      "topic": "INIT ramp",
+      "m21": "duration_=3.0 s, 50 Hz interpolation from observed motor positions to default angles. ProfileInitKp/Kd are ordinary profile gains. Final command has zero target velocities and zero feedforward torque.",
+      "browser": "reset begins policy inference immediately with default qpos, zero qvel/action and replicated initial-state history.",
+      "evidence": [
+        "g1_deploy_onnx_ref.cpp:2715-2720",
+        "g1_deploy_onnx_ref.cpp:3687-3742",
+        "policy_parameters.hpp:616-621"
+      ]
+    },
+    {
+      "topic": "WAIT_FOR_CONTROL",
+      "m21": "The independent 500 Hz LowCommandWriter continues publishing the most recent default-pose PD command while the 50 Hz control state waits for start.",
+      "browser": "No separate manual default-pose waiting state.",
+      "evidence": [
+        "g1_deploy_onnx_ref.cpp:3459-3483",
+        "g1_deploy_onnx_ref.cpp:5053-5075"
+      ]
+    },
+    {
+      "topic": "Active policy while reference paused",
+      "m21": "After start enters CONTROL, play=false does not stop inference or physics. All 10 reference samples use current_frame without future lookahead; all target joint velocities are zero. Encoder, decoder, PD, physics and real observation/action history continue. At startup current_frame=0.",
+      "browser": "paused=true returns immediately from LocalPolicy.step and worker skips it; reset starts unpaused so time=0 immediately includes future samples through +0.9 s and original qdot.",
+      "evidence": [
+        "g1_deploy_onnx_ref.cpp:677-690",
+        "g1_deploy_onnx_ref.cpp:734-745",
+        "g1_deploy_onnx_ref.cpp:1055-1065",
+        "g1_deploy_onnx_ref.cpp:5078-5288",
+        "homepage/demo/local-policy.js reference()/step()",
+        "homepage/demo/local-worker.js loop()"
+      ]
+    },
+    {
+      "topic": "Playback start",
+      "m21": "Keyboard t sets play=true only; it does not reset robot state, policy history, last action or heading. Then 10-frame future offsets are 0,5,...45 reference frames (50 Hz), equivalent to 0,.1,... .9 s.",
+      "browser": "Same future spacing after start, but there is no initial learned frame-0 hold before the first moving target.",
+      "evidence": [
+        "keyboard_handler.hpp:408-421",
+        "g1_deploy_onnx_ref.cpp:2029-2053"
+      ]
+    },
+    {
+      "topic": "Heading",
+      "m21": "On first CONTROL observation or explicit reference reset/next/end, UpdateHeadingState captures current physical base orientation and current reference root orientation. Applied yaw is heading(initial physical base) times inverse heading(initial reference). Playing t alone keeps this stored yaw. Reference root orientation is refreshed from frame0 while current_frame==0; physical base heading is not recaptured every tick.",
+      "browser": "headingOffset is physical yaw minus first reference yaw at reset (before any settling), and persists through playback.",
+      "evidence": [
+        "g1_deploy_onnx_ref.cpp:627-674",
+        "keyboard_handler.hpp:382-430",
+        "homepage/demo/local-policy.js reset()"
+      ]
+    },
+    {
+      "topic": "End of ordinary file reference",
+      "m21": "Each control tick evaluates the current frame, emits action, then CurrentFrameAdvancement increments. Once current_frame>=timesteps, play=false; current_frame=0; reinitialize_heading=true. Next tick physically tracks frame0 with all dq zero and no lookahead. It does not hold the final frame. Future lookahead before completion is clamped to the last frame and still uses original joint velocities while play=true.",
+      "browser": "Completion clamps time to (N-1)/fps and keeps the final frame with qdot zero; this marks complete one control step earlier than evaluating source last frame while playing.",
+      "evidence": [
+        "g1_deploy_onnx_ref.cpp:4528-4545",
+        "g1_deploy_onnx_ref.cpp:5283",
+        "homepage/demo/local-policy.js reference()/step()"
+      ]
+    },
+    {
+      "topic": "Simulator startup sling",
+      "m21": "H2 standard config enables ElasticBand on torso_link, point [0,0,1.30], positional Kp/Kd 10000/1000, angular Kp/Kd 1000/10. Key9 disables support. Documentation orders start policy, release support, then play; duration between those user events is unspecified.",
+      "browser": "No elastic support; begins on the floor with a calibrated physical state.",
+      "evidence": [
+        "h2_native_sonic_unitree_ros_loop.yaml:35-51",
+        "unitree_sdk2py_bridge.py:636-704",
+        "g1_paper_sim2sim.md operation line"
+      ]
+    }
+  ],
+  "minimalPreRollCandidate": {
+    "purpose": "Test the missing learned-controller settling stage without changing source motion or adding runtime support.",
+    "steps": [
+      "Reset exactly to existing default physical qpos/qvel; initialize heading once from that physical orientation and source first-frame yaw.",
+      "For an explicit fixed candidate duration (e.g. 1.0 s, with 2.0 s only as a separately reported diagnostic), keep motion frame at zero; all 10 future samples have q=source[0], dq=0, rootQuat=source[0]. Continue ONNX encoder3, H2 decoder, PD, physics and histories every .02 s.",
+      "Set reference playing true without resetting physics, histories, last action or heading. Execute original 50 Hz frames once, untouched.",
+      "Keep the existing +2 s last-frame-hold QA as a stronger, separately labeled requirement; optionally test exact m21 frame0-on-completion behavior in a separate diagnostic. Do not conflate them."
+    ],
+    "boundary": "A fixed pre-roll duration is a candidate reproducing one real deployment stage, not proof of full timed equivalence; original manual event timing and elastic support-release trajectory are unknown.",
+    "forbiddenChanges": [
+      "No source pose clamp/retarget/crop",
+      "No initial airborne source qpos/velocity override",
+      "No forced physical root movement or support during the actual motion",
+      "No hiding failure via an end-state teleport"
+    ]
+  },
+  "failureCausalityBoundary": "QA agent reports broadA359 first non-foot contact at 4.16 s, before the 5.26 s source endpoint, with hands down around 4.8 s. Therefore the ending semantic difference alone cannot explain its first loss of balance. No success claim until the unchanged-source pre-roll case passes real physics."
+}

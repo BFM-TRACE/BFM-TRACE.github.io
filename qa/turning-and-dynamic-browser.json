@@ -1,0 +1,61 @@
+{
+  "testedAt": "2026-10-10T15:15:18.357274+00:00",
+  "browser": "Codex in-app Chromium",
+  "url": "http://127.0.0.1:4173/#demo",
+  "execution": "Browser policy + physics; MuJoCo + H2 policy; no reference-only mode used for action success checks",
+  "observations": [
+    {
+      "check": "Turn-rate pointer drag",
+      "result": "Slow walk label and slider changed from 0.5 to 1.0 rad/s; actual Q held for 3.5 seconds changed robot heading; release returned command to zero."
+    },
+    {
+      "check": "Run clamp",
+      "result": "Switching Slow walk 1.0 to Run yields enabled max/value 0.3 rad/s after acknowledgement."
+    },
+    {
+      "check": "Preserve lower choice",
+      "result": "Set Run to 0.2 with native slider keys, switch to Walk: value remains 0.2; new max 1.0."
+    },
+    {
+      "check": "Idle disables slider",
+      "result": "Observed disabled slider in idle; no command possible."
+    },
+    {
+      "check": "Standing long jump",
+      "result": "Full browser rollout complete; Restart motion visible, simulation time 28.2s, measured speed 0.01m/s; upright on ground."
+    },
+    {
+      "check": "Right high kick",
+      "result": "Full rollout complete; Restart motion visible at 12.2s, measured speed 0.01m/s."
+    },
+    {
+      "check": "Left high kick",
+      "result": "Full rollout complete; Restart motion visible at 11.9s, measured speed 0.02m/s. Separate rollout paused through normal Pause control at 2.2s for screenshot."
+    },
+    {
+      "check": "High jump",
+      "result": "Full rollout complete; Restart motion visible at 31.4s, measured speed 0.00m/s."
+    }
+  ],
+  "consoleWarningsOrErrors": [],
+  "screenshots": [
+    "qa/screenshots/planner-turn-rate-slider.jpg",
+    "qa/screenshots/dynamic-left-high-kick.jpg"
+  ],
+  "limitations": [
+    "Visual and DOM observations complement the separate 50Hz numerical physics reports; they do not measure hardware performance."
+  ],
+  "sources": {
+    "demo/index.html": "e893a1c95b49f3f83d26609e68b8efc3e24253c04e8c793316bf0b1cc70d361c",
+    "demo/demo.js": "a4e03fdb919e5da94e96b6534805399d1f23764857d7b7a37609b9efa81dbea8",
+    "demo/local-policy.js": "0d6e9869e76f24c1674aee5f7381f229ce0e9d06a782b5d9b5dc51351771c8b4",
+    "demo/local-planner.js": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119",
+    "demo/local-assets/controller.json": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f",
+    "demo/local-assets/planner-bank/manifest.json": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea",
+    "demo/assets/motions.json": "4d618a92cead27b08eb5b11506b0b26105d0476dc35228dc9b030cbe1bb77315",
+    "demo/local-assets/references/manifest.json": "d92e20372c6f2c768ceb19366ead9be6cb36d963cabba61cfa46a5ca23097990",
+    "scripts/check-planner-controls.mjs": "c84ba3fd75f347a5ed0dae23260c63836d029b8adf2430c78c4c2691ccd0ac54",
+    "scripts/check-planner-turn-rates.mjs": "1031007951c62db05cca0feb560243c3105447a28856937eee549502dd5fe5c9",
+    "scripts/check-dynamic-motions.mjs": "3e0fe767f1c55521045dbf72ea95940e439ee28c0e8b66dd6ce0fbfcf95c46d7"
+  }
+}

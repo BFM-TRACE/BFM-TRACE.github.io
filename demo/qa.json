@@ -1,0 +1,89 @@
+{
+  "verifiedAt": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "browser": "Codex in-app browser (cua_repl)",
+  "url": "http://127.0.0.1:4173/demo/index.html",
+  "checks": {
+    "javascriptSyntax": "pass",
+    "meshIndexBounds": "pass",
+    "motionBinaryLayouts": "pass: 5 motions × 45 body poses",
+    "desktopRendering": "pass: 1280 px",
+    "mobileRendering": "pass: 390 px, no horizontal overflow",
+    "referenceMotionSelection": "pass: selected Dance",
+    "referencePauseAndScrub": "pass: paused and scrubbed Dance to 5.0 s",
+    "offlineDisclosure": "pass: explicit kinematic reference label and live-service-unavailable feedback",
+    "liveInitialization": "pass: Starting / Initializing displayed until first valid live pose; reference animation held still",
+    "livePlanner": "pass: held W through browser for 3.5 s; real MuJoCo robot moved; release returned all commands to zero",
+    "liveTrackingHoldRestart": "pass: browser Hold and Restart; live squat body height changed between 0.508 m and 1.022 m",
+    "consoleErrors": "none observed"
+  },
+  "planner": {
+    "targetSpeedMps": 0.4,
+    "heldKey": "w",
+    "heldDurationMs": 3500,
+    "before": {
+      "timestamp": 1791480229.6152792,
+      "sim_time": 63.20699999994339,
+      "root_position": [
+        0.12113215983971151,
+        0.1559259730564884,
+        1.0222547573520893
+      ],
+      "mode": "planner",
+      "status": "running",
+      "command": {
+        "vx": 0,
+        "vy": 0,
+        "yaw": 0
+      }
+    },
+    "after": {
+      "timestamp": 1791480243.8952765,
+      "sim_time": 77.48700000000593,
+      "root_position": [
+        1.6000209954422864,
+        0.5647040221352319,
+        1.0224107359505488
+      ],
+      "mode": "planner",
+      "status": "running",
+      "command": {
+        "vx": 0,
+        "vy": 0,
+        "yaw": 0
+      }
+    },
+    "displacement": [
+      1.478888835602575,
+      0.4087780490787435,
+      0.00015597859845950524
+    ],
+    "evidenceScope": "Before and after samples bracket the browser interaction; wall-clock interval also includes inspection overhead."
+  },
+  "tracking": {
+    "motion": "squat_001__A359",
+    "sampleCount": 18,
+    "minimumRootHeightM": 0.5078959611115638,
+    "maximumRootHeightM": 1.0222370757769177,
+    "source": "live MuJoCo state; physics and ONNX controller active",
+    "rawEvidence": ".work/homepage/live-tracking-qa.json"
+  },
+  "sourceIntegrity": {
+    "firstPoseGate": "implemented and browser-observed",
+    "freshnessGate": "code-reviewed: only changed snapshot timestamp/sim_time extends freshness; >5 s without fresh states disconnects",
+    "errorGate": "code-reviewed: backend error/stopped/offline exits live state",
+    "modeLabel": "driven by backend frame.mode",
+    "backendResetMode": "backend/qa.json records mode-preserving reset test"
+  },
+  "screenshots": [
+    "qa/screenshots/demo-live-planner-desktop.jpg",
+    "qa/screenshots/demo-live-tracking-desktop.jpg",
+    "qa/screenshots/demo-live-tracking-mobile.jpg",
+    "qa/screenshots/demo-planner-mobile.jpg"
+  ],
+  "limits": [
+    "Reference preview is retargeted motion forward kinematics, not policy inference.",
+    "Browser planner test covered forward locomotion at target 0.4 m/s; backend QA includes further controls.",
+    "Live simulation depends on the SSH tunnel and separate simulation service."
+  ]
+}

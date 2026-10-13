@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-09",
+  "page": "http://127.0.0.1:4173/",
+  "browser": "Codex in-app browser",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "checked": [
+        "hero",
+        "demo embed",
+        "method figure",
+        "video galleries"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "checked": [
+        "hero",
+        "responsive layout",
+        "demo embed",
+        "no horizontal overflow"
+      ]
+    }
+  ],
+  "interactions": [
+    "Header anchor navigation",
+    "VLA gallery tab produces four task clips",
+    "Native video playback and muted autoplay",
+    "Training efficiency details expand",
+    "Reference demo loads native H2 model"
+  ],
+  "consoleErrors": [],
+  "assetCheck": "npm run check: 46 local resources, navigation anchors, 17 gallery entries, HTTP ranges and isolated API proxy checks passed",
+  "mediaCheck": "See content/asset-validation.json; 19 videos fully decoded; 17 gallery clips match v33 embedded originals",
+  "liveCheck": "Browser motion tracking with Hold/Restart and planner W-key movement passed; see backend/qa.json and demo/qa.json.",
+  "screenshots": [
+    "qa/screenshots/homepage-desktop.jpg",
+    "qa/screenshots/mobile-demo.jpg",
+    "qa/screenshots/demo-live-planner-desktop.jpg",
+    "qa/screenshots/demo-live-tracking-desktop.jpg"
+  ]
+}

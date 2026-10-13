@@ -1,0 +1,302 @@
+{
+  "source": "live_mujoco_policy",
+  "policy": "gpu3_20260907_stage2_step009450",
+  "simulation_only": true,
+  "dds_domain": 189,
+  "body_pose_values": 315,
+  "startup": {
+    "status": "running",
+    "error": null,
+    "mode": "tracking",
+    "motion": "squat_001__A359",
+    "sim_time": 21.89700000000378,
+    "root_position": [
+      0.13832586320210605,
+      -0.0030273914840816237,
+      1.014845053099435
+    ],
+    "root_velocity": [
+      -0.004218501409125048,
+      -0.0005319973371289587,
+      0.0030624193376352755
+    ],
+    "band_enabled": false
+  },
+  "hold": {
+    "state": {
+      "status": "paused",
+      "error": null,
+      "mode": "tracking",
+      "motion": "squat_001__A359",
+      "sim_time": 23.25700000000544,
+      "root_position": [
+        0.1419118101581403,
+        -0.0013651740049675659,
+        1.0145699227783282
+      ],
+      "root_velocity": [
+        -0.0008380340262985499,
+        0.009193224995876575,
+        -0.0002225309514468681
+      ],
+      "band_enabled": false
+    },
+    "semantics": "Controller holds reference frame zero while physics and feedback continue"
+  },
+  "replay": {
+    "state": {
+      "status": "running",
+      "error": null,
+      "mode": "tracking",
+      "motion": "squat_001__A359",
+      "sim_time": 23.86900000000619,
+      "root_position": [
+        0.06570763824859299,
+        0.007982064562973868,
+        1.0119585370170396
+      ],
+      "root_velocity": [
+        -0.32718464480423354,
+        0.14108597930621483,
+        -0.05722535948498206
+      ],
+      "band_enabled": false
+    },
+    "physics_advances": true
+  },
+  "planner_forward": {
+    "target_speed_m_s": 0.4,
+    "start": {
+      "status": "running",
+      "error": null,
+      "mode": "tracking",
+      "motion": "squat_001__A359",
+      "sim_time": 33.15100000001344,
+      "root_position": [
+        0.27996031154133977,
+        -0.08563208290614405,
+        1.0165029790684115
+      ],
+      "root_velocity": [
+        0.018534478281038137,
+        -0.03147494426681888,
+        -0.004117859862267631
+      ],
+      "band_enabled": false
+    },
+    "samples": [
+      {
+        "status": "running",
+        "error": null,
+        "mode": "planner",
+        "motion": "squat_001__A359",
+        "sim_time": 35.32700000000837,
+        "root_position": [
+          0.8503130470628444,
+          -0.26347567906353875,
+          1.0300178487300071
+        ],
+        "root_velocity": [
+          0.3543172144281727,
+          0.16342111469344375,
+          -0.04000691523511699
+        ],
+        "band_enabled": false
+      },
+      {
+        "status": "running",
+        "error": null,
+        "mode": "planner",
+        "motion": "squat_001__A359",
+        "sim_time": 37.469000000003376,
+        "root_position": [
+          1.5874683862980905,
+          -0.3169888316190755,
+          1.0259553825411047
+        ],
+        "root_velocity": [
+          0.3936946776426675,
+          -0.3325390658280243,
+          0.14496983199103547
+        ],
+        "band_enabled": false
+      },
+      {
+        "status": "running",
+        "error": null,
+        "mode": "planner",
+        "motion": "squat_001__A359",
+        "sim_time": 39.644999999998305,
+        "root_position": [
+          2.373376477518163,
+          -0.5535417354842982,
+          1.0223501074027066
+        ],
+        "root_velocity": [
+          0.29600522025561604,
+          0.15023113098924973,
+          -0.05919310513930827
+        ],
+        "band_enabled": false
+      },
+      {
+        "status": "running",
+        "error": null,
+        "mode": "planner",
+        "motion": "squat_001__A359",
+        "sim_time": 41.95699999999292,
+        "root_position": [
+          3.2835971160911335,
+          -0.8650572329524941,
+          1.0402297196247363
+        ],
+        "root_velocity": [
+          0.25738656038222035,
+          -0.2062176351239595,
+          -0.004087253043322995
+        ],
+        "band_enabled": false
+      }
+    ],
+    "end": {
+      "status": "running",
+      "error": null,
+      "mode": "planner",
+      "motion": "squat_001__A359",
+      "sim_time": 42.22899999999228,
+      "root_position": [
+        3.356594518968883,
+        -0.8947391204553851,
+        1.024577247957363
+      ],
+      "root_velocity": [
+        0.3490718442011257,
+        0.040561286739224024,
+        -0.08547865329224669
+      ],
+      "band_enabled": false
+    },
+    "delta_x_m": 3.076634207427543
+  },
+  "watchdog_stop": {
+    "state": {
+      "status": "running",
+      "error": null,
+      "mode": "planner",
+      "motion": "squat_001__A359",
+      "sim_time": 44.098999999987925,
+      "root_position": [
+        3.9483912840991597,
+        -0.8235819379450391,
+        1.029220405125998
+      ],
+      "root_velocity": [
+        0.11305335054271866,
+        0.12196315535937598,
+        0.03784886468945721
+      ],
+      "band_enabled": false
+    },
+    "command": {
+      "vx": 0.0,
+      "vy": 0.0,
+      "yaw": 0.0
+    }
+  },
+  "unknown_motion_http_status": 400,
+  "reset_requested": {
+    "status": "starting",
+    "error": null,
+    "mode": "tracking",
+    "motion": "squat_001__A359",
+    "sim_time": 44.540999999986894,
+    "root_position": [
+      3.985933058717335,
+      -0.7883392716056992,
+      1.0318295917693108
+    ],
+    "root_velocity": [
+      0.05296419855520563,
+      -0.0012644789106856583,
+      -0.002658356482823946
+    ],
+    "band_enabled": false
+  },
+  "reset_completed": {
+    "status": "running",
+    "error": null,
+    "mode": "tracking",
+    "motion": "squat_001__A359",
+    "sim_time": 11.458999999999088,
+    "root_position": [
+      -0.04748706985846931,
+      -0.06127211328073053,
+      0.994629770179507
+    ],
+    "root_velocity": [
+      -0.23989740618987757,
+      0.06701098988557372,
+      -0.024849055967785243
+    ],
+    "band_enabled": false
+  },
+  "passed": true,
+  "implementation_sha256": {
+    "live_server.py": "afc330b566d2cc18d598c715cca31ca2779a862ad260008b3a6abd937a4799b9",
+    "manage.py": "2b46420058c06936f50b26c75a481e7b9016e1438cad13c240d1415e5c4231e6"
+  },
+  "planner_log_evidence": "Replanning with mode: SLOW_WALK, target_height: -1, target_vel: 0.4, movement: [1, 0, 0], facing: [1, 0, 0]",
+  "known_limitations": [
+    "Controller hold keeps physics running; tracking hold returns to reference frame zero.",
+    "Planner speed is quantized to 0.1 m/s in the 0.2\u20130.8 m/s SLOW_WALK range.",
+    "Directional commands use the existing keyboard planner; this test does not validate every transition or direction."
+  ],
+  "followup_regression": {
+    "planner_reset_preserves_mode": true,
+    "stale_warmup_movement_discarded": true,
+    "before_reset": {
+      "status": "running",
+      "error": null,
+      "mode": "planner",
+      "sim_time": 22.16900000000411,
+      "root_position": [
+        0.14514496253721393,
+        -0.04043435389788712,
+        1.01541553602589
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "yaw": 0.0
+      },
+      "band_enabled": false
+    },
+    "after_reset": {
+      "status": "running",
+      "error": null,
+      "mode": "planner",
+      "sim_time": 13.804999999997788,
+      "root_position": [
+        0.1020323855017008,
+        0.07449072855554291,
+        1.0204903001276742
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "yaw": 0.0
+      },
+      "band_enabled": false
+    },
+    "manager_stop_result": {
+      "stopped": true,
+      "pid": 980108,
+      "error": null
+    }
+  },
+  "baseline_implementation_sha256": {
+    "live_server.py": "8d4473ebd73c9b2bee5913bf162eb20a21c5f7db7cd4b9ba969fe6f131c1be04",
+    "manage.py": "574937c727e2488be982499f49a433d25b88c1ac8e34ec1d3386329414d7197e"
+  },
+  "test_scope": "Full baseline HTTP integration, followed by targeted regression on the current implementation for reset mode preservation, stale warmup command expiry, and confirmed service stop."
+}

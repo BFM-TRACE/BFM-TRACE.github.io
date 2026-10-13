@@ -1,0 +1,28 @@
+[
+  {
+    "source": "/home/qingyul/Datasets/bones_seed/h2_soma_full_0719_balanced/csv/230509/broad_jump_003__A360.csv",
+    "label": "Standing long jump",
+    "kind": "long_jump"
+  },
+  {
+    "source": "/home/qingyul/Datasets/bones_seed/h2_soma_full_0719_balanced/csv/231011/high_jump_R_opt_2_001__A477.csv",
+    "label": "High jump",
+    "kind": "jump"
+  },
+  {
+    "source": "/home/qingyul/Datasets/bones_seed/h2_soma_full_0719_balanced/csv/230103/neutral_kick_trash_R_003__A098.csv",
+    "label": "Right kick",
+    "kind": "kick",
+    "kickSide": "right",
+    "sourceMirror": false,
+    "mirrorSource": "Original native H2 source"
+  },
+  {
+    "source": "/home/qingyul/Datasets/bones_seed/h2_soma_full_0719_balanced/csv/230103/neutral_kick_trash_R_003__A098_M.csv",
+    "label": "Left kick",
+    "kind": "kick",
+    "kickSide": "left",
+    "sourceMirror": true,
+    "mirrorSource": "Existing native H2 mirrored source CSV; exporter does not synthesize mirroring"
+  }
+]

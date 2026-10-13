@@ -1,0 +1,295 @@
+{
+  "schema": "trace_g1_standard_source_audit_v1",
+  "machine": "ai-precog-machine21",
+  "project": "/home/qingyul/workspace/SONIC-H2",
+  "requestedCollection": "gear_sonic_deploy/reference/example_g1",
+  "requestedCollectionExists": false,
+  "searchScope": "Read-only check of requested path, workspace directories and symlinks through depth6, project scripts/report references. No full home-disk scan.",
+  "actualCollection": "gear_sonic_deploy/reference/example",
+  "actualCollectionEvidence": {
+    "schema": "sonic_typed_reference_manifest_v1",
+    "description": "Original SONIC G1 reference demos for the native G1 selector branch.",
+    "output_dir": "gear_sonic_deploy/reference/example",
+    "fps": 50,
+    "reference_type": "g1",
+    "motions": [
+      {
+        "motion_name": "dance_in_da_party_001__A464",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "dance_in_da_party_001__A464_M",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "forward_lunge_R_001__A359_M",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "macarena_001__A545",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "macarena_001__A545_M",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "neutral_kick_R_001__A543",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "neutral_kick_R_001__A543_M",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "squat_001__A359",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "tired_forward_lunge_R_001__A359_M",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "tired_one_leg_jumping_R_001__A359",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "tired_one_leg_jumping_R_001__A359_M",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "walking_quip_360_R_002__A428",
+        "reference_type": "g1"
+      },
+      {
+        "motion_name": "walking_quip_360_R_002__A428_M",
+        "reference_type": "g1"
+      }
+    ]
+  },
+  "selectionAuthority": "Parent approved continuing with the four original typed G1 kick/hop references in actual reference/example after the requested path was found absent.",
+  "motions": [
+    {
+      "id": "g1_standard_neutral_kick_R_001__A543",
+      "sourceMotionId": "neutral_kick_R_001__A543",
+      "label": "Right high kick",
+      "kind": "kick",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "frames": 165,
+      "fps": 50,
+      "duration": 3.28,
+      "file": "g1_standard_neutral_kick_R_001__A543.json",
+      "sha256": "65fedb3d75751db06afed13e8286e65c8fcc6316ed7ba25a922a7a45605e8a4d",
+      "startupHoldSeconds": 0.5,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example/neutral_kick_R_001__A543",
+      "sourceRuntimeIndex0Based": 5,
+      "sourceManifestPosition1Based": 6,
+      "sourceMeasurementFile": "../source-measurements/g1_standard_neutral_kick_R_001__A543.json",
+      "sourceMeasurementSHA256": "6694e46ee84863fafb1404543aaedf4c8a7e024385c0168c652a6320f37c80e8",
+      "referenceOnlyPreview": null,
+      "kickSide": "right",
+      "hopSide": null,
+      "liftedSide": null
+    },
+    {
+      "id": "g1_standard_neutral_kick_R_001__A543_M",
+      "sourceMotionId": "neutral_kick_R_001__A543_M",
+      "label": "Left high kick",
+      "kind": "kick",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "frames": 165,
+      "fps": 50,
+      "duration": 3.28,
+      "file": "g1_standard_neutral_kick_R_001__A543_M.json",
+      "sha256": "4e3ada3f00f373a95bee8c88c3931576eb0dfa4fd3898a41483c7a49daa0e579",
+      "startupHoldSeconds": 0.5,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example/neutral_kick_R_001__A543_M",
+      "sourceRuntimeIndex0Based": 6,
+      "sourceManifestPosition1Based": 7,
+      "sourceMeasurementFile": "../source-measurements/g1_standard_neutral_kick_R_001__A543_M.json",
+      "sourceMeasurementSHA256": "885fd40a6227e74072fd5ad1e191ad8b2debd2741eff839aa2f9f822456d6c2c",
+      "referenceOnlyPreview": null,
+      "kickSide": "left",
+      "hopSide": null,
+      "liftedSide": null
+    },
+    {
+      "id": "g1_standard_tired_one_leg_jumping_R_001__A359",
+      "sourceMotionId": "tired_one_leg_jumping_R_001__A359",
+      "label": "Right-foot hop",
+      "kind": "single_leg_hop",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "frames": 500,
+      "fps": 50,
+      "duration": 9.98,
+      "file": "g1_standard_tired_one_leg_jumping_R_001__A359.json",
+      "sha256": "b7952b3f49e2579d3aa52afdda583dba51d05724a6f7b13e7d50fdf50c85e261",
+      "startupHoldSeconds": 0.5,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example/tired_one_leg_jumping_R_001__A359",
+      "sourceRuntimeIndex0Based": 9,
+      "sourceManifestPosition1Based": 10,
+      "sourceMeasurementFile": "../source-measurements/g1_standard_tired_one_leg_jumping_R_001__A359.json",
+      "sourceMeasurementSHA256": "4d87948f95e47256fdce91f13026a9169134f3c0bb809a19bf7dc44c2de628a8",
+      "referenceOnlyPreview": null,
+      "kickSide": null,
+      "hopSide": "right",
+      "liftedSide": "left"
+    },
+    {
+      "id": "g1_standard_tired_one_leg_jumping_R_001__A359_M",
+      "sourceMotionId": "tired_one_leg_jumping_R_001__A359_M",
+      "label": "Left-foot hop",
+      "kind": "single_leg_hop",
+      "referenceType": "g1",
+      "referenceSpace": "g1",
+      "encoderMode": 3,
+      "frames": 500,
+      "fps": 50,
+      "duration": 9.98,
+      "file": "g1_standard_tired_one_leg_jumping_R_001__A359_M.json",
+      "sha256": "279c8fd4d33b9ee79c85626a2f0e495ffbb781e85475ef3ddaaff823819a3192",
+      "startupHoldSeconds": 0.5,
+      "source": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example/tired_one_leg_jumping_R_001__A359_M",
+      "sourceRuntimeIndex0Based": 10,
+      "sourceManifestPosition1Based": 11,
+      "sourceMeasurementFile": "../source-measurements/g1_standard_tired_one_leg_jumping_R_001__A359_M.json",
+      "sourceMeasurementSHA256": "52cd25d79fbf2c569a05caf3c1ff8bf252af6cc3788bbff602eb78efd00bb136",
+      "referenceOnlyPreview": null,
+      "kickSide": null,
+      "hopSide": "left",
+      "liftedSide": "right"
+    }
+  ],
+  "loadingOrder": [
+    {
+      "runtimeIndex0Based": 0,
+      "manifestPosition1Based": 1,
+      "sourceMotionId": "dance_in_da_party_001__A464"
+    },
+    {
+      "runtimeIndex0Based": 1,
+      "manifestPosition1Based": 2,
+      "sourceMotionId": "dance_in_da_party_001__A464_M"
+    },
+    {
+      "runtimeIndex0Based": 2,
+      "manifestPosition1Based": 3,
+      "sourceMotionId": "forward_lunge_R_001__A359_M"
+    },
+    {
+      "runtimeIndex0Based": 3,
+      "manifestPosition1Based": 4,
+      "sourceMotionId": "macarena_001__A545"
+    },
+    {
+      "runtimeIndex0Based": 4,
+      "manifestPosition1Based": 5,
+      "sourceMotionId": "macarena_001__A545_M"
+    },
+    {
+      "runtimeIndex0Based": 5,
+      "manifestPosition1Based": 6,
+      "sourceMotionId": "neutral_kick_R_001__A543"
+    },
+    {
+      "runtimeIndex0Based": 6,
+      "manifestPosition1Based": 7,
+      "sourceMotionId": "neutral_kick_R_001__A543_M"
+    },
+    {
+      "runtimeIndex0Based": 7,
+      "manifestPosition1Based": 8,
+      "sourceMotionId": "squat_001__A359"
+    },
+    {
+      "runtimeIndex0Based": 8,
+      "manifestPosition1Based": 9,
+      "sourceMotionId": "tired_forward_lunge_R_001__A359_M"
+    },
+    {
+      "runtimeIndex0Based": 9,
+      "manifestPosition1Based": 10,
+      "sourceMotionId": "tired_one_leg_jumping_R_001__A359"
+    },
+    {
+      "runtimeIndex0Based": 10,
+      "manifestPosition1Based": 11,
+      "sourceMotionId": "tired_one_leg_jumping_R_001__A359_M"
+    },
+    {
+      "runtimeIndex0Based": 11,
+      "manifestPosition1Based": 12,
+      "sourceMotionId": "walking_quip_360_R_002__A428"
+    },
+    {
+      "runtimeIndex0Based": 12,
+      "manifestPosition1Based": 13,
+      "sourceMotionId": "walking_quip_360_R_002__A428_M"
+    }
+  ],
+  "fpsEvidence": [
+    "Typed manifest top-level fps=50",
+    "C++ MotionSequence fps default50; per-motion metadata has no FPS field"
+  ],
+  "jointSpaceEvidence": {
+    "referenceType": "g1",
+    "encoderSelector": 3,
+    "dimensions": 29,
+    "manifestDescription": "Original SONIC G1 reference demos for the native G1 selector branch.",
+    "jointOrderDefinition": "gear_sonic/envs/env_utils/joint_utils.py G1_ISAACLab_ORDER",
+    "jointOrderDefinitionSHA256": "e06409660a1ed169fcc27c99d00b18ed7eed53cf29e891665809ee43d363ce03",
+    "cppEvidence": "GatherH2NativeReferenceMultiFrame directly copies native 29D joint_pos and joint_vel for selector3; no hip projection.",
+    "metadataBoundary": "Legacy per-motion metadata declares shapes29 and body indexes but does not name joint order; canonical order is established by the typed collection contract and deployment reader/gatherer."
+  },
+  "bodyMapping": {
+    "bodyPartIndexes": [
+      0,
+      4,
+      10,
+      18,
+      5,
+      11,
+      19,
+      9,
+      16,
+      22,
+      28,
+      17,
+      23,
+      29
+    ],
+    "leftFoot": {
+      "storageIndex": 3,
+      "anatomicalBodyIndex": 18,
+      "name": "left_ankle_roll_link"
+    },
+    "rightFoot": {
+      "storageIndex": 6,
+      "anatomicalBodyIndex": 19,
+      "name": "right_ankle_roll_link"
+    }
+  },
+  "sideLabels": "Candidate kickSide/hopSide derive from original body_pos height statistics, not filename. QA must confirm actual controlled H2 same-foot takeoff/landing before a production side label is asserted.",
+  "sourceBoundary": "All eight files per motion are cached unchanged and SHA verified against remote bytes. Upstream pre-deployment CSV/retarget archive path is not declared in this legacy bundle; none was inferred.",
+  "candidateTransformation": "CSV-to-JSON only, unchanged joint and velocity values, unchanged root quaternion and world positions, all frames at50Hz, no cropping/retarget/normalization/resampling or initial-state override.",
+  "preRoll": "Manifest .5s startupHoldSeconds is a separately declared controller initialization stage, never appended or inserted into raw reference values.",
+  "sourceFingerprints": {
+    "file": "evidence/remote-source-fingerprints.json",
+    "sha256": "14d233f484f518d5e6bbcc0bff69421d2af0cbf96501d0e7bd5b831ae7671068",
+    "count": 33
+  },
+  "validation": "validation.json",
+  "sourceMeasurements": "source-measurements/<id>.json",
+  "physicalValidation": "Delegated to content_assets; extraction itself makes no success/tracking-quality claim.",
+  "candidateExporter": "export_g1_standard_candidates.py",
+  "candidateExporterSHA256": "713fe08e0d9c95a0dc1f0e63431e63067697f77f9ae8c9855b97011a9bf4050c",
+  "remoteWrites": false,
+  "remoteServiceLaunches": false,
+  "productionChanges": false
+}

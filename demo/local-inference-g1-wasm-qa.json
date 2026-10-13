@@ -1,0 +1,161 @@
+{
+  "provider": "wasm",
+  "runtimeVersion": "1.30.0",
+  "runtimeVariant": "CPU-only WASM SIMD, one thread in Node",
+  "modelHash": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975",
+  "sourceFullSha256": "a92f1703be9949b44d305997c32b622084a11580dd57e73e827506fee49d0710",
+  "sourceSelector": 3,
+  "metadata": {
+    "encoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoded_tokens",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            64
+          ]
+        }
+      ],
+      "loadMs": 202.92087499999997
+    },
+    "decoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            994
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "action",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            29
+          ]
+        }
+      ],
+      "loadMs": 47.17475000000002
+    },
+    "plannerEncoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoded_tokens",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            64
+          ]
+        }
+      ],
+      "loadMs": 19.63349999999997
+    }
+  },
+  "cases": [
+    {
+      "label": "zero",
+      "maxAbsError": 0,
+      "inferenceMs": 7.772166999999968
+    },
+    {
+      "label": "planner_idle_idle:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.7071669999999699
+    },
+    {
+      "label": "planner_run_back:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 1.1592919999999935
+    },
+    {
+      "label": "planner_run_forward:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 1.2514579999999569
+    },
+    {
+      "label": "planner_run_left:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.8543329999999969
+    },
+    {
+      "label": "planner_run_right:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.6509580000000028
+    },
+    {
+      "label": "planner_slow_walk_back:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.692875000000015
+    },
+    {
+      "label": "planner_slow_walk_forward:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.5184580000000096
+    },
+    {
+      "label": "planner_slow_walk_left:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.6272089999999935
+    },
+    {
+      "label": "planner_slow_walk_right:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.6140000000000327
+    },
+    {
+      "label": "planner_walk_back:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 1.0377500000000168
+    },
+    {
+      "label": "planner_walk_forward:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.7488330000000474
+    },
+    {
+      "label": "planner_walk_left:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.8951250000000073
+    },
+    {
+      "label": "planner_walk_right:0:aligned",
+      "maxAbsError": 0,
+      "inferenceMs": 0.6209590000000276
+    }
+  ],
+  "maxAbsError": 0,
+  "boundary": "Real planner observations compared with source full encoder selector 3. Numerical and API verification only; no physics or browser performance claim.",
+  "originalTrackingEncoderSmoke": "passed",
+  "status": "passed"
+}

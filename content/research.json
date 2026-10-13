@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "shortTitle": "TRACE",
+  "title": "TRACE: Efficient Transfer Learning for Neural Whole-Body Control Across Humanoid Embodiments",
+  "subtitle": "Transfer the motion knowledge. Adapt the body.",
+  "summary": "From Unitree G1 to full-scale H2: one adapted controller for dynamic motion tracking, whole-body teleoperation, and downstream VLA tasks.",
+  "authors": [],
+  "authorNote": "The current manuscript has an empty author field. No author names or affiliations are inferred.",
+  "abstract": "Humanoid behavior foundation models enable diverse whole-body control, but transferring a pretrained controller to a new body requires handling changes in kinematics and dynamics. TRACE preserves the pretrained motion representation while adapting feedback control to the target robot. It combines kinematic priors and nominal joint-response alignment with encoder distillation and low-rank reinforcement learning on a compact motion set. A two-phase curriculum first establishes stable tracking, then refines difficult motions. Transferring SONIC from Unitree G1 to Unitree H2 takes approximately eight hours on a single RTX PRO 6000 GPU using 10 million motion frames. The adapted controller achieves 96.08% success on 67,953 evaluation motions under a height-scaled tracking criterion, and supports dynamic motion tracking, teleoperation, and downstream VLA applications on physical H2 hardware.",
+  "metrics": [
+    {
+      "id": "adaptation-time",
+      "value": "~8 h",
+      "label": "Single-GPU adaptation",
+      "detail": "One RTX PRO 6000; adaptation from the released SONIC checkpoint. Source pretraining is excluded.",
+      "source": "00_Abstract/abstract_en.tex"
+    },
+    {
+      "id": "motion-data",
+      "value": "10M",
+      "label": "Motion frames",
+      "detail": "A curated BONES-SEED transfer set with paired G1 and H2 references.",
+      "source": "04_Experiments/experiments_en.tex"
+    },
+    {
+      "id": "tracking-success",
+      "value": "96.08%",
+      "label": "Motion-tracking success",
+      "detail": "67,953 held-out PHUMA motions in simulation, using a body-height-scaled success threshold.",
+      "source": "04_Experiments/experiments_en.tex"
+    }
+  ],
+  "method": [
+    {
+      "number": "01",
+      "id": "pre-adaptation",
+      "title": "Align the embodiment",
+      "description": "Inject kinematic priors into reference, observation, and action projections. Align action scales and nominal joint responses before target-side fine-tuning.",
+      "source": "03_Method/method_en.tex: Cross-Embodiment Pre-Adaptation"
+    },
+    {
+      "number": "02",
+      "id": "motion-curation",
+      "title": "Curate a compact motion set",
+      "description": "Retarget motions to both robots, screen physical validity, balance motion categories, and select diverse commands using frozen source-model descriptors.",
+      "source": "03_Method/method_en.tex: Motion Dataset Curation"
+    },
+    {
+      "number": "03",
+      "id": "fine-tuning",
+      "title": "Separate representation and control",
+      "description": "Distill source command latents and tokens into the target encoder while PPO adapts the control decoder through low-rank branches. A two-phase curriculum progresses from broad, stable tracking to difficult motions.",
+      "source": "03_Method/method_en.tex: Parameter-Efficient Fine-Tuning"
+    },
+    {
+      "number": "04",
+      "id": "deployment",
+      "title": "Reuse one motion interface",
+      "description": "Deploy the same adapted low-level controller for reference-motion tracking, VR teleoperation, and downstream VLA tasks on the physical H2 robot.",
+      "source": "04_Experiments/experiments_en.tex: Whole-Body Control and Downstream Applications"
+    }
+  ],
+  "figures": [
+    {"id": "method", "src": "assets/method-overview.webp", "alt": "The four stages of TRACE: embodiment alignment, motion curation, parameter-efficient fine-tuning, and deployment.", "source": "build/en/main_en.pdf, Fig. 2, page 3; includes the current LaTeX label corrections"},
+    {"id": "training", "src": "assets/training-curves.webp", "alt": "Completion rate and mean training reward for TRACE, direct fine-tuning, and training from scratch.", "source": "04_Experiments/imgs/training_curves_en.png", "limitation": "One run per method under a common sampling distribution; difficulty-based oversampling disabled."},
+    {"id": "curation", "src": "assets/data-curation.webp", "alt": "Motion-set feature dispersion and category frame balance.", "source": "04_Experiments/imgs/data_distribution_balancing.png"},
+    {"id": "tracking", "src": "assets/tracking-comparison.webp", "alt": "G1 simulation, H2 simulation, and H2 hardware performing squatting, kneeling, kicking, and hopping.", "source": "04_Experiments/imgs/motion_tracking_comparison_4col_no_dance.jpg"}
+  ],
+  "benchmark": {
+    "name": "PHUMA motion tracking",
+    "motionCount": 67953,
+    "environment": "Simulation",
+    "source": "04_Experiments/experiments_en.tex, Table I",
+    "columns": ["Method", "Robot", "Success (%)", "Local position error (mm)", "Velocity error (mm/frame)", "Acceleration error (mm/frame²)"],
+    "rows": [
+      {"method": "SONIC (pretrained)", "robot": "Unitree G1", "success": 97.59, "localPositionError": 27.81, "velocityError": 5.157, "accelerationError": 1.390},
+      {"method": "TRACE", "robot": "Unitree H2", "success": 96.08, "localPositionError": 55.81, "velocityError": 7.536, "accelerationError": 2.394},
+      {"method": "Without pre-adaptation", "robot": "Unitree H2", "success": 87.29, "localPositionError": 72.88, "velocityError": 8.033, "accelerationError": 2.474},
+      {"method": "Without data strategy", "robot": "Unitree H2", "success": 93.80, "localPositionError": 54.01, "velocityError": 7.853, "accelerationError": 2.558},
+      {"method": "Without two-phase fine-tuning", "robot": "Unitree H2", "success": 95.64, "localPositionError": 62.47, "velocityError": 8.115, "accelerationError": 2.553}
+    ],
+    "note": "Success requires root, wrist, and ankle world-height errors to remain within the threshold at every evaluated frame: 0.250 m for G1 and 0.3447 m for H2, scaled by body height. Errors are measured at 50 Hz on each policy's own successful-motion subset, so the error averages do not use identical motion sets.",
+    "sourceComparison": "SONIC/G1 is a source-controller reference, evaluated with references retargeted to its own embodiment. The experiment does not establish cross-robot superiority."
+  },
+  "vlaBenchmark": {
+    "name": "VLA task success on physical H2",
+    "trialsPerTask": 20,
+    "source": "04_Experiments/experiments_en.tex, Table III",
+    "rows": [
+      {"task": "Object relocation (toy)", "type": "Single-arm", "trials": 20, "success": 90},
+      {"task": "Object relocation (cube)", "type": "Bimanual", "trials": 20, "success": 75},
+      {"task": "Object pickup (pillow)", "type": "Whole-body", "trials": 20, "success": 80},
+      {"task": "Open door", "type": "Whole-body", "trials": 20, "success": 65},
+      {"task": "Open trash can", "type": "Whole-body", "trials": 20, "success": 65}
+    ],
+    "note": "These are the manuscript's five evaluation tasks. The v33 gallery is a separate qualitative selection and is not a one-to-one record of this benchmark. The presentation's separate 19/20 continuous-trial clip must not be used as an aggregate VLA success rate."
+  },
+  "costNote": "The manuscript's less-than-0.1% GPU-hour comparison uses SONIC's reported 21,000 GPU-hours as a reference. TRACE's approximately eight GPU-hours cover adaptation only, excluding source pretraining. GPU-hours are not normalized across hardware.",
+  "limitations": [
+    "The evaluation covers one source model (SONIC) and one embodiment pair (Unitree G1 to H2).",
+    "Simulation success uses body-size-adjusted thresholds. Position and temporal errors are reported over each policy's successful motions only.",
+    "Training-curve comparisons use one run per method; they do not report variation across seeds.",
+    "Hardware motion examples are qualitative demonstrations; globally referenced tracking errors were not reliably measured on hardware.",
+    "Gallery task labels and benchmark task definitions are recorded separately."
+  ],
+  "downloads": {
+    "paper": "assets/trace-paper.pdf",
+    "video": "assets/trace-overview.mp4",
+    "captions": "assets/trace-overview.vtt"
+  },
+  "sources": [
+    {"path": "main_en.tex", "role": "Current title and empty author field"},
+    {"path": "00_Abstract/abstract_en.tex", "role": "Headline claims and GPU-hour comparison boundary"},
+    {"path": "03_Method/method_en.tex", "role": "Method and two-phase training design"},
+    {"path": "04_Experiments/experiments_en.tex", "role": "Benchmark definitions, result tables, and hardware evaluation"},
+    {"path": "05_Conclusion/conclusion_en.tex", "role": "Scope and limitations"},
+    {"path": "build/en/main_en.pdf", "role": "Current 8-page compiled paper; title and approximately-eight-hour claim verified against source"},
+    {"path": "demo_video/deliverables/TRACE_live_presentation_v33.pptx", "role": "25 embedded source videos; selected hardware clips extracted for the site"},
+    {"path": "demo_video/README.md", "role": "Approved privacy handling, speed, delivery version, and playback provenance"}
+  ]
+}

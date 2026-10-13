@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-09T18:41:42.318676+00:00",
+  "url": "http://127.0.0.1:4173/#demo",
+  "method": "Real controls and keyboard in Codex in-app Chromium, with the actual browser Worker, ONNX runtime and MuJoCo simulation; no injected state. Final version intentionally reloaded after the Walk-stop fix.",
+  "status": "pass",
+  "observations": [
+    "Motion tracking and Planner control both acknowledged mode switches after reloading the final version.",
+    "Walk slider reached 2.5 m/s; holding W for 12 wall-clock seconds produced a displayed instantaneous measured speed of 2.55 m/s just after release; a later settled sample showed 0.00 m/s.",
+    "Run slider reached 4.0 m/s; held W produced displayed instantaneous measured speeds of 4.11 and 4.14 m/s just after release. These are individual UI samples, not steady-state averages.",
+    "The final saved screenshot shows Run, the 4.0 m/s setting, full robot and ground during the release/braking phase; commanded translation is already zero.",
+    "Captured console contains no warnings or errors."
+  ],
+  "earlierSameTurnObservations": {
+    "bankManifestSHA256": "a576ad88f50cb750452bfda969a42a03db7b8203e4090bac67200d8a10fa626b",
+    "observations": [
+      "Slow-walk Home selected 0.1 m/s; a 10-second W hold produced a displayed speed of 0.07 m/s after release.",
+      "Run 2.5 and 4.0 were exercised through real keyboard input."
+    ],
+    "relationToFinal": "This snapshot preceded only the Walk braking fix and a provenance-text correction. walk-stop-fix.json verifies the Run/Slow targets remain bit-exact."
+  },
+  "finalConsoleWarningsAndErrors": [],
+  "screenshot": "screenshots/planner-speed-quality-fixed.jpg",
+  "automatedReports": [
+    "planner-quality.json",
+    "planner-boundaries.json",
+    "planner-bank.json",
+    "planner-combinations.json",
+    "planner-controls.json",
+    "walk-stop-fix.json"
+  ],
+  "sourceSha256": {
+    "demo/demo.js": "130ea5a746fe578c5714df9427f762f9201cf4d57f35f14f69ac6e715a6f41bb",
+    "demo/index.html": "0332ba900590e642cebf42f4e755441de818344dcfa022d185f25ed31e77f467",
+    "demo/local-policy.js": "0d6e9869e76f24c1674aee5f7381f229ce0e9d06a782b5d9b5dc51351771c8b4",
+    "demo/local-planner.js": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119",
+    "demo/local-worker.js": "44336bc47749865af8cf19f392c40ab6e1ae2cb5d6a5a431ea14f949c219d24b",
+    "demo/local-inference.js": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159",
+    "demo/local-assets/planner-bank/manifest.json": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea"
+  },
+  "limits": "Bounded local UI checks; not exhaustive browser compatibility, timing or stability coverage. Browser uses four styles from a local target bank with real policy and physics, not the full online neural planner."
+}

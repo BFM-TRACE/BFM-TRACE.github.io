@@ -1,0 +1,251 @@
+{
+  "completedAt": "2026-10-10T15:43:04.065684+00:00",
+  "status": "pass",
+  "features": [
+    "Four confirmed m21 README motions #1, #2, #4 and #5 installed as unchanged native G1 references.",
+    "Typed H2/G1 tracking uses the matching encoder with the same H2 decoder and physics.",
+    "Fixed 0.5 simulated-second preparation runs 25 real control steps with frame-zero targets and zero desired velocity, then continues complete original 1x motion without resetting feedback history.",
+    "All runtime assets reside in homepage; no remote SSH or removable-drive runtime dependency."
+  ],
+  "selectedMotions": [
+    {
+      "id": "g1_explore_prayer_R_001__A430",
+      "label": "M21 #1 · Single-knee kneel & rise",
+      "startupHoldSeconds": 0.5,
+      "sha256": "afbfab7251219aac5bfe4634b1d98d92631bbcab5b1d693714bb4083dc086f9e"
+    },
+    {
+      "id": "g1_explore_dejection_R_001__A430",
+      "label": "M21 #2 · Double-knee kneel & rise",
+      "startupHoldSeconds": 0.5,
+      "sha256": "76bcbb4a357a49dbe5d7ed4890f6d5627b44fbdc6380a4055653117052040d2e"
+    },
+    {
+      "id": "g1_explore_jump_and_land_light_002__A001",
+      "label": "M21 #4 · Light jump",
+      "startupHoldSeconds": 0.5,
+      "sha256": "07a4e883b536a2d264e92dbc7d633fe932cd6e5e7b5d3bfb2f643a68707f9055"
+    },
+    {
+      "id": "g1_explore_broad_jump_002__A359",
+      "label": "M21 #5 · Standing broad jump",
+      "startupHoldSeconds": 0.5,
+      "sha256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2"
+    }
+  ],
+  "checks": {
+    "staticSite": {
+      "status": "pass",
+      "assets": 68,
+      "visibleTypedMotions": 13
+    },
+    "g1Physical": {
+      "status": "pass",
+      "cases": 4,
+      "fullOriginalReference": true,
+      "postMotionHoldSeconds": 2
+    },
+    "existingH2DynamicPhysical": {
+      "status": "pass",
+      "cases": 4
+    },
+    "plannerPhysical": {
+      "status": "pass",
+      "cases": 15
+    },
+    "uiControls": {
+      "status": "pass",
+      "cases": 44
+    },
+    "browser": {
+      "status": "pass",
+      "fourFullMotionsObserved": true,
+      "broadJumpRepeated": true,
+      "consoleWarningsOrErrors": 0
+    }
+  },
+  "limitations": [
+    "The A359 broad jump is strongly startup-sensitive. Fixed 0.5 s and 2 s trials passed; nearby 0.4/0.6 and 1.8/2.2 s trials failed. This validates the shipped deterministic reset/preparation preset, not arbitrary initial histories.",
+    "G1 references have no H2 kinematic preview; these four options are only available in policy + physics mode.",
+    "One browser/device observed; slow devices advance simulation more slowly.",
+    "The lightweight planner bank, gains, physics and model weights were not retuned in this update."
+  ],
+  "reports": {
+    "qa/g1-explore.json": {
+      "rawReportSHA256": "5c3485f4e8b188a0e7051f17d40da12a12c5ee69e1be5efd2159a3ec900c8ab5",
+      "rawReportBytes": 10672525,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-explore.json",
+      "archivePathBase": "repository root",
+      "rawArchiveRequiredForRuntime": false,
+      "summaryPath": "g1-explore.json",
+      "summaryPathBase": "homepage/qa",
+      "summarySHA256": "371912edeb61aa5f9bbb14ee8a955476e2b898832af26bb847c2886c4fc9c03b",
+      "summaryBytes": 45720
+    },
+    "qa/g1-explore-summary.json": {
+      "sha256": "58b02db56a9a38d7ab3c12665df57c9dec194668f1f42bd1803b4e62637d8d73",
+      "archivedPreviousSHA256": "62fe7114ffc6ec20a1b2d042c87f2eb940c8dec28da6cfec458c3878bb3a6696",
+      "archivedPreviousLocalPath": ".work/archive/homepage-qa-20261011/related-report-references/g1-explore-summary.json",
+      "bytes": 14273,
+      "hashMeaning": "Current published reference document; archivedPreviousSHA256 preserves the pre-archive document identity."
+    },
+    "qa/g1-explore-h2-regression.json": {
+      "rawReportSHA256": "0fae7514803d34ed099ac1e6420864ab0e20fe897ed1a7436ceb8636cf831acf",
+      "rawReportBytes": 5053151,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-explore-h2-regression.json",
+      "archivePathBase": "repository root",
+      "rawArchiveRequiredForRuntime": false,
+      "summaryPath": "g1-explore-h2-regression.json",
+      "summaryPathBase": "homepage/qa",
+      "summarySHA256": "97500f20ffed5366d901aa3eb475a86dc93482b4ff8887ba123b67e0ed9d2682",
+      "summaryBytes": 39731
+    },
+    "qa/g1-explore-planner-regression.json": {
+      "sha256": "571d97f39d6acdc735f76d5bf7cb2c4ac3c3374d1deca0a6c5cf3080282f4d70"
+    },
+    "qa/planner-controls.json": {
+      "sha256": "d89a7b99d3b1a32ab338b46352a965bcace3167c40f03e6a0fb4937195aff6b8"
+    },
+    "qa/g1-explore-browser.json": {
+      "sha256": "a21e7a85eb0876f2cd1b028bcf25f2ae3c18323992fc06ec1a7312adb733fe21"
+    },
+    "qa/g1-explore-installation.json": {
+      "sha256": "07772b1140338b9e23ed5ee54573d05185581285a1e38db8f596c90ed6611254"
+    },
+    "qa/g1-explore-startup-ab.json": {
+      "sha256": "fb64fffd2b81edf75bcc556513989f21498ca2f91050f16c7d95a375b054b8c5"
+    },
+    "qa/g1-explore-source-audit.json": {
+      "sha256": "feee24e6a2bda3b400642a34d2a7a9d5876bf5fbc863ef39d5f14e13039a386f"
+    },
+    "qa/g1-explore-playback-audit.json": {
+      "sha256": "e2ec0eb8554dbd30cf0e919c9bcf7e936b86718b40ff3d9db32fd15f34cf0670"
+    }
+  },
+  "sources": {
+    "demo/local-reference.js": {
+      "bytes": 3025,
+      "sha256": "c54401ba90d12e570b4de1e4735451d4b2c7c4913eeea8cd38b2a05892dc13f5"
+    },
+    "demo/local-policy.js": {
+      "bytes": 9594,
+      "sha256": "2b16bc37395e3cbab985f787ad4c9308f3eeb100d5674916ba4dc2976837402b"
+    },
+    "demo/local-worker.js": {
+      "bytes": 4742,
+      "sha256": "64c341d1eedf8b24bf8f2d38c60abed5e0e2b7b8684c3390c13c47b13156f894"
+    },
+    "demo/demo.js": {
+      "bytes": 32456,
+      "sha256": "fd828d56bc1b1348ff0de507b5a22b6cf6cd7097416dd3d5985d716307b8ea16"
+    },
+    "demo/index.html": {
+      "bytes": 7526,
+      "sha256": "dc968a71d3cc4604939b633db68478a39a799dfa2015fe1f3f4aa74a866c49dd"
+    },
+    "demo/local-planner.js": {
+      "bytes": 9667,
+      "sha256": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119"
+    },
+    "demo/local-physics.js": {
+      "bytes": 13376,
+      "sha256": "c0c138bf5f0a2fd559b4e8e1383de831c2f4d1eb129cee94ae22a007abb3f8a0"
+    },
+    "demo/local-inference.js": {
+      "bytes": 8606,
+      "sha256": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159"
+    },
+    "demo/local-assets/controller.json": {
+      "bytes": 5978,
+      "sha256": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f"
+    },
+    "demo/local-assets/references/manifest.json": {
+      "bytes": 11393,
+      "sha256": "3ddfd8b526a6638a3ebdc4c7e67be734f91dbb120ac561d5a45919ce328470ec"
+    },
+    "demo/assets/motions.json": {
+      "bytes": 9150,
+      "sha256": "209be430bd3aaad644404c623907bff6d0be032ac19a59280cee7649f580246a"
+    },
+    "demo/local-assets/planner-bank/manifest.json": {
+      "bytes": 46519,
+      "sha256": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea"
+    },
+    "demo/local-assets/models/encoder_g1.onnx": {
+      "bytes": 16932124,
+      "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975"
+    },
+    "demo/local-assets/models/decoder.onnx": {
+      "bytes": 40743594,
+      "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+    },
+    "demo/export_g1_explore_candidates.py": {
+      "bytes": 6173,
+      "sha256": "9991a479e918e73ba3750930f29dbf22e0fb1aaa4a6e3857591d08f01239e865"
+    },
+    "scripts/check-dynamic-motions.mjs": {
+      "bytes": 19084,
+      "sha256": "3e0fe767f1c55521045dbf72ea95940e439ee28c0e8b66dd6ce0fbfcf95c46d7"
+    },
+    "scripts/check-g1-explore.mjs": {
+      "bytes": 25919,
+      "sha256": "64d397f27982dcd7f244a6007e62eb3eac8bc05165a5417b16dae7c313ac5aa5"
+    },
+    "scripts/check-local-physics.mjs": {
+      "bytes": 5694,
+      "sha256": "c05a7ce7309fbc4bd340004e9822b95474b988df4693c88c8e4819289b8b4b2e"
+    },
+    "scripts/check-local-simulation.mjs": {
+      "bytes": 15252,
+      "sha256": "81c6ad5745ca837a23dc151b8594d82511216af55eb0d6bdad40b9a8bf27b3ad"
+    },
+    "scripts/check-planner-bank.mjs": {
+      "bytes": 13942,
+      "sha256": "b27e879fb007f5e7936e937a3b349e44302e1b5d9f32de00f4c2a5e94018ae0c"
+    },
+    "scripts/check-planner-boundaries.mjs": {
+      "bytes": 15601,
+      "sha256": "bb88cbb1e10690b61f30ea23b597a814ae5e36142d20353fdee7bc7ea002e16b"
+    },
+    "scripts/check-planner-combinations.mjs": {
+      "bytes": 10422,
+      "sha256": "e85783a7a984dda501e37cd05858b06e214da6c28abc361a1f04640d51da1b2e"
+    },
+    "scripts/check-planner-compaction.mjs": {
+      "bytes": 2175,
+      "sha256": "03bfed892dd9cf7beb07544d506191bfb8ec1203e09ed60c6e2713a92a0e5e29"
+    },
+    "scripts/check-planner-controls.mjs": {
+      "bytes": 40529,
+      "sha256": "881c6f28de8778a1d9c35f4d842bd6f9d8d3610038b11ace65ddb016aa9215a7"
+    },
+    "scripts/check-planner-quality.mjs": {
+      "bytes": 18315,
+      "sha256": "7fc86ca455da3c6941d65ec913530d4a8852280cafc48344e4b3e270f985b26b"
+    },
+    "scripts/check-planner-turn-rates.mjs": {
+      "bytes": 11410,
+      "sha256": "bde840f853852a55571855e2a4dae9a51f5d89df355ff1342778e0d5a1604431"
+    },
+    "scripts/check-site.mjs": {
+      "bytes": 6499,
+      "sha256": "cc38995ebe0f60b6b2581a59f919d556ac63e889cf79a5542fb6eba400cd5982"
+    },
+    "demo/local-assets/references/g1_explore_prayer_R_001__A430.json": {
+      "bytes": 365035,
+      "sha256": "afbfab7251219aac5bfe4634b1d98d92631bbcab5b1d693714bb4083dc086f9e"
+    },
+    "demo/local-assets/references/g1_explore_dejection_R_001__A430.json": {
+      "bytes": 721326,
+      "sha256": "76bcbb4a357a49dbe5d7ed4890f6d5627b44fbdc6380a4055653117052040d2e"
+    },
+    "demo/local-assets/references/g1_explore_jump_and_land_light_002__A001.json": {
+      "bytes": 423964,
+      "sha256": "07a4e883b536a2d264e92dbc7d633fe932cd6e5e7b5d3bfb2f643a68707f9055"
+    },
+    "demo/local-assets/references/g1_explore_broad_jump_002__A359.json": {
+      "bytes": 255702,
+      "sha256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2"
+    }
+  }
+}

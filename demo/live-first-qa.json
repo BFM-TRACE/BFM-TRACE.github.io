@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-10-09",
+  "type": "Node VM logic checks; no browser or robot mocked as evidence of live inference",
+  "checks": [
+    "initial model static; reference mode off; controls disabled",
+    "offline direction cannot mutate command or contact controller",
+    "connection failure stays static and visibly unavailable; no automatic replay",
+    "reference playback requires explicit selection; planner remains disabled",
+    "HTTP command acceptance cannot enable live controls or reference playback",
+    "fresh live physics pose enables controls and measured telemetry; replay widgets hidden",
+    "unchanged timestamp and sim-time disconnect after 5 seconds without replay fallback",
+    "controller error immediately removes live state",
+    "explicit reference-only choice suppresses automatic reconnect"
+  ],
+  "result": "pass",
+  "count": 9
+}

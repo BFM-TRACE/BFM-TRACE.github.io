@@ -1,0 +1,83 @@
+{
+  "schema": "trace-h2-planner-reference-bank-v1",
+  "styles": {
+    "run": {
+      "mode": 3,
+      "speed": 2.5,
+      "clips": {
+        "left": {
+          "id": "planner_run_left",
+          "file": "planner_run_left.json",
+          "frames": 106,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 99,
+            "frames": 99,
+            "score": 0.01751390589838246,
+            "qMeanSquaredError": 0.01015025974120147,
+            "dqMeanSquaredError": 0.7139364533496559,
+            "orientationSeamRadians": 0.06697486449175184,
+            "yawMin": -0.17422513552897462,
+            "yawMax": 0.15506997761916785,
+            "maxAbsYaw": 0.17422513552897462,
+            "meanVelocity": [
+              0.054036884596853525,
+              1.4115104289970006,
+              -0.00034953608657372286
+            ],
+            "meanDirectionalSpeed": 1.4115104289970006
+          },
+          "movement": [
+            0,
+            1,
+            0
+          ],
+          "facing": [
+            1,
+            0,
+            0
+          ],
+          "validation": "not yet tested in H2 closed-loop physics"
+        },
+        "forward": {
+          "id": "planner_run_forward",
+          "file": "planner_run_forward.json",
+          "frames": 106,
+          "recommendedLoop": {
+            "startFrame": 2,
+            "endFrame": 100,
+            "frames": 98,
+            "score": 0.004623593229700312,
+            "qMeanSquaredError": 0.0019054006027010369,
+            "dqMeanSquaredError": 0.2558993123498757,
+            "orientationSeamRadians": 0.056426855928807265,
+            "yawMin": -0.0901554084063861,
+            "yawMax": 0.10995307120111587,
+            "maxAbsYaw": 0.10995307120111587,
+            "meanVelocity": [
+              1.3986887250627797,
+              -0.03867902317825628,
+              0.002642316477639312
+            ],
+            "meanDirectionalSpeed": 1.3986887250627797
+          },
+          "movement": [
+            1,
+            0,
+            0
+          ],
+          "facing": [
+            1,
+            0,
+            0
+          ],
+          "validation": "not yet tested in H2 closed-loop physics"
+        }
+      }
+    }
+  },
+  "kind": "Offline generated policy targets; not simulated poses or online learned-planner inference",
+  "quaternionOrder": "wxyz",
+  "fps": 50,
+  "updatedAt": "2026-10-09T17:30:35.250537+00:00"
+}

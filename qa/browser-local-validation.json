@@ -1,0 +1,60 @@
+{
+  "testedAt": "2026-10-09T17:09:33.907356+00:00",
+  "browser": "Codex in-app browser (Chromium)",
+  "method": "Manual browser UI verification through cua_repl; static HTTP request log inspection",
+  "localControl": {
+    "url": "http://127.0.0.1:4173/#demo",
+    "statusLabel": "Browser policy + physics",
+    "plannerForwardHoldSeconds": 3,
+    "afterReleaseCommand": {
+      "vx": 0,
+      "vy": 0,
+      "yaw": 0
+    },
+    "afterSettlingMeasuredSpeedMps": 0.02,
+    "observedRealTimeFactorRange": [
+      0.78,
+      0.81
+    ],
+    "consoleWarningsAndErrors": [],
+    "screenshot": "screenshots/browser-local-planner.png"
+  },
+  "independentInstances": {
+    "url": "http://127.0.0.1:4189/qa/browser-isolation.html",
+    "server": "Python static HTTP server, without simulation endpoints",
+    "getRequestsObserved": 75,
+    "simulationApiRequests": [],
+    "visitorA": {
+      "motion": "Squat",
+      "pausedClockSeconds": 0.3,
+      "clockAfterExplicitResetSeconds": 0.1
+    },
+    "visitorB": {
+      "motion": "Macarena",
+      "clockWhileAPausedSeconds": 18.2,
+      "clockAfterAResetSeconds": 23.5
+    },
+    "result": "Pausing and resetting A did not pause or reset B.",
+    "screenshot": "screenshots/browser-isolation.png"
+  },
+  "numericalChecks": {
+    "physics": "local-physics.json",
+    "closedLoop": "local-simulation.json",
+    "closedLoopStatus": "pass",
+    "fullTrackingMotions": 5,
+    "plannerSegments": 11,
+    "simulatedSeconds": 109.08
+  },
+  "limitations": [
+    "Browser speed observations are specific to this machine and are not a cross-device performance guarantee.",
+    "The browser planner is a lightweight gait/heading planner, not the full learned neural planner.",
+    "Two local instances establish functional state isolation, not a public-host bandwidth or large-scale load benchmark."
+  ],
+  "sourceHashes": {
+    "demo/demo.js": "e043663d957da7faf91703973fee1f22c596c486bc9a2b0648bec777b062e4d2",
+    "demo/local-worker.js": "31f42262903b3be6237740cd7d3efb6cd6dcbd6e1d0e3e20daf806cbd1b835f6",
+    "demo/local-client.js": "7139539532ce7348ea69767db187ae65e0fc86c5d0692680c0a2dc0ef451955b",
+    "demo/local-policy.js": "ed42ba33e9755711825ebaddb18619279ec2f025239131cdafbf70ef967069dc"
+  },
+  "status": "pass"
+}

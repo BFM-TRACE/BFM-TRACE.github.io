@@ -1,0 +1,465 @@
+{
+  "generatedAt": "2026-10-10T15:35:00.921299+00:00",
+  "scope": "Bounded, explicitly authorized startup comparisons. These are isolated pre-roll subclass experiments, not final production verification. No model/gain/reference/ending edits.",
+  "startupProtocol": "All10 future slots use frame0 with joint velocity0 while the original encoder/decoder, feedback history and PD/physics continue. No state/history reset at playback. Then full unchanged1x source and2s final-frame hold.",
+  "cases": [
+    {
+      "startupHoldSeconds": 0,
+      "status": "fail",
+      "sourceReport": "confirmed-four.json",
+      "reportSHA256": "f705a7636130a16068351c253bfd443f1ff221e64edecd7c547ef5eb9e0def38",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": true,
+      "completedHold": false,
+      "finalReferenceTime": 5.26,
+      "minRootHeight": 0.2712336911902374,
+      "maxForbiddenGroundContactSeconds": 1.32,
+      "actualForwardDisplacement": 3.9646139939683613,
+      "firstFlight": {
+        "start": 2.659999999999818,
+        "end": 3.079999999999772,
+        "duration": 0.44,
+        "forwardDisplacement": 0.6138269732779074,
+        "approachRootForwardDisplacement": 0.3175204665368268,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.010549225604753888,
+        "preFlightDoubleSupportSeconds": 0.28,
+        "rootRise": 0.13881125902954028,
+        "minimumFootClearance": 0.018070182354979883,
+        "landingTime": 3.0999999999997696
+      },
+      "terminal": {
+        "samples": 40,
+        "horizontalSpeed": 0.9408369316420339,
+        "verticalSpeed": 0.4638149072444959,
+        "minRootHeight": 0.2712336911902374,
+        "maxTorsoTiltDeg": 95.72311449302791,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 304,
+        "decoderCalls": 304,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained forbidden body contact with floor",
+        "Sustained near-horizontal/inverted torso",
+        "Incomplete final one-second stability window",
+        "Terminal horizontal motion did not settle",
+        "Terminal vertical motion did not settle",
+        "Terminal root posture too low",
+        "Terminal torso not upright"
+      ]
+    },
+    {
+      "startupHoldSeconds": 0.4,
+      "status": "fail",
+      "sourceReport": "broad-preroll-0p4.json",
+      "reportSHA256": "6d1d873b3280c250ebd4a001b7312a2fa08571585efdd3080b609eb55b5a5f84",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": false,
+      "completedHold": false,
+      "finalReferenceTime": 4.559999999999991,
+      "minRootHeight": 0.2692770728790312,
+      "maxForbiddenGroundContactSeconds": 0.16,
+      "actualForwardDisplacement": 2.6866905087924753,
+      "firstFlight": {
+        "start": 3.059999999999774,
+        "end": 3.45999999999973,
+        "duration": 0.42,
+        "forwardDisplacement": 0.5851092027245208,
+        "approachRootForwardDisplacement": 0.32116608661395213,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.017142754674121602,
+        "preFlightDoubleSupportSeconds": 0.26,
+        "rootRise": 0.1328647611339404,
+        "minimumFootClearance": 0.01810678692035675,
+        "landingTime": 3.4999999999997256
+      },
+      "terminal": {
+        "samples": 0,
+        "horizontalSpeed": null,
+        "verticalSpeed": null,
+        "minRootHeight": null,
+        "maxTorsoTiltDeg": null,
+        "groundContactFraction": null
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 248,
+        "decoderCalls": 248,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete full reference",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained forbidden body contact with floor",
+        "Sustained near-horizontal/inverted torso",
+        "Incomplete final one-second stability window"
+      ]
+    },
+    {
+      "startupHoldSeconds": 0.5,
+      "status": "pass",
+      "sourceReport": "broad-preroll-0p5.json",
+      "reportSHA256": "cbe71337ad2f9b87a2603bf21d44890a73e8b67bf69fa55bc71eef6552cb051d",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": true,
+      "completedHold": true,
+      "finalReferenceTime": 5.26,
+      "minRootHeight": 0.3624750202565157,
+      "maxForbiddenGroundContactSeconds": 0,
+      "actualForwardDisplacement": 1.9965945341376434,
+      "firstFlight": {
+        "start": 3.159999999999763,
+        "end": 3.559999999999719,
+        "duration": 0.42,
+        "forwardDisplacement": 0.5795316249946918,
+        "approachRootForwardDisplacement": 0.31832134590505895,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.015609567245708007,
+        "preFlightDoubleSupportSeconds": 0.28,
+        "rootRise": 0.13189209109101974,
+        "minimumFootClearance": 0.01644717653987457,
+        "landingTime": 3.5999999999997145
+      },
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.010398569102904124,
+        "verticalSpeed": 0.0016438126631238175,
+        "minRootHeight": 1.01330182022582,
+        "maxTorsoTiltDeg": 1.7451888946807634,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 389,
+        "decoderCalls": 389,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": []
+    },
+    {
+      "startupHoldSeconds": 0.6,
+      "status": "fail",
+      "sourceReport": "broad-preroll-0p6.json",
+      "reportSHA256": "44546bac2d51f07371518a73a23ac2f4ebc615666f16a2f7ca72789f9f134135",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": false,
+      "completedHold": false,
+      "finalReferenceTime": 4.6199999999999894,
+      "minRootHeight": 0.2616605785857719,
+      "maxForbiddenGroundContactSeconds": 0.12,
+      "actualForwardDisplacement": 2.8940894299444224,
+      "firstFlight": {
+        "start": 3.259999999999752,
+        "end": 3.6799999999997057,
+        "duration": 0.44,
+        "forwardDisplacement": 0.6166833371626314,
+        "approachRootForwardDisplacement": 0.32045946737261555,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.017616924824676097,
+        "preFlightDoubleSupportSeconds": 0.28,
+        "rootRise": 0.13690415802525102,
+        "minimumFootClearance": 0.019974969530017483,
+        "landingTime": 3.6999999999997035
+      },
+      "terminal": {
+        "samples": 0,
+        "horizontalSpeed": null,
+        "verticalSpeed": null,
+        "minRootHeight": null,
+        "maxTorsoTiltDeg": null,
+        "groundContactFraction": null
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 261,
+        "decoderCalls": 261,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete full reference",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained forbidden body contact with floor",
+        "Incomplete final one-second stability window"
+      ]
+    },
+    {
+      "startupHoldSeconds": 1,
+      "status": "fail",
+      "sourceReport": "broad-preroll-1.json",
+      "reportSHA256": "84e051cccd1d900eddc305a26231fe7ddee2ae30988131c881440cbc75242e44",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": false,
+      "completedHold": false,
+      "finalReferenceTime": 4.779999999999986,
+      "minRootHeight": 0.263379389844235,
+      "maxForbiddenGroundContactSeconds": 0.16,
+      "actualForwardDisplacement": 2.623918505440252,
+      "firstFlight": {
+        "start": 3.659999999999708,
+        "end": 4.079999999999697,
+        "duration": 0.44,
+        "forwardDisplacement": 0.6163005522176852,
+        "approachRootForwardDisplacement": 0.3206541021688347,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.01958546346949852,
+        "preFlightDoubleSupportSeconds": 0.26,
+        "rootRise": 0.14160432720979133,
+        "minimumFootClearance": 0.01958718770905138,
+        "landingTime": 4.099999999999704
+      },
+      "terminal": {
+        "samples": 0,
+        "horizontalSpeed": null,
+        "verticalSpeed": null,
+        "minRootHeight": null,
+        "maxTorsoTiltDeg": null,
+        "groundContactFraction": null
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 289,
+        "decoderCalls": 289,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete full reference",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained forbidden body contact with floor",
+        "Incomplete final one-second stability window"
+      ]
+    },
+    {
+      "startupHoldSeconds": 1.8,
+      "status": "fail",
+      "sourceReport": "broad-preroll-1p8.json",
+      "reportSHA256": "0e181e849b85b6798a03543971637e2957697a4edfc565d235bcb26ca9ae11ab",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": false,
+      "completedHold": false,
+      "finalReferenceTime": 4.539999999999991,
+      "minRootHeight": 0.25452439282969175,
+      "maxForbiddenGroundContactSeconds": 0.1,
+      "actualForwardDisplacement": 2.5874148910313672,
+      "firstFlight": {
+        "start": 4.459999999999824,
+        "end": 4.879999999999964,
+        "duration": 0.44,
+        "forwardDisplacement": 0.6063655290373737,
+        "approachRootForwardDisplacement": 0.31979152787979664,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.01839848132743719,
+        "preFlightDoubleSupportSeconds": 0.26,
+        "rootRise": 0.1383529993009469,
+        "minimumFootClearance": 0.023277290485820265,
+        "landingTime": 4.899999999999971
+      },
+      "terminal": {
+        "samples": 0,
+        "horizontalSpeed": null,
+        "verticalSpeed": null,
+        "minRootHeight": null,
+        "maxTorsoTiltDeg": null,
+        "groundContactFraction": null
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 317,
+        "decoderCalls": 317,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete full reference",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained forbidden body contact with floor",
+        "Incomplete final one-second stability window"
+      ]
+    },
+    {
+      "startupHoldSeconds": 2,
+      "status": "pass",
+      "sourceReport": "broad-preroll-2.json",
+      "reportSHA256": "324a90b16291f1587888d051b803117ba478456f1c0399aa9f2184996cdd4c39",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": true,
+      "completedHold": true,
+      "finalReferenceTime": 5.26,
+      "minRootHeight": 0.33854703628456617,
+      "maxForbiddenGroundContactSeconds": 0,
+      "actualForwardDisplacement": 2.032069695199472,
+      "firstFlight": {
+        "start": 4.659999999999891,
+        "end": 5.080000000000031,
+        "duration": 0.44,
+        "forwardDisplacement": 0.596864696945669,
+        "approachRootForwardDisplacement": 0.3171499366935993,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.018515613944136033,
+        "preFlightDoubleSupportSeconds": 0.22,
+        "rootRise": 0.14632510217531558,
+        "minimumFootClearance": 0.02633761563875732,
+        "landingTime": 5.1200000000000445
+      },
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.03353602740203876,
+        "verticalSpeed": 0.004766082473984006,
+        "minRootHeight": 1.0126291734259607,
+        "maxTorsoTiltDeg": 2.4423917763713168,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 464,
+        "decoderCalls": 464,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": []
+    },
+    {
+      "startupHoldSeconds": 2.2,
+      "status": "fail",
+      "sourceReport": "broad-preroll-2p2.json",
+      "reportSHA256": "8a38a3b09ade91aa7d0dc8afa7e53c0f7b58a56933dff4e1034b3fe7e8da808b",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "completedReference": false,
+      "completedHold": false,
+      "finalReferenceTime": 4.479999999999992,
+      "minRootHeight": 0.27483789115718277,
+      "maxForbiddenGroundContactSeconds": 0.14,
+      "actualForwardDisplacement": 2.6203953465659042,
+      "firstFlight": {
+        "start": 4.879999999999964,
+        "end": 5.300000000000105,
+        "duration": 0.44,
+        "forwardDisplacement": 0.5921296763204233,
+        "approachRootForwardDisplacement": 0.31629758089409177,
+        "maximumGroundedFootForwardAdvanceBeforeFlight": 0.01817040053575733,
+        "preFlightDoubleSupportSeconds": 0.24,
+        "rootRise": 0.14353054163825663,
+        "minimumFootClearance": 0.028860570205768182,
+        "landingTime": 5.340000000000118
+      },
+      "terminal": {
+        "samples": 0,
+        "horizontalSpeed": null,
+        "verticalSpeed": null,
+        "minRootHeight": null,
+        "maxTorsoTiltDeg": null,
+        "groundContactFraction": null
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 335,
+        "decoderCalls": 335,
+        "maxRawFeatureError": 0
+      },
+      "sourceChanges": [],
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete full reference",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained forbidden body contact with floor",
+        "Sustained near-horizontal/inverted torso",
+        "Incomplete final one-second stability window"
+      ]
+    }
+  ],
+  "otherThreeAtPointFive": [
+    {
+      "id": "g1_explore_dejection_R_001__A430",
+      "status": "pass",
+      "kneeling": {
+        "singleKneeSupportedSeconds": 0.36,
+        "doubleKneeSeconds": 1.66,
+        "leftKneeContactSeconds": 6.22,
+        "rightKneeContactSeconds": 7.16,
+        "terminalDoubleSupportFraction": 1,
+        "terminalKneeContactFraction": 0
+      },
+      "flights": [],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.014990974640610106,
+        "verticalSpeed": 0.004178420216832796,
+        "minRootHeight": 1.011372813533347,
+        "maxTorsoTiltDeg": 1.8633211478182297,
+        "groundContactFraction": 1
+      }
+    },
+    {
+      "id": "g1_explore_jump_and_land_light_002__A001",
+      "status": "pass",
+      "kneeling": null,
+      "flights": [
+        {
+          "start": 3.9799999999996727,
+          "end": 4.119999999999711,
+          "duration": 0.16,
+          "forwardDisplacement": 0.06480374060643213,
+          "approachRootForwardDisplacement": 0.009350729128337109,
+          "maximumGroundedFootForwardAdvanceBeforeFlight": 0.01461385593054048,
+          "preFlightDoubleSupportSeconds": 0.24,
+          "rootRise": 0.02217090157743029,
+          "minimumFootClearance": 0.016299780817241885,
+          "landingTime": 4.139999999999717
+        }
+      ],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.01445073216064579,
+        "verticalSpeed": 0.005189595691838551,
+        "minRootHeight": 1.0155976893874858,
+        "maxTorsoTiltDeg": 4.06203195881574,
+        "groundContactFraction": 1
+      }
+    },
+    {
+      "id": "g1_explore_prayer_R_001__A430",
+      "status": "pass",
+      "kneeling": {
+        "singleKneeSupportedSeconds": 3.44,
+        "doubleKneeSeconds": 0,
+        "leftKneeContactSeconds": 0,
+        "rightKneeContactSeconds": 3.44,
+        "terminalDoubleSupportFraction": 1,
+        "terminalKneeContactFraction": 0
+      },
+      "flights": [],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.004613644644548629,
+        "verticalSpeed": 0.0014876195476593139,
+        "minRootHeight": 1.023000105042881,
+        "maxTorsoTiltDeg": 3.547767752451291,
+        "groundContactFraction": 1
+      }
+    }
+  ],
+  "conclusion": "Fixed0.5s and2s pre-roll passed the selected broad jump. Neighboring0.4/0.6 and1.8/2.2s failed, as did0/1s. This is strong startup-state sensitivity, not a broad convergence interval.0.5s is a bounded deterministic preset; allfour original requested motions passed at this preset in isolated tests.",
+  "samplingStopped": true,
+  "samplingDecision": "After testing the authorized neighbors, no wider parameter/grid/model/target search was performed. Production and browser checks remain separate."
+}

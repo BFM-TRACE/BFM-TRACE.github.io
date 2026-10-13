@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "validatedAt": "2026-10-10T17:10:16.577Z",
+  "scope": "Build integrity and static HTTP delivery, not a browser rendering or physical-policy regression.",
+  "files": 183,
+  "bytes": 194246722,
+  "treeSha256": "b9c911cba576698a0c2e22568db697e84c934d2072a2b8b0bd190afbdb3c71f9",
+  "manifestSha256": "df9260eacdd6a63213b3072ec0e2b7831c53622e0da7ac6f8e53020891b285b6",
+  "runtime": {
+    "galleryVideos": 17,
+    "selectableMotions": 16,
+    "trackingReferences": 21,
+    "plannerReferences": 29,
+    "physicsFiles": 39
+  },
+  "checks": [
+    {
+      "name": "Complete publication inventory and SHA-256 integrity",
+      "status": "pass",
+      "files": 183
+    },
+    {
+      "name": "Runtime manifests, module paths, typed targets, preview shapes and licenses",
+      "status": "pass",
+      "runtime": {
+        "galleryVideos": 17,
+        "selectableMotions": 16,
+        "trackingReferences": 21,
+        "plannerReferences": 29,
+        "physicsFiles": 39
+      }
+    },
+    {
+      "name": "Root and project-subpath static serving; every payload fetched with correct bytes and MIME",
+      "status": "pass",
+      "fetchedFiles": 182,
+      "projectMount": "/project-site/"
+    },
+    {
+      "name": "Video byte ranges and absence of backend, QA, scripts and candidate routes",
+      "status": "pass"
+    }
+  ]
+}

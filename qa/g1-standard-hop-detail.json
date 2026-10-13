@@ -1,0 +1,323 @@
+{
+  "generatedAt": "2026-10-10T15:59:28.738603+00:00",
+  "id": "g1_standard_tired_one_leg_jumping_R_001__A359",
+  "scope": "Diagnostic extraction from the final installed production rollout. No thresholds or reference data changed.",
+  "formalReport": {
+    "sourceChanges": [],
+    "rawReportSHA256": "b4342c3d480c1651278dffb8f6e8def1f0988adc0ee1919cdcd99800ad881c6b",
+    "rawReportBytes": 5276207,
+    "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-standard.json",
+    "archivePathBase": "repository root",
+    "rawArchiveRequiredForRuntime": false,
+    "summaryPath": "g1-standard.json",
+    "summaryPathBase": "homepage/qa",
+    "summarySHA256": "54e30d19315d95110de8d31938695d4c6ae32104eda35cd54b52fb6769a94b54",
+    "summaryBytes": 66105
+  },
+  "sourceSHA256": "b7952b3f49e2579d3aa52afdda583dba51d05724a6f7b13e7d50fdf50c85e261",
+  "measurementSource": {
+    "path": "/Users/eren/Workspace/BFM-Trace/homepage/qa/g1-standard-source-measurements/g1_standard_tired_one_leg_jumping_R_001__A359.json",
+    "sha256": "4d87948f95e47256fdce91f13026a9169134f3c0bb809a19bf7dc44c2de628a8"
+  },
+  "protocol": {
+    "policyHz": 50,
+    "physicsHz": 1000,
+    "holdSeconds": 2,
+    "startup": "Production LocalPolicy only; manifest startupHoldSeconds determines frame0/dq0 policy steps. No subclass or method replacement.",
+    "initialization": "Unchanged LocalPolicy.reset with controller.initialQpos/default qvel; no motion-specific initial state",
+    "fullReference": true
+  },
+  "strictHopCriteria": {
+    "minimumFlightSeconds": 0.06,
+    "minimumFlightFootClearance": 0.015,
+    "minimumSingleFootSupportSeconds": 0.06,
+    "minimumOtherFootClearance": 0.05,
+    "maximumTakeoffContactGapSeconds": 0.12
+  },
+  "sourceBeatDiagnostics": {
+    "interpretation": "Diagnostic only; no change to strict flight/hop acceptance. Contact-free samples and positive clearance peaks can reveal small liftoffs below the 1.5cm/0.06s threshold. Foot-body peak timing differs from sole-clearance timing when the foot rotates. Contact constraints are from the last 1ms substep, so tiny negative sole heights at interval boundaries do not establish continuously positive clearance.",
+    "beats": [
+      {
+        "sourcePeakTime": 1.76,
+        "windowSeconds": 0.3,
+        "actualFootBodyPeakReferenceTime": 1.700000000000001,
+        "bodyPeakDelay": -0.05999999999999894,
+        "actualSoleClearancePeakReferenceTime": 1.9200000000000013,
+        "solePeakDelay": 0.16000000000000125,
+        "maximumSupportFootSoleClearance": 0.006423764245798233,
+        "allFloorContactFreeSeconds": 0.08,
+        "contactFreeSegments": [
+          {
+            "startReferenceTime": 1.640000000000001,
+            "endReferenceTime": 1.660000000000001,
+            "sampledDuration": 0.04,
+            "supportFootClearanceMinimum": 0.00026812651951768976,
+            "supportFootClearanceMaximum": 0.0011049609364773335,
+            "raisedFootClearanceMinimum": 0.3414495328558979,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 1.620000000000001,
+            "afterContactTime": 1.680000000000001
+          },
+          {
+            "startReferenceTime": 1.9000000000000012,
+            "endReferenceTime": 1.9200000000000013,
+            "sampledDuration": 0.04,
+            "supportFootClearanceMinimum": 0.0030469460810477085,
+            "supportFootClearanceMaximum": 0.006423764245798233,
+            "raisedFootClearanceMinimum": 0.33692314736227863,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 1.8800000000000012,
+            "afterContactTime": 1.9400000000000013
+          }
+        ],
+        "raisedFootContactSeconds": 0
+      },
+      {
+        "sourcePeakTime": 2.76,
+        "windowSeconds": 0.3,
+        "actualFootBodyPeakReferenceTime": 2.660000000000002,
+        "bodyPeakDelay": -0.09999999999999787,
+        "actualSoleClearancePeakReferenceTime": 2.680000000000002,
+        "solePeakDelay": -0.07999999999999785,
+        "maximumSupportFootSoleClearance": 0.013227535761209011,
+        "allFloorContactFreeSeconds": 0.16,
+        "contactFreeSegments": [
+          {
+            "startReferenceTime": 2.640000000000002,
+            "endReferenceTime": 2.700000000000002,
+            "sampledDuration": 0.08,
+            "supportFootClearanceMinimum": 0.001344067261991433,
+            "supportFootClearanceMaximum": 0.013227535761209011,
+            "raisedFootClearanceMinimum": 0.3467775069139777,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 2.620000000000002,
+            "afterContactTime": 2.720000000000002
+          },
+          {
+            "startReferenceTime": 2.940000000000002,
+            "endReferenceTime": 3.000000000000002,
+            "sampledDuration": 0.08,
+            "supportFootClearanceMinimum": -9.416732247574146e-06,
+            "supportFootClearanceMaximum": 0.009361874146161672,
+            "raisedFootClearanceMinimum": 0.24329359108215842,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 2.920000000000002,
+            "afterContactTime": 3.0200000000000022
+          }
+        ],
+        "raisedFootContactSeconds": 0
+      },
+      {
+        "sourcePeakTime": 3.74,
+        "windowSeconds": 0.3,
+        "actualFootBodyPeakReferenceTime": 3.780000000000003,
+        "bodyPeakDelay": 0.0400000000000027,
+        "actualSoleClearancePeakReferenceTime": 3.5600000000000027,
+        "solePeakDelay": -0.1799999999999975,
+        "maximumSupportFootSoleClearance": 0.008223593885424358,
+        "allFloorContactFreeSeconds": 0.14,
+        "contactFreeSegments": [
+          {
+            "startReferenceTime": 3.5400000000000027,
+            "endReferenceTime": 3.5800000000000027,
+            "sampledDuration": 0.06,
+            "supportFootClearanceMinimum": -0.0002758842923590854,
+            "supportFootClearanceMaximum": 0.008223593885424358,
+            "raisedFootClearanceMinimum": 0.27267792033949195,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 3.5200000000000027,
+            "afterContactTime": 3.6000000000000028
+          },
+          {
+            "startReferenceTime": 3.760000000000003,
+            "endReferenceTime": 3.820000000000003,
+            "sampledDuration": 0.08,
+            "supportFootClearanceMinimum": -0.00040248053707628295,
+            "supportFootClearanceMaximum": 0.007273123683936782,
+            "raisedFootClearanceMinimum": 0.5052696706684434,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 3.740000000000003,
+            "afterContactTime": 3.840000000000003
+          }
+        ],
+        "raisedFootContactSeconds": 0
+      },
+      {
+        "sourcePeakTime": 4.7,
+        "windowSeconds": 0.3,
+        "actualFootBodyPeakReferenceTime": 4.679999999999988,
+        "bodyPeakDelay": -0.020000000000012008,
+        "actualSoleClearancePeakReferenceTime": 4.679999999999988,
+        "solePeakDelay": -0.020000000000012008,
+        "maximumSupportFootSoleClearance": 0.07369831950802698,
+        "allFloorContactFreeSeconds": 0.22,
+        "contactFreeSegments": [
+          {
+            "startReferenceTime": 4.57999999999999,
+            "endReferenceTime": 4.779999999999986,
+            "sampledDuration": 0.22,
+            "supportFootClearanceMinimum": 0.0033580318675809143,
+            "supportFootClearanceMaximum": 0.07369831950802698,
+            "raisedFootClearanceMinimum": 0.5916030715969556,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 4.559999999999991,
+            "afterContactTime": 4.799999999999986
+          }
+        ],
+        "raisedFootContactSeconds": 0
+      },
+      {
+        "sourcePeakTime": 5.74,
+        "windowSeconds": 0.3,
+        "actualFootBodyPeakReferenceTime": 5.719999999999966,
+        "bodyPeakDelay": -0.020000000000034213,
+        "actualSoleClearancePeakReferenceTime": 5.719999999999966,
+        "solePeakDelay": -0.020000000000034213,
+        "maximumSupportFootSoleClearance": 0.02911138076178712,
+        "allFloorContactFreeSeconds": 0.16,
+        "contactFreeSegments": [
+          {
+            "startReferenceTime": 5.659999999999967,
+            "endReferenceTime": 5.759999999999965,
+            "sampledDuration": 0.12,
+            "supportFootClearanceMinimum": 0.008840441765911436,
+            "supportFootClearanceMaximum": 0.02911138076178712,
+            "raisedFootClearanceMinimum": 0.511807800249706,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 5.639999999999968,
+            "afterContactTime": 5.779999999999965
+          },
+          {
+            "startReferenceTime": 5.959999999999961,
+            "endReferenceTime": 5.9799999999999605,
+            "sampledDuration": 0.04,
+            "supportFootClearanceMinimum": 0.006353249624875969,
+            "supportFootClearanceMaximum": 0.0073266957464403065,
+            "raisedFootClearanceMinimum": 0.38133928899821656,
+            "takeoffSameFootOnly": true,
+            "landingSameFootOnly": true,
+            "beforeContactTime": 5.939999999999961,
+            "afterContactTime": 5.99999999999996
+          }
+        ],
+        "raisedFootContactSeconds": 0
+      }
+    ],
+    "bodyPeakTiming": {
+      "meanSignedDelay": -0.032000000000008064,
+      "meanAbsDelay": 0.048000000000009146,
+      "maxAbsDelay": 0.09999999999999787
+    }
+  },
+  "hopSupportQuality": {
+    "sourceKinematicPeakCount": 5,
+    "qualifyingSameFootHopCount": 2,
+    "episodeReferenceTime": [
+      1.46,
+      6.04
+    ],
+    "raisedFootContactSeconds": 0,
+    "longestRaisedFootContactSeconds": 0,
+    "raisedFootOnlySupportSeconds": 0,
+    "raisedFootContactIntervals": [],
+    "interpretation": "Intervening raised-foot contacts are retained as tracking imperfections; qualifying hops only count verified same-foot takeoff/first landing events."
+  },
+  "qualifyingHops": [
+    {
+      "start": 5.100000000000038,
+      "end": 5.260000000000091,
+      "startReferenceTime": 4.59999999999999,
+      "endReferenceTime": 4.7599999999999865,
+      "duration": 0.18,
+      "singleFootSupport": {
+        "left": {
+          "takeoffOnlyThisFoot": false,
+          "lastTakeoffContactGap": 0.04000000000001336,
+          "preSupportSeconds": 0,
+          "landingOnlyThisFoot": false,
+          "postSupportSeconds": 0
+        },
+        "right": {
+          "takeoffOnlyThisFoot": true,
+          "lastTakeoffContactGap": 0.04000000000001336,
+          "preSupportSeconds": 0.2,
+          "landingOnlyThisFoot": true,
+          "postSupportSeconds": 0.2
+        }
+      },
+      "forwardDisplacement": 0.08737524739108221,
+      "approachRootForwardDisplacement": 0.28436813572235803,
+      "maximumGroundedFootForwardAdvanceBeforeFlight": 0.322438467393751,
+      "preFlightDoubleSupportSeconds": 0,
+      "rootRise": 0.06463765450058001,
+      "minimumFootClearance": 0.016248752554054356,
+      "landingTime": 5.300000000000105
+    },
+    {
+      "start": 6.1800000000003985,
+      "end": 6.2400000000004185,
+      "startReferenceTime": 5.679999999999967,
+      "endReferenceTime": 5.739999999999966,
+      "duration": 0.08,
+      "singleFootSupport": {
+        "left": {
+          "takeoffOnlyThisFoot": false,
+          "lastTakeoffContactGap": 0.04000000000001336,
+          "preSupportSeconds": 0,
+          "landingOnlyThisFoot": false,
+          "postSupportSeconds": 0
+        },
+        "right": {
+          "takeoffOnlyThisFoot": true,
+          "lastTakeoffContactGap": 0.04000000000001336,
+          "preSupportSeconds": 0.2,
+          "landingOnlyThisFoot": true,
+          "postSupportSeconds": 0.18
+        }
+      },
+      "forwardDisplacement": 0.041975584464583826,
+      "approachRootForwardDisplacement": 0.6160249924112565,
+      "maximumGroundedFootForwardAdvanceBeforeFlight": 0.6121454897081267,
+      "preFlightDoubleSupportSeconds": 0,
+      "rootRise": 0.015220045945893323,
+      "minimumFootClearance": 0.02048742362445343,
+      "landingTime": 6.280000000000432
+    }
+  ],
+  "terminal": {
+    "samples": 50,
+    "horizontalSpeed": 0.006467359840102811,
+    "verticalSpeed": 0.0020282036706663455,
+    "minRootHeight": 1.0235678179024017,
+    "maxTorsoTiltDeg": 3.834726042988039,
+    "groundContactFraction": 1
+  },
+  "inferenceAudit": {
+    "encoderBranch": "g1/selector3",
+    "nativeCalls": 0,
+    "encoderCalls": 625,
+    "decoderCalls": 625,
+    "maxRawFeatureError": 4.393187202911264e-16
+  },
+  "candidateAndInstalledBeatMetricsIdentical": true,
+  "interpretation": "Five source motion beats have small measured same-right-foot liftoffs nearby; the first three are shallow and sometimes split into two contact-free intervals. Only two hops exceed the unchanged 1.5cm/0.06s strict flight threshold. The raised left foot never touches the floor during the source hop episode. Foot-body peak timing mean absolute difference is 48ms; this is a timing diagnostic, not a paper tracking-error metric.",
+  "limitations": [
+    "Bounded simulation QA, not a hardware safety guarantee or paper benchmark.",
+    "Measurements are at 50Hz policy boundaries. Contact constraints describe the last 1ms physics substep; current kinematics are refreshed without changing solver state.",
+    "Flight requires no active floor contacts and both collision-mesh sole minima above the floor. Reference labels or root trajectories alone cannot pass.",
+    "Default reset starts slightly above contact; the first .5s cannot count as flight. Standing takeoff is measured from grounded foot advance and double support, not root translation during crouch/push-off.",
+    "Kneeling permits shin contact or thigh-mesh contact within 0.15m of the knee joint; no pelvis, torso, head or hand floor contact is allowed. Kneeling torso inclination alone is not treated as falling.",
+    "The G1 reference joint angles are not H2 target angles; no cross-robot raw-angle tracking-error score is claimed.",
+    "Source foot-body positions are kinematic timing proxies, not source contact/flight measurements. Cross-embodiment distances and raw-angle MSE are not used as tracking metrics.",
+    "Status records physical semantic completion; source timing/correlation diagnostics support candidate comparison rather than a paper benchmark.",
+    "No browser rendering or scheduling is tested."
+  ]
+}

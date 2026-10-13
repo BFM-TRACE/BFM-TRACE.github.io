@@ -1,0 +1,529 @@
+{
+  "testedAt": "2026-10-10T15:58:17.305Z",
+  "host": "Node v22.20.0 DOM event harness",
+  "scope": "Production planner UI input/state synchronization and tracking reference routing with stub inference/physics; no browser or physical-motion validation.",
+  "sourceSha256": "fd828d56bc1b1348ff0de507b5a22b6cf6cd7097416dd3d5985d716307b8ea16",
+  "htmlSha256": "dc968a71d3cc4604939b633db68478a39a799dfa2015fe1f3f4aa74a866c49dd",
+  "checks": [
+    {
+      "name": "W+A combines translation and normalizes diagonal target speed",
+      "status": "pass"
+    },
+    {
+      "name": "Q/E yaw is independent of translation; opposite turns cancel",
+      "status": "pass"
+    },
+    {
+      "name": "Turn-rate slider declares rad/s range and preserves the default 0.5 command",
+      "status": "pass"
+    },
+    {
+      "name": "Dragging turn rate updates held Q immediately and releasing Q stops yaw only",
+      "status": "pass"
+    },
+    {
+      "name": "Turn and translation sliders independently update combined E and diagonal input",
+      "status": "pass"
+    },
+    {
+      "name": "Opposite held turns stay cancelled while dragging, then resume the remaining sign",
+      "status": "pass"
+    },
+    {
+      "name": "Pointer turn buttons use the slider amplitude and release or lost capture sends zero",
+      "status": "pass"
+    },
+    {
+      "name": "Moving the turn-rate slider without a held turn never starts rotation",
+      "status": "pass"
+    },
+    {
+      "name": "Turn-rate input is disabled outside ready planner control and ignores disabled input events",
+      "status": "pass",
+      "tested": [
+        "initializing",
+        "disconnected",
+        "reference-only",
+        "idle",
+        "tracking",
+        "pending-mode",
+        "pending-style"
+      ]
+    },
+    {
+      "name": "Turn-rate limits wait for style acknowledgement and clamp only when entering a narrower range",
+      "status": "pass"
+    },
+    {
+      "name": "A legal user-selected turn rate survives Run, Idle and repeated worker states",
+      "status": "pass"
+    },
+    {
+      "name": "Run turn-rate clamping and dragging preserve the independent forward speed command",
+      "status": "pass"
+    },
+    {
+      "name": "Single-key release preserves other held directions and yaw",
+      "status": "pass"
+    },
+    {
+      "name": "Arrow keys use the same composable translation input",
+      "status": "pass"
+    },
+    {
+      "name": "Held movement reacts immediately to speed changes",
+      "status": "pass"
+    },
+    {
+      "name": "WASD works after range input focus; arrows retain native range editing",
+      "status": "pass"
+    },
+    {
+      "name": "Pointer translation and turn combine; releasing one preserves the other",
+      "status": "pass"
+    },
+    {
+      "name": "Blur clears held keyboard and pointer state and sends a stop",
+      "status": "pass"
+    },
+    {
+      "name": "Explicit mode reset cancels timers; even a stale callback cannot revert the mode",
+      "status": "pass"
+    },
+    {
+      "name": "Mode panels wait for a matching fresh worker acknowledgement",
+      "status": "pass"
+    },
+    {
+      "name": "Initialization and fallen state disable mode and style changes",
+      "status": "pass"
+    },
+    {
+      "name": "Planner style waits for matching state and applies its speed range",
+      "status": "pass"
+    },
+    {
+      "name": "Run and slow-walk use the requested default and permitted speed ranges",
+      "status": "pass"
+    },
+    {
+      "name": "Validated style speed boundaries reach pure-forward held commands, including Run 4.0 m/s",
+      "status": "pass",
+      "tested": [
+        {
+          "style": "slow_walk",
+          "requestedSpeed": 0.1
+        },
+        {
+          "style": "slow_walk",
+          "requestedSpeed": 0.8
+        },
+        {
+          "style": "walk",
+          "requestedSpeed": 0.8
+        },
+        {
+          "style": "walk",
+          "requestedSpeed": 2.5
+        },
+        {
+          "style": "run",
+          "requestedSpeed": 2.5
+        },
+        {
+          "style": "run",
+          "requestedSpeed": 4
+        }
+      ]
+    },
+    {
+      "name": "slow_walk: high-speed cardinal and diagonal commands preserve direction and obey vector limits",
+      "status": "pass",
+      "tested": [
+        {
+          "keys": [
+            "KeyW"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": 0.8,
+            "vy": 0,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyS"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": -0.8,
+            "vy": 0,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyA"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": 0,
+            "vy": 0.8,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyD"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": 0,
+            "vy": -0.8,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyW",
+            "KeyA"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": 0.565685424949238,
+            "vy": 0.565685424949238,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyW",
+            "KeyD"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": 0.565685424949238,
+            "vy": -0.565685424949238,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyS",
+            "KeyA"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": -0.565685424949238,
+            "vy": 0.565685424949238,
+            "yaw": 0
+          },
+          "norm": 0.8
+        },
+        {
+          "keys": [
+            "KeyS",
+            "KeyD"
+          ],
+          "slider": 0.8,
+          "sent": {
+            "vx": -0.565685424949238,
+            "vy": -0.565685424949238,
+            "yaw": 0
+          },
+          "norm": 0.8
+        }
+      ]
+    },
+    {
+      "name": "walk: high-speed cardinal and diagonal commands preserve direction and obey vector limits",
+      "status": "pass",
+      "tested": [
+        {
+          "keys": [
+            "KeyW"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": 2.5,
+            "vy": 0,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyS"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": -1.6,
+            "vy": 0,
+            "yaw": 0
+          },
+          "norm": 1.6
+        },
+        {
+          "keys": [
+            "KeyA"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": 0,
+            "vy": 1.6,
+            "yaw": 0
+          },
+          "norm": 1.6
+        },
+        {
+          "keys": [
+            "KeyD"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": 0,
+            "vy": -1.6,
+            "yaw": 0
+          },
+          "norm": 1.6
+        },
+        {
+          "keys": [
+            "KeyW",
+            "KeyA"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": 1.131370849898476,
+            "vy": 1.131370849898476,
+            "yaw": 0
+          },
+          "norm": 1.6
+        },
+        {
+          "keys": [
+            "KeyW",
+            "KeyD"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": 1.131370849898476,
+            "vy": -1.131370849898476,
+            "yaw": 0
+          },
+          "norm": 1.6
+        },
+        {
+          "keys": [
+            "KeyS",
+            "KeyA"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": -1.131370849898476,
+            "vy": 1.131370849898476,
+            "yaw": 0
+          },
+          "norm": 1.6
+        },
+        {
+          "keys": [
+            "KeyS",
+            "KeyD"
+          ],
+          "slider": 2.5,
+          "sent": {
+            "vx": -1.131370849898476,
+            "vy": -1.131370849898476,
+            "yaw": 0
+          },
+          "norm": 1.6
+        }
+      ]
+    },
+    {
+      "name": "run: high-speed cardinal and diagonal commands preserve direction and obey vector limits",
+      "status": "pass",
+      "tested": [
+        {
+          "keys": [
+            "KeyW"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": 4,
+            "vy": 0,
+            "yaw": 0
+          },
+          "norm": 4
+        },
+        {
+          "keys": [
+            "KeyS"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": -2.5,
+            "vy": 0,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyA"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": 0,
+            "vy": 2.5,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyD"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": 0,
+            "vy": -2.5,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyW",
+            "KeyA"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": 1.7677669529663687,
+            "vy": 1.7677669529663687,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyW",
+            "KeyD"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": 1.7677669529663687,
+            "vy": -1.7677669529663687,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyS",
+            "KeyA"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": -1.7677669529663687,
+            "vy": 1.7677669529663687,
+            "yaw": 0
+          },
+          "norm": 2.5
+        },
+        {
+          "keys": [
+            "KeyS",
+            "KeyD"
+          ],
+          "slider": 4,
+          "sent": {
+            "vx": -1.7677669529663687,
+            "vy": -1.7677669529663687,
+            "yaw": 0
+          },
+          "norm": 2.5
+        }
+      ]
+    },
+    {
+      "name": "Releasing a strafe component restores full forward speed; Q/E does not reduce translation",
+      "status": "pass"
+    },
+    {
+      "name": "Dragging the slider while holding a diagonal remains capped and preserves its ratio",
+      "status": "pass"
+    },
+    {
+      "name": "Pointer and mixed keyboard/pointer inputs share the same directional speed cap",
+      "status": "pass"
+    },
+    {
+      "name": "Direction-limit hint follows acknowledged style and identifies command versus measured speed",
+      "status": "pass"
+    },
+    {
+      "name": "Idle disables movement, then a Walk acknowledgement restores it",
+      "status": "pass"
+    },
+    {
+      "name": "Movement and keepalive commands cannot implicitly switch controller mode",
+      "status": "pass"
+    },
+    {
+      "name": "A G1 target without preview sends a real tracking reset without fetching or rendering a preview",
+      "status": "pass"
+    },
+    {
+      "name": "No-preview G1 cannot enter reference-only even through a direct event call",
+      "status": "pass"
+    },
+    {
+      "name": "Reference-only disables only missing previews and returning to simulation restores their options",
+      "status": "pass"
+    },
+    {
+      "name": "Returning from a G1 target to H2 preserves the existing H2 preview path",
+      "status": "pass"
+    },
+    {
+      "name": "Live source wording follows acknowledged G1 tracking rather than changing the H2 renderer",
+      "status": "pass"
+    },
+    {
+      "name": "Typed reference preparation preserves raw G1 semantic values and rejects mixed or malformed spaces",
+      "status": "pass"
+    },
+    {
+      "name": "Tracking routes native G1 through its encoder and H2 actions while H2 references retain the native branch",
+      "status": "pass"
+    },
+    {
+      "name": "Startup hold metadata defaults to zero, accepts matching manifest configuration and rejects conflicts",
+      "status": "pass"
+    },
+    {
+      "name": "G1 startup runs exactly 25 true controller steps with frame-zero futures, then advances without resetting physics or history",
+      "status": "pass"
+    },
+    {
+      "name": "Pausing startup freezes its counter; resume continues while reset and completed-motion replay start a fresh hold",
+      "status": "pass"
+    },
+    {
+      "name": "Preparing motion status keeps Pause available, reports paused preparation, and clears after startup",
+      "status": "pass"
+    }
+  ],
+  "referenceSourceSha256": "c54401ba90d12e570b4de1e4735451d4b2c7c4913eeea8cd38b2a05892dc13f5",
+  "policySourceSha256": "2b16bc37395e3cbab985f787ad4c9308f3eeb100d5674916ba4dc2976837402b",
+  "status": "pass"
+}

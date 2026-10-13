@@ -1,0 +1,1211 @@
+{
+  "schema": "trace-h2-planner-reference-bank-v2",
+  "styles": {
+    "slow_walk": {
+      "mode": 1,
+      "speed": 0.4,
+      "clips": {
+        "left": {
+          "id": "planner_mode1_left_speed0p4",
+          "file": "planner_mode1_left_speed0p4.json",
+          "targetSpeed": 0.4,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 52,
+            "frames": 52,
+            "score": 0.0023866300041827204,
+            "meanVelocity": [
+              -0.0012760208203242455,
+              0.4406765561837417,
+              0.0036714971065521453
+            ],
+            "qMeanSquaredError": 0.0015102997731652394,
+            "dqMeanSquaredError": 0.08763302310174811,
+            "seamVelocityErrorRMS": 1.9431287741457328,
+            "rootRPYMinDegrees": [
+              -3.7689734510736717,
+              0.16227500863696515,
+              -5.360250101594718
+            ],
+            "rootRPYMaxDegrees": [
+              -1.4203436070392352,
+              4.92106649111234,
+              8.08011609637724
+            ],
+            "waistPitchDegrees": [
+              9.362255384023992,
+              15.915233130344772
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.4406765561837417,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "9be840f49796090435f3bbdbda25502f51cdf28063ce96c6d8a2e8d15b4c78bd",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/left/planner_mode1_left_speed0p4.json",
+          "variants": [
+            {
+              "id": "planner_mode1_left_speed0p8",
+              "file": "planner_mode1_left_speed0p8.json",
+              "targetSpeed": 0.8,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 50,
+                "frames": 50,
+                "score": 0.00009939573011410785,
+                "meanVelocity": [
+                  0.002679593861103058,
+                  0.8763084411621094,
+                  -0.00017625093460083008
+                ],
+                "qMeanSquaredError": 0.00006616809905409547,
+                "dqMeanSquaredError": 0.0033227631060012367,
+                "seamVelocityErrorRMS": 0.4067188803525584,
+                "rootRPYMinDegrees": [
+                  -3.723812060044777,
+                  -1.1016544050973223,
+                  -7.366746470354855
+                ],
+                "rootRPYMaxDegrees": [
+                  0.4381272272436506,
+                  4.572233456782417,
+                  11.249260032680835
+                ],
+                "waistPitchDegrees": [
+                  8.002785801436785,
+                  14.54826195099214
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.8763084411621094,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "18de060fff18963e0c37655f086f71cf7b6d57e97cfaa7d0564ee7f991f0c19a",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/left/planner_mode1_left_speed0p8.json"
+            },
+            {
+              "id": "planner_slow_left_low_cadence",
+              "file": "planner_slow_left_low_cadence.json",
+              "targetSpeed": 0.1,
+              "playbackRate": 0.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 52,
+                "frames": 52,
+                "score": 0.0023866300041827204,
+                "meanVelocity": [
+                  -0.0012760208203242455,
+                  0.4406765561837417,
+                  0.0036714971065521453
+                ],
+                "qMeanSquaredError": 0.0015102997731652394,
+                "dqMeanSquaredError": 0.08763302310174811,
+                "seamVelocityErrorRMS": 1.9431287741457328,
+                "rootRPYMinDegrees": [
+                  -3.7689734510736717,
+                  0.16227500863696515,
+                  -5.360250101594718
+                ],
+                "rootRPYMaxDegrees": [
+                  -1.4203436070392352,
+                  4.92106649111234,
+                  8.08011609637724
+                ],
+                "waistPitchDegrees": [
+                  9.362255384023992,
+                  15.915233130344772
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.4406765561837417,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "7c2e03bc0404998613d0e98830fcba2f13ccf9ada26c182bf7d1ee61c51fb046"
+            }
+          ]
+        },
+        "right": {
+          "id": "planner_mode1_right_speed0p4",
+          "file": "planner_mode1_right_speed0p4.json",
+          "targetSpeed": 0.4,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 50,
+            "frames": 50,
+            "score": 0.00003991102532799055,
+            "meanVelocity": [
+              -0.011863067746162415,
+              -0.3240211009979248,
+              0.0012126564979553223
+            ],
+            "qMeanSquaredError": 0.000035195506964862456,
+            "dqMeanSquaredError": 0.00047155183631280916,
+            "seamVelocityErrorRMS": 0.29662900635668815,
+            "rootRPYMinDegrees": [
+              -1.4663962321575912,
+              2.3754262670354374,
+              -7.987944244912933
+            ],
+            "rootRPYMaxDegrees": [
+              1.3812996937541338,
+              5.238800646030112,
+              0.7294754128600447
+            ],
+            "waistPitchDegrees": [
+              9.793402708399315,
+              13.614066754622417
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.3240211009979248,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "956728c16ef1e0ae693aeab83db2b926d9d1ec5cc0f10100083ec2171112797c",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/right/planner_mode1_right_speed0p4.json",
+          "variants": [
+            {
+              "id": "planner_mode1_right_speed0p8",
+              "file": "planner_mode1_right_speed0p8.json",
+              "targetSpeed": 0.8,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 50,
+                "frames": 50,
+                "score": 0.00012356486097562185,
+                "meanVelocity": [
+                  0.013168051838874817,
+                  -0.8124194145202637,
+                  0.0012533068656921387
+                ],
+                "qMeanSquaredError": 0.000071493223484178,
+                "dqMeanSquaredError": 0.0052071637491443844,
+                "seamVelocityErrorRMS": 0.42276832746841975,
+                "rootRPYMinDegrees": [
+                  -0.8813824505989579,
+                  -2.3275311172662403,
+                  -5.741299393792014
+                ],
+                "rootRPYMaxDegrees": [
+                  2.416773595898707,
+                  4.445274882514632,
+                  8.678631222986372
+                ],
+                "waistPitchDegrees": [
+                  10.2823425898753,
+                  14.861737239553918
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.8124194145202637,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "824423a1b95a87ae3e57f788f6d9ea465a682b18b8e803cb0e5eaa53b907ccad",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/right/planner_mode1_right_speed0p8.json"
+            },
+            {
+              "id": "planner_slow_right_low_cadence",
+              "file": "planner_slow_right_low_cadence.json",
+              "targetSpeed": 0.1,
+              "playbackRate": 0.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 50,
+                "frames": 50,
+                "score": 0.00003991102532799055,
+                "meanVelocity": [
+                  -0.011863067746162415,
+                  -0.3240211009979248,
+                  0.0012126564979553223
+                ],
+                "qMeanSquaredError": 0.000035195506964862456,
+                "dqMeanSquaredError": 0.00047155183631280916,
+                "seamVelocityErrorRMS": 0.29662900635668815,
+                "rootRPYMinDegrees": [
+                  -1.4663962321575912,
+                  2.3754262670354374,
+                  -7.987944244912933
+                ],
+                "rootRPYMaxDegrees": [
+                  1.3812996937541338,
+                  5.238800646030112,
+                  0.7294754128600447
+                ],
+                "waistPitchDegrees": [
+                  9.793402708399315,
+                  13.614066754622417
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.3240211009979248,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "bf1fc32920f1d2537053a2a2a8eaa8a514c17c7e2cf65ba341eb1d3c74240937"
+            }
+          ]
+        },
+        "forward": {
+          "id": "planner_mode1_forward_speed0p4",
+          "file": "planner_mode1_forward_speed0p4.json",
+          "targetSpeed": 0.4,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 63,
+            "frames": 63,
+            "score": 0.0021862400980584467,
+            "meanVelocity": [
+              0.35164629656171026,
+              -0.01801956060623366,
+              0.003741856605287635
+            ],
+            "qMeanSquaredError": 0.0014312766616058133,
+            "dqMeanSquaredError": 0.07549634364526331,
+            "seamVelocityErrorRMS": 1.8916108622056844,
+            "rootRPYMinDegrees": [
+              -1.801722937459974,
+              -5.098743890860878,
+              -3.1171003706906593
+            ],
+            "rootRPYMaxDegrees": [
+              1.1870099277087265,
+              -2.007557159867921,
+              2.800513026527955
+            ],
+            "waistPitchDegrees": [
+              12.884670682402028,
+              15.232602509597813
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.35164629656171026,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "9db0f88ac8b3bfd44e1845e3cce23eba42b1c781eb635f5cc8d8a7f05b1247eb",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/forward/planner_mode1_forward_speed0p4.json",
+          "variants": [
+            {
+              "id": "planner_mode1_forward_speed0p8",
+              "file": "planner_mode1_forward_speed0p8.json",
+              "targetSpeed": 0.8,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 50,
+                "frames": 50,
+                "score": 0.0000017457508182707799,
+                "meanVelocity": [
+                  0.6893267631530762,
+                  -0.03162062168121338,
+                  0.00010818243026733398
+                ],
+                "qMeanSquaredError": 0.0000011620745154003373,
+                "dqMeanSquaredError": 0.000058367630287044276,
+                "seamVelocityErrorRMS": 0.05389978004130298,
+                "rootRPYMinDegrees": [
+                  -2.658745336968375,
+                  -6.734098730188165,
+                  -11.977544305518544
+                ],
+                "rootRPYMaxDegrees": [
+                  2.403030313290589,
+                  -3.710270067839511,
+                  -1.4902964889505326
+                ],
+                "waistPitchDegrees": [
+                  11.717488341933063,
+                  15.159674872282293
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.6893267631530762,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "9cf48a1a284e76395dcc01ae7a2a68fbf11ff82b61ee22cb90165365e28baf8c",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/forward/planner_mode1_forward_speed0p8.json"
+            },
+            {
+              "id": "planner_slow_forward_low_cadence",
+              "file": "planner_slow_forward_low_cadence.json",
+              "targetSpeed": 0.1,
+              "playbackRate": 0.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 63,
+                "frames": 63,
+                "score": 0.0021862400980584467,
+                "meanVelocity": [
+                  0.35164629656171026,
+                  -0.01801956060623366,
+                  0.003741856605287635
+                ],
+                "qMeanSquaredError": 0.0014312766616058133,
+                "dqMeanSquaredError": 0.07549634364526331,
+                "seamVelocityErrorRMS": 1.8916108622056844,
+                "rootRPYMinDegrees": [
+                  -1.801722937459974,
+                  -5.098743890860878,
+                  -3.1171003706906593
+                ],
+                "rootRPYMaxDegrees": [
+                  1.1870099277087265,
+                  -2.007557159867921,
+                  2.800513026527955
+                ],
+                "waistPitchDegrees": [
+                  12.884670682402028,
+                  15.232602509597813
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.35164629656171026,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "c179030cbfb403e55eb7e9b4bdefd864f4dfe6f6ba672615f771c2f3a461c7a8"
+            }
+          ]
+        },
+        "back": {
+          "id": "planner_mode1_back_speed0p4",
+          "file": "planner_mode1_back_speed0p4.json",
+          "targetSpeed": 0.4,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 98,
+            "frames": 98,
+            "score": 0.001043566331634528,
+            "meanVelocity": [
+              -0.3384673717070598,
+              0.006873641847347727,
+              0.001443746138592133
+            ],
+            "qMeanSquaredError": 0.0008684984050320678,
+            "dqMeanSquaredError": 0.017506792660246014,
+            "seamVelocityErrorRMS": 1.4735148497996786,
+            "rootRPYMinDegrees": [
+              -1.3874929173893533,
+              -2.7454061744135245,
+              -6.240517304636561
+            ],
+            "rootRPYMaxDegrees": [
+              2.173177312891025,
+              -0.35314650223163246,
+              1.8298570416745323
+            ],
+            "waistPitchDegrees": [
+              9.09685147910495,
+              14.539056563538255
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.3384673717070598,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "cdf9e8bc271cb20bcbee80211b3ff3acbe93098ccfdcc7872e6bf54b34b5015f",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/back/planner_mode1_back_speed0p4.json",
+          "variants": [
+            {
+              "id": "planner_mode1_back_speed0p8",
+              "file": "planner_mode1_back_speed0p8.json",
+              "targetSpeed": 0.8,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 50,
+                "frames": 50,
+                "score": 0.0005327362870635942,
+                "meanVelocity": [
+                  -0.7240591049194336,
+                  0.04146186411380767,
+                  -0.0009745359420776367
+                ],
+                "qMeanSquaredError": 0.0003534595475472818,
+                "dqMeanSquaredError": 0.017927673951631234,
+                "seamVelocityErrorRMS": 0.9400259937194314,
+                "rootRPYMinDegrees": [
+                  -1.5683365013154735,
+                  -4.903814361139916,
+                  -9.260750480178585
+                ],
+                "rootRPYMaxDegrees": [
+                  1.980750345583631,
+                  -0.7894364571826732,
+                  -3.1883294258223955
+                ],
+                "waistPitchDegrees": [
+                  10.03647035793985,
+                  15.525308900440873
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.7240591049194336,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "593a1ec910ff77dfdb0c3ba3623574719f7341e08f3aa628c6a1f673b967e412",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/slow_walk/back/planner_mode1_back_speed0p8.json"
+            },
+            {
+              "id": "planner_slow_back_low_cadence",
+              "file": "planner_slow_back_low_cadence.json",
+              "targetSpeed": 0.1,
+              "playbackRate": 0.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 98,
+                "frames": 98,
+                "score": 0.001043566331634528,
+                "meanVelocity": [
+                  -0.3384673717070598,
+                  0.006873641847347727,
+                  0.001443746138592133
+                ],
+                "qMeanSquaredError": 0.0008684984050320678,
+                "dqMeanSquaredError": 0.017506792660246014,
+                "seamVelocityErrorRMS": 1.4735148497996786,
+                "rootRPYMinDegrees": [
+                  -1.3874929173893533,
+                  -2.7454061744135245,
+                  -6.240517304636561
+                ],
+                "rootRPYMaxDegrees": [
+                  2.173177312891025,
+                  -0.35314650223163246,
+                  1.8298570416745323
+                ],
+                "waistPitchDegrees": [
+                  9.09685147910495,
+                  14.539056563538255
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 0.3384673717070598,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "83f915fddde79cc6604414ac56d9654af712fe44a5e3a53f837fdca82aff03d5"
+            }
+          ]
+        }
+      },
+      "speedLimits": {
+        "forward": 0.8,
+        "other": 0.8
+      }
+    },
+    "walk": {
+      "mode": 2,
+      "speed": 0.9,
+      "clips": {
+        "left": {
+          "id": "planner_mode2_left_speed0p8",
+          "file": "planner_mode2_left_speed0p8.json",
+          "targetSpeed": 0.8,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 50,
+            "frames": 50,
+            "score": 0.00009939573011410785,
+            "meanVelocity": [
+              0.002679593861103058,
+              0.8763084411621094,
+              -0.00017625093460083008
+            ],
+            "qMeanSquaredError": 0.00006616809905409547,
+            "dqMeanSquaredError": 0.0033227631060012367,
+            "seamVelocityErrorRMS": 0.4067188803525584,
+            "rootRPYMinDegrees": [
+              -3.723812060044777,
+              -1.1016544050973223,
+              -7.366746470354855
+            ],
+            "rootRPYMaxDegrees": [
+              0.4381272272436506,
+              4.572233456782417,
+              11.249260032680835
+            ],
+            "waistPitchDegrees": [
+              8.002785801436785,
+              14.54826195099214
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.8763084411621094,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "7b1d7f952a7381afe057fd876f66f97f380f79bbaa69a1b2a091aecb4f40c29e",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/left/planner_mode2_left_speed0p8.json",
+          "variants": [
+            {
+              "id": "planner_mode2_left_speed1p6",
+              "file": "planner_mode2_left_speed1p6.json",
+              "targetSpeed": 1.6,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 32,
+                "frames": 32,
+                "score": 0.012412323465810473,
+                "meanVelocity": [
+                  -0.0011595641262829174,
+                  1.3572940230369561,
+                  0.003958288580179284
+                ],
+                "qMeanSquaredError": 0.003933859166922842,
+                "dqMeanSquaredError": 0.8478464298887631,
+                "seamVelocityErrorRMS": 3.1360242214158847,
+                "rootRPYMinDegrees": [
+                  -1.615735272333755,
+                  -1.2778329332553253,
+                  -2.863800015044588
+                ],
+                "rootRPYMaxDegrees": [
+                  6.361123799958222,
+                  6.5870278486933564,
+                  4.171710042009014
+                ],
+                "waistPitchDegrees": [
+                  8.083573620449155,
+                  15.954478372787289
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 1.3572940230369561,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "8507e6aad2e7b91c2da0af475400ea0e5b17fa78b51125c16a58aba9a2a0d9b1",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/left/planner_mode2_left_speed1p6.json"
+            }
+          ]
+        },
+        "right": {
+          "id": "planner_mode2_right_speed0p8",
+          "file": "planner_mode2_right_speed0p8.json",
+          "targetSpeed": 0.8,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 50,
+            "frames": 50,
+            "score": 0.00012356486097562185,
+            "meanVelocity": [
+              0.013168051838874817,
+              -0.8124194145202637,
+              0.0012533068656921387
+            ],
+            "qMeanSquaredError": 0.000071493223484178,
+            "dqMeanSquaredError": 0.0052071637491443844,
+            "seamVelocityErrorRMS": 0.42276832746841975,
+            "rootRPYMinDegrees": [
+              -0.8813824505989579,
+              -2.3275311172662403,
+              -5.741299393792014
+            ],
+            "rootRPYMaxDegrees": [
+              2.416773595898707,
+              4.445274882514632,
+              8.678631222986372
+            ],
+            "waistPitchDegrees": [
+              10.2823425898753,
+              14.861737239553918
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.8124194145202637,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "91e5d9eb68c8fe82a09041f2d85527e2396f5e82b1e49f02dce63bd9e3f0adf8",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/right/planner_mode2_right_speed0p8.json",
+          "variants": [
+            {
+              "id": "planner_mode2_right_speed1p6",
+              "file": "planner_mode2_right_speed1p6.json",
+              "targetSpeed": 1.6,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 66,
+                "frames": 66,
+                "score": 0.007595930398831433,
+                "meanVelocity": [
+                  0.028756685329206055,
+                  -1.4337135083747632,
+                  0.009583921143502934
+                ],
+                "qMeanSquaredError": 0.004514280306495004,
+                "dqMeanSquaredError": 0.30816500923364293,
+                "seamVelocityErrorRMS": 3.359419706770428,
+                "rootRPYMinDegrees": [
+                  -4.044285917405566,
+                  -5.750158437449674,
+                  -3.738069724909273
+                ],
+                "rootRPYMaxDegrees": [
+                  3.1407450767248895,
+                  4.8498161471204515,
+                  9.922169965252447
+                ],
+                "waistPitchDegrees": [
+                  8.939340657410016,
+                  18.899667212708916
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 1.4337135083747632,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "10482a078c9bf60b96d644489cd18ecba07e7d7531473ba662eeff241b41bb40",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/right/planner_mode2_right_speed1p6.json"
+            },
+            {
+              "id": "planner_mode2_right_speed2p5",
+              "file": "planner_mode2_right_speed2p5.json",
+              "targetSpeed": 2.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 56,
+                "frames": 56,
+                "score": 0.019042176470390505,
+                "meanVelocity": [
+                  0.04411459501300539,
+                  -2.076576437268938,
+                  0.001594424247741699
+                ],
+                "qMeanSquaredError": 0.009657725611185372,
+                "dqMeanSquaredError": 0.9384450859205132,
+                "seamVelocityErrorRMS": 4.913686399025016,
+                "rootRPYMinDegrees": [
+                  -3.5010752853885028,
+                  -6.047647867135908,
+                  2.5744256322230843
+                ],
+                "rootRPYMaxDegrees": [
+                  3.8460130935414734,
+                  2.55500969113633,
+                  10.602529793235066
+                ],
+                "waistPitchDegrees": [
+                  14.321119912029864,
+                  21.293667982837523
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 2.076576437268938,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "ca3a1b9caf601ce9b172c373a31f1df6752d59e4c484a90dfc56e1065a1e715f",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/right/planner_mode2_right_speed2p5.json"
+            }
+          ]
+        },
+        "forward": {
+          "id": "planner_mode2_forward_speed0p8",
+          "file": "planner_mode2_forward_speed0p8.json",
+          "targetSpeed": 0.8,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 50,
+            "frames": 50,
+            "score": 0.0000017422470475769892,
+            "meanVelocity": [
+              0.689326286315918,
+              -0.03162142634391785,
+              0.00010818243026733398
+            ],
+            "qMeanSquaredError": 0.0000011594014379748912,
+            "dqMeanSquaredError": 0.000058284560960209795,
+            "seamVelocityErrorRMS": 0.053837752506370726,
+            "rootRPYMinDegrees": [
+              -2.65871397547083,
+              -6.73415322738733,
+              -11.977591881686928
+            ],
+            "rootRPYMaxDegrees": [
+              2.4030333941188364,
+              -3.710283586587293,
+              -1.4903726072080303
+            ],
+            "waistPitchDegrees": [
+              11.717544690993716,
+              15.159616132655431
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.689326286315918,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "35af8f9ea994d1cbb00571a00ae6b676169687354267be25c879985ac4ff4bc6",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/forward/planner_mode2_forward_speed0p8.json",
+          "variants": [
+            {
+              "id": "planner_mode2_forward_speed1p6",
+              "file": "planner_mode2_forward_speed1p6.json",
+              "targetSpeed": 1.6,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 41,
+                "frames": 41,
+                "score": 0.0024880401225156994,
+                "meanVelocity": [
+                  1.4295119774050837,
+                  -0.003511689875910928,
+                  0.001532013823346421
+                ],
+                "qMeanSquaredError": 0.001503880832955619,
+                "dqMeanSquaredError": 0.09841592895600805,
+                "seamVelocityErrorRMS": 1.9389951218064079,
+                "rootRPYMinDegrees": [
+                  -3.9658287116957975,
+                  -6.823218634954891,
+                  -3.7616022766390915
+                ],
+                "rootRPYMaxDegrees": [
+                  3.2553677678730764,
+                  -3.804950733986411,
+                  4.420686254407085
+                ],
+                "waistPitchDegrees": [
+                  13.321466872041725,
+                  16.1201787620518
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 1.4295119774050837,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "3b77baee0391134dc178a047ddc130fe9c1a903259b77345c18ac0f89877d051",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/forward/planner_mode2_forward_speed1p6.json"
+            },
+            {
+              "id": "planner_mode2_forward_speed2p5",
+              "file": "planner_mode2_forward_speed2p5.json",
+              "targetSpeed": 2.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 34,
+                "frames": 34,
+                "score": 0.005013027172820355,
+                "meanVelocity": [
+                  2.2041298361385575,
+                  0.04291661521967715,
+                  0.011944279951207809
+                ],
+                "qMeanSquaredError": 0.0022668531896362907,
+                "dqMeanSquaredError": 0.2746173983184065,
+                "seamVelocityErrorRMS": 2.3805740849825967,
+                "rootRPYMinDegrees": [
+                  -5.577708459835205,
+                  -3.13508216235181,
+                  -10.65624123496054
+                ],
+                "rootRPYMaxDegrees": [
+                  6.884010017620408,
+                  -0.9952429755948236,
+                  8.458651127189977
+                ],
+                "waistPitchDegrees": [
+                  12.15507551016733,
+                  17.042620099322257
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 2.2041298361385575,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "1585505fa26307ce261639350258abb16dc94ade5ced028eb136005da8396d1a",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/forward/planner_mode2_forward_speed2p5.json"
+            }
+          ]
+        },
+        "back": {
+          "id": "planner_mode2_back_speed0p8",
+          "file": "planner_mode2_back_speed0p8.json",
+          "targetSpeed": 0.8,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 50,
+            "frames": 50,
+            "score": 0.0005327353950257528,
+            "meanVelocity": [
+              -0.7240596771240231,
+              0.0414629101753235,
+              -0.0009745836257933904
+            ],
+            "qMeanSquaredError": 0.0003534518540352433,
+            "dqMeanSquaredError": 0.017928354099050945,
+            "seamVelocityErrorRMS": 0.9400157632125687,
+            "rootRPYMinDegrees": [
+              -1.5682893976465362,
+              -4.903810950344474,
+              -9.260786661888202
+            ],
+            "rootRPYMaxDegrees": [
+              1.980675964502653,
+              -0.7893959614851292,
+              -3.188444131387588
+            ],
+            "waistPitchDegrees": [
+              10.036468650392559,
+              15.52532324383813
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 0.7240596771240231,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "ec950ab7a40a0036a86c67397d41b6c4dd9a1f9cb417da19cd23962c655355ad",
+          "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/back/planner_mode2_back_speed0p8.json",
+          "variants": [
+            {
+              "id": "planner_mode2_back_speed1p6",
+              "file": "planner_mode2_back_speed1p6.json",
+              "targetSpeed": 1.6,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 38,
+                "frames": 38,
+                "score": 0.002018574602247965,
+                "meanVelocity": [
+                  -1.4249716306987552,
+                  0.0027180992458996018,
+                  0.003067443245335629
+                ],
+                "qMeanSquaredError": 0.000990985259963752,
+                "dqMeanSquaredError": 0.1027589342284213,
+                "seamVelocityErrorRMS": 1.5739959180091225,
+                "rootRPYMinDegrees": [
+                  -3.000564949929163,
+                  -7.740925388277696,
+                  -8.681582271375724
+                ],
+                "rootRPYMaxDegrees": [
+                  4.093237277032922,
+                  -2.4351199311783867,
+                  -2.1816754785369863
+                ],
+                "waistPitchDegrees": [
+                  11.262618020334312,
+                  18.143074180987185
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 1.4249716306987552,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "4c3242c238dd26b866d161a8880bbaec5b4f359bf39608bdb433fe4cb47875d9",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/back/planner_mode2_back_speed1p6.json"
+            },
+            {
+              "id": "planner_mode2_back_speed2p5",
+              "file": "planner_mode2_back_speed2p5.json",
+              "targetSpeed": 2.5,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 57,
+                "frames": 57,
+                "score": 0.0033899109481753493,
+                "meanVelocity": [
+                  -2.2251795049299288,
+                  -0.03469661662453099,
+                  0.006107928460104444
+                ],
+                "qMeanSquaredError": 0.0016159302814376338,
+                "dqMeanSquaredError": 0.17739806667377156,
+                "seamVelocityErrorRMS": 2.009931765905023,
+                "rootRPYMinDegrees": [
+                  -3.0338335888765293,
+                  -6.6714152129830095,
+                  -7.339805769713021
+                ],
+                "rootRPYMaxDegrees": [
+                  2.0277405332028993,
+                  -0.2516690832945605,
+                  3.3613601075929043
+                ],
+                "waistPitchDegrees": [
+                  11.033401866364514,
+                  19.808246979879613
+                ],
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 2.2251795049299288,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "1c8e1b56023dd7937db3a8c2fd16fd3d40e2342feb4c2c392cdef580ebc22ef9",
+              "sourceCandidate": ".work/browser-port/speed-bank-candidates/walk/back/planner_mode2_back_speed2p5.json"
+            }
+          ]
+        }
+      },
+      "speedLimits": {
+        "forward": 2.5,
+        "other": 1.6
+      }
+    },
+    "run": {
+      "mode": 3,
+      "speed": 2.5,
+      "clips": {
+        "left": {
+          "id": "planner_run_left",
+          "file": "planner_run_left.json",
+          "frames": 106,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 34,
+            "frames": 34,
+            "score": 0.004808069904913905,
+            "qMeanSquaredError": 0.0024462739386712645,
+            "dqMeanSquaredError": 0.221009758321301,
+            "orientationSeamRadians": 0.05508146385666056,
+            "yawMin": -0.09375681691337481,
+            "yawMax": 0.08366693506203005,
+            "maxAbsYaw": 0.09375681691337481,
+            "meanVelocity": [
+              -0.040937732247745155,
+              1.3023387684541547,
+              -0.005438941366532204
+            ],
+            "meanDirectionalSpeed": 1.3023387684541547,
+            "singleCycle": true,
+            "strideCount": 1,
+            "phaseAnchor": "One-stride 0.64-0.68 second interval, aligned by the left-knee maximum"
+          },
+          "movement": [
+            0,
+            1,
+            0
+          ],
+          "facing": [
+            1,
+            0,
+            0
+          ],
+          "validation": "not yet tested in H2 closed-loop physics",
+          "candidateSource": "candidates/seed_20450/planner_run_left.json",
+          "targetSpeed": 2.5,
+          "sha256": "e5db43fd93c925f4753e5948e9d067d1bbf48a7df9825842e9ddcfdb97b8c3ec"
+        },
+        "right": {
+          "id": "planner_run_right",
+          "file": "planner_run_right.json",
+          "frames": 106,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 34,
+            "frames": 34,
+            "score": 0.005413705712180156,
+            "qMeanSquaredError": 0.0036224439497313425,
+            "dqMeanSquaredError": 0.15876091717962046,
+            "orientationSeamRadians": 0.06382046547191716,
+            "meanVelocity": [
+              0.06325053818085624,
+              -1.2781922957476415,
+              0.012576246962827891
+            ],
+            "meanDirectionalSpeed": 1.2781922957476415,
+            "singleCycle": true,
+            "strideCount": 1,
+            "phaseAnchor": "One-stride 0.64-0.68 second interval, aligned by the left-knee maximum"
+          },
+          "movement": [
+            0,
+            -1,
+            0
+          ],
+          "facing": [
+            1,
+            0,
+            0
+          ],
+          "validation": "not yet tested in H2 closed-loop physics",
+          "targetSpeed": 2.5,
+          "sha256": "9a4244babf1acea3e2ab93af7290e12a08561916ac7e363da01d924e4111908a"
+        },
+        "forward": {
+          "id": "planner_mode3_forward_speed2p5",
+          "file": "planner_mode3_forward_speed2p5.json",
+          "targetSpeed": 2.5,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 30,
+            "frames": 30,
+            "score": 0.0026800976798915578,
+            "meanVelocity": [
+              3.2198279102643275,
+              0.062472695019096136,
+              0.005437375977635125
+            ],
+            "qMeanSquaredError": 0.001681088826975736,
+            "dqMeanSquaredError": 0.09990088529158218,
+            "seamVelocityErrorRMS": 2.050054162074588,
+            "rootRPYMinDegrees": [
+              -3.397566743249257,
+              -11.09496478472539,
+              0.8773521227424894
+            ],
+            "rootRPYMaxDegrees": [
+              6.849020423227475,
+              -6.209556400721642,
+              3.5712693110238147
+            ],
+            "waistPitchDegrees": [
+              3.25705654741271,
+              15.627024888645666
+            ],
+            "singleCycle": true,
+            "strideCount": 1,
+            "meanDirectionalSpeed": 3.2198279102643275,
+            "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+          },
+          "sha256": "d7243e3e343e1bcb0f95a69b926a452d17e770e8b233f5473182f717fe33349f",
+          "sourceCandidate": ".work/browser-port/source-audit-run-speeds/planner_mode3_forward_speed2p5.json",
+          "variants": [
+            {
+              "id": "planner_mode3_forward_speed4",
+              "file": "planner_mode3_forward_speed4.json",
+              "targetSpeed": 4,
+              "recommendedLoop": {
+                "startFrame": 0,
+                "endFrame": 25,
+                "frames": 25,
+                "score": 0.001018287849322341,
+                "meanVelocity": [
+                  4.402576613426206,
+                  -0.2878733798861499,
+                  -0.0007025621831415751
+                ],
+                "qMeanSquaredError": 0.0003160174136702975,
+                "dqMeanSquaredError": 0.07022704356520436,
+                "seamVelocityErrorRMS": 0.8888439312813828,
+                "rootRPYMinDegrees": [
+                  -5.06475154140871,
+                  -11.102789446227579,
+                  -2.1532181364144547
+                ],
+                "rootRPYMaxDegrees": [
+                  5.757277382473797,
+                  -6.815145891173671,
+                  6.069045386782965
+                ],
+                "waistPitchDegrees": [
+                  19.915085439207186,
+                  25.22366103149168
+                ],
+                "rootRPYPeakToPeakDegrees": [
+                  10.822028923882506,
+                  4.287643555053909,
+                  8.22226352319742
+                ],
+                "waistPitchPeakToPeakDegrees": 5.308575592284495,
+                "postureScreen": "stable-lean",
+                "singleCycle": true,
+                "strideCount": 1,
+                "meanDirectionalSpeed": 4.402576613426206,
+                "phaseAnchor": "Consecutive left-knee swing peaks; one complete same-leg stride"
+              },
+              "sha256": "a884d0dd15676ff03ffabaffd3b7cf71ec327640c43dbfd644090f7282b60a32",
+              "sourceCandidate": ".work/browser-port/source-audit-run-lean-seed42/planner_mode3_forward_speed4.json"
+            }
+          ]
+        },
+        "back": {
+          "id": "planner_run_back",
+          "file": "planner_run_back.json",
+          "frames": 106,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 32,
+            "frames": 32,
+            "score": 0.0020828726789853835,
+            "qMeanSquaredError": 0.0009770136400697777,
+            "dqMeanSquaredError": 0.08570961619451364,
+            "orientationSeamRadians": 0.07053550552317173,
+            "yawMin": -0.13407713314979408,
+            "yawMax": 0.04879211199742017,
+            "maxAbsYaw": 0.13407713314979408,
+            "meanVelocity": [
+              -1.2663733959197954,
+              0.047500738874077776,
+              0.0012687779963015122
+            ],
+            "meanDirectionalSpeed": 1.2663733959197954,
+            "singleCycle": true,
+            "strideCount": 1,
+            "phaseAnchor": "One-stride 0.64-0.68 second interval, aligned by the left-knee maximum"
+          },
+          "movement": [
+            -1,
+            0,
+            0
+          ],
+          "facing": [
+            1,
+            0,
+            0
+          ],
+          "validation": "not yet tested in H2 closed-loop physics",
+          "candidatePromotion": {
+            "seedBase": 21450,
+            "source": "candidates/seed_21450/planner_run_back.json",
+            "sourceSHA256": "f6a39a5b1ca55a5f7a2dc0c03026710f1e367593f258e208dc0a2340afe281ed",
+            "previousSHA256": "f984070f37974f538114e9a59be88ac934d3ec6a82bc0227e730ff083c57d0ba"
+          },
+          "targetSpeed": 2.5,
+          "sha256": "6cb88fcdb753c5292834fc21c2ccef844a20f7cf546dd52f08d2a5a2aaa49667"
+        }
+      },
+      "speedLimits": {
+        "forward": 4,
+        "other": 2.5
+      }
+    },
+    "idle": {
+      "mode": 0,
+      "speed": 0,
+      "clips": {
+        "idle": {
+          "id": "planner_idle_idle",
+          "file": "planner_idle_idle.json",
+          "frames": 106,
+          "recommendedLoop": {
+            "startFrame": 0,
+            "endFrame": 101,
+            "frames": 101,
+            "score": 0.00013455169959588522,
+            "qMeanSquaredError": 0.000046677178704770004,
+            "dqMeanSquaredError": 0.00876898312201789,
+            "orientationSeamRadians": 0.001921924405049819,
+            "meanVelocity": [
+              -0.00016366133908971676,
+              -0.000028257076121350563,
+              -0.0004005668186905141
+            ],
+            "meanDirectionalSpeed": 0
+          },
+          "movement": [
+            0,
+            0,
+            0
+          ],
+          "facing": [
+            1,
+            0,
+            0
+          ],
+          "validation": "not yet tested in H2 closed-loop physics",
+          "sha256": "ba2e7d2fe40823d39c28a5337a401595473eca159e77a5c9a52470a643175248"
+        }
+      },
+      "speedLimits": {
+        "forward": 0,
+        "other": 0
+      }
+    }
+  },
+  "kind": "Offline G1 reference targets drive the real local H2 policy and physics. New speed knots use corrected deployment horizon/timing; four legacy idle and Run back/left/right references retain their original generation provenance and closed-loop validation.",
+  "quaternionOrder": "wxyz",
+  "fps": 50,
+  "updatedAt": "2026-10-09T17:36:45.433832+00:00",
+  "forwardStopBlendSeconds": 0.55,
+  "stopBlendSeconds": 0.55,
+  "compaction": {
+    "script": "scripts/compact-planner-bank.py",
+    "sourceManifestSHA256": "fecf58be4f3905a4d5128163c6673cfd5875cd62c74b8c906a7445a453b1393e",
+    "beforeBytes": 38525305,
+    "afterBytes": 3920548
+  },
+  "walkStopBlendSeconds": 0.4
+}

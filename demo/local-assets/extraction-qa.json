@@ -1,0 +1,25 @@
+{
+  "models": {
+    "encoder_native": {
+      "bytes": 16950929,
+      "sha256": "142b7fb729528c2c0f474d656266bac313a703d10021b3759d84f9cd2b72634f",
+      "matchesSource": true
+    },
+    "decoder": {
+      "bytes": 40743594,
+      "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee",
+      "matchesSource": true
+    }
+  },
+  "referenceCount": 10,
+  "qpos": 68,
+  "localJoints": 31,
+  "closedLoopGroups": 5,
+  "meshes": 38,
+  "mujocoVersion": "3.10.0",
+  "referenceShapesAndQuaternionsValid": true,
+  "unbundledModels": [
+    "encoder_full",
+    "planner"
+  ]
+}

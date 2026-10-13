@@ -1,0 +1,1007 @@
+{
+  "testedAt": "2026-10-10T15:37:30.323Z",
+  "status": "pass",
+  "scope": "Raw canonical G1 encoder (selector3) + H2 decoder + original MuJoCo WASM physics. No state/reference injection during rollouts; no changes to gains, clipping, targets or timing.",
+  "host": {
+    "runtime": "Node WebAssembly",
+    "node": "v22.20.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "protocol": {
+    "policyHz": 50,
+    "physicsHz": 1000,
+    "holdSeconds": 2,
+    "startup": "Production LocalPolicy only; manifest startupHoldSeconds determines frame0/dq0 policy steps. No subclass or method replacement.",
+    "initialization": "Unchanged LocalPolicy.reset with controller.initialQpos/default qvel; no motion-specific initial state",
+    "fullReference": true
+  },
+  "limits": {
+    "minimumRootHeight": 0.28,
+    "minimumKneelingSeconds": 0.1,
+    "kneeContactRadius": 0.15,
+    "kneelTerminalMinimumRootHeight": 0.9,
+    "kneelTerminalMinimumDoubleSupportFraction": 0.8,
+    "kneelTerminalMaximumKneeContactFraction": 0.05,
+    "maximumNonFootGroundContactSeconds": 0.04,
+    "maximumSustainedTorsoTiltDeg": 85,
+    "maximumSevereTiltSeconds": 0.2,
+    "terminalMinimumRootHeight": 0.5,
+    "terminalMaximumTorsoTiltDeg": 45,
+    "terminalMaximumHorizontalSpeedRMS": 0.25,
+    "terminalMaximumVerticalSpeedRMS": 0.2,
+    "minimumKickPoseSeconds": 0.06,
+    "minimumKickFootClearance": 0.25,
+    "minimumKickHorizontalReach": 0.35,
+    "minimumKickLegExcursionRad": 0.5,
+    "minimumFlightMeasurementTimeSeconds": 0.5,
+    "minimumFlightSeconds": 0.06,
+    "minimumFlightFootClearance": 0.015,
+    "minimumFlightForwardDisplacement": 0.12,
+    "minimumLongJumpForwardDisplacement": 0.35,
+    "maximumStandingJumpGroundedFootAdvance": 0.15,
+    "minimumPreFlightDoubleSupportSeconds": 0.06
+  },
+  "limitations": [
+    "Bounded simulation QA, not a hardware safety guarantee or paper benchmark.",
+    "Measurements are at 50Hz policy boundaries. Contact constraints describe the last 1ms physics substep; current kinematics are refreshed without changing solver state.",
+    "Flight requires no active floor contacts and both collision-mesh sole minima above the floor. Reference labels or root trajectories alone cannot pass.",
+    "Default reset starts slightly above contact; the first .5s cannot count as flight. Standing takeoff is measured from grounded foot advance and double support, not root translation during crouch/push-off.",
+    "Kneeling permits shin contact or thigh-mesh contact within 0.15m of the knee joint; no pelvis, torso, head or hand floor contact is allowed. Kneeling torso inclination alone is not treated as falling.",
+    "The G1 reference joint angles are not H2 target angles; no cross-robot raw-angle tracking-error score is claimed.",
+    "No browser rendering or scheduling is tested."
+  ],
+  "sources": {
+    "scripts/check-g1-explore.mjs": {
+      "bytes": 25919,
+      "sha256": "64d397f27982dcd7f244a6007e62eb3eac8bc05165a5417b16dae7c313ac5aa5"
+    },
+    "demo/local-policy.js": {
+      "bytes": 9594,
+      "sha256": "2b16bc37395e3cbab985f787ad4c9308f3eeb100d5674916ba4dc2976837402b"
+    },
+    "demo/local-reference.js": {
+      "bytes": 3025,
+      "sha256": "c54401ba90d12e570b4de1e4735451d4b2c7c4913eeea8cd38b2a05892dc13f5"
+    },
+    "demo/local-planner.js": {
+      "bytes": 9667,
+      "sha256": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119"
+    },
+    "demo/local-physics.js": {
+      "bytes": 13376,
+      "sha256": "c0c138bf5f0a2fd559b4e8e1383de831c2f4d1eb129cee94ae22a007abb3f8a0"
+    },
+    "demo/local-inference.js": {
+      "bytes": 8606,
+      "sha256": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159"
+    },
+    "demo/vendor/mujoco/mujoco.js": {
+      "bytes": 292374,
+      "sha256": "45e8e0e1617c19fbf7f00b36a6a72d1c0c980c0a4f38523e04f0641e8fbab7b9"
+    },
+    "demo/vendor/mujoco/mujoco.wasm": {
+      "bytes": 10143561,
+      "sha256": "832597ae0a0e306c97ed43d2a9bbca033cf3e547eced410fb9011d87a68d4207"
+    },
+    "demo/vendor/ort/ort.wasm.min.mjs": {
+      "bytes": 50126,
+      "sha256": "219e6a1fc8a9938268d18efca3c91d310bd2f4a59bbd13744df5b2b7fc6cee3b"
+    },
+    "demo/vendor/ort/ort-wasm-simd-threaded.mjs": {
+      "bytes": 24381,
+      "sha256": "e13f7f94fc51b4ca72b12faeb1ee95f4ace6dfbc8939bc718aabdc0a27c4299b"
+    },
+    "demo/vendor/ort/ort-wasm-simd-threaded.wasm": {
+      "bytes": 14239897,
+      "sha256": "3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2"
+    },
+    "demo/local-assets/controller.json": {
+      "bytes": 5978,
+      "sha256": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f"
+    },
+    "demo/local-assets/physics/manifest.json": {
+      "bytes": 4167,
+      "sha256": "7b456403cae20e75cd2a26f4afe53eaa83c90eb2122025b59a7c602ecbd3f478"
+    },
+    "demo/local-assets/physics/physics-config.json": {
+      "bytes": 33325,
+      "sha256": "7986df7f2e97ffa76ce79c865458d32d8178fe3fe332889455b72252e0b75771"
+    },
+    "demo/local-assets/physics/meshes/left_hip_roll_link.stl": {
+      "bytes": 204384,
+      "sha256": "32c8554cee739281bee25da955f61dcf4fb828c4deeee94b963403c512875265"
+    },
+    "demo/local-assets/physics/model.xml": {
+      "bytes": 36191,
+      "sha256": "488766ab4899370001960b38e801ce3443eb5d519b7dd08a4a7ceb6b5b0098c2"
+    },
+    "demo/local-assets/physics/meshes/left_ankle_roll_link.stl": {
+      "bytes": 12384,
+      "sha256": "65e35f53cf85e55c0c61a6b10e7c2e6e4c3a46b18bf9ce6dffa520ec1e4e5b66"
+    },
+    "demo/local-assets/physics/meshes/left_ankle_pitch_link.stl": {
+      "bytes": 319184,
+      "sha256": "0b15f8fcbfaece06fbbf16684a96d8a31914ab870c55b292ac18203d7c6c7a62"
+    },
+    "demo/local-assets/physics/meshes/left_hip_yaw_link.stl": {
+      "bytes": 300884,
+      "sha256": "1222ef2aed7b276e05a86b588d92df934c7feac537ae2491243db2d32fd9aac6"
+    },
+    "demo/local-assets/physics/meshes/right_hip_roll_link.stl": {
+      "bytes": 203784,
+      "sha256": "a1bc4cf4a5c2ad261af93c29972dce9bd8a1818c78fea513dec46d25b729b9fc"
+    },
+    "demo/local-assets/physics/meshes/right_ankle_roll_link.stl": {
+      "bytes": 12384,
+      "sha256": "27cbf682efac52262a35867ce39c969a56e87e00395a7f29ca4840149cf0a96a"
+    },
+    "demo/local-assets/physics/meshes/waist_yaw_link.stl": {
+      "bytes": 20684,
+      "sha256": "385f8caecd05d046aabd3cd4721e2d23a27f190646a247f71c8d0c19114456a2"
+    },
+    "demo/local-assets/physics/meshes/right_hip_yaw_link.stl": {
+      "bytes": 297484,
+      "sha256": "9095a160b6c5ba60a8460439f748764baee08bf85ef9d05c0bdc14b7a1c66437"
+    },
+    "demo/local-assets/physics/meshes/waist_roll_link.stl": {
+      "bytes": 13084,
+      "sha256": "e229c2617f2c1ed26d29b44bc45cfe9622cfd0dcb6974f1896e4a21941706c7c"
+    },
+    "demo/local-assets/physics/meshes/head_pitch_link.stl": {
+      "bytes": 39484,
+      "sha256": "1800daa300a7319bb14dda0b9bddc5c76fa8ca2b7943efef3ecc298886e89e33"
+    },
+    "demo/local-assets/physics/meshes/right_ankle_pitch_link.stl": {
+      "bytes": 317784,
+      "sha256": "6270e30af526c306e4a1006f7ad9a70fe010ffa8451c9630ff98527a5bdce2d1"
+    },
+    "demo/local-assets/physics/meshes/left_shoulder_pitch_link.stl": {
+      "bytes": 271484,
+      "sha256": "7d10e524f5124b8dd37d8b9b61f2ae9342f0605bdc87ba49c6953c2863fa32c9"
+    },
+    "demo/local-assets/physics/meshes/left_shoulder_roll_link.stl": {
+      "bytes": 307184,
+      "sha256": "cc86323ffe6477cacc6f6ee2a7e000940432e47ba53d3514716f3539f8c83208"
+    },
+    "demo/local-assets/physics/meshes/left_wrist_pitch_link.stl": {
+      "bytes": 35084,
+      "sha256": "6ae7cbf9941e3507546c2d568d0bac32b93eaaafaa83117371f5c7363172bcb3"
+    },
+    "demo/local-assets/physics/meshes/left_shoulder_yaw_link.stl": {
+      "bytes": 286484,
+      "sha256": "253bde468b2156e13a0172436ab0327001d08b2a7872b729426e2f4a6f70183f"
+    },
+    "demo/local-assets/physics/meshes/left_wrist_roll_link.stl": {
+      "bytes": 206684,
+      "sha256": "7fed0dde408dd63bec1a5a13721173e66e4a063b68850a2ab7701719da6bec62"
+    },
+    "demo/local-assets/physics/meshes/left_elbow_link.stl": {
+      "bytes": 472684,
+      "sha256": "3da8b8c0a387fd91911a3fb3dda3ce6a0c56903490d9e08b4536216066211b5f"
+    },
+    "demo/local-assets/physics/meshes/left_wrist_yaw_link.stl": {
+      "bytes": 147984,
+      "sha256": "c8fc77bf0b8617f9e8405c4a1006280b1605a3b3a130b45428d4be8531d75005"
+    },
+    "demo/local-assets/physics/meshes/right_shoulder_yaw_link.stl": {
+      "bytes": 284684,
+      "sha256": "78b6403fc846c6f64cd6740ec3432f1933635724f988313fdf848063e261c73d"
+    },
+    "demo/local-assets/physics/meshes/right_wrist_pitch_link.stl": {
+      "bytes": 35084,
+      "sha256": "216abd2755c2288dd408afb1b59867cdac3e22ef7a5ee111b54f456b38b25074"
+    },
+    "demo/local-assets/physics/meshes/right_shoulder_roll_link.stl": {
+      "bytes": 306984,
+      "sha256": "be48510290d600d0656cd6055d2a6c58d94665e2f8210fb39ebed8cfdcf0abed"
+    },
+    "demo/local-assets/physics/meshes/right_shoulder_pitch_link.stl": {
+      "bytes": 271684,
+      "sha256": "e2b725c2592250811135c05004bb5ec6356b357fdf45781cb2affc7e61499cfb"
+    },
+    "demo/local-assets/physics/meshes/right_wrist_roll_link.stl": {
+      "bytes": 206584,
+      "sha256": "545475c0f7377661a9c67a983f4017985578e805045d2d7b42df8d37c5641d7d"
+    },
+    "demo/local-assets/physics/meshes/right_wrist_yaw_link.stl": {
+      "bytes": 147284,
+      "sha256": "c13910f88609dd2b801c1398150ceb6c82f65ca308bc8e2878f19ea9a3dabda5"
+    },
+    "demo/local-assets/physics/meshes/left_ankle_A_link.STL": {
+      "bytes": 347984,
+      "sha256": "32fa65107d904a016990a94edae01eab17ce5a84a0eef02af96056cdbc7a478c"
+    },
+    "demo/local-assets/physics/meshes/right_ankle_A_link.STL": {
+      "bytes": 347984,
+      "sha256": "46d6fa85f043e50228b45cc2f6f6f95f22be327e9b68a767417ec5fc1c9ceb06"
+    },
+    "demo/local-assets/physics/meshes/right_elbow_link.stl": {
+      "bytes": 477684,
+      "sha256": "421fdb043f2775038c72e692a598f96840f1bd2b898ce19b35e240fe5617abc4"
+    },
+    "demo/local-assets/physics/meshes/pelvis.stl": {
+      "bytes": 689984,
+      "sha256": "1f2a2e99ce060eb1a25efcbadfdd4424347f58e6d954e023dcfcb05d87c55a4e"
+    },
+    "demo/local-assets/physics/meshes/Link-pitch-R-A3.STL": {
+      "bytes": 361584,
+      "sha256": "aaf6a787d16b6b971926634794d3b3bd5d7cd3443720780663f15037a5ecaf06"
+    },
+    "demo/local-assets/physics/meshes/left_knee_link.stl": {
+      "bytes": 698284,
+      "sha256": "f24801b1dde9fd004b2f2178ef65318364a48daede96ab95c8ea2d979a642219"
+    },
+    "demo/local-assets/physics/meshes/right_knee_link.stl": {
+      "bytes": 700884,
+      "sha256": "4db181250da6aaec995b4eda88a3729c5144128704c3d949fa9cb5a56f437b1b"
+    },
+    "demo/local-assets/physics/meshes/torso_link.stl": {
+      "bytes": 526884,
+      "sha256": "0f0c12bddbe2e29df43f38fbaeb3a65c08d43123fbb62379a1cc58e9c6df47b5"
+    },
+    "demo/local-assets/physics/meshes/left_hand_link.stl": {
+      "bytes": 753684,
+      "sha256": "b326d6cbdeb2ca202feb193b3103f8194fc594e6177e7d1a73791bcea39d4c47"
+    },
+    "demo/local-assets/physics/meshes/Link-pitch-L-A3.STL": {
+      "bytes": 360784,
+      "sha256": "b1fa54e1503dc29e9f16e714c1f40a86f3e317a881d3d7662c1419d10502318e"
+    },
+    "demo/local-assets/physics/meshes/right_hand_link.stl": {
+      "bytes": 754384,
+      "sha256": "8e5d75d26f970b05148436d21973cfe29cc1bc335783cd6e5104d6170bd8a139"
+    },
+    "demo/local-assets/physics/meshes/left_hip_pitch_link.stl": {
+      "bytes": 1269084,
+      "sha256": "d1bccf3c881baf960ff75c17d570f9a5871ebbf1f8935f4d8873677533d6d3ec"
+    },
+    "demo/local-assets/physics/meshes/right_hip_pitch_link.stl": {
+      "bytes": 1278984,
+      "sha256": "33de10c25bee624038bf31bccb41aa84bfea0cd6bca5fcd5dfee8fa84eb0eab1"
+    },
+    "demo/local-assets/physics/meshes/head_yaw_link.stl": {
+      "bytes": 1481284,
+      "sha256": "eb39c18b45de3194341ae47f259c21a00dc7f25ba9a10dfde3673b11debf138f"
+    },
+    "demo/local-assets/models/encoder_g1.onnx": {
+      "bytes": 16932124,
+      "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975"
+    },
+    "demo/local-assets/models/decoder.onnx": {
+      "bytes": 40743594,
+      "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/manifest.json": {
+      "bytes": 11393,
+      "sha256": "3ddfd8b526a6638a3ebdc4c7e67be734f91dbb120ac561d5a45919ce328470ec"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/broad_jump_003__A360.json": {
+      "bytes": 488557,
+      "sha256": "7027838525670878d695da6183e65016ef59e5ac9fccda2cd39dc19b4c2ebc7b"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/dance_in_da_party_001__A464.json": {
+      "bytes": 1008372,
+      "sha256": "668a277907fc6c06734593f7e76856d891138ae228344a179ffb01dc2142fdb4"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/dance_in_da_party_001__A464_M.json": {
+      "bytes": 1008887,
+      "sha256": "1d0baa5b7c17bac0b4b3a7934b3b92b50283f51f082aa3aff72f8bfd107be5a3"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/forward_lunge_R_001__A359_M.json": {
+      "bytes": 812616,
+      "sha256": "1cf71348066fba958dc83e0b23d14a0dde166d506315ce8314accfddf615d1b4"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_broad_jump_002__A359.json": {
+      "bytes": 255702,
+      "sha256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_dejection_R_001__A430.json": {
+      "bytes": 721326,
+      "sha256": "76bcbb4a357a49dbe5d7ed4890f6d5627b44fbdc6380a4055653117052040d2e"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_jump_and_land_light_002__A001.json": {
+      "bytes": 423964,
+      "sha256": "07a4e883b536a2d264e92dbc7d633fe932cd6e5e7b5d3bfb2f643a68707f9055"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_prayer_R_001__A430.json": {
+      "bytes": 365035,
+      "sha256": "afbfab7251219aac5bfe4634b1d98d92631bbcab5b1d693714bb4083dc086f9e"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/h2_default_stand.json": {
+      "bytes": 1103198,
+      "sha256": "ea832417d0b33ad044aaa2111ff5c71d4c471531a01fa1b894cf54c07a8776f3"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/high_jump_R_opt_2_001__A477.json": {
+      "bytes": 227841,
+      "sha256": "f732618a2ab0105b52a2902c61bbc6c674ecc00937356a3be9d95be8e28becb4"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/macarena_001__A545.json": {
+      "bytes": 2803221,
+      "sha256": "5b0c90cad84a7356c68849e6f9f53239d83fb206360a1e50092f109970fc3f67"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/macarena_001__A545_M.json": {
+      "bytes": 2804580,
+      "sha256": "80c2dd2c2f86322bc40425f4efcd661b43d58fe90ac133dd95fa0e8d69a6e99a"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/neutral_kick_trash_R_003__A098.json": {
+      "bytes": 459846,
+      "sha256": "02d41c35a3b0ea6ca0d61620bead21a3d4fa77774f4b0b403ba089c52acf6bd4"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/neutral_kick_trash_R_003__A098_M.json": {
+      "bytes": 459062,
+      "sha256": "fb10a96372b33afce115ee161cb02fb0a60273bed26928f3fc99711a0341f702"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/planner_walk_04.json": {
+      "bytes": 149534,
+      "sha256": "e83222101c9b19cd495f38b4b26c643d649cde1b80056fa4ae8f5ec37fe49688"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/squat_001__A359.json": {
+      "bytes": 863730,
+      "sha256": "aa687d1f3d7c38d4fe98e23f95bcbf5d09597d919a2cd108912a657b431d1d4b"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/walking_quip_360_R_002__A428.json": {
+      "bytes": 930822,
+      "sha256": "785953c309d21b7c3529d8c1bb9be378297f83b06f5dd173aef36621179173b6"
+    },
+    "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/walking_quip_360_R_002__A428_M.json": {
+      "bytes": 930573,
+      "sha256": "873d74e3000c5a7904e1fae4c997084e5f1fa969e24814cf06245e24207a08c8"
+    }
+  },
+  "cases": [
+    {
+      "id": "g1_explore_broad_jump_002__A359",
+      "kind": "long_jump",
+      "sourceMenuNumber1Based": 5,
+      "referenceSpace": "g1",
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 389,
+        "decoderCalls": 389,
+        "maxRawFeatureError": 0
+      },
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "kickSide": null,
+      "source": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_broad_jump_002__A359.json",
+      "sourceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "provenance": {
+        "kind": "Original native G1 deployment reference; not an H2 retarget or simulator rollout",
+        "serverHostname": "ai-precog-machine21",
+        "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/broad_jump_002__A359",
+        "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/230509/broad_jump_002__A359.csv",
+        "sourceCSVSHA256": "e9f90fe2e843beb998ba649f520058fb3677ac7eddeddf14b39e1300815a214a",
+        "sourceFPS": 120,
+        "sourceFrames": 631,
+        "sourceManifestSHA256": "ee25dddbc6ebbbd8e9d84701a7ca06b51581c1e11fdd872ba12d521e5cbba952",
+        "sourceBundleSHA256": {
+          "body_ang_vel.csv": "7a518309ca1ad7b1da8fd2e30597a9ee2c65286b1a435550355375a2b78b2cfc",
+          "body_lin_vel.csv": "64fa90f5053570a9e5a19835c64b1c8f144676d58292d85990316d07268372b2",
+          "body_pos.csv": "07c45a81ce170af893671e366cdc2941f5ae7a45aedf680126a6d7bf2244c975",
+          "body_quat.csv": "ebfb0fc76901ae7e8236c7aeb7f177acb517c2cac4fb2ba014a1e5143224d69a",
+          "joint_pos.csv": "d0bd4ffca2d85ddb59f2f4d4b84e9c38cede6a42e81bbc6e2bd9b3afeb285c47",
+          "joint_vel.csv": "ac6007dd588a6032c1de581bf934eed68195bbaeabe9582ccef71c15a66c781c",
+          "metadata.txt": "3afdc3c4ee16e13404b88e177f262a72782e016891fd7dff44875299b2c00660"
+        },
+        "exporterSHA256": "9991a479e918e73ba3750930f29dbf22e0fb1aaa4a6e3857591d08f01239e865",
+        "deploymentResampling": "120 to 50 Hz: linear joints/root position; SLERP root rotation; FK at 50 Hz; final pose hold < 20 ms",
+        "deploymentVelocityMethod": "forward joint difference (last repeats); central world linear/angular differences",
+        "candidateTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+        "jointProjection": "none",
+        "initialQposOverride": false,
+        "physicalValidation": "not_run",
+        "sourceMenuNumber1Based": 5,
+        "sourceRuntimeIndex0Based": 4
+      },
+      "referenceFrames": 264,
+      "referenceSeconds": 5.26,
+      "completedReference": true,
+      "completedHold": true,
+      "failures": [],
+      "sampleCount": 390,
+      "completionTime": 5.780000000000265,
+      "actualHoldSeconds": 2.000000000000668,
+      "wallSeconds": 3.4581688329999998,
+      "minRootHeight": 0.3624750202565157,
+      "maxRootTiltDeg": 34.724544506018304,
+      "maxTorsoTiltDeg": 62.44418076453456,
+      "maxNonFootGroundContactSeconds": 0,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.010398569102904124,
+        "verticalSpeed": 0.0016438126631238175,
+        "minRootHeight": 1.01330182022582,
+        "maxTorsoTiltDeg": 1.7451888946807634,
+        "groundContactFraction": 1
+      },
+      "jointExcursions": {
+        "left_hip_pitch_joint": 2.369023928829311,
+        "left_hip_roll_joint": 0.7363992660187499,
+        "left_hip_yaw_joint": 1.1265689978255704,
+        "left_knee_joint": 2.0308856520781675,
+        "left_ankle_roll_joint": 0.3000782397659904,
+        "left_ankle_pitch_joint": 1.2260531866669406,
+        "right_hip_pitch_joint": 2.3469336810929553,
+        "right_hip_roll_joint": 0.7762757676251532,
+        "right_hip_yaw_joint": 1.0980632442887468,
+        "right_knee_joint": 2.5610917660631998,
+        "right_ankle_roll_joint": 0.3482870089116077,
+        "right_ankle_pitch_joint": 1.5236296764082224,
+        "waist_yaw_joint": 0.43987614254820934,
+        "waist_roll_joint": 0.38924003502710114,
+        "waist_pitch_joint": 0.5828692864615881,
+        "head_pitch_joint": 0.37899322116048606,
+        "head_yaw_joint": 0.006080111908565859,
+        "left_shoulder_pitch_joint": 2.9971793651581997,
+        "left_shoulder_roll_joint": 1.1000500414805963,
+        "left_shoulder_yaw_joint": 1.0619700165328765,
+        "left_elbow_joint": 1.4263114362754414,
+        "left_wrist_roll_joint": 0.9540717379698096,
+        "left_wrist_pitch_joint": 0.45434972520421685,
+        "left_wrist_yaw_joint": 1.1589799403544034,
+        "right_shoulder_pitch_joint": 3.0098794893105105,
+        "right_shoulder_roll_joint": 1.3893901927859011,
+        "right_shoulder_yaw_joint": 1.0282069794149697,
+        "right_elbow_joint": 2.069161822904828,
+        "right_wrist_roll_joint": 0.7536045930902201,
+        "right_wrist_pitch_joint": 0.49365884696574336,
+        "right_wrist_yaw_joint": 0.8352077108845831
+      },
+      "maxForbiddenGroundContactSeconds": 0,
+      "feet": {
+        "left": {
+          "maximumClearance": 0.3672363438149542,
+          "maximumRootRelativeHorizontalReach": 0.5525572977334213,
+          "maximumRootRelativeForward": 0.45623797839564395,
+          "heightExcursion": 0.4793935492160421,
+          "maximumContiguousKickPoseSeconds": 0.12,
+          "legExcursion": 2.369023928829311
+        },
+        "right": {
+          "maximumClearance": 0.46496636932180324,
+          "maximumRootRelativeHorizontalReach": 0.49275238386616826,
+          "maximumRootRelativeForward": 0.4050267022742554,
+          "heightExcursion": 0.5856806159753295,
+          "maximumContiguousKickPoseSeconds": 0.1,
+          "legExcursion": 2.5610917660631998
+        }
+      },
+      "actualDisplacement": [
+        1.9965945341376434,
+        3.3906814694841574e-05,
+        0.015009441311077731
+      ],
+      "actualForwardDisplacement": 1.9965945341376434,
+      "flights": [
+        {
+          "start": 3.159999999999763,
+          "end": 3.559999999999719,
+          "duration": 0.42,
+          "forwardDisplacement": 0.5795316249946918,
+          "approachRootForwardDisplacement": 0.31832134590505895,
+          "maximumGroundedFootForwardAdvanceBeforeFlight": 0.015609567245708007,
+          "preFlightDoubleSupportSeconds": 0.28,
+          "rootRise": 0.13189209109101974,
+          "minimumFootClearance": 0.01644717653987457,
+          "landingTime": 3.5999999999997145
+        }
+      ],
+      "qualifyingFlights": [
+        {
+          "start": 3.159999999999763,
+          "end": 3.559999999999719,
+          "duration": 0.42,
+          "forwardDisplacement": 0.5795316249946918,
+          "approachRootForwardDisplacement": 0.31832134590505895,
+          "maximumGroundedFootForwardAdvanceBeforeFlight": 0.015609567245708007,
+          "preFlightDoubleSupportSeconds": 0.28,
+          "rootRise": 0.13189209109101974,
+          "minimumFootClearance": 0.01644717653987457,
+          "landingTime": 3.5999999999997145
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "g1_explore_dejection_R_001__A430",
+      "kind": "double_kneel",
+      "sourceMenuNumber1Based": 2,
+      "referenceSpace": "g1",
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 889,
+        "decoderCalls": 889,
+        "maxRawFeatureError": 8.023096076392733e-18
+      },
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "kickSide": null,
+      "source": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_dejection_R_001__A430.json",
+      "sourceSHA256": "76bcbb4a357a49dbe5d7ed4890f6d5627b44fbdc6380a4055653117052040d2e",
+      "provenance": {
+        "kind": "Original native G1 deployment reference; not an H2 retarget or simulator rollout",
+        "serverHostname": "ai-precog-machine21",
+        "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/dejection_R_001__A430",
+        "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/230713/dejection_R_001__A430.csv",
+        "sourceCSVSHA256": "c6676136ea8f31ebca6e1fb9240c9abfe0fa200be3f495c120b4bd7a4e3864a6",
+        "sourceFPS": 120,
+        "sourceFrames": 1830,
+        "sourceManifestSHA256": "ee25dddbc6ebbbd8e9d84701a7ca06b51581c1e11fdd872ba12d521e5cbba952",
+        "sourceBundleSHA256": {
+          "body_ang_vel.csv": "9ff32cada0fdf53f450fad54334c734caa7f5099009445d7d41febdf8716b7a0",
+          "body_lin_vel.csv": "c36ffab91e6156489e12e732fb9328f35333ed388276cc20f2264965d0fbd4f6",
+          "body_pos.csv": "1fa03405f75ae356243eed5b81c6dc8eaa485e55eeaefa36bc67dada41a81f1f",
+          "body_quat.csv": "68552e8e68bb9f30d50e626dd18ea90a9f0c4efd974a95039e896368bffc0258",
+          "joint_pos.csv": "6c8d19ed1c2b00db936a0105ea60db34d6f51e9dc53cc6db18f615705314142f",
+          "joint_vel.csv": "fd4e05f49ce6dc37d4f6db3661293d31c9330af24af14d96176846ef7949ceb1",
+          "metadata.txt": "d53ed341666b1c2b4b830048e8e20a6630451f55d03c32d39dc63a3723996c7e"
+        },
+        "exporterSHA256": "9991a479e918e73ba3750930f29dbf22e0fb1aaa4a6e3857591d08f01239e865",
+        "deploymentResampling": "120 to 50 Hz: linear joints/root position; SLERP root rotation; FK at 50 Hz; final pose hold < 20 ms",
+        "deploymentVelocityMethod": "forward joint difference (last repeats); central world linear/angular differences",
+        "candidateTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+        "jointProjection": "none",
+        "initialQposOverride": false,
+        "physicalValidation": "not_run",
+        "sourceMenuNumber1Based": 2,
+        "sourceRuntimeIndex0Based": 1
+      },
+      "referenceFrames": 764,
+      "referenceSeconds": 15.26,
+      "completedReference": true,
+      "completedHold": true,
+      "failures": [],
+      "sampleCount": 890,
+      "completionTime": 15.779999999996694,
+      "actualHoldSeconds": 2.0000000000020535,
+      "wallSeconds": 7.485913333,
+      "minRootHeight": 0.39099206663485264,
+      "maxRootTiltDeg": 31.22170250919755,
+      "maxTorsoTiltDeg": 50.12779824233804,
+      "maxNonFootGroundContactSeconds": 7.52,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.014990974640610106,
+        "verticalSpeed": 0.004178420216832796,
+        "minRootHeight": 1.011372813533347,
+        "maxTorsoTiltDeg": 1.8633211478182297,
+        "groundContactFraction": 1
+      },
+      "jointExcursions": {
+        "left_hip_pitch_joint": 2.2222887205206034,
+        "left_hip_roll_joint": 0.7992823913482567,
+        "left_hip_yaw_joint": 1.3109439099413898,
+        "left_knee_joint": 2.4975437695808744,
+        "left_ankle_roll_joint": 0.3466269500391357,
+        "left_ankle_pitch_joint": 1.1597373579132844,
+        "right_hip_pitch_joint": 2.013961608215518,
+        "right_hip_roll_joint": 0.6651461118398243,
+        "right_hip_yaw_joint": 1.3045811178377489,
+        "right_knee_joint": 2.714998727024925,
+        "right_ankle_roll_joint": 0.6155262425635067,
+        "right_ankle_pitch_joint": 1.5888577643719122,
+        "waist_yaw_joint": 0.45226782415102484,
+        "waist_roll_joint": 0.7067500476589277,
+        "waist_pitch_joint": 0.4539144138425639,
+        "head_pitch_joint": 0.27954846624604246,
+        "head_yaw_joint": 0.03417370193812923,
+        "left_shoulder_pitch_joint": 1.8050907420100288,
+        "left_shoulder_roll_joint": 1.3732528663740629,
+        "left_shoulder_yaw_joint": 1.858449241909927,
+        "left_elbow_joint": 1.3797078915750927,
+        "left_wrist_roll_joint": 1.0905466753180189,
+        "left_wrist_pitch_joint": 0.32533485524426053,
+        "left_wrist_yaw_joint": 1.0641212171807237,
+        "right_shoulder_pitch_joint": 1.691857756523495,
+        "right_shoulder_roll_joint": 1.195827042895905,
+        "right_shoulder_yaw_joint": 1.9241415676940847,
+        "right_elbow_joint": 1.7734767083261938,
+        "right_wrist_roll_joint": 0.7170410432463209,
+        "right_wrist_pitch_joint": 0.5947710841569936,
+        "right_wrist_yaw_joint": 0.4678190463715436
+      },
+      "maxForbiddenGroundContactSeconds": 0,
+      "feet": {
+        "left": {
+          "maximumClearance": 0.04248991181062016,
+          "maximumRootRelativeHorizontalReach": 0.42633174906822063,
+          "maximumRootRelativeForward": 0.15396820961323351,
+          "heightExcursion": 0.11539224297772345,
+          "maximumContiguousKickPoseSeconds": 0,
+          "legExcursion": 2.4975437695808744
+        },
+        "right": {
+          "maximumClearance": 0.05313419332432673,
+          "maximumRootRelativeHorizontalReach": 0.38520883405897266,
+          "maximumRootRelativeForward": 0.29529924405205404,
+          "heightExcursion": 0.15171528272398332,
+          "maximumContiguousKickPoseSeconds": 0,
+          "legExcursion": 2.714998727024925
+        }
+      },
+      "actualDisplacement": [
+        0.8997996153186821,
+        -0.35535422309181885,
+        0.013578611635651772
+      ],
+      "actualForwardDisplacement": 0.8997996153186821,
+      "flights": [],
+      "kneeling": {
+        "singleKneeSupportedSeconds": 0.36,
+        "doubleKneeSeconds": 1.66,
+        "leftKneeContactSeconds": 6.22,
+        "rightKneeContactSeconds": 7.16,
+        "terminalDoubleSupportFraction": 1,
+        "terminalKneeContactFraction": 0
+      },
+      "status": "pass"
+    },
+    {
+      "id": "g1_explore_jump_and_land_light_002__A001",
+      "kind": "jump",
+      "sourceMenuNumber1Based": 4,
+      "referenceSpace": "g1",
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 564,
+        "decoderCalls": 564,
+        "maxRawFeatureError": 0
+      },
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "kickSide": null,
+      "source": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_jump_and_land_light_002__A001.json",
+      "sourceSHA256": "07a4e883b536a2d264e92dbc7d633fe932cd6e5e7b5d3bfb2f643a68707f9055",
+      "provenance": {
+        "kind": "Original native G1 deployment reference; not an H2 retarget or simulator rollout",
+        "serverHostname": "ai-precog-machine21",
+        "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/jump_and_land_light_002__A001",
+        "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/210531/jump_and_land_light_002__A001.csv",
+        "sourceCSVSHA256": "5bfd1cd08f6bfcb77a9bac00bbed84895d113a343d6c86793110f2e902cf7f0f",
+        "sourceFPS": 120,
+        "sourceFrames": 1051,
+        "sourceManifestSHA256": "ee25dddbc6ebbbd8e9d84701a7ca06b51581c1e11fdd872ba12d521e5cbba952",
+        "sourceBundleSHA256": {
+          "body_ang_vel.csv": "2c5c84875f62316092a4386a589b178a5336491088552a1344445d70e5a01b88",
+          "body_lin_vel.csv": "a5902c0cbd895d25fffdfac42f6c33943b7a838d9b0d00a1e1d3421340c426f6",
+          "body_pos.csv": "9d6cbaefd09852342f41ae78b630840deae987c96558d399f9cc5848cac4c04f",
+          "body_quat.csv": "588a76812c7ddcb9b40a0e1cdfc680ed03acea8c73904cad833b4ceb64514125",
+          "joint_pos.csv": "38c94feeb385ce664b3187999fe6c78df7c1d5b6db45adfc0946aa489de83258",
+          "joint_vel.csv": "b23e842cce421d405ea08bcad5d7e6d383715d4a4eb9977a9f8934c8f2dd5115",
+          "metadata.txt": "afa877c2bf8e50114b061959e6b1a629c401f8892a0dbfa31dbf1f24ad796524"
+        },
+        "exporterSHA256": "9991a479e918e73ba3750930f29dbf22e0fb1aaa4a6e3857591d08f01239e865",
+        "deploymentResampling": "120 to 50 Hz: linear joints/root position; SLERP root rotation; FK at 50 Hz; final pose hold < 20 ms",
+        "deploymentVelocityMethod": "forward joint difference (last repeats); central world linear/angular differences",
+        "candidateTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+        "jointProjection": "none",
+        "initialQposOverride": false,
+        "physicalValidation": "not_run",
+        "sourceMenuNumber1Based": 4,
+        "sourceRuntimeIndex0Based": 3
+      },
+      "referenceFrames": 439,
+      "referenceSeconds": 8.76,
+      "completedReference": true,
+      "completedHold": true,
+      "failures": [],
+      "sampleCount": 565,
+      "completionTime": 9.280000000000296,
+      "actualHoldSeconds": 1.9999999999988916,
+      "wallSeconds": 5.4168925,
+      "minRootHeight": 0.9222879744166577,
+      "maxRootTiltDeg": 11.631851820271589,
+      "maxTorsoTiltDeg": 34.84417481209235,
+      "maxNonFootGroundContactSeconds": 0,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.01445073216064579,
+        "verticalSpeed": 0.005189595691838551,
+        "minRootHeight": 1.0155976893874858,
+        "maxTorsoTiltDeg": 4.06203195881574,
+        "groundContactFraction": 1
+      },
+      "jointExcursions": {
+        "left_hip_pitch_joint": 0.7912914054758485,
+        "left_hip_roll_joint": 0.2198936765506888,
+        "left_hip_yaw_joint": 0.7361222704127711,
+        "left_knee_joint": 0.8860945231434836,
+        "left_ankle_roll_joint": 0.1144717914503007,
+        "left_ankle_pitch_joint": 0.9157142627376978,
+        "right_hip_pitch_joint": 0.8269258562124506,
+        "right_hip_roll_joint": 0.16632007459434525,
+        "right_hip_yaw_joint": 0.7440686409275807,
+        "right_knee_joint": 0.8841757263492716,
+        "right_ankle_roll_joint": 0.1311487401787978,
+        "right_ankle_pitch_joint": 0.9039513871601981,
+        "waist_yaw_joint": 0.16980761533993174,
+        "waist_roll_joint": 0.09847520576538506,
+        "waist_pitch_joint": 0.40885420218305857,
+        "head_pitch_joint": 0.24337866588570972,
+        "head_yaw_joint": 0.002229358023377287,
+        "left_shoulder_pitch_joint": 2.0167536458963227,
+        "left_shoulder_roll_joint": 1.1070978913425256,
+        "left_shoulder_yaw_joint": 1.6649611735403518,
+        "left_elbow_joint": 1.8491099967132691,
+        "left_wrist_roll_joint": 0.5738565343171181,
+        "left_wrist_pitch_joint": 0.33125455917835167,
+        "left_wrist_yaw_joint": 0.5536555285834474,
+        "right_shoulder_pitch_joint": 1.5196999621409721,
+        "right_shoulder_roll_joint": 1.09168655776137,
+        "right_shoulder_yaw_joint": 1.3141578751034126,
+        "right_elbow_joint": 1.711008941982905,
+        "right_wrist_roll_joint": 0.6448722903720532,
+        "right_wrist_pitch_joint": 0.35305227239259684,
+        "right_wrist_yaw_joint": 0.4151211585014582
+      },
+      "maxForbiddenGroundContactSeconds": 0,
+      "feet": {
+        "left": {
+          "maximumClearance": 0.06783056137959155,
+          "maximumRootRelativeHorizontalReach": 0.333785493220135,
+          "maximumRootRelativeForward": 0.04501506671372675,
+          "heightExcursion": 0.13461450199472588,
+          "maximumContiguousKickPoseSeconds": 0,
+          "legExcursion": 0.8860945231434836
+        },
+        "right": {
+          "maximumClearance": 0.07732432950360434,
+          "maximumRootRelativeHorizontalReach": 0.3074682951482164,
+          "maximumRootRelativeForward": 0.08406854139935405,
+          "heightExcursion": 0.12056638400293365,
+          "maximumContiguousKickPoseSeconds": 0,
+          "legExcursion": 0.8841757263492716
+        }
+      },
+      "actualDisplacement": [
+        0.046577416201714614,
+        0.017630814417662923,
+        0.018982056343087583
+      ],
+      "actualForwardDisplacement": 0.046577416201714614,
+      "flights": [
+        {
+          "start": 3.9799999999996727,
+          "end": 4.119999999999711,
+          "duration": 0.16,
+          "forwardDisplacement": 0.06480374060643213,
+          "approachRootForwardDisplacement": 0.009350729128337109,
+          "maximumGroundedFootForwardAdvanceBeforeFlight": 0.01461385593054048,
+          "preFlightDoubleSupportSeconds": 0.24,
+          "rootRise": 0.02217090157743029,
+          "minimumFootClearance": 0.016299780817241885,
+          "landingTime": 4.139999999999717
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "g1_explore_prayer_R_001__A430",
+      "kind": "single_kneel",
+      "sourceMenuNumber1Based": 1,
+      "referenceSpace": "g1",
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 506,
+        "decoderCalls": 506,
+        "maxRawFeatureError": 1.0955862952966022e-16
+      },
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "kickSide": null,
+      "source": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/references/g1_explore_prayer_R_001__A430.json",
+      "sourceSHA256": "afbfab7251219aac5bfe4634b1d98d92631bbcab5b1d693714bb4083dc086f9e",
+      "provenance": {
+        "kind": "Original native G1 deployment reference; not an H2 retarget or simulator rollout",
+        "serverHostname": "ai-precog-machine21",
+        "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/prayer_R_001__A430",
+        "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/230713/prayer_R_001__A430.csv",
+        "sourceCSVSHA256": "1a87839c417a600f21f6065ce082c6a3d6f787f08275eba5c34cc9b74ecc8c63",
+        "sourceFPS": 120,
+        "sourceFrames": 912,
+        "sourceManifestSHA256": "ee25dddbc6ebbbd8e9d84701a7ca06b51581c1e11fdd872ba12d521e5cbba952",
+        "sourceBundleSHA256": {
+          "body_ang_vel.csv": "433bbd9ae5609c0b9e6e1844d84cd2fbab2e8467439d4e219b26d8a70d695998",
+          "body_lin_vel.csv": "d7e0a976038c10b5ee2428df03fe552b55b77e56fc2e77401e2fda403bf8b4b3",
+          "body_pos.csv": "cd9a5cfe5122ea0679f71c8a9957e37148ed83dbe9e55ad128f7bc80f39756e5",
+          "body_quat.csv": "d86bb0b6d4da5158aa5e2dd5230624032cd31ef1b38c127bd996c87ff265b7c3",
+          "joint_pos.csv": "16c1bc23eb243956a49bf27c6e82e6640e6b45b3e1cd8d892f7f98207f9a2b5b",
+          "joint_vel.csv": "b8a48bdc7e4679ad210560bef6f3ecffc5c6fdf30148fa285d29d91ca4bb8ea4",
+          "metadata.txt": "ebf99e2756bebd196006a32e350096bb4fdbc3fdbc68241a617a8fd98c0248ac"
+        },
+        "exporterSHA256": "9991a479e918e73ba3750930f29dbf22e0fb1aaa4a6e3857591d08f01239e865",
+        "deploymentResampling": "120 to 50 Hz: linear joints/root position; SLERP root rotation; FK at 50 Hz; final pose hold < 20 ms",
+        "deploymentVelocityMethod": "forward joint difference (last repeats); central world linear/angular differences",
+        "candidateTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+        "jointProjection": "none",
+        "initialQposOverride": false,
+        "physicalValidation": "not_run",
+        "sourceMenuNumber1Based": 1,
+        "sourceRuntimeIndex0Based": 0
+      },
+      "referenceFrames": 381,
+      "referenceSeconds": 7.6,
+      "completedReference": true,
+      "completedHold": true,
+      "failures": [],
+      "sampleCount": 507,
+      "completionTime": 8.120000000000939,
+      "actualHoldSeconds": 1.9999999999988916,
+      "wallSeconds": 4.769556250000002,
+      "minRootHeight": 0.5274485474255707,
+      "maxRootTiltDeg": 17.415046915893672,
+      "maxTorsoTiltDeg": 28.890295487590468,
+      "maxNonFootGroundContactSeconds": 3.44,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.004613644644548629,
+        "verticalSpeed": 0.0014876195476593139,
+        "minRootHeight": 1.023000105042881,
+        "maxTorsoTiltDeg": 3.547767752451291,
+        "groundContactFraction": 1
+      },
+      "jointExcursions": {
+        "left_hip_pitch_joint": 1.7939895478603767,
+        "left_hip_roll_joint": 0.5179570166471867,
+        "left_hip_yaw_joint": 0.5421554251326425,
+        "left_knee_joint": 2.0202812550643734,
+        "left_ankle_roll_joint": 0.34168683482628504,
+        "left_ankle_pitch_joint": 0.5147879883662153,
+        "right_hip_pitch_joint": 0.5227738701991727,
+        "right_hip_roll_joint": 0.275543269356784,
+        "right_hip_yaw_joint": 0.5559587266242184,
+        "right_knee_joint": 2.2057959060855836,
+        "right_ankle_roll_joint": 0.21991576930861761,
+        "right_ankle_pitch_joint": 0.763336746277334,
+        "waist_yaw_joint": 0.46289181419287734,
+        "waist_roll_joint": 0.157321745825457,
+        "waist_pitch_joint": 0.3418165352644961,
+        "head_pitch_joint": 0.07099501606432333,
+        "head_yaw_joint": 0.004067961310622918,
+        "left_shoulder_pitch_joint": 0.47648782565440534,
+        "left_shoulder_roll_joint": 0.6948943620588514,
+        "left_shoulder_yaw_joint": 0.47930888234494046,
+        "left_elbow_joint": 0.4181501229157608,
+        "left_wrist_roll_joint": 0.6400565220505224,
+        "left_wrist_pitch_joint": 0.3018028538884421,
+        "left_wrist_yaw_joint": 0.20671539675721723,
+        "right_shoulder_pitch_joint": 1.3531573646278674,
+        "right_shoulder_roll_joint": 0.5868159422275436,
+        "right_shoulder_yaw_joint": 0.5670845571065344,
+        "right_elbow_joint": 1.7577246305602099,
+        "right_wrist_roll_joint": 1.3187779516609965,
+        "right_wrist_pitch_joint": 0.4001789109074309,
+        "right_wrist_yaw_joint": 0.1678499840233193
+      },
+      "maxForbiddenGroundContactSeconds": 0,
+      "feet": {
+        "left": {
+          "maximumClearance": 0.006600371519864846,
+          "maximumRootRelativeHorizontalReach": 0.4170595840571356,
+          "maximumRootRelativeForward": 0.37781233695281347,
+          "heightExcursion": 0.01879276289661788,
+          "maximumContiguousKickPoseSeconds": 0,
+          "legExcursion": 2.0202812550643734
+        },
+        "right": {
+          "maximumClearance": 0.10774365351966185,
+          "maximumRootRelativeHorizontalReach": 0.5692859249369018,
+          "maximumRootRelativeForward": 0.05671462105771001,
+          "heightExcursion": 0.22821085296697163,
+          "maximumContiguousKickPoseSeconds": 0,
+          "legExcursion": 2.2057959060855836
+        }
+      },
+      "actualDisplacement": [
+        0.1411229078083569,
+        0.04328244422944266,
+        0.02473614078997799
+      ],
+      "actualForwardDisplacement": 0.1411229078083569,
+      "flights": [],
+      "kneeling": {
+        "singleKneeSupportedSeconds": 3.44,
+        "doubleKneeSeconds": 0,
+        "leftKneeContactSeconds": 0,
+        "rightKneeContactSeconds": 3.44,
+        "terminalDoubleSupportFraction": 1,
+        "terminalKneeContactFraction": 0
+      },
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "engines": {
+    "mujoco": "3.10.0",
+    "ort": "1.30.0",
+    "provider": "wasm"
+  },
+  "measurementMapping": {
+    "footBodies": {
+      "left": 7,
+      "right": 17
+    },
+    "footGeoms": {
+      "left": 13,
+      "right": 31
+    },
+    "kneeBodies": {
+      "left": 5,
+      "right": 15
+    },
+    "thighBodies": {
+      "left": 4,
+      "right": 14
+    },
+    "floorGeom": 0,
+    "torsoBody": 24
+  },
+  "passed": [
+    "g1_explore_broad_jump_002__A359",
+    "g1_explore_dejection_R_001__A430",
+    "g1_explore_jump_and_land_light_002__A001",
+    "g1_explore_prayer_R_001__A430"
+  ],
+  "sourceChanges": [],
+  "wallSeconds": 22.826631125,
+  "completedAt": "2026-10-10T15:37:53.151Z",
+  "archiveSummary": {
+    "format": "metrics_and_provenance_without_per_frame_sample_arrays",
+    "rawReportSHA256": "5c3485f4e8b188a0e7051f17d40da12a12c5ee69e1be5efd2159a3ec900c8ab5",
+    "rawReportBytes": 10672525,
+    "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-explore.json",
+    "archivePathBase": "repository root",
+    "rawArchiveRequiredForRuntime": false,
+    "rawArchiveIncludedInPublishedSource": false,
+    "omission": "Only array-valued samples properties were removed recursively. Their lengths are retained as sampleCount. Numeric samples counts and all other metrics, thresholds, provenance, failures, source hashes and sourceChanges are preserved.",
+    "removedSampleArrays": [
+      {
+        "path": "$.cases[0].samples",
+        "count": 390
+      },
+      {
+        "path": "$.cases[1].samples",
+        "count": 890
+      },
+      {
+        "path": "$.cases[2].samples",
+        "count": 565
+      },
+      {
+        "path": "$.cases[3].samples",
+        "count": 507
+      }
+    ],
+    "removedSampleRecordCount": 2352,
+    "summaryChecksum": "Stored in homepage/qa/archive-index.json; omitted here to avoid a self-referential hash."
+  }
+}

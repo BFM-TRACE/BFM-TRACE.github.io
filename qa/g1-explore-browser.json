@@ -1,0 +1,63 @@
+{
+  "testedAt": "2026-10-10T15:42:42.672Z",
+  "status": "pass",
+  "url": "http://127.0.0.1:4173/#demo",
+  "browser": "Codex in-app browser",
+  "scope": "Normal UI interaction and visible physical renderer; numerical motion metrics are verified separately in g1-explore.json.",
+  "observations": [
+    {
+      "motion": "g1_explore_broad_jump_002__A359",
+      "check": "Completed with Restart motion, upright after full 5.26 s reference + 0.5 s preparation and >2 s hold",
+      "simulationTime": 14.7,
+      "measuredSpeed": 0,
+      "screenshot": "screenshots/g1-explore-broad-jump-complete.jpg"
+    },
+    {
+      "motion": "g1_explore_broad_jump_002__A359",
+      "check": "Restart displayed Preparing motion, completed again and remained upright",
+      "simulationTime": 14.4,
+      "measuredSpeed": 0.01
+    },
+    {
+      "motion": "g1_explore_prayer_R_001__A430",
+      "check": "Complete; upright after 7.6 s reference + preparation + >2 s hold",
+      "simulationTime": 10.4,
+      "measuredSpeed": 0
+    },
+    {
+      "motion": "g1_explore_dejection_R_001__A430",
+      "check": "Both knees visibly grounded; paused with Resume control; no reference preview",
+      "simulationTime": 7.5,
+      "measuredSpeed": 0.03,
+      "screenshot": "screenshots/g1-explore-double-kneel.jpg"
+    },
+    {
+      "motion": "g1_explore_dejection_R_001__A430",
+      "check": "Resume continued; completed full 15.26 s reference and >2 s hold; returned to standing",
+      "simulationTime": 18.6,
+      "measuredSpeed": 0.01
+    },
+    {
+      "motion": "g1_explore_jump_and_land_light_002__A001",
+      "check": "Complete; upright after full 8.76 s reference + preparation + >2 s hold",
+      "simulationTime": 19.4,
+      "measuredSpeed": 0
+    },
+    {
+      "check": "Native Squat restored H2 source label and enabled preview. Reference-only mode disables all four G1 options."
+    },
+    {
+      "check": "Planner mode ready; turn slider changed from 0.5 to 0.7 rad/s and command remained zero without held turn"
+    }
+  ],
+  "consoleWarningsOrErrors": [],
+  "limitations": [
+    "Four full motions observed; broad jump repeated successfully. This is one browser/device, not cross-platform or arbitrary-startup robustness.",
+    "Runtime factor varied under local load; simulation-time durations remain fixed.",
+    "Two transient waitFor selector timeouts occurred while awaiting slow simulation, without page/worker errors; completion was subsequently observed."
+  ],
+  "screenshots": [
+    "screenshots/g1-explore-broad-jump-complete.jpg",
+    "screenshots/g1-explore-double-kneel.jpg"
+  ]
+}

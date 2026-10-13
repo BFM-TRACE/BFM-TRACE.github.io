@@ -1,0 +1,263 @@
+{
+  "videoDecode": {
+    "status": "passed",
+    "tool": "ffmpeg -xerror",
+    "count": 19
+  },
+  "gallerySourceEquality": {
+    "status": "passed",
+    "count": 17,
+    "method": "SHA-256 comparison with v33 embedded MP4 bytes"
+  },
+  "visualChecks": {
+    "heroPoster": "passed; existing task-label crop and source 4-second opening pose inspected",
+    "methodOverview": "passed; all four stages visible, G1 1.32m and command-space distribution overlays retained",
+    "overviewPoster": "passed; title fully revealed at 2.0 seconds",
+    "heroFullSequence": "passed; all 619 original frames retained through the final doorway passage, with original partial occlusion at the end"
+  },
+  "files": [
+    {
+      "path": "assets/data-curation.webp",
+      "bytes": 76838,
+      "sha256": "8dcc1104b38c6b23206748f4beeeaf4b9d3f2073fcedff2db2feacb9ecf5f8b4"
+    },
+    {
+      "path": "assets/hero-loop.mp4",
+      "bytes": 3390329,
+      "sha256": "61260d2e73baf0a47d7d89f55d78144d035338dc1295aafa6d33abee45776a7a"
+    },
+    {
+      "path": "assets/hero-poster.jpg",
+      "bytes": 203336,
+      "sha256": "8e5319aa40f41409aafd1846f196ad3bee581ee746e6d828f6378fc2b2ff93db"
+    },
+    {
+      "path": "assets/lora-details.webp",
+      "bytes": 72914,
+      "sha256": "ea11bfd04c833ec987e285ae5ab0e246f4e43ce5657a54d47a5eca4d19467af8"
+    },
+    {
+      "path": "assets/method-overview.webp",
+      "bytes": 141030,
+      "sha256": "49a346023dcc85591cf289de7ea22b7f81ac383df4ef42afb6f68c7960afa11e"
+    },
+    {
+      "path": "assets/motion-coordination.jpg",
+      "bytes": 48927,
+      "sha256": "e9d90c9751c0c7486fce080fb9de698cc3d5125cdc36581097ce855bc2864771"
+    },
+    {
+      "path": "assets/motion-coordination.mp4",
+      "bytes": 961526,
+      "sha256": "b587bf5cd58e3a875df928d12d7c4896b7f3729d21f3393b3f296ebf4cc6ca1b"
+    },
+    {
+      "path": "assets/motion-hop.jpg",
+      "bytes": 51105,
+      "sha256": "dbbd54c3cee6d82efb797a5d31858ea881ef8365afd3f9d05b2425aa1bf6d79a"
+    },
+    {
+      "path": "assets/motion-hop.mp4",
+      "bytes": 314033,
+      "sha256": "eb019f06b53a8fa1ae296cd9c1673c73da343f3f7a6197b74aad2a6cb5e1744a"
+    },
+    {
+      "path": "assets/motion-kick-left.jpg",
+      "bytes": 45910,
+      "sha256": "4d396c17ca5c48716e06c7b8a67ace9adc7af6b299e540eb38af9bc5cded72cc"
+    },
+    {
+      "path": "assets/motion-kick-left.mp4",
+      "bytes": 405902,
+      "sha256": "07ed18308acdf526a4b4499fc5c7acc9362a2cd23211788e8a9865db74fbdf9d"
+    },
+    {
+      "path": "assets/motion-kick-right.jpg",
+      "bytes": 48203,
+      "sha256": "e5b79fe281a256ef812c71e7cafb4d470e9eb5cc681a81d8e5907bbd6a19eb3f"
+    },
+    {
+      "path": "assets/motion-kick-right.mp4",
+      "bytes": 332136,
+      "sha256": "eeb600d9477b0b026c9d38fc94cd630ea72e9cf47a1fe6501ee44c96c4304d5a"
+    },
+    {
+      "path": "assets/motion-kneel.jpg",
+      "bytes": 54198,
+      "sha256": "572c2a1566b52e4777cc658d6a8827d442e89ed6e8d280e0983cfc9db9483c9a"
+    },
+    {
+      "path": "assets/motion-kneel.mp4",
+      "bytes": 509469,
+      "sha256": "7c877d0ad864a6ab662c113bfb62959690240735c0b486486ec3a2490ecfb83c"
+    },
+    {
+      "path": "assets/motion-sequence.jpg",
+      "bytes": 53328,
+      "sha256": "e686bd874c071ac3591f2cb8a5337fdb0c4acbdfb92bc7ad5d9b8d163b8f044e"
+    },
+    {
+      "path": "assets/motion-sequence.mp4",
+      "bytes": 851249,
+      "sha256": "3dbf56da13aa9e135750f245e1d1ecbba98d42df6e7f58a3b42f38804b8fb476"
+    },
+    {
+      "path": "assets/motion-squat.jpg",
+      "bytes": 45343,
+      "sha256": "1b71d0c1057c013ec16d38a54e717ab9749492a0de93242028e80899a64f6296"
+    },
+    {
+      "path": "assets/motion-squat.mp4",
+      "bytes": 813099,
+      "sha256": "b139d78046960c61e61fd9fd1032f9cc5524ff54113aebe559b4164854d1eef7"
+    },
+    {
+      "path": "assets/motion-transition.jpg",
+      "bytes": 53485,
+      "sha256": "88a4ad10994ede2d6a2049a95edb42e323e071f32d042b65acf1ea545b560ff5"
+    },
+    {
+      "path": "assets/motion-transition.mp4",
+      "bytes": 1011547,
+      "sha256": "0cc809545a7003614eaa0b4aac0e9c0c1e86ab351f38a1d3c47bb00dd99df410"
+    },
+    {
+      "path": "assets/paper-teaser.webp",
+      "bytes": 280940,
+      "sha256": "10606fc744dbb831db6f1f57fe76f90bb12ff87c1390c70c6f4634dd1a322680"
+    },
+    {
+      "path": "assets/teleop-door.jpg",
+      "bytes": 59902,
+      "sha256": "00cf653fda4edef4cdaafb8bce905037c01370c341004066be9b0cc9b565b904"
+    },
+    {
+      "path": "assets/teleop-door.mp4",
+      "bytes": 5832597,
+      "sha256": "5ad646acef5a5d4b52dce318d80cdee99667d76552097e89aa817c0864103ee2"
+    },
+    {
+      "path": "assets/teleop-packing.jpg",
+      "bytes": 56994,
+      "sha256": "0dbac058ac714ea17cfd56f1a71db0e4837984fc00941ecd174ea0107ff31a71"
+    },
+    {
+      "path": "assets/teleop-packing.mp4",
+      "bytes": 1421025,
+      "sha256": "d767af6f210593ced2cb07432bdb04cced942207978857a058749db9fff9251c"
+    },
+    {
+      "path": "assets/teleop-pillow.jpg",
+      "bytes": 60121,
+      "sha256": "b7a16add32c498806c8bd17e61f3da9fed5c4b371d55fef768d507c136db6e98"
+    },
+    {
+      "path": "assets/teleop-pillow.mp4",
+      "bytes": 1618072,
+      "sha256": "81f100c31fd3c9668ef1d72ff7496dda1df5837a68040f24b21e05c159d46e8a"
+    },
+    {
+      "path": "assets/teleop-soccer.jpg",
+      "bytes": 71624,
+      "sha256": "1a27de7cce9c6eeabb5f2aa679b227b9b9e9b65ce56476e2e04c83532f00b8f2"
+    },
+    {
+      "path": "assets/teleop-soccer.mp4",
+      "bytes": 1210428,
+      "sha256": "53caa8f83bd3fe3e3d4b0b13e2808f2b780a13ac751391a93b6c01b835cae758"
+    },
+    {
+      "path": "assets/teleop-trash.jpg",
+      "bytes": 62575,
+      "sha256": "0cb25c82f9248ec68dc4558f0c8b9ed3b73e70cb76bb3b552b5d0ea49a782efb"
+    },
+    {
+      "path": "assets/teleop-trash.mp4",
+      "bytes": 1412021,
+      "sha256": "e25b9038753593e12d272a0f603b1106c5c6232ced263600caad9a1a8e9652bf"
+    },
+    {
+      "path": "assets/teleoperation-sequence.webp",
+      "bytes": 504194,
+      "sha256": "2c79f22a30c8bdc5e20c80d473b8934ed9d477151cdda98c153b33193c4c7c06"
+    },
+    {
+      "path": "assets/trace-overview.mp4",
+      "bytes": 18545956,
+      "sha256": "129050e6ade833aa4a5fda970b9b080a1db20240166104219aeb2e29f4774178"
+    },
+    {
+      "path": "assets/trace-overview.vtt",
+      "bytes": 2862,
+      "sha256": "460ee1c1d475c8fe31e978e0ed0f7134daeaca0e55ec527957d002e75da3d937"
+    },
+    {
+      "path": "assets/trace-paper.pdf",
+      "bytes": 5318050,
+      "sha256": "79db04c363cf9b2dcc7b87376ab5974901c1dbaac251d5f77dfdcc675c867058"
+    },
+    {
+      "path": "assets/tracking-comparison.webp",
+      "bytes": 192210,
+      "sha256": "91f7727923a17dd045e8f5f25655a06c96ef94e520d5d56c77478a21994b5eed"
+    },
+    {
+      "path": "assets/training-curves.webp",
+      "bytes": 70970,
+      "sha256": "4fbca4c3e18a2ddc070fa83a2996c61c97d92d561c9e4e2f6df9d5ef9f0633a4"
+    },
+    {
+      "path": "assets/vla-chair.jpg",
+      "bytes": 60401,
+      "sha256": "6afae53dcd27c77c71abd078946d662c794a9a1c672fcfb98f395b404e50fcc9"
+    },
+    {
+      "path": "assets/vla-chair.mp4",
+      "bytes": 719452,
+      "sha256": "b17dcf7a9aa5cfd9ab3d319d9e821f4179872c7c8e3643e62d4164d5d402eb1c"
+    },
+    {
+      "path": "assets/vla-large-toy.jpg",
+      "bytes": 43590,
+      "sha256": "8c4ba3cff5b251cb384e13e2dba0be9057024563f8f89bf122c53365a5d635a5"
+    },
+    {
+      "path": "assets/vla-large-toy.mp4",
+      "bytes": 1741958,
+      "sha256": "dd4e462be2d7dfea4f4988dc3206d204bba84fbabde713877d15f9463c5817d5"
+    },
+    {
+      "path": "assets/vla-small-toy.jpg",
+      "bytes": 45610,
+      "sha256": "6c95034011a8ae08f30a7b8d366c9f6dcb54a704d09d970d77505ad618b112de"
+    },
+    {
+      "path": "assets/vla-small-toy.mp4",
+      "bytes": 1554802,
+      "sha256": "5b2c50c8d99cdd4d116ad46624a8fd5c940c7034bfc8426c5e76ef1fb9df553d"
+    },
+    {
+      "path": "assets/vla-trash.jpg",
+      "bytes": 53624,
+      "sha256": "a456ca6da141c4b56fd44813bd951d762e4e1326b4f2fe3ceebe41fd872402c7"
+    },
+    {
+      "path": "assets/vla-trash.mp4",
+      "bytes": 772308,
+      "sha256": "5e71bbd48844c2a9b3956aaaa5b2bd9bbd3f261337be7a9c58061608a9e5de70"
+    },
+    {
+      "path": "assets/trace-overview.jpg",
+      "bytes": 243079,
+      "sha256": "b1e7dc51dba0e51409aeaa0b3351c19c526e3fde1f73ddd7e5fd05268168931c"
+    }
+  ],
+  "heroFullSequence": {
+    "status": "passed",
+    "report": "qa/hero-video.json",
+    "frames": 619,
+    "durationSeconds": 20.633008,
+    "audioStreams": 0,
+    "decode": "ffmpeg -xerror full decode passed"
+  }
+}

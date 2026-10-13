@@ -1,0 +1,309 @@
+{
+  "testedAt": "2026-10-10T15:37:30.323Z",
+  "status": "pass",
+  "scope": "Final installed production LocalPolicy and prepareTrackingReference with original G1 assets; Node uses the same local CPU WASM inference and physics libraries. No experimental subclass or method replacement. Browser rendering/scheduling is checked separately.",
+  "sourceChanges": [],
+  "coreSources": {
+    "scripts/check-g1-explore.mjs": {
+      "bytes": 25919,
+      "sha256": "64d397f27982dcd7f244a6007e62eb3eac8bc05165a5417b16dae7c313ac5aa5"
+    },
+    "demo/local-reference.js": {
+      "bytes": 3025,
+      "sha256": "c54401ba90d12e570b4de1e4735451d4b2c7c4913eeea8cd38b2a05892dc13f5"
+    },
+    "demo/local-policy.js": {
+      "bytes": 9594,
+      "sha256": "2b16bc37395e3cbab985f787ad4c9308f3eeb100d5674916ba4dc2976837402b"
+    },
+    "demo/local-physics.js": {
+      "bytes": 13376,
+      "sha256": "c0c138bf5f0a2fd559b4e8e1383de831c2f4d1eb129cee94ae22a007abb3f8a0"
+    },
+    "demo/local-inference.js": {
+      "bytes": 8606,
+      "sha256": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159"
+    },
+    "demo/local-assets/controller.json": {
+      "bytes": 5978,
+      "sha256": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f"
+    },
+    "demo/local-assets/models/encoder_g1.onnx": {
+      "bytes": 16932124,
+      "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975"
+    },
+    "demo/local-assets/models/decoder.onnx": {
+      "bytes": 40743594,
+      "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+    },
+    "demo/vendor/mujoco/mujoco.wasm": {
+      "bytes": 10143561,
+      "sha256": "832597ae0a0e306c97ed43d2a9bbca033cf3e547eced410fb9011d87a68d4207"
+    },
+    "demo/vendor/ort/ort-wasm-simd-threaded.wasm": {
+      "bytes": 14239897,
+      "sha256": "3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2"
+    }
+  },
+  "cases": [
+    {
+      "id": "g1_explore_prayer_R_001__A430",
+      "menuNumber": 1,
+      "kind": "single_kneel",
+      "status": "pass",
+      "referenceFile": "demo/local-assets/references/g1_explore_prayer_R_001__A430.json",
+      "referenceSHA256": "afbfab7251219aac5bfe4634b1d98d92631bbcab5b1d693714bb4083dc086f9e",
+      "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/prayer_R_001__A430",
+      "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/230713/prayer_R_001__A430.csv",
+      "sourceCSVSHA256": "1a87839c417a600f21f6065ce082c6a3d6f787f08275eba5c34cc9b74ecc8c63",
+      "sourceBundleSHA256": {
+        "body_ang_vel.csv": "433bbd9ae5609c0b9e6e1844d84cd2fbab2e8467439d4e219b26d8a70d695998",
+        "body_lin_vel.csv": "d7e0a976038c10b5ee2428df03fe552b55b77e56fc2e77401e2fda403bf8b4b3",
+        "body_pos.csv": "cd9a5cfe5122ea0679f71c8a9957e37148ed83dbe9e55ad128f7bc80f39756e5",
+        "body_quat.csv": "d86bb0b6d4da5158aa5e2dd5230624032cd31ef1b38c127bd996c87ff265b7c3",
+        "joint_pos.csv": "16c1bc23eb243956a49bf27c6e82e6640e6b45b3e1cd8d892f7f98207f9a2b5b",
+        "joint_vel.csv": "b8a48bdc7e4679ad210560bef6f3ecffc5c6fdf30148fa285d29d91ca4bb8ea4",
+        "metadata.txt": "ebf99e2756bebd196006a32e350096bb4fdbc3fdbc68241a617a8fd98c0248ac"
+      },
+      "sourceTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+      "referenceFrames": 381,
+      "referenceSeconds": 7.6,
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "actualHoldSeconds": 1.9999999999988916,
+      "rootMinimum": 0.5274485474255707,
+      "maxForbiddenGroundContactSeconds": 0,
+      "actualForwardDisplacement": 0.1411229078083569,
+      "kneeling": {
+        "singleKneeSupportedSeconds": 3.44,
+        "doubleKneeSeconds": 0,
+        "leftKneeContactSeconds": 0,
+        "rightKneeContactSeconds": 3.44,
+        "terminalDoubleSupportFraction": 1,
+        "terminalKneeContactFraction": 0
+      },
+      "flights": [],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.004613644644548629,
+        "verticalSpeed": 0.0014876195476593139,
+        "minRootHeight": 1.023000105042881,
+        "maxTorsoTiltDeg": 3.547767752451291,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 506,
+        "decoderCalls": 506,
+        "maxRawFeatureError": 1.0955862952966022e-16
+      }
+    },
+    {
+      "id": "g1_explore_dejection_R_001__A430",
+      "menuNumber": 2,
+      "kind": "double_kneel",
+      "status": "pass",
+      "referenceFile": "demo/local-assets/references/g1_explore_dejection_R_001__A430.json",
+      "referenceSHA256": "76bcbb4a357a49dbe5d7ed4890f6d5627b44fbdc6380a4055653117052040d2e",
+      "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/dejection_R_001__A430",
+      "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/230713/dejection_R_001__A430.csv",
+      "sourceCSVSHA256": "c6676136ea8f31ebca6e1fb9240c9abfe0fa200be3f495c120b4bd7a4e3864a6",
+      "sourceBundleSHA256": {
+        "body_ang_vel.csv": "9ff32cada0fdf53f450fad54334c734caa7f5099009445d7d41febdf8716b7a0",
+        "body_lin_vel.csv": "c36ffab91e6156489e12e732fb9328f35333ed388276cc20f2264965d0fbd4f6",
+        "body_pos.csv": "1fa03405f75ae356243eed5b81c6dc8eaa485e55eeaefa36bc67dada41a81f1f",
+        "body_quat.csv": "68552e8e68bb9f30d50e626dd18ea90a9f0c4efd974a95039e896368bffc0258",
+        "joint_pos.csv": "6c8d19ed1c2b00db936a0105ea60db34d6f51e9dc53cc6db18f615705314142f",
+        "joint_vel.csv": "fd4e05f49ce6dc37d4f6db3661293d31c9330af24af14d96176846ef7949ceb1",
+        "metadata.txt": "d53ed341666b1c2b4b830048e8e20a6630451f55d03c32d39dc63a3723996c7e"
+      },
+      "sourceTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+      "referenceFrames": 764,
+      "referenceSeconds": 15.26,
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "actualHoldSeconds": 2.0000000000020535,
+      "rootMinimum": 0.39099206663485264,
+      "maxForbiddenGroundContactSeconds": 0,
+      "actualForwardDisplacement": 0.8997996153186821,
+      "kneeling": {
+        "singleKneeSupportedSeconds": 0.36,
+        "doubleKneeSeconds": 1.66,
+        "leftKneeContactSeconds": 6.22,
+        "rightKneeContactSeconds": 7.16,
+        "terminalDoubleSupportFraction": 1,
+        "terminalKneeContactFraction": 0
+      },
+      "flights": [],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.014990974640610106,
+        "verticalSpeed": 0.004178420216832796,
+        "minRootHeight": 1.011372813533347,
+        "maxTorsoTiltDeg": 1.8633211478182297,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 889,
+        "decoderCalls": 889,
+        "maxRawFeatureError": 8.023096076392733e-18
+      }
+    },
+    {
+      "id": "g1_explore_jump_and_land_light_002__A001",
+      "menuNumber": 4,
+      "kind": "jump",
+      "status": "pass",
+      "referenceFile": "demo/local-assets/references/g1_explore_jump_and_land_light_002__A001.json",
+      "referenceSHA256": "07a4e883b536a2d264e92dbc7d633fe932cd6e5e7b5d3bfb2f643a68707f9055",
+      "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/jump_and_land_light_002__A001",
+      "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/210531/jump_and_land_light_002__A001.csv",
+      "sourceCSVSHA256": "5bfd1cd08f6bfcb77a9bac00bbed84895d113a343d6c86793110f2e902cf7f0f",
+      "sourceBundleSHA256": {
+        "body_ang_vel.csv": "2c5c84875f62316092a4386a589b178a5336491088552a1344445d70e5a01b88",
+        "body_lin_vel.csv": "a5902c0cbd895d25fffdfac42f6c33943b7a838d9b0d00a1e1d3421340c426f6",
+        "body_pos.csv": "9d6cbaefd09852342f41ae78b630840deae987c96558d399f9cc5848cac4c04f",
+        "body_quat.csv": "588a76812c7ddcb9b40a0e1cdfc680ed03acea8c73904cad833b4ceb64514125",
+        "joint_pos.csv": "38c94feeb385ce664b3187999fe6c78df7c1d5b6db45adfc0946aa489de83258",
+        "joint_vel.csv": "b23e842cce421d405ea08bcad5d7e6d383715d4a4eb9977a9f8934c8f2dd5115",
+        "metadata.txt": "afa877c2bf8e50114b061959e6b1a629c401f8892a0dbfa31dbf1f24ad796524"
+      },
+      "sourceTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+      "referenceFrames": 439,
+      "referenceSeconds": 8.76,
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "actualHoldSeconds": 1.9999999999988916,
+      "rootMinimum": 0.9222879744166577,
+      "maxForbiddenGroundContactSeconds": 0,
+      "actualForwardDisplacement": 0.046577416201714614,
+      "kneeling": null,
+      "flights": [
+        {
+          "start": 3.9799999999996727,
+          "end": 4.119999999999711,
+          "duration": 0.16,
+          "forwardDisplacement": 0.06480374060643213,
+          "approachRootForwardDisplacement": 0.009350729128337109,
+          "maximumGroundedFootForwardAdvanceBeforeFlight": 0.01461385593054048,
+          "preFlightDoubleSupportSeconds": 0.24,
+          "rootRise": 0.02217090157743029,
+          "minimumFootClearance": 0.016299780817241885,
+          "landingTime": 4.139999999999717
+        }
+      ],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.01445073216064579,
+        "verticalSpeed": 0.005189595691838551,
+        "minRootHeight": 1.0155976893874858,
+        "maxTorsoTiltDeg": 4.06203195881574,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 564,
+        "decoderCalls": 564,
+        "maxRawFeatureError": 0
+      }
+    },
+    {
+      "id": "g1_explore_broad_jump_002__A359",
+      "menuNumber": 5,
+      "kind": "long_jump",
+      "status": "pass",
+      "referenceFile": "demo/local-assets/references/g1_explore_broad_jump_002__A359.json",
+      "referenceSHA256": "98d4d69b2d8e6ed8a759cf4f645eb6481c7cd4bef38c3e66d46ca40639b11ca2",
+      "sourceDirectory": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/reference/example_g1_explore/broad_jump_002__A359",
+      "sourceCSV": "/home/qingyul/Datasets/bones_seed/g1/csv/230509/broad_jump_002__A359.csv",
+      "sourceCSVSHA256": "e9f90fe2e843beb998ba649f520058fb3677ac7eddeddf14b39e1300815a214a",
+      "sourceBundleSHA256": {
+        "body_ang_vel.csv": "7a518309ca1ad7b1da8fd2e30597a9ee2c65286b1a435550355375a2b78b2cfc",
+        "body_lin_vel.csv": "64fa90f5053570a9e5a19835c64b1c8f144676d58292d85990316d07268372b2",
+        "body_pos.csv": "07c45a81ce170af893671e366cdc2941f5ae7a45aedf680126a6d7bf2244c975",
+        "body_quat.csv": "ebfb0fc76901ae7e8236c7aeb7f177acb517c2cac4fb2ba014a1e5143224d69a",
+        "joint_pos.csv": "d0bd4ffca2d85ddb59f2f4d4b84e9c38cede6a42e81bbc6e2bd9b3afeb285c47",
+        "joint_vel.csv": "ac6007dd588a6032c1de581bf934eed68195bbaeabe9582ccef71c15a66c781c",
+        "metadata.txt": "3afdc3c4ee16e13404b88e177f262a72782e016891fd7dff44875299b2c00660"
+      },
+      "sourceTransformation": "CSV-to-JSON only; original 50 Hz joint values/velocities and world pelvis pose retained, all frames retained",
+      "referenceFrames": 264,
+      "referenceSeconds": 5.26,
+      "startup": {
+        "requestedSeconds": 0.5,
+        "expectedSteps": 25,
+        "observedSteps": 25,
+        "physicalSeconds": 0.5000000000000003,
+        "historyContinuationChecked": true,
+        "motionTimeAtEnd": 0
+      },
+      "actualHoldSeconds": 2.000000000000668,
+      "rootMinimum": 0.3624750202565157,
+      "maxForbiddenGroundContactSeconds": 0,
+      "actualForwardDisplacement": 1.9965945341376434,
+      "kneeling": null,
+      "flights": [
+        {
+          "start": 3.159999999999763,
+          "end": 3.559999999999719,
+          "duration": 0.42,
+          "forwardDisplacement": 0.5795316249946918,
+          "approachRootForwardDisplacement": 0.31832134590505895,
+          "maximumGroundedFootForwardAdvanceBeforeFlight": 0.015609567245708007,
+          "preFlightDoubleSupportSeconds": 0.28,
+          "rootRise": 0.13189209109101974,
+          "minimumFootClearance": 0.01644717653987457,
+          "landingTime": 3.5999999999997145
+        }
+      ],
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.010398569102904124,
+        "verticalSpeed": 0.0016438126631238175,
+        "minRootHeight": 1.01330182022582,
+        "maxTorsoTiltDeg": 1.7451888946807634,
+        "groundContactFraction": 1
+      },
+      "inferenceAudit": {
+        "encoderBranch": "g1/selector3",
+        "nativeCalls": 0,
+        "encoderCalls": 389,
+        "decoderCalls": 389,
+        "maxRawFeatureError": 0
+      }
+    }
+  ],
+  "startupSensitivity": "g1-explore-startup-ab.json",
+  "interpretation": "Each case uses the fixed0.5s production startup preset (25 feedback policy/physics steps), then the complete original1x sequence and2s final-frame hold. The broad jump is sensitive to startup state: neighboring durations failed in separate experiments. This result does not establish arbitrary-startup robustness.",
+  "rawReportSHA256": "5c3485f4e8b188a0e7051f17d40da12a12c5ee69e1be5efd2159a3ec900c8ab5",
+  "rawReportBytes": 10672525,
+  "rawReportArchivePath": ".work/archive/homepage-qa-20261011/g1-explore.json",
+  "archivePathBase": "repository root",
+  "rawArchiveRequiredForRuntime": false,
+  "summaryPath": "g1-explore.json",
+  "summaryPathBase": "homepage/qa",
+  "summarySHA256": "371912edeb61aa5f9bbb14ee8a955476e2b898832af26bb847c2886c4fc9c03b",
+  "summaryBytes": 45720
+}

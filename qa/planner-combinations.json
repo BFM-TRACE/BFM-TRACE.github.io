@@ -1,0 +1,2624 @@
+{
+  "testedAt": "2026-10-09T18:38:56.621Z",
+  "status": "pass",
+  "bankPath": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank",
+  "host": {
+    "runtime": "Node WebAssembly",
+    "node": "v22.20.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "scope": "Real local planner targets, G1 encoder, H2 decoder, closed-loop transmissions and MuJoCo contact dynamics.",
+  "limitations": [
+    "This is not a browser rendering, worker scheduling, hardware, or exact target-speed accuracy test.",
+    "Finite-state and root-height checks are sampled at the 50 Hz policy boundaries.",
+    "Planner references are local targets; the original neural planner does not run online in this test."
+  ],
+  "protocol": {
+    "standSeconds": 1,
+    "commandSeconds": 5,
+    "stopSeconds": 3,
+    "commandRefreshHz": 50,
+    "stopTailSeconds": 1
+  },
+  "limits": {
+    "minimumHeight": 0.28,
+    "minimumMovement": 0.2,
+    "maximumYawDrift": 0.3,
+    "maximumStopTailRMS": 0.25,
+    "minimumSignedTurnRadians": 0.25
+  },
+  "sources": {
+    "scripts/check-planner-combinations.mjs": {
+      "bytes": 10399,
+      "sha256": "110b6ca20cad014d33c795f0b90bdd4e305ce416fe7eb2aacc102bb039d893aa"
+    },
+    "demo/local-policy.js": {
+      "bytes": 8759,
+      "sha256": "0d6e9869e76f24c1674aee5f7381f229ce0e9d06a782b5d9b5dc51351771c8b4"
+    },
+    "demo/local-planner.js": {
+      "bytes": 9667,
+      "sha256": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119"
+    },
+    "demo/local-physics.js": {
+      "bytes": 13376,
+      "sha256": "c0c138bf5f0a2fd559b4e8e1383de831c2f4d1eb129cee94ae22a007abb3f8a0"
+    },
+    "demo/local-inference.js": {
+      "bytes": 8606,
+      "sha256": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159"
+    },
+    "demo/local-assets/physics/manifest.json": {
+      "bytes": 4167,
+      "sha256": "7b456403cae20e75cd2a26f4afe53eaa83c90eb2122025b59a7c602ecbd3f478"
+    },
+    "demo/local-assets/controller.json": {
+      "bytes": 5978,
+      "sha256": "69761e6438ec4fedb74c6c1b25c8099ddbaeec4a772c149cfba9693fa2f8396f"
+    },
+    "demo/local-assets/physics/physics-config.json": {
+      "bytes": 33325,
+      "sha256": "7986df7f2e97ffa76ce79c865458d32d8178fe3fe332889455b72252e0b75771"
+    },
+    "demo/local-assets/physics/model.xml": {
+      "bytes": 36191,
+      "sha256": "488766ab4899370001960b38e801ce3443eb5d519b7dd08a4a7ceb6b5b0098c2"
+    },
+    "demo/local-assets/physics/meshes/left_ankle_roll_link.stl": {
+      "bytes": 12384,
+      "sha256": "65e35f53cf85e55c0c61a6b10e7c2e6e4c3a46b18bf9ce6dffa520ec1e4e5b66"
+    },
+    "demo/local-assets/physics/meshes/left_hip_yaw_link.stl": {
+      "bytes": 300884,
+      "sha256": "1222ef2aed7b276e05a86b588d92df934c7feac537ae2491243db2d32fd9aac6"
+    },
+    "demo/local-assets/physics/meshes/left_ankle_pitch_link.stl": {
+      "bytes": 319184,
+      "sha256": "0b15f8fcbfaece06fbbf16684a96d8a31914ab870c55b292ac18203d7c6c7a62"
+    },
+    "demo/local-assets/physics/meshes/left_hip_roll_link.stl": {
+      "bytes": 204384,
+      "sha256": "32c8554cee739281bee25da955f61dcf4fb828c4deeee94b963403c512875265"
+    },
+    "demo/local-assets/physics/meshes/right_hip_yaw_link.stl": {
+      "bytes": 297484,
+      "sha256": "9095a160b6c5ba60a8460439f748764baee08bf85ef9d05c0bdc14b7a1c66437"
+    },
+    "demo/local-assets/physics/meshes/right_hip_roll_link.stl": {
+      "bytes": 203784,
+      "sha256": "a1bc4cf4a5c2ad261af93c29972dce9bd8a1818c78fea513dec46d25b729b9fc"
+    },
+    "demo/local-assets/physics/meshes/right_ankle_roll_link.stl": {
+      "bytes": 12384,
+      "sha256": "27cbf682efac52262a35867ce39c969a56e87e00395a7f29ca4840149cf0a96a"
+    },
+    "demo/local-assets/physics/meshes/waist_roll_link.stl": {
+      "bytes": 13084,
+      "sha256": "e229c2617f2c1ed26d29b44bc45cfe9622cfd0dcb6974f1896e4a21941706c7c"
+    },
+    "demo/local-assets/physics/meshes/waist_yaw_link.stl": {
+      "bytes": 20684,
+      "sha256": "385f8caecd05d046aabd3cd4721e2d23a27f190646a247f71c8d0c19114456a2"
+    },
+    "demo/local-assets/physics/meshes/head_pitch_link.stl": {
+      "bytes": 39484,
+      "sha256": "1800daa300a7319bb14dda0b9bddc5c76fa8ca2b7943efef3ecc298886e89e33"
+    },
+    "demo/local-assets/physics/meshes/left_shoulder_pitch_link.stl": {
+      "bytes": 271484,
+      "sha256": "7d10e524f5124b8dd37d8b9b61f2ae9342f0605bdc87ba49c6953c2863fa32c9"
+    },
+    "demo/local-assets/physics/meshes/left_wrist_pitch_link.stl": {
+      "bytes": 35084,
+      "sha256": "6ae7cbf9941e3507546c2d568d0bac32b93eaaafaa83117371f5c7363172bcb3"
+    },
+    "demo/local-assets/physics/meshes/right_ankle_pitch_link.stl": {
+      "bytes": 317784,
+      "sha256": "6270e30af526c306e4a1006f7ad9a70fe010ffa8451c9630ff98527a5bdce2d1"
+    },
+    "demo/local-assets/physics/meshes/left_shoulder_yaw_link.stl": {
+      "bytes": 286484,
+      "sha256": "253bde468b2156e13a0172436ab0327001d08b2a7872b729426e2f4a6f70183f"
+    },
+    "demo/local-assets/physics/meshes/left_elbow_link.stl": {
+      "bytes": 472684,
+      "sha256": "3da8b8c0a387fd91911a3fb3dda3ce6a0c56903490d9e08b4536216066211b5f"
+    },
+    "demo/local-assets/physics/meshes/left_shoulder_roll_link.stl": {
+      "bytes": 307184,
+      "sha256": "cc86323ffe6477cacc6f6ee2a7e000940432e47ba53d3514716f3539f8c83208"
+    },
+    "demo/local-assets/physics/meshes/left_wrist_yaw_link.stl": {
+      "bytes": 147984,
+      "sha256": "c8fc77bf0b8617f9e8405c4a1006280b1605a3b3a130b45428d4be8531d75005"
+    },
+    "demo/local-assets/physics/meshes/left_wrist_roll_link.stl": {
+      "bytes": 206684,
+      "sha256": "7fed0dde408dd63bec1a5a13721173e66e4a063b68850a2ab7701719da6bec62"
+    },
+    "demo/local-assets/physics/meshes/right_shoulder_pitch_link.stl": {
+      "bytes": 271684,
+      "sha256": "e2b725c2592250811135c05004bb5ec6356b357fdf45781cb2affc7e61499cfb"
+    },
+    "demo/local-assets/physics/meshes/right_shoulder_roll_link.stl": {
+      "bytes": 306984,
+      "sha256": "be48510290d600d0656cd6055d2a6c58d94665e2f8210fb39ebed8cfdcf0abed"
+    },
+    "demo/local-assets/physics/meshes/right_wrist_roll_link.stl": {
+      "bytes": 206584,
+      "sha256": "545475c0f7377661a9c67a983f4017985578e805045d2d7b42df8d37c5641d7d"
+    },
+    "demo/local-assets/physics/meshes/right_wrist_pitch_link.stl": {
+      "bytes": 35084,
+      "sha256": "216abd2755c2288dd408afb1b59867cdac3e22ef7a5ee111b54f456b38b25074"
+    },
+    "demo/local-assets/physics/meshes/right_elbow_link.stl": {
+      "bytes": 477684,
+      "sha256": "421fdb043f2775038c72e692a598f96840f1bd2b898ce19b35e240fe5617abc4"
+    },
+    "demo/local-assets/physics/meshes/right_wrist_yaw_link.stl": {
+      "bytes": 147284,
+      "sha256": "c13910f88609dd2b801c1398150ceb6c82f65ca308bc8e2878f19ea9a3dabda5"
+    },
+    "demo/local-assets/physics/meshes/right_shoulder_yaw_link.stl": {
+      "bytes": 284684,
+      "sha256": "78b6403fc846c6f64cd6740ec3432f1933635724f988313fdf848063e261c73d"
+    },
+    "demo/local-assets/physics/meshes/Link-pitch-R-A3.STL": {
+      "bytes": 361584,
+      "sha256": "aaf6a787d16b6b971926634794d3b3bd5d7cd3443720780663f15037a5ecaf06"
+    },
+    "demo/local-assets/physics/meshes/left_ankle_A_link.STL": {
+      "bytes": 347984,
+      "sha256": "32fa65107d904a016990a94edae01eab17ce5a84a0eef02af96056cdbc7a478c"
+    },
+    "demo/local-assets/physics/meshes/right_ankle_A_link.STL": {
+      "bytes": 347984,
+      "sha256": "46d6fa85f043e50228b45cc2f6f6f95f22be327e9b68a767417ec5fc1c9ceb06"
+    },
+    "demo/local-assets/physics/meshes/Link-pitch-L-A3.STL": {
+      "bytes": 360784,
+      "sha256": "b1fa54e1503dc29e9f16e714c1f40a86f3e317a881d3d7662c1419d10502318e"
+    },
+    "demo/local-assets/physics/meshes/pelvis.stl": {
+      "bytes": 689984,
+      "sha256": "1f2a2e99ce060eb1a25efcbadfdd4424347f58e6d954e023dcfcb05d87c55a4e"
+    },
+    "demo/local-assets/physics/meshes/left_knee_link.stl": {
+      "bytes": 698284,
+      "sha256": "f24801b1dde9fd004b2f2178ef65318364a48daede96ab95c8ea2d979a642219"
+    },
+    "demo/local-assets/physics/meshes/right_knee_link.stl": {
+      "bytes": 700884,
+      "sha256": "4db181250da6aaec995b4eda88a3729c5144128704c3d949fa9cb5a56f437b1b"
+    },
+    "demo/local-assets/physics/meshes/torso_link.stl": {
+      "bytes": 526884,
+      "sha256": "0f0c12bddbe2e29df43f38fbaeb3a65c08d43123fbb62379a1cc58e9c6df47b5"
+    },
+    "demo/local-assets/physics/meshes/right_hand_link.stl": {
+      "bytes": 754384,
+      "sha256": "8e5d75d26f970b05148436d21973cfe29cc1bc335783cd6e5104d6170bd8a139"
+    },
+    "demo/local-assets/physics/meshes/left_hand_link.stl": {
+      "bytes": 753684,
+      "sha256": "b326d6cbdeb2ca202feb193b3103f8194fc594e6177e7d1a73791bcea39d4c47"
+    },
+    "demo/local-assets/physics/meshes/left_hip_pitch_link.stl": {
+      "bytes": 1269084,
+      "sha256": "d1bccf3c881baf960ff75c17d570f9a5871ebbf1f8935f4d8873677533d6d3ec"
+    },
+    "demo/local-assets/physics/meshes/right_hip_pitch_link.stl": {
+      "bytes": 1278984,
+      "sha256": "33de10c25bee624038bf31bccb41aa84bfea0cd6bca5fcd5dfee8fa84eb0eab1"
+    },
+    "demo/local-assets/physics/meshes/head_yaw_link.stl": {
+      "bytes": 1481284,
+      "sha256": "eb39c18b45de3194341ae47f259c21a00dc7f25ba9a10dfde3673b11debf138f"
+    },
+    "demo/vendor/mujoco/mujoco.wasm": {
+      "bytes": 10143561,
+      "sha256": "832597ae0a0e306c97ed43d2a9bbca033cf3e547eced410fb9011d87a68d4207"
+    },
+    "demo/local-assets/models/encoder_native.onnx": {
+      "bytes": 16950929,
+      "sha256": "142b7fb729528c2c0f474d656266bac313a703d10021b3759d84f9cd2b72634f"
+    },
+    "demo/local-assets/models/decoder.onnx": {
+      "bytes": 40743594,
+      "sha256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee"
+    },
+    "demo/local-assets/models/encoder_g1.onnx": {
+      "bytes": 16932124,
+      "sha256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975"
+    },
+    "demo/local-assets/references/manifest.json": {
+      "bytes": 5405,
+      "sha256": "efc52f02d9ea632c47f4394b7f631ded599a7475c1a901e0dbfa9ef73afbfb42"
+    },
+    "demo/local-assets/references/forward_lunge_R_001__A359_M.json": {
+      "bytes": 812616,
+      "sha256": "1cf71348066fba958dc83e0b23d14a0dde166d506315ce8314accfddf615d1b4"
+    },
+    "demo/local-assets/references/squat_001__A359.json": {
+      "bytes": 863730,
+      "sha256": "aa687d1f3d7c38d4fe98e23f95bcbf5d09597d919a2cd108912a657b431d1d4b"
+    },
+    "demo/local-assets/references/walking_quip_360_R_002__A428.json": {
+      "bytes": 930822,
+      "sha256": "785953c309d21b7c3529d8c1bb9be378297f83b06f5dd173aef36621179173b6"
+    },
+    "demo/local-assets/references/walking_quip_360_R_002__A428_M.json": {
+      "bytes": 930573,
+      "sha256": "873d74e3000c5a7904e1fae4c997084e5f1fa969e24814cf06245e24207a08c8"
+    },
+    "demo/local-assets/references/dance_in_da_party_001__A464.json": {
+      "bytes": 1008372,
+      "sha256": "668a277907fc6c06734593f7e76856d891138ae228344a179ffb01dc2142fdb4"
+    },
+    "demo/local-assets/references/dance_in_da_party_001__A464_M.json": {
+      "bytes": 1008887,
+      "sha256": "1d0baa5b7c17bac0b4b3a7934b3b92b50283f51f082aa3aff72f8bfd107be5a3"
+    },
+    "demo/local-assets/references/macarena_001__A545.json": {
+      "bytes": 2803221,
+      "sha256": "5b0c90cad84a7356c68849e6f9f53239d83fb206360a1e50092f109970fc3f67"
+    },
+    "demo/local-assets/references/macarena_001__A545_M.json": {
+      "bytes": 2804580,
+      "sha256": "80c2dd2c2f86322bc40425f4efcd661b43d58fe90ac133dd95fa0e8d69a6e99a"
+    },
+    "demo/local-assets/references/h2_default_stand.json": {
+      "bytes": 1103198,
+      "sha256": "ea832417d0b33ad044aaa2111ff5c71d4c471531a01fa1b894cf54c07a8776f3"
+    },
+    "demo/local-assets/references/planner_walk_04.json": {
+      "bytes": 149534,
+      "sha256": "e83222101c9b19cd495f38b4b26c643d649cde1b80056fa4ae8f5ec37fe49688"
+    },
+    "bank/manifest.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/manifest.json",
+      "bytes": 46519,
+      "sha256": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea"
+    },
+    "bank/planner_mode1_left_speed0p4.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_left_speed0p4.json",
+      "bytes": 133098,
+      "sha256": "9be840f49796090435f3bbdbda25502f51cdf28063ce96c6d8a2e8d15b4c78bd"
+    },
+    "bank/planner_mode1_left_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_left_speed0p8.json",
+      "bytes": 127920,
+      "sha256": "18de060fff18963e0c37655f086f71cf7b6d57e97cfaa7d0564ee7f991f0c19a"
+    },
+    "bank/planner_slow_left_low_cadence.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_slow_left_low_cadence.json",
+      "bytes": 133431,
+      "sha256": "7c2e03bc0404998613d0e98830fcba2f13ccf9ada26c182bf7d1ee61c51fb046"
+    },
+    "bank/planner_mode1_right_speed0p4.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_right_speed0p4.json",
+      "bytes": 128731,
+      "sha256": "956728c16ef1e0ae693aeab83db2b926d9d1ec5cc0f10100083ec2171112797c"
+    },
+    "bank/planner_mode1_right_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_right_speed0p8.json",
+      "bytes": 127706,
+      "sha256": "824423a1b95a87ae3e57f788f6d9ea465a682b18b8e803cb0e5eaa53b907ccad"
+    },
+    "bank/planner_slow_right_low_cadence.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_slow_right_low_cadence.json",
+      "bytes": 129064,
+      "sha256": "bf1fc32920f1d2537053a2a2a8eaa8a514c17c7e2cf65ba341eb1d3c74240937"
+    },
+    "bank/planner_mode1_forward_speed0p4.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_forward_speed0p4.json",
+      "bytes": 162955,
+      "sha256": "9db0f88ac8b3bfd44e1845e3cce23eba42b1c781eb635f5cc8d8a7f05b1247eb"
+    },
+    "bank/planner_mode1_forward_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_forward_speed0p8.json",
+      "bytes": 129003,
+      "sha256": "9cf48a1a284e76395dcc01ae7a2a68fbf11ff82b61ee22cb90165365e28baf8c"
+    },
+    "bank/planner_slow_forward_low_cadence.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_slow_forward_low_cadence.json",
+      "bytes": 163288,
+      "sha256": "c179030cbfb403e55eb7e9b4bdefd864f4dfe6f6ba672615f771c2f3a461c7a8"
+    },
+    "bank/planner_mode1_back_speed0p4.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_back_speed0p4.json",
+      "bytes": 250522,
+      "sha256": "cdf9e8bc271cb20bcbee80211b3ff3acbe93098ccfdcc7872e6bf54b34b5015f"
+    },
+    "bank/planner_mode1_back_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode1_back_speed0p8.json",
+      "bytes": 129154,
+      "sha256": "593a1ec910ff77dfdb0c3ba3623574719f7341e08f3aa628c6a1f673b967e412"
+    },
+    "bank/planner_slow_back_low_cadence.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_slow_back_low_cadence.json",
+      "bytes": 250855,
+      "sha256": "83f915fddde79cc6604414ac56d9654af712fe44a5e3a53f837fdca82aff03d5"
+    },
+    "bank/planner_mode2_left_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_left_speed0p8.json",
+      "bytes": 127920,
+      "sha256": "7b1d7f952a7381afe057fd876f66f97f380f79bbaa69a1b2a091aecb4f40c29e"
+    },
+    "bank/planner_mode2_left_speed1p6.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_left_speed1p6.json",
+      "bytes": 82990,
+      "sha256": "8507e6aad2e7b91c2da0af475400ea0e5b17fa78b51125c16a58aba9a2a0d9b1"
+    },
+    "bank/planner_mode2_right_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_right_speed0p8.json",
+      "bytes": 127706,
+      "sha256": "91e5d9eb68c8fe82a09041f2d85527e2396f5e82b1e49f02dce63bd9e3f0adf8"
+    },
+    "bank/planner_mode2_right_speed1p6.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_right_speed1p6.json",
+      "bytes": 166403,
+      "sha256": "10482a078c9bf60b96d644489cd18ecba07e7d7531473ba662eeff241b41bb40"
+    },
+    "bank/planner_mode2_right_speed2p5.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_right_speed2p5.json",
+      "bytes": 141760,
+      "sha256": "ca3a1b9caf601ce9b172c373a31f1df6752d59e4c484a90dfc56e1065a1e715f"
+    },
+    "bank/planner_mode2_forward_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_forward_speed0p8.json",
+      "bytes": 129000,
+      "sha256": "35af8f9ea994d1cbb00571a00ae6b676169687354267be25c879985ac4ff4bc6"
+    },
+    "bank/planner_mode2_forward_speed1p6.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_forward_speed1p6.json",
+      "bytes": 106173,
+      "sha256": "3b77baee0391134dc178a047ddc130fe9c1a903259b77345c18ac0f89877d051"
+    },
+    "bank/planner_mode2_forward_speed2p5.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_forward_speed2p5.json",
+      "bytes": 88145,
+      "sha256": "1585505fa26307ce261639350258abb16dc94ade5ced028eb136005da8396d1a"
+    },
+    "bank/planner_mode2_back_speed0p8.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_back_speed0p8.json",
+      "bytes": 129063,
+      "sha256": "ec950ab7a40a0036a86c67397d41b6c4dd9a1f9cb417da19cd23962c655355ad"
+    },
+    "bank/planner_mode2_back_speed1p6.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_back_speed1p6.json",
+      "bytes": 98548,
+      "sha256": "4c3242c238dd26b866d161a8880bbaec5b4f359bf39608bdb433fe4cb47875d9"
+    },
+    "bank/planner_mode2_back_speed2p5.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode2_back_speed2p5.json",
+      "bytes": 145456,
+      "sha256": "1c8e1b56023dd7937db3a8c2fd16fd3d40e2342feb4c2c392cdef580ebc22ef9"
+    },
+    "bank/planner_run_left.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_run_left.json",
+      "bytes": 99105,
+      "sha256": "e5db43fd93c925f4753e5948e9d067d1bbf48a7df9825842e9ddcfdb97b8c3ec"
+    },
+    "bank/planner_run_right.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_run_right.json",
+      "bytes": 95828,
+      "sha256": "9a4244babf1acea3e2ab93af7290e12a08561916ac7e363da01d924e4111908a"
+    },
+    "bank/planner_mode3_forward_speed2p5.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode3_forward_speed2p5.json",
+      "bytes": 78010,
+      "sha256": "d7243e3e343e1bcb0f95a69b926a452d17e770e8b233f5473182f717fe33349f"
+    },
+    "bank/planner_mode3_forward_speed4.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_mode3_forward_speed4.json",
+      "bytes": 65648,
+      "sha256": "a884d0dd15676ff03ffabaffd3b7cf71ec327640c43dbfd644090f7282b60a32"
+    },
+    "bank/planner_run_back.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_run_back.json",
+      "bytes": 93802,
+      "sha256": "6cb88fcdb753c5292834fc21c2ccef844a20f7cf546dd52f08d2a5a2aaa49667"
+    },
+    "bank/planner_idle_idle.json": {
+      "path": "/Users/eren/Workspace/BFM-Trace/homepage/demo/local-assets/planner-bank/planner_idle_idle.json",
+      "bytes": 279264,
+      "sha256": "ba2e7d2fe40823d39c28a5337a401595473eca159e77a5c9a52470a643175248"
+    }
+  },
+  "cases": [
+    {
+      "style": "slow_walk",
+      "combination": "forward_left",
+      "speed": 0.4,
+      "command": {
+        "vx": 0.282842712474619,
+        "vy": 0.282842712474619,
+        "yaw": 0
+      },
+      "segments": [
+        {
+          "name": "stand",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 0,
+            "position": [
+              0,
+              0,
+              0.9982923789147422
+            ],
+            "velocity": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9982923789147422,
+          "maxAbsYawDrift": 0.07375896436985638,
+          "yawChange": 0.024568962322193647,
+          "samples": [
+            {
+              "time": 0,
+              "position": [
+                0,
+                0,
+                0.9982923789147422
+              ],
+              "velocity": [
+                0,
+                0,
+                0
+              ],
+              "yaw": 0,
+              "status": "running"
+            },
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "simSeconds": 1.0000000000000007,
+          "displacement": [
+            -0.031963094351813125,
+            0.01850014189444085,
+            0.03430492973209609
+          ],
+          "bodyXY": {
+            "forward": -0.031963094351813125,
+            "left": 0.01850014189444085
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.13711075467999193,
+          "finalOneSecondRMSYawRate": 0.3840487869205373
+        },
+        {
+          "name": "command",
+          "command": {
+            "vx": 0.282842712474619,
+            "vy": 0.282842712474619,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.0056143987174595,
+          "maxAbsYawDrift": 0.08443203960047446,
+          "yawChange": -0.04517883029746349,
+          "samples": [
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            },
+            {
+              "time": 1.9999999999998905,
+              "position": [
+                -0.029564836537865506,
+                0.06433644866457564,
+                1.0240910748822463
+              ],
+              "velocity": [
+                -0.01573102994195941,
+                -0.024793400330293126,
+                0.026456211421138617
+              ],
+              "yaw": 0.009933849129584567,
+              "status": "running"
+            },
+            {
+              "time": 2.9999999999997806,
+              "position": [
+                0.13166176359140108,
+                0.29111129047252776,
+                1.0349206641437676
+              ],
+              "velocity": [
+                0.2191115803667692,
+                -0.0054235467202242765,
+                -0.02017710025630718
+              ],
+              "yaw": -0.010292659822876978,
+              "status": "running"
+            },
+            {
+              "time": 3.9999999999996705,
+              "position": [
+                0.3664656300819583,
+                0.5476776987680413,
+                1.0365703996012554
+              ],
+              "velocity": [
+                0.24716666823346894,
+                0.10626910354390309,
+                0.025224113830881734
+              ],
+              "yaw": -0.046789352819827726,
+              "status": "running"
+            },
+            {
+              "time": 5.000000000000004,
+              "position": [
+                0.5906875402981527,
+                0.7828925078252664,
+                1.0327187641318925
+              ],
+              "velocity": [
+                0.2205196987936902,
+                0.24606658462362563,
+                0.05674748309737164
+              ],
+              "yaw": -0.05277317625144642,
+              "status": "running"
+            },
+            {
+              "time": 6.000000000000338,
+              "position": [
+                0.8059941875537665,
+                1.0054817599456025,
+                1.0192040004337903
+              ],
+              "velocity": [
+                0.26575672832322267,
+                0.4617579003080223,
+                0.09469535000841146
+              ],
+              "yaw": -0.020609867975269775,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 6.000000000000338,
+            "position": [
+              0.8059941875537665,
+              1.0054817599456025,
+              1.0192040004337903
+            ],
+            "velocity": [
+              0.26575672832322267,
+              0.4617579003080223,
+              0.09469535000841146
+            ],
+            "yaw": -0.020609867975269775,
+            "status": "running"
+          },
+          "simSeconds": 5.0000000000003375,
+          "displacement": [
+            0.8379572819055796,
+            0.9869816180511617,
+            -0.01339330821304796
+          ],
+          "bodyXY": {
+            "forward": 0.8619510595746177,
+            "left": 0.9660980755428872
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.3695451093552124,
+          "finalOneSecondRMSYawRate": 0.2440715225330205
+        },
+        {
+          "name": "stop",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 6.000000000000338,
+            "position": [
+              0.8059941875537665,
+              1.0054817599456025,
+              1.0192040004337903
+            ],
+            "velocity": [
+              0.26575672832322267,
+              0.4617579003080223,
+              0.09469535000841146
+            ],
+            "yaw": -0.020609867975269775,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.0192040004337903,
+          "maxAbsYawDrift": 0.07519591056232715,
+          "yawChange": 0.041532705993850935,
+          "samples": [
+            {
+              "time": 6.000000000000338,
+              "position": [
+                0.8059941875537665,
+                1.0054817599456025,
+                1.0192040004337903
+              ],
+              "velocity": [
+                0.26575672832322267,
+                0.4617579003080223,
+                0.09469535000841146
+              ],
+              "yaw": -0.020609867975269775,
+              "status": "running"
+            },
+            {
+              "time": 7.000000000000672,
+              "position": [
+                0.9604093194550478,
+                0.9712792362864863,
+                1.0304636539041978
+              ],
+              "velocity": [
+                0.044674851495319017,
+                -0.11926167700446494,
+                -0.008638166785666288
+              ],
+              "yaw": 0.0534804594182714,
+              "status": "running"
+            },
+            {
+              "time": 8.000000000001005,
+              "position": [
+                0.9593232824905072,
+                0.9757988188711153,
+                1.0279936976405615
+              ],
+              "velocity": [
+                0.0012639334814396027,
+                0.01605253252305484,
+                0.0014231133818757456
+              ],
+              "yaw": 0.03855316531973035,
+              "status": "running"
+            },
+            {
+              "time": 9.000000000000451,
+              "position": [
+                0.9599632891227975,
+                0.9852208663293649,
+                1.0261193373391546
+              ],
+              "velocity": [
+                0.008750096211450458,
+                0.0005818040556732275,
+                -0.0012690340202102608
+              ],
+              "yaw": 0.02092283801858121,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 9.000000000000451,
+            "position": [
+              0.9599632891227975,
+              0.9852208663293649,
+              1.0261193373391546
+            ],
+            "velocity": [
+              0.008750096211450458,
+              0.0005818040556732275,
+              -0.0012690340202102608
+            ],
+            "yaw": 0.02092283801858121,
+            "status": "running"
+          },
+          "simSeconds": 3.000000000000113,
+          "displacement": [
+            0.15396910156903099,
+            -0.02026089361623762,
+            0.006915336905364278
+          ],
+          "bodyXY": {
+            "forward": 0.15435394703734576,
+            "left": -0.01708353248293052
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.011217317473870113,
+          "finalOneSecondRMSYawRate": 0.02507601866121572
+        }
+      ],
+      "failures": [],
+      "status": "pass"
+    },
+    {
+      "style": "slow_walk",
+      "combination": "forward_right",
+      "speed": 0.4,
+      "command": {
+        "vx": 0.282842712474619,
+        "vy": -0.282842712474619,
+        "yaw": 0
+      },
+      "segments": [
+        {
+          "name": "stand",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 0,
+            "position": [
+              0,
+              0,
+              0.9982923789147422
+            ],
+            "velocity": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9982923789147422,
+          "maxAbsYawDrift": 0.07375896436985638,
+          "yawChange": 0.024568962322193647,
+          "samples": [
+            {
+              "time": 0,
+              "position": [
+                0,
+                0,
+                0.9982923789147422
+              ],
+              "velocity": [
+                0,
+                0,
+                0
+              ],
+              "yaw": 0,
+              "status": "running"
+            },
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "simSeconds": 1.0000000000000007,
+          "displacement": [
+            -0.031963094351813125,
+            0.01850014189444085,
+            0.03430492973209609
+          ],
+          "bodyXY": {
+            "forward": -0.031963094351813125,
+            "left": 0.01850014189444085
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.13711075467999193,
+          "finalOneSecondRMSYawRate": 0.3840487869205373
+        },
+        {
+          "name": "command",
+          "command": {
+            "vx": 0.282842712474619,
+            "vy": -0.282842712474619,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.0032700359617934,
+          "maxAbsYawDrift": 0.05521341487530943,
+          "yawChange": -0.013849010278474991,
+          "samples": [
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            },
+            {
+              "time": 1.9999999999998905,
+              "position": [
+                0.11114721584956316,
+                -0.0852436854939955,
+                1.0263019587644466
+              ],
+              "velocity": [
+                0.2964576585420824,
+                -0.2694329759770755,
+                0.12521841569570738
+              ],
+              "yaw": 0.07174902406124828,
+              "status": "running"
+            },
+            {
+              "time": 2.9999999999997806,
+              "position": [
+                0.3222877978570369,
+                -0.243754568749747,
+                1.0121808316970353
+              ],
+              "velocity": [
+                0.24604823954679977,
+                -0.3664937568356404,
+                0.12647996002798678
+              ],
+              "yaw": 0.07354065974098162,
+              "status": "running"
+            },
+            {
+              "time": 3.9999999999996705,
+              "position": [
+                0.5196249958684477,
+                -0.38182022140002997,
+                1.0081221928194686
+              ],
+              "velocity": [
+                0.38944051353623815,
+                -0.5148245803591069,
+                -0.17618965479311288
+              ],
+              "yaw": 0.025387160176957507,
+              "status": "running"
+            },
+            {
+              "time": 5.000000000000004,
+              "position": [
+                0.7217973725746157,
+                -0.5269502144509374,
+                1.0270367380210357
+              ],
+              "velocity": [
+                0.2696246515061182,
+                -0.2327408727761953,
+                -0.008767894460783658
+              ],
+              "yaw": 0.0032723896033559872,
+              "status": "running"
+            },
+            {
+              "time": 6.000000000000338,
+              "position": [
+                0.9544092199417502,
+                -0.7161365248182624,
+                1.0254594868861764
+              ],
+              "velocity": [
+                0.12877780004268882,
+                -0.013386320393523825,
+                -0.024287127944796993
+              ],
+              "yaw": 0.010719952043718674,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 6.000000000000338,
+            "position": [
+              0.9544092199417502,
+              -0.7161365248182624,
+              1.0254594868861764
+            ],
+            "velocity": [
+              0.12877780004268882,
+              -0.013386320393523825,
+              -0.024287127944796993
+            ],
+            "yaw": 0.010719952043718674,
+            "status": "running"
+          },
+          "simSeconds": 5.0000000000003375,
+          "displacement": [
+            0.9863723142935633,
+            -0.7346366667127032,
+            -0.007137821760661911
+          ],
+          "bodyXY": {
+            "forward": 0.9680271805982658,
+            "left": -0.7586466582715329
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.3656853139913138,
+          "finalOneSecondRMSYawRate": 0.22596788108562868
+        },
+        {
+          "name": "stop",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 6.000000000000338,
+            "position": [
+              0.9544092199417502,
+              -0.7161365248182624,
+              1.0254594868861764
+            ],
+            "velocity": [
+              0.12877780004268882,
+              -0.013386320393523825,
+              -0.024287127944796993
+            ],
+            "yaw": 0.010719952043718674,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.021063481319251,
+          "maxAbsYawDrift": 0.10054360312700752,
+          "yawChange": 0.07848449382770688,
+          "samples": [
+            {
+              "time": 6.000000000000338,
+              "position": [
+                0.9544092199417502,
+                -0.7161365248182624,
+                1.0254594868861764
+              ],
+              "velocity": [
+                0.12877780004268882,
+                -0.013386320393523825,
+                -0.024287127944796993
+              ],
+              "yaw": 0.010719952043718674,
+              "status": "running"
+            },
+            {
+              "time": 7.000000000000672,
+              "position": [
+                1.0823834196213555,
+                -0.7895030791378748,
+                1.024650870120368
+              ],
+              "velocity": [
+                -0.03961835297453982,
+                0.057594874529996586,
+                -0.0020491664412038493
+              ],
+              "yaw": 0.09024070516549437,
+              "status": "running"
+            },
+            {
+              "time": 8.000000000001005,
+              "position": [
+                1.0765392914603291,
+                -0.7825261550828044,
+                1.0225719664114077
+              ],
+              "velocity": [
+                0.004676992293397091,
+                0.0347795957811878,
+                -0.006890711006333546
+              ],
+              "yaw": 0.09191542587026509,
+              "status": "running"
+            },
+            {
+              "time": 9.000000000000451,
+              "position": [
+                1.0748448947008589,
+                -0.7783023205617862,
+                1.0226557624988444
+              ],
+              "velocity": [
+                0.011357200341457586,
+                -0.019405787353129703,
+                0.0012368752347140354
+              ],
+              "yaw": 0.08920444587142555,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 9.000000000000451,
+            "position": [
+              1.0748448947008589,
+              -0.7783023205617862,
+              1.0226557624988444
+            ],
+            "velocity": [
+              0.011357200341457586,
+              -0.019405787353129703,
+              0.0012368752347140354
+            ],
+            "yaw": 0.08920444587142555,
+            "status": "running"
+          },
+          "simSeconds": 3.000000000000113,
+          "displacement": [
+            0.12043567475910866,
+            -0.062165795743523766,
+            -0.0028037243873320072
+          ],
+          "bodyXY": {
+            "forward": 0.11976235316433056,
+            "left": -0.06345326374308481
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.019202701819502156,
+          "finalOneSecondRMSYawRate": 0.029022331126863303
+        }
+      ],
+      "failures": [],
+      "status": "pass"
+    },
+    {
+      "style": "slow_walk",
+      "combination": "forward_Q",
+      "speed": 0.4,
+      "command": {
+        "vx": 0.4,
+        "vy": 0,
+        "yaw": 0.5
+      },
+      "segments": [
+        {
+          "name": "stand",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 0,
+            "position": [
+              0,
+              0,
+              0.9982923789147422
+            ],
+            "velocity": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9982923789147422,
+          "maxAbsYawDrift": 0.07375896436985638,
+          "yawChange": 0.024568962322193647,
+          "samples": [
+            {
+              "time": 0,
+              "position": [
+                0,
+                0,
+                0.9982923789147422
+              ],
+              "velocity": [
+                0,
+                0,
+                0
+              ],
+              "yaw": 0,
+              "status": "running"
+            },
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "simSeconds": 1.0000000000000007,
+          "displacement": [
+            -0.031963094351813125,
+            0.01850014189444085,
+            0.03430492973209609
+          ],
+          "bodyXY": {
+            "forward": -0.031963094351813125,
+            "left": 0.01850014189444085
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.13711075467999193,
+          "finalOneSecondRMSYawRate": 0.3840487869205373
+        },
+        {
+          "name": "command",
+          "command": {
+            "vx": 0.4,
+            "vy": 0,
+            "yaw": 0.5
+          },
+          "initial": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.012159517631274,
+          "maxAbsYawDrift": 2.472654142241271,
+          "yawChange": 2.472654142241271,
+          "samples": [
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            },
+            {
+              "time": 1.9999999999998905,
+              "position": [
+                0.13703672072548945,
+                0.027880920209837397,
+                1.0212883775894779
+              ],
+              "velocity": [
+                0.3863748467959874,
+                -0.07095447015080207,
+                0.05038247280893302
+              ],
+              "yaw": 0.5156539288466185,
+              "status": "running"
+            },
+            {
+              "time": 2.9999999999997806,
+              "position": [
+                0.32734174728950133,
+                0.25100502519094176,
+                1.0315381932440395
+              ],
+              "velocity": [
+                0.22355579863492925,
+                0.3103698635508397,
+                -0.06284825551062469
+              ],
+              "yaw": 0.992705412591347,
+              "status": "running"
+            },
+            {
+              "time": 3.9999999999996705,
+              "position": [
+                0.5487539609942124,
+                0.5464696251589033,
+                1.0201191089227766
+              ],
+              "velocity": [
+                -0.2740762147949412,
+                0.4608782463592945,
+                0.14712137092152258
+              ],
+              "yaw": 1.3990652888950286,
+              "status": "running"
+            },
+            {
+              "time": 5.000000000000004,
+              "position": [
+                0.6088887759057449,
+                0.9171093798724331,
+                1.0259534028737787
+              ],
+              "velocity": [
+                -0.20085810406424812,
+                0.27135202128518726,
+                -0.0957310824362407
+              ],
+              "yaw": 1.927530275417528,
+              "status": "running"
+            },
+            {
+              "time": 6.000000000000338,
+              "position": [
+                0.3598233860203671,
+                1.2638731035490813,
+                1.0355960082892113
+              ],
+              "velocity": [
+                -0.0344323692296124,
+                0.4060095066413585,
+                0.05115611634860164
+              ],
+              "yaw": 2.4972231045634645,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 6.000000000000338,
+            "position": [
+              0.3598233860203671,
+              1.2638731035490813,
+              1.0355960082892113
+            ],
+            "velocity": [
+              -0.0344323692296124,
+              0.4060095066413585,
+              0.05115611634860164
+            ],
+            "yaw": 2.4972231045634645,
+            "status": "running"
+          },
+          "simSeconds": 5.0000000000003375,
+          "displacement": [
+            0.3917864803721802,
+            1.2453729616546405,
+            0.0029986996423729817
+          ],
+          "bodyXY": {
+            "forward": 0.4222626816991267,
+            "left": 1.2353722869917123
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.4736316545622172,
+          "finalOneSecondRMSYawRate": 0.7034174895521985
+        },
+        {
+          "name": "stop",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 6.000000000000338,
+            "position": [
+              0.3598233860203671,
+              1.2638731035490813,
+              1.0355960082892113
+            ],
+            "velocity": [
+              -0.0344323692296124,
+              0.4060095066413585,
+              0.05115611634860164
+            ],
+            "yaw": 2.4972231045634645,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.0254263886169712,
+          "maxAbsYawDrift": 0.06578745740262226,
+          "yawChange": -0.03263472618690999,
+          "samples": [
+            {
+              "time": 6.000000000000338,
+              "position": [
+                0.3598233860203671,
+                1.2638731035490813,
+                1.0355960082892113
+              ],
+              "velocity": [
+                -0.0344323692296124,
+                0.4060095066413585,
+                0.05115611634860164
+              ],
+              "yaw": 2.4972231045634645,
+              "status": "running"
+            },
+            {
+              "time": 7.000000000000672,
+              "position": [
+                0.27828055258406104,
+                1.2974713162055598,
+                1.0296808873019483
+              ],
+              "velocity": [
+                0.013899254848216858,
+                0.07135947156115237,
+                -0.006353251680772079
+              ],
+              "yaw": 2.468850995679877,
+              "status": "running"
+            },
+            {
+              "time": 8.000000000001005,
+              "position": [
+                0.3019168579977087,
+                1.3157635390714182,
+                1.0274292698961602
+              ],
+              "velocity": [
+                -0.005551966298912386,
+                -0.02359136872774807,
+                0.0034998462412101808
+              ],
+              "yaw": 2.4707160441467337,
+              "status": "running"
+            },
+            {
+              "time": 9.000000000000451,
+              "position": [
+                0.29747249906936535,
+                1.3198213873759548,
+                1.0254263886169712
+              ],
+              "velocity": [
+                0.007346143199358564,
+                0.0022098121677529047,
+                -0.0003275122639360739
+              ],
+              "yaw": 2.4645883783765545,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 9.000000000000451,
+            "position": [
+              0.29747249906936535,
+              1.3198213873759548,
+              1.0254263886169712
+            ],
+            "velocity": [
+              0.007346143199358564,
+              0.0022098121677529047,
+              -0.0003275122639360739
+            ],
+            "yaw": 2.4645883783765545,
+            "status": "running"
+          },
+          "simSeconds": 3.000000000000113,
+          "displacement": [
+            -0.06235088695100177,
+            0.055948283826873446,
+            -0.01016961967224006
+          ],
+          "bodyXY": {
+            "forward": 0.08345602976897296,
+            "left": -0.007275621069660808
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.01575157398213345,
+          "finalOneSecondRMSYawRate": 0.01588575881832412
+        }
+      ],
+      "failures": [],
+      "status": "pass"
+    },
+    {
+      "style": "walk",
+      "combination": "forward_left",
+      "speed": 0.9,
+      "command": {
+        "vx": 0.6363961030678927,
+        "vy": 0.6363961030678927,
+        "yaw": 0
+      },
+      "segments": [
+        {
+          "name": "stand",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 0,
+            "position": [
+              0,
+              0,
+              0.9982923789147422
+            ],
+            "velocity": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9982923789147422,
+          "maxAbsYawDrift": 0.07375896436985638,
+          "yawChange": 0.024568962322193647,
+          "samples": [
+            {
+              "time": 0,
+              "position": [
+                0,
+                0,
+                0.9982923789147422
+              ],
+              "velocity": [
+                0,
+                0,
+                0
+              ],
+              "yaw": 0,
+              "status": "running"
+            },
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "simSeconds": 1.0000000000000007,
+          "displacement": [
+            -0.031963094351813125,
+            0.01850014189444085,
+            0.03430492973209609
+          ],
+          "bodyXY": {
+            "forward": -0.031963094351813125,
+            "left": 0.01850014189444085
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.13711075467999193,
+          "finalOneSecondRMSYawRate": 0.3840487869205373
+        },
+        {
+          "name": "command",
+          "command": {
+            "vx": 0.6363961030678927,
+            "vy": 0.6363961030678927,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9776327821871732,
+          "maxAbsYawDrift": 0.11404935997118656,
+          "yawChange": -0.04822807355148695,
+          "samples": [
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            },
+            {
+              "time": 1.9999999999998905,
+              "position": [
+                0.2136702223692977,
+                0.2523216524655024,
+                1.0200145500385915
+              ],
+              "velocity": [
+                0.482186197373774,
+                0.22473686730693285,
+                -0.07485160968766645
+              ],
+              "yaw": -0.007266201483310137,
+              "status": "running"
+            },
+            {
+              "time": 2.9999999999997806,
+              "position": [
+                0.7768648199764725,
+                0.7885631016244381,
+                1.0191553750113131
+              ],
+              "velocity": [
+                0.6370484688631536,
+                0.5688025570120843,
+                -0.086869755578969
+              ],
+              "yaw": 0.018365834408535654,
+              "status": "running"
+            },
+            {
+              "time": 3.9999999999996705,
+              "position": [
+                1.300136274634856,
+                1.3196843608225919,
+                1.016509897711819
+              ],
+              "velocity": [
+                0.6408282149522074,
+                0.5893829540870564,
+                -0.15523348699750592
+              ],
+              "yaw": 0.0016618133870059764,
+              "status": "running"
+            },
+            {
+              "time": 5.000000000000004,
+              "position": [
+                1.8630007272486175,
+                1.8720165395122748,
+                1.003729737138688
+              ],
+              "velocity": [
+                0.6188975368199863,
+                0.7589189341251279,
+                -0.26475160850152535
+              ],
+              "yaw": -0.012536272112087866,
+              "status": "running"
+            },
+            {
+              "time": 6.000000000000338,
+              "position": [
+                2.4076013674992036,
+                2.4085764215293897,
+                0.992823629684465
+              ],
+              "velocity": [
+                0.5417444717074762,
+                0.8206890411111398,
+                -0.3313678415466391
+              ],
+              "yaw": -0.023659111229293237,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 6.000000000000338,
+            "position": [
+              2.4076013674992036,
+              2.4085764215293897,
+              0.992823629684465
+            ],
+            "velocity": [
+              0.5417444717074762,
+              0.8206890411111398,
+              -0.3313678415466391
+            ],
+            "yaw": -0.023659111229293237,
+            "status": "running"
+          },
+          "simSeconds": 5.0000000000003375,
+          "displacement": [
+            2.439564461851017,
+            2.3900762796349486,
+            -0.03977367896237327
+          ],
+          "bodyXY": {
+            "forward": 2.497543983476966,
+            "left": 2.3294234129067406
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.7931389731868895,
+          "finalOneSecondRMSYawRate": 0.41393497513712846
+        },
+        {
+          "name": "stop",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 6.000000000000338,
+            "position": [
+              2.4076013674992036,
+              2.4085764215293897,
+              0.992823629684465
+            ],
+            "velocity": [
+              0.5417444717074762,
+              0.8206890411111398,
+              -0.3313678415466391
+            ],
+            "yaw": -0.023659111229293237,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.98005481661458,
+          "maxAbsYawDrift": 0.07399971720660199,
+          "yawChange": 0.04315791023439867,
+          "samples": [
+            {
+              "time": 6.000000000000338,
+              "position": [
+                2.4076013674992036,
+                2.4085764215293897,
+                0.992823629684465
+              ],
+              "velocity": [
+                0.5417444717074762,
+                0.8206890411111398,
+                -0.3313678415466391
+              ],
+              "yaw": -0.023659111229293237,
+              "status": "running"
+            },
+            {
+              "time": 7.000000000000672,
+              "position": [
+                2.710952119995315,
+                2.5646089854738348,
+                1.0291491875804117
+              ],
+              "velocity": [
+                0.0474783087111627,
+                -0.03262321406981612,
+                0.003631937565760213
+              ],
+              "yaw": 0.03628359399596732,
+              "status": "running"
+            },
+            {
+              "time": 8.000000000001005,
+              "position": [
+                2.6871561901309127,
+                2.5847532814737506,
+                1.0286114295941426
+              ],
+              "velocity": [
+                0.03130846632457547,
+                0.02009248397904366,
+                -0.002484924817680784
+              ],
+              "yaw": 0.0289079152860291,
+              "status": "running"
+            },
+            {
+              "time": 9.000000000000451,
+              "position": [
+                2.6991795289635734,
+                2.5785192902492633,
+                1.025945461244804
+              ],
+              "velocity": [
+                -0.01377865856939262,
+                -0.004372342108572808,
+                0.007325543551872177
+              ],
+              "yaw": 0.019498799005105403,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 9.000000000000451,
+            "position": [
+              2.6991795289635734,
+              2.5785192902492633,
+              1.025945461244804
+            ],
+            "velocity": [
+              -0.01377865856939262,
+              -0.004372342108572808,
+              0.007325543551872177
+            ],
+            "yaw": 0.019498799005105403,
+            "status": "running"
+          },
+          "simSeconds": 3.000000000000113,
+          "displacement": [
+            0.29157816146436977,
+            0.16994286871987363,
+            0.03312183156033899
+          ],
+          "bodyXY": {
+            "forward": 0.28747623717201526,
+            "left": 0.1767931444742739
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.030887507944478053,
+          "finalOneSecondRMSYawRate": 0.03507480496484063
+        }
+      ],
+      "failures": [],
+      "status": "pass"
+    },
+    {
+      "style": "walk",
+      "combination": "forward_right",
+      "speed": 0.9,
+      "command": {
+        "vx": 0.6363961030678927,
+        "vy": -0.6363961030678927,
+        "yaw": 0
+      },
+      "segments": [
+        {
+          "name": "stand",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 0,
+            "position": [
+              0,
+              0,
+              0.9982923789147422
+            ],
+            "velocity": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9982923789147422,
+          "maxAbsYawDrift": 0.07375896436985638,
+          "yawChange": 0.024568962322193647,
+          "samples": [
+            {
+              "time": 0,
+              "position": [
+                0,
+                0,
+                0.9982923789147422
+              ],
+              "velocity": [
+                0,
+                0,
+                0
+              ],
+              "yaw": 0,
+              "status": "running"
+            },
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "simSeconds": 1.0000000000000007,
+          "displacement": [
+            -0.031963094351813125,
+            0.01850014189444085,
+            0.03430492973209609
+          ],
+          "bodyXY": {
+            "forward": -0.031963094351813125,
+            "left": 0.01850014189444085
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.13711075467999193,
+          "finalOneSecondRMSYawRate": 0.3840487869205373
+        },
+        {
+          "name": "command",
+          "command": {
+            "vx": 0.6363961030678927,
+            "vy": -0.6363961030678927,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9785842389924109,
+          "maxAbsYawDrift": 0.09051827368359067,
+          "yawChange": -0.015838477103021564,
+          "samples": [
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            },
+            {
+              "time": 1.9999999999998905,
+              "position": [
+                0.23499088437653792,
+                -0.2172169320036711,
+                1.0241657235910513
+              ],
+              "velocity": [
+                0.4738652416693678,
+                -0.32608778054768567,
+                0.16646875826533636
+              ],
+              "yaw": 0.0042789793635139755,
+              "status": "running"
+            },
+            {
+              "time": 2.9999999999997806,
+              "position": [
+                0.6303390133014034,
+                -0.6947768065365396,
+                1.0301620211693436
+              ],
+              "velocity": [
+                0.5349854501757817,
+                -0.3068645150753919,
+                0.1910447732818075
+              ],
+              "yaw": 0.017717792145334837,
+              "status": "running"
+            },
+            {
+              "time": 3.9999999999996705,
+              "position": [
+                1.0313437248234445,
+                -1.1696044774187453,
+                1.0356180313398273
+              ],
+              "velocity": [
+                0.47034980334836607,
+                -0.34743257841864783,
+                0.14412394724229352
+              ],
+              "yaw": 0.014938158132106784,
+              "status": "running"
+            },
+            {
+              "time": 5.000000000000004,
+              "position": [
+                1.3861516282672413,
+                -1.66712029448397,
+                1.0345816009661268
+              ],
+              "velocity": [
+                0.46190804100501576,
+                -0.3304928031812056,
+                0.07537683533475008
+              ],
+              "yaw": 0.0030674011992083265,
+              "status": "running"
+            },
+            {
+              "time": 6.000000000000338,
+              "position": [
+                1.760029441519297,
+                -2.1351694278660065,
+                1.0346367074139111
+              ],
+              "velocity": [
+                0.46269803145869864,
+                -0.34013976405511565,
+                0.14462985433683354
+              ],
+              "yaw": 0.008730485219172069,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 6.000000000000338,
+            "position": [
+              1.760029441519297,
+              -2.1351694278660065,
+              1.0346367074139111
+            ],
+            "velocity": [
+              0.46269803145869864,
+              -0.34013976405511565,
+              0.14462985433683354
+            ],
+            "yaw": 0.008730485219172069,
+            "status": "running"
+          },
+          "simSeconds": 5.0000000000003375,
+          "displacement": [
+            1.7919925358711102,
+            -2.1536695697604475,
+            0.0020393987670728198
+          ],
+          "bodyXY": {
+            "forward": 1.738543606062029,
+            "left": -2.197042556290333
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.6389781239314735,
+          "finalOneSecondRMSYawRate": 0.3352046454203111
+        },
+        {
+          "name": "stop",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 6.000000000000338,
+            "position": [
+              1.760029441519297,
+              -2.1351694278660065,
+              1.0346367074139111
+            ],
+            "velocity": [
+              0.46269803145869864,
+              -0.34013976405511565,
+              0.14462985433683354
+            ],
+            "yaw": 0.008730485219172069,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.0160467736870507,
+          "maxAbsYawDrift": 0.08727961479862933,
+          "yawChange": 0.014326559779574196,
+          "samples": [
+            {
+              "time": 6.000000000000338,
+              "position": [
+                1.760029441519297,
+                -2.1351694278660065,
+                1.0346367074139111
+              ],
+              "velocity": [
+                0.46269803145869864,
+                -0.34013976405511565,
+                0.14462985433683354
+              ],
+              "yaw": 0.008730485219172069,
+              "status": "running"
+            },
+            {
+              "time": 7.000000000000672,
+              "position": [
+                1.9019585084561064,
+                -2.2320535318287797,
+                1.0295818484390125
+              ],
+              "velocity": [
+                0.052026170988837224,
+                -0.0033732968721164494,
+                -0.00030006285954637714
+              ],
+              "yaw": 0.008681835580336745,
+              "status": "running"
+            },
+            {
+              "time": 8.000000000001005,
+              "position": [
+                1.9124732452370226,
+                -2.25251557644019,
+                1.0265307930138814
+              ],
+              "velocity": [
+                -0.013487134087356047,
+                0.01828008931591441,
+                0.0014264164770290235
+              ],
+              "yaw": 0.02156305139227295,
+              "status": "running"
+            },
+            {
+              "time": 9.000000000000451,
+              "position": [
+                1.9203262106161814,
+                -2.249322927311623,
+                1.0234472808177004
+              ],
+              "velocity": [
+                -0.0007602452322401251,
+                -0.00766866306450097,
+                -0.002224285089162855
+              ],
+              "yaw": 0.023057044998746272,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 9.000000000000451,
+            "position": [
+              1.9203262106161814,
+              -2.249322927311623,
+              1.0234472808177004
+            ],
+            "velocity": [
+              -0.0007602452322401251,
+              -0.00766866306450097,
+              -0.002224285089162855
+            ],
+            "yaw": 0.023057044998746272,
+            "status": "running"
+          },
+          "simSeconds": 3.000000000000113,
+          "displacement": [
+            0.1602967690968844,
+            -0.11415349944561637,
+            -0.011189426596210694
+          ],
+          "bodyXY": {
+            "forward": 0.15929405733673166,
+            "left": -0.11554859980018041
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.01897130232582037,
+          "finalOneSecondRMSYawRate": 0.023413489763509238
+        }
+      ],
+      "failures": [],
+      "status": "pass"
+    },
+    {
+      "style": "walk",
+      "combination": "forward_Q",
+      "speed": 0.9,
+      "command": {
+        "vx": 0.9,
+        "vy": 0,
+        "yaw": 0.5
+      },
+      "segments": [
+        {
+          "name": "stand",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 0,
+            "position": [
+              0,
+              0,
+              0.9982923789147422
+            ],
+            "velocity": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9982923789147422,
+          "maxAbsYawDrift": 0.07375896436985638,
+          "yawChange": 0.024568962322193647,
+          "samples": [
+            {
+              "time": 0,
+              "position": [
+                0,
+                0,
+                0.9982923789147422
+              ],
+              "velocity": [
+                0,
+                0,
+                0
+              ],
+              "yaw": 0,
+              "status": "running"
+            },
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "simSeconds": 1.0000000000000007,
+          "displacement": [
+            -0.031963094351813125,
+            0.01850014189444085,
+            0.03430492973209609
+          ],
+          "bodyXY": {
+            "forward": -0.031963094351813125,
+            "left": 0.01850014189444085
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.13711075467999193,
+          "finalOneSecondRMSYawRate": 0.3840487869205373
+        },
+        {
+          "name": "command",
+          "command": {
+            "vx": 0.9,
+            "vy": 0,
+            "yaw": 0.5
+          },
+          "initial": {
+            "time": 1.0000000000000007,
+            "position": [
+              -0.031963094351813125,
+              0.01850014189444085,
+              1.0325973086468383
+            ],
+            "velocity": [
+              0.04175920915412897,
+              0.024253019127630067,
+              0.0038547707483358538
+            ],
+            "yaw": 0.02456896232219366,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 0.9934278133322763,
+          "maxAbsYawDrift": 2.463372120611737,
+          "yawChange": 2.413515152278218,
+          "samples": [
+            {
+              "time": 1.0000000000000007,
+              "position": [
+                -0.031963094351813125,
+                0.01850014189444085,
+                1.0325973086468383
+              ],
+              "velocity": [
+                0.04175920915412897,
+                0.024253019127630067,
+                0.0038547707483358538
+              ],
+              "yaw": 0.02456896232219366,
+              "status": "running"
+            },
+            {
+              "time": 1.9999999999998905,
+              "position": [
+                0.41201876869508136,
+                0.20896123240235148,
+                1.014814834233998
+              ],
+              "velocity": [
+                0.7343988788828809,
+                0.2261537231852755,
+                0.3124722378054933
+              ],
+              "yaw": 0.5356490524967815,
+              "status": "running"
+            },
+            {
+              "time": 2.9999999999997806,
+              "position": [
+                1.2266911900902369,
+                0.8150160626853219,
+                1.0310711182083805
+              ],
+              "velocity": [
+                0.6390293570348791,
+                0.699961040954373,
+                0.040146756335508446
+              ],
+              "yaw": 0.98843227100497,
+              "status": "running"
+            },
+            {
+              "time": 3.9999999999996705,
+              "position": [
+                1.6857186426652717,
+                1.7694302102848622,
+                1.0336456963870135
+              ],
+              "velocity": [
+                0.21773412630325326,
+                0.8441910614144735,
+                0.012925788007392136
+              ],
+              "yaw": 1.4774791142050727,
+              "status": "running"
+            },
+            {
+              "time": 5.000000000000004,
+              "position": [
+                1.6708525145992885,
+                2.806638705197077,
+                1.0292568125692734
+              ],
+              "velocity": [
+                -0.27208970314258524,
+                0.8387074505591661,
+                -0.03916605929329618
+              ],
+              "yaw": 1.9560135670783418,
+              "status": "running"
+            },
+            {
+              "time": 6.000000000000338,
+              "position": [
+                1.1169663864213157,
+                3.696357535214213,
+                1.030712081858158
+              ],
+              "velocity": [
+                -0.654146662316934,
+                0.5953949276487943,
+                -0.0720825102528317
+              ],
+              "yaw": 2.4380841146004117,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 6.000000000000338,
+            "position": [
+              1.1169663864213157,
+              3.696357535214213,
+              1.030712081858158
+            ],
+            "velocity": [
+              -0.654146662316934,
+              0.5953949276487943,
+              -0.0720825102528317
+            ],
+            "yaw": 2.4380841146004117,
+            "status": "running"
+          },
+          "simSeconds": 5.0000000000003375,
+          "displacement": [
+            1.148929480773129,
+            3.677857393319772,
+            -0.0018852267886801943
+          ],
+          "bodyXY": {
+            "forward": 1.2389347809748539,
+            "left": 3.648522244125327
+          },
+          "finalOneSecondRMSHorizontalSpeed": 1.0607594265085758,
+          "finalOneSecondRMSYawRate": 0.9710090616291139
+        },
+        {
+          "name": "stop",
+          "command": {
+            "vx": 0,
+            "vy": 0,
+            "yaw": 0
+          },
+          "initial": {
+            "time": 6.000000000000338,
+            "position": [
+              1.1169663864213157,
+              3.696357535214213,
+              1.030712081858158
+            ],
+            "velocity": [
+              -0.654146662316934,
+              0.5953949276487943,
+              -0.0720825102528317
+            ],
+            "yaw": 2.4380841146004117,
+            "status": "running"
+          },
+          "finite": true,
+          "fallen": false,
+          "minZ": 1.0152130983652965,
+          "maxAbsYawDrift": 0.12024505745133496,
+          "yawChange": 0.11224651096073002,
+          "samples": [
+            {
+              "time": 6.000000000000338,
+              "position": [
+                1.1169663864213157,
+                3.696357535214213,
+                1.030712081858158
+              ],
+              "velocity": [
+                -0.654146662316934,
+                0.5953949276487943,
+                -0.0720825102528317
+              ],
+              "yaw": 2.4380841146004117,
+              "status": "running"
+            },
+            {
+              "time": 7.000000000000672,
+              "position": [
+                0.8048499431657992,
+                3.9698919149643204,
+                1.0293856316315826
+              ],
+              "velocity": [
+                0.08196494357309408,
+                0.03488001760274573,
+                -0.010879416170850042
+              ],
+              "yaw": 2.5458450333190537,
+              "status": "running"
+            },
+            {
+              "time": 8.000000000001005,
+              "position": [
+                0.8025470420321454,
+                3.998434501181531,
+                1.0277805133397528
+              ],
+              "velocity": [
+                -0.03980407999555464,
+                0.009035111778364406,
+                -0.00999487667088142
+              ],
+              "yaw": 2.553896876294781,
+              "status": "running"
+            },
+            {
+              "time": 9.000000000000451,
+              "position": [
+                0.799799372397604,
+                3.9950310461778207,
+                1.0256443076973834
+              ],
+              "velocity": [
+                0.0054780593973158135,
+                -0.005137167047114883,
+                -0.00004181328208490223
+              ],
+              "yaw": 2.5503306255611418,
+              "status": "running"
+            }
+          ],
+          "final": {
+            "time": 9.000000000000451,
+            "position": [
+              0.799799372397604,
+              3.9950310461778207,
+              1.0256443076973834
+            ],
+            "velocity": [
+              0.0054780593973158135,
+              -0.005137167047114883,
+              -0.00004181328208490223
+            ],
+            "yaw": 2.5503306255611418,
+            "status": "running"
+          },
+          "simSeconds": 3.000000000000113,
+          "displacement": [
+            -0.3171670140237117,
+            0.29867351096360784,
+            -0.005067774160774752
+          ],
+          "bodyXY": {
+            "forward": 0.4350753968494221,
+            "left": -0.02258716432763444
+          },
+          "finalOneSecondRMSHorizontalSpeed": 0.019823880942901505,
+          "finalOneSecondRMSYawRate": 0.025817634496391385
+        }
+      ],
+      "failures": [],
+      "status": "pass"
+    }
+  ],
+  "wallSeconds": 26.468312833
+}

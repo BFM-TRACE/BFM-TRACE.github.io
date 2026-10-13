@@ -1,0 +1,35 @@
+{
+  "id": "planner_slow_walk_forward_left",
+  "file": "planner_slow_walk_forward_left.json",
+  "frames": 106,
+  "recommendedLoop": {
+    "startFrame": 2,
+    "endFrame": 42,
+    "frames": 40,
+    "score": 0.007344296511780797,
+    "qMeanSquaredError": 0.0058026564901771825,
+    "dqMeanSquaredError": 0.10871906521338183,
+    "orientationSeamRadians": 0.09533618090418722,
+    "yawMin": -0.010993170282329148,
+    "yawMax": 0.07384738491644906,
+    "maxAbsYaw": 0.07384738491644906,
+    "meanVelocity": [
+      0.11802184581756581,
+      0.1189156770706179,
+      0.004237189888954274
+    ],
+    "meanDirectionalSpeed": 0.16754012915177752
+  },
+  "movement": [
+    0.7071067811865476,
+    0.7071067811865476,
+    0
+  ],
+  "facing": [
+    1,
+    0,
+    0
+  ],
+  "validation": "not yet tested in H2 closed-loop physics",
+  "candidateSource": "candidates/slow_diagonals/planner_slow_walk_forward_left.json"
+}

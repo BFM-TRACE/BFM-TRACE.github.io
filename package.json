@@ -1,0 +1,29 @@
+{
+  "name": "trace-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TRACE research homepage and interactive humanoid demo",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node scripts/check-site.mjs",
+    "check:physics": "node scripts/check-local-physics.mjs",
+    "check:simulation": "node scripts/check-local-simulation.mjs",
+    "check:planner": "node scripts/check-planner-bank.mjs --output qa/generated/planner-bank.json",
+    "check:controls": "node scripts/check-planner-controls.mjs",
+    "check:combinations": "node scripts/check-planner-combinations.mjs --output qa/generated/planner-combinations.json",
+    "check:quality": "node scripts/check-planner-quality.mjs --output qa/generated/planner-quality.json",
+    "check:boundaries": "node scripts/check-planner-boundaries.mjs --output qa/generated/planner-boundaries.json",
+    "check:turning": "node scripts/check-planner-turn-rates.mjs --output qa/generated/planner-turn-rates.json",
+    "check:dynamic": "node scripts/check-dynamic-motions.mjs --candidates demo/local-assets/references --ids broad_jump_003__A360,high_jump_R_opt_2_001__A477,neutral_kick_trash_R_003__A098,neutral_kick_trash_R_003__A098_M --output qa/generated/dynamic-motions.json",
+    "check:g1": "node scripts/check-g1-explore.mjs --candidates demo/local-assets/references --ids g1_explore_prayer_R_001__A430,g1_explore_dejection_R_001__A430,g1_explore_jump_and_land_light_002__A001,g1_explore_broad_jump_002__A359 --output qa/generated/g1-explore.json",
+    "check:g1-standard": "node scripts/check-g1-standard-motions.mjs --candidates demo/local-assets/references --ids g1_standard_neutral_kick_R_001__A543,g1_standard_neutral_kick_R_001__A543_M,g1_standard_tired_one_leg_jumping_R_001__A359 --output qa/generated/g1-standard.json",
+    "build": "node scripts/build-site.mjs",
+    "check:dist": "node scripts/check-dist.mjs",
+    "check:release": "npm run check && npm run check:controls && npm run build && npm run check:dist"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

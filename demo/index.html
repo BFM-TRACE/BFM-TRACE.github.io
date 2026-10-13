@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRACE · Interactive H2 demo</title>
+  <link rel="stylesheet" href="demo.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <main class="demo" aria-label="Interactive TRACE robot demo">
+    <div class="toolbar">
+      <div class="mode-switch" aria-label="Demo mode">
+        <button class="mode active" data-mode="tracking" aria-pressed="true" disabled>Motion tracking</button>
+        <button class="mode" data-mode="planner" aria-pressed="false" disabled>Planner control</button>
+      </div>
+      <span class="connection" id="connection"><i></i><span>Loading local controller</span></span>
+    </div>
+    <div class="workspace">
+      <aside class="controls">
+        <div class="control-heading"><span class="eyebrow" id="robot-label">UNITREE H2</span><h1 id="mode-title">A motion. A whole body.</h1><p id="mode-description">The H2 policy tracks motion targets in a physics simulation running entirely in your browser.</p></div>
+        <section id="tracking-controls" aria-label="Motion controls">
+          <label class="field-label" for="motion" id="motion-heading">POLICY MOTION TARGET</label>
+          <select id="motion" aria-label="Select a motion" disabled><option>Loading motions…</option></select>
+          <div class="motion-facts"><span id="motion-duration">— s</span><span id="motion-source-rate">50 Hz source</span><span>29 controlled DoF</span></div>
+          <p class="policy-caption" id="motion-reference-note">H2 reference targets for the H2 controller.</p>
+          <div id="reference-timeline" hidden><label class="field-label timeline-label" for="timeline"><span id="time-heading">REFERENCE PLAYBACK</span><output id="time-label">0.0 s</output></label>
+          <input id="timeline" type="range" min="0" max="1" step="0.001" value="0" aria-label="Motion playback position"></div>
+          <div class="playback-actions"><button class="primary" id="play" disabled>Pause</button><button class="secondary" id="reset" aria-label="Reset demo" disabled>Reset</button></div>
+          <div id="reference-speed" hidden><label class="field-label speed-label" for="speed">REFERENCE SPEED</label>
+          <select id="speed"><option value="0.5">0.5× · slow motion</option><option value="1" selected>1× · original speed</option><option value="1.5">1.5×</option></select></div>
+          <p class="policy-caption" id="policy-caption" hidden>Rendered pose comes from the simulator after policy inference and contact dynamics.</p>
+        </section>
+        <section id="planner-controls" aria-label="Planner controls" hidden>
+          <label class="field-label" for="planner-style">LOCOMOTION STYLE</label>
+          <select id="planner-style" disabled>
+            <option value="idle">Stand · idle</option>
+            <option value="slow_walk" selected>Slow walk</option>
+            <option value="walk">Walk</option>
+            <option value="run">Run</option>
+          </select>
+          <label class="field-label" for="velocity">SPEED COMMAND <output id="velocity-label">0.4 m/s</output></label>
+          <input type="range" id="velocity" disabled min="0.1" max="0.8" step="0.1" value="0.4">
+          <p class="speed-note"><span id="direction-limit">Forward up to 0.8 m/s; strafe/backward up to 0.8 m/s.</span><br>Requested planner speed; measured speed may differ.</p>
+          <div class="direction-pad" aria-label="Hold direction controls">
+            <button disabled data-direction="forward" aria-label="Move forward"><span aria-hidden="true">↑</span><small>Forward</small></button>
+            <button disabled data-direction="left" aria-label="Strafe left"><span aria-hidden="true">←</span><small>Strafe left</small></button>
+            <button disabled data-direction="stop" aria-label="Stop movement"><span aria-hidden="true">■</span><small>Stop</small></button>
+            <button disabled data-direction="right" aria-label="Strafe right"><span aria-hidden="true">→</span><small>Strafe right</small></button>
+            <button disabled data-direction="back" aria-label="Move backward"><span aria-hidden="true">↓</span><small>Backward</small></button>
+          </div>
+          <label class="field-label" for="turn-speed">TURN RATE COMMAND <output id="turn-speed-label">0.5 rad/s</output></label>
+          <input type="range" id="turn-speed" disabled min="0.1" max="1.0" step="0.1" value="0.5">
+          <div class="turn-controls" aria-label="Facing direction controls">
+            <button disabled data-direction="turn-left" aria-label="Turn left"><span aria-hidden="true">↶</span> Turn left <kbd>Q</kbd></button>
+            <button disabled data-direction="turn-right" aria-label="Turn right"><span aria-hidden="true">↷</span> Turn right <kbd>E</kbd></button>
+          </div>
+          <p class="key-help">Hold <kbd>W</kbd><kbd>S</kbd> to move forward/backward and <kbd>A</kbd><kbd>D</kbd> to strafe. Arrow keys also move. Combine directions; <kbd>Q</kbd><kbd>E</kbd> turn independently. Release to brake.</p>
+          <div class="command-values"><span>v<sub>x</sub> <b id="vx">0.0</b></span><span>v<sub>y</sub> <b id="vy">0.0</b></span><span>turn <b id="yaw">0.0</b></span></div>
+          <button class="secondary planner-reset" id="planner-reset" disabled>Reset simulation</button>
+          <p class="policy-caption">Local reference targets drive the real H2 policy and contact physics. The full neural planner is not running in this browser.</p>
+        </section>
+        <div class="runtime"><button id="connect" class="connect-button">Loading browser simulation…</button><p id="runtime-note" role="status">Loading local policy models and physics. Each visitor runs an independent simulation.</p><p id="runtime-rate"></p><button id="reference-only" class="reference-button">View reference only</button></div>
+      </aside>
+      <section class="viewport" id="viewport" aria-label="Interactive three-dimensional robot viewport">
+        <div class="scene-label"><i></i><span id="scene-label">H2 · LOADING LOCAL CONTROLLER</span></div>
+        <div class="ground-scale">Ground · 0.5 m squares</div>
+        <div class="stage" id="stage"></div>
+        <div class="loading" id="loading"><span class="spinner"></span>Loading H2 model…</div>
+        <div class="view-actions"><button id="camera-reset" title="Reset camera" aria-label="Reset camera">⌖</button><button id="follow" title="Toggle follow camera" aria-label="Toggle follow camera" aria-pressed="true">↗</button></div>
+        <div id="live-telemetry" class="live-telemetry" hidden><div><span>SIMULATION TIME</span><b id="sim-clock">—</b></div><div><span>MEASURED SPEED</span><b id="measured-speed">—</b></div></div>
+        <div class="stage-footer"><span id="source-label">Loading browser policy and physics · static model</span><span>Drag to orbit · scroll to zoom</span></div>
+        <div class="planner-hint" id="planner-hint"><strong id="hint-title">Loading the local controller</strong><span id="hint-detail">The robot will move when browser policy inference and physics are ready.</span></div>
+      </section>
+    </div>
+    <footer class="demo-footer"><span><i></i><span id="footer-state">Loading · independent browser simulation</span></span><span>TRACE / H2</span></footer>
+  </main>
+  <script type="module" src="demo.js"></script>
+</body>
+</html>

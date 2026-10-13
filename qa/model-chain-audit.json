@@ -1,0 +1,420 @@
+{
+  "auditedAt": "2026-10-09T18:01:09.221545+00:00",
+  "remoteCapturedAt": "2026-10-09T17:58:10.004287+00:00",
+  "scope": "Read-only model/configuration audit. Production files and running services were not modified. No DDS, robot command, policy process or simulation step was started; a DefaultEnv was initialized only to inspect model parameters.",
+  "conclusion": "The browser model and physical configuration chain matches the currently running step9450 server simulation. It differs intentionally from the configured step70000 real-robot launcher. No model/observation/version mismatch was found that explains periodic Run forward bending; the current repeated reference contains strong periodic pitch.",
+  "activeBinary": {
+    "sha256": "c4bd74d4b65b005f52ecc07254f23babee1ad784f3cfe9ece0ec4582d450b258",
+    "mtime": 1789770423.1231542
+  },
+  "deploymentVariants": {
+    "runningSimulation": {
+      "checkpoint": "gpu3_20260907_stage2_step009450",
+      "profile": "h2_native",
+      "planner": "full learned planner V2",
+      "projectionG1ToH2": false,
+      "plannerSelector": 3,
+      "orientationContract": "sonic_full_root_relative_v0",
+      "nominalGains": true,
+      "sourceEvidence": "model-chain-policy-log.txt"
+    },
+    "sim2simLauncher": {
+      "path": "gear_sonic_deploy/scripts/run_h2_sim2sim.sh",
+      "checkpoint": "gpu3_20260907_stage2_step009450",
+      "documentedRollbackDate": "2026-09-18",
+      "plannerDisabledByDefault": true,
+      "referenceCollection": "reference/example (native G1 selector3)",
+      "nominalGains": true
+    },
+    "configuredRealLauncher": {
+      "path": "gear_sonic_deploy/config/h2_deploy.env",
+      "checkpoint": "versions/h2_stage2_070000_20260918",
+      "actualMetadataStep": 70000,
+      "commentIncorrectlySaysStep": 5000,
+      "runningRealRobotProcessObserved": false,
+      "plannerDisabledByDefault": true,
+      "kpScale": {
+        "leftAnklePitch": 1.2,
+        "rightAnklePitch": 1.4,
+        "leftAnkleRoll": 0.7,
+        "rightAnkleRoll": 0.7,
+        "leftKnee": 1.2,
+        "rightKnee": 1.2
+      },
+      "note": "The configured physical-robot setup is not the running loopback simulation or browser simulation."
+    }
+  },
+  "modelComparisons": [
+    {
+      "browserFile": "homepage/demo/local-assets/models/encoder_native.onnx",
+      "browserSHA256": "142b7fb729528c2c0f474d656266bac313a703d10021b3759d84f9cd2b72634f",
+      "manifestSHA256": "142b7fb729528c2c0f474d656266bac313a703d10021b3759d84f9cd2b72634f",
+      "serverFile": "sonic_h2_native_release/experiments/gpu3_20260907_stage2_step009450/model_encoder.onnx",
+      "serverSHA256": "142b7fb729528c2c0f474d656266bac313a703d10021b3759d84f9cd2b72634f",
+      "matches": true,
+      "metadata": {
+        "model_role": "encoder",
+        "policy_interface": "h2_native",
+        "observation_contract": "sonic_h2_native_v1",
+        "encoder_name": "h2",
+        "input_features": "[\"command_multi_future_h2_native_nonflat\", \"motion_anchor_ori_b_mf_nonflat\"]",
+        "global_step": "9450",
+        "checkpoint_sha256": "f5fd50637370077ec9c4dc4d181b9574c7603a60056abd79c8f38a2f65e46521",
+        "reference_orientation_contract": "sonic_full_root_relative_v0"
+      },
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "shape": [
+            1,
+            640
+          ],
+          "dtype": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoded_tokens",
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": 1
+        }
+      ]
+    },
+    {
+      "browserFile": "homepage/demo/local-assets/models/decoder.onnx",
+      "browserSHA256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee",
+      "manifestSHA256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee",
+      "serverFile": "sonic_h2_native_release/experiments/gpu3_20260907_stage2_step009450/model_decoder.onnx",
+      "serverSHA256": "309572275dd2e44d46c4bf15b22f31a29b8d3a302c66701e4bd77767426259ee",
+      "matches": true,
+      "metadata": {
+        "policy_interface": "h2_native",
+        "model_role": "decoder",
+        "encoder_name": "g1_dyn",
+        "observation_contract": "sonic_h2_native_v1",
+        "h2_native_io_folded": "true",
+        "global_step": "9450",
+        "checkpoint_sha256": "f5fd50637370077ec9c4dc4d181b9574c7603a60056abd79c8f38a2f65e46521",
+        "reference_orientation_contract": "sonic_full_root_relative_v0"
+      },
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "shape": [
+            1,
+            994
+          ],
+          "dtype": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "action",
+          "shape": [
+            1,
+            29
+          ],
+          "dtype": 1
+        }
+      ]
+    },
+    {
+      "browserFile": "homepage/demo/local-assets/models/encoder_g1.onnx",
+      "browserSHA256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975",
+      "validatedSHA256": "f2570f299890afcbc0548426a33783cd30ac0d568aba388dcf9cc23e65771975",
+      "matchesValidated": true,
+      "serverSource": "sonic_h2_native_release/experiments/gpu3_20260907_stage2_step009450/model_encoder_full.onnx",
+      "sourceSHA256Matches": true,
+      "allTenOriginalWeightHashesMatch": true,
+      "sourceSelector": 3,
+      "contract": {
+        "jointPositions": [
+          0,
+          290
+        ],
+        "jointVelocities": [
+          290,
+          580
+        ],
+        "orientation6D": [
+          580,
+          640
+        ],
+        "jointOrder": "G1 semantic (mujoco_to_isaaclab), without G1-to-H2 hip projection",
+        "fullMapping": {
+          "selector": 3,
+          "qAndQd": [
+            4,
+            584
+          ],
+          "orientation": [
+            590,
+            650
+          ]
+        }
+      },
+      "sampledEquivalence": {
+        "cases": 473,
+        "maxAbsError": 0.0,
+        "nonBitExactCases": 0
+      }
+    }
+  ],
+  "observationAndActionAudit": {
+    "encoderInput": "640 = q290, qd290, root orientation60; ten future samples at 0.1s spacing",
+    "trackingSelector": 0,
+    "plannerSelector": 3,
+    "plannerUsesRawG1SemanticOrder": true,
+    "noLegacyHipProjection": true,
+    "rootOrientation": "wxyz, full inverse physical root quaternion times reference quaternion; first two rotation columns flattened row-wise. Matches sonic_full_root_relative_v0 and current server.",
+    "bodyAngularVelocity": "MuJoCo free-joint qvel[3:6] is local root frame, matching configured USE_LOCAL_BASE_GYRO.",
+    "decoderOrder": [
+      "tokens64",
+      "oldest-first omega30",
+      "q-minus-default290",
+      "qd290",
+      "last-action290",
+      "gravity30"
+    ],
+    "actionClip": 6,
+    "actionResidualMultiplier": 1,
+    "runningProcessHasNoClipOrScaleOverride": true,
+    "policyToLocalAndConstants": {
+      "policyToLocal": {
+        "serverConstant": "h2lora_body_to_h2_mujoco",
+        "count": 29,
+        "exactMatch": true
+      },
+      "defaultAnglesPolicy": {
+        "serverConstant": "h2_native_default_angles_policy",
+        "count": 29,
+        "exactMatch": true
+      },
+      "actionScalePolicy": {
+        "serverConstant": "h2_native_action_scale_policy",
+        "count": 29,
+        "exactMatch": true
+      },
+      "kp": {
+        "serverConstant": "h2_native_kps",
+        "count": 31,
+        "exactMatch": true
+      },
+      "kd": {
+        "serverConstant": "h2_native_kds",
+        "count": 31,
+        "exactMatch": true
+      }
+    },
+    "serverCodeSources": {
+      "orientation": "g1_deploy_onnx_ref.cpp GatherMotionAnchorOrientationMultiFrame",
+      "observationLayout": "ValidateRobotSpecificObservationLayout",
+      "actionMapping": "policy_action_clip/command_action/H2NativeKpDds"
+    }
+  },
+  "physicsAudit": {
+    "freshNoDDSInitialization": true,
+    "fields": {
+      "mujocoVersion": {
+        "exactMatch": true
+      },
+      "nq": {
+        "exactMatch": true
+      },
+      "nv": {
+        "exactMatch": true
+      },
+      "nu": {
+        "exactMatch": true
+      },
+      "nbody": {
+        "exactMatch": true
+      },
+      "timestep": {
+        "exactMatch": true
+      },
+      "initialQpos": {
+        "exactMatch": true
+      },
+      "initialQvel": {
+        "exactMatch": true
+      },
+      "localNames": {
+        "exactMatch": true
+      },
+      "localQposAddresses": {
+        "exactMatch": true
+      },
+      "localDofAddresses": {
+        "exactMatch": true
+      },
+      "bodyActuatorIndices": {
+        "exactMatch": true
+      },
+      "actuatorJointIndices": {
+        "exactMatch": true
+      },
+      "dofDamping": {
+        "exactMatch": true
+      },
+      "dofArmature": {
+        "exactMatch": true
+      },
+      "dofFrictionloss": {
+        "exactMatch": true
+      },
+      "actuatorForceRange": {
+        "exactMatch": true
+      },
+      "torqueLimits": {
+        "exactMatch": true
+      },
+      "transmissions": {
+        "exactMatch": true
+      },
+      "motor_response_enabled": {
+        "exactMatch": true
+      },
+      "ankle_response_enabled": {
+        "exactMatch": true
+      },
+      "modelConfig": {
+        "exactMatch": true
+      }
+    },
+    "sourceOriginalXML": {
+      "serverPath": "gear_sonic/data/assets/robot_description/unitree_ros/h2_description/H2_loop.xml",
+      "serverSHA256": "399284179c4b7067b82cc5dc910b832936f35c0d7981dc8954897251f731e458",
+      "cachedSourceExists": false,
+      "cachedSourceMatches": false
+    },
+    "dimensions": {
+      "qpos": 68,
+      "qvel": 61,
+      "actuators": 31,
+      "bodies": 45,
+      "closedLoopGroups": 5
+    },
+    "mujoco": "3.10.0",
+    "controlHz": 50,
+    "physicsHz": 1000,
+    "parityHistory": "homepage/qa/local-physics.json records SVD/transmission fixtures matching Python at approximately 1e-14; this audit rechecked configuration, not a full trajectory."
+  },
+  "materialRuntimeDifferences": [
+    "Server executes the full learned planner with rolling contexts and trajectory blending (RUN replans at 10 Hz; ordinary walking at 1 Hz). The browser resamples and loops a finite offline reference bank. A repeating source bow is therefore a planning/reference candidate even when encoder/decoder weights match.",
+    "Browser adds phase scaling, direction/style blending and heading target bounds/feedback; these target modifications are not the original neural planner.",
+    "Server uses TensorRT/CUDA inference; browser uses single-threaded ORT WASM. Identical source weights and CPU/WASM fixtures do not prove every GPU numerical output bit-identical.",
+    "Server warms up with an elastic band and asynchronous DDS histories; browser starts from deterministic reset state and repeated initial history. This affects startup but does not by itself explain a recurring two-second bow.",
+    "Physical robot launcher has a different checkpoint and tuned ankle/knee Kp; these should not be copied into browser simulation without controlled evaluation."
+  ],
+  "limitations": [
+    "Read-only: no new closed-loop A/B rollout or model swap was performed.",
+    "Source code matches cached audit files, but a binary hash alone does not prove build provenance. Runtime startup logs corroborate active profile and model paths.",
+    "Other agents may update planner-bank assets during this task. Interpret reference measurements with the recorded SHA-256 and timestamp."
+  ],
+  "freshWASMFixtureCheck": {
+    "date": "2026-10-09T17:59:30.257Z",
+    "runtimeVersion": "1.30.0",
+    "provider": "wasm",
+    "trackingEncoderFinite": true,
+    "scope": "Read-only replay of full-selector3 fixtures; no physical simulation or DDS.",
+    "cases": 14,
+    "maxAbsError": 0,
+    "allDecoderOutputsFinite": true
+  },
+  "runForwardReferenceSnapshot": {
+    "sourceFile": "homepage/demo/local-assets/planner-bank/planner_run_forward.json",
+    "sha256": "c3a90df46b2fc4d4a27ad13cc763ff0ec6b7dca67b52c874fcfec31d541cd2ca",
+    "loopStartFrame": 0,
+    "loopEndExclusive": 98,
+    "loopSeconds": 1.96,
+    "rootPitchDegrees": {
+      "min": -2.8067593446302106,
+      "max": 42.0170373050966
+    },
+    "waistPitchDegrees": {
+      "semanticJointIndex": 8,
+      "min": 9.225879216677829,
+      "max": 30.49371764388584
+    },
+    "interpretation": "The reference itself bends strongly forward and repeats approximately every 1.96 s at rate 1. This is a direct candidate cause, not a proven closed-loop causal attribution.",
+    "status": "Pre-fix source snapshot, identified by hash. Reference bank replacement was in progress after this audit; this is not a measurement of future replacements."
+  },
+  "otherCheckpoints": {
+    "step70000": {
+      "global_step": 70000,
+      "training_stage": 2,
+      "exported_at": "2026-09-18T17:24:02",
+      "reference_orientation_contract": "sonic_full_root_relative_v0",
+      "actor_observation_contract": "sonic_h2_native_v1",
+      "model_sha256": {
+        "model_decoder": "1dd42628187c3d1e67dab3d1150ac40926602c5a3a031588dd71690c2cb1d3bd",
+        "model_encoder": "1f3d3b3942c04d7d06b2ccdcc4bd7eded4dc92b7b374e0118afa6ce8b4a0f99c",
+        "model_encoder_full": "86d43c14c65856cc44c90b5abd5f37e5ced8762e0da4e3ec7eea9713250747a7"
+      },
+      "model_encoder": {
+        "encoder_name": "h2",
+        "input_dim": 640,
+        "output_dim": 64,
+        "policy_interface": "h2_native"
+      },
+      "model_encoder_full": {
+        "input_dim": 1751,
+        "output_dim": 64,
+        "selector_contract": "sonic_h2_native_full_v1",
+        "selector_encoder_names": [
+          "h2",
+          "teleop",
+          "smpl",
+          "g1"
+        ]
+      },
+      "model_decoder": {
+        "h2_native_io_folded": true,
+        "input_dim": 994,
+        "output_dim": 29,
+        "policy_interface": "h2_native"
+      },
+      "frozen_encoder_validation": {
+        "exact_match": true,
+        "reference_checkpoint": "/home/qingyul/workspace/sonic_transfer/sonic_release/last.pt",
+        "reference_sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909",
+        "tensor_counts": {
+          "g1": 10,
+          "smpl": 10,
+          "teleop": 10
+        }
+      }
+    },
+    "notes": [
+      "The configured physical-robot launcher points to step70000, despite a stale comment saying 5000. No running real-robot process was observed.",
+      "All ten G1 encoder weight tensors agree between step9450 and step70000; H2 encoder/decoder weights differ. This audit did not compare closed-loop quality.",
+      "The older v1.1 step16150 release declares sonic_robot_heading_v1; it cannot be substituted into the current full-root-relative observation pipeline without matching its contract.",
+      "Checkpoint step numbers from different training runs do not establish performance ordering."
+    ]
+  },
+  "reproducibility": {
+    "detailedWorkspaceReport": ".work/browser-port/model-chain-audit.json",
+    "remoteSnapshot": ".work/browser-port/model-chain-remote.json",
+    "collector": ".work/browser-port/model-chain-audit-collect.py",
+    "wasmParity": ".work/browser-port/model-chain-wasm-parity.json",
+    "publicEncoderValidation": "../demo/local-assets/models/encoder-g1-validation.json",
+    "physicsFixtureValidation": "local-physics.json"
+  },
+  "actualRunningPlanner": {
+    "checkedAt": "2026-10-09T18:04:56.145107+00:00",
+    "source": "Fresh /proc/1808192/cmdline --planner-file, resolved on server and SHA-256 of that actual file; not inferred from a manifest.",
+    "pid": 1808192,
+    "argvPlanner": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+    "resolvedPlanner": "/home/qingyul/workspace/SONIC-H2/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+    "bytes": 773952989,
+    "sha256": "39b553e197f62f077975ba38512bc04781a3fc37c2af7c6756e04629f760edea",
+    "plannerDirectoryInventory": [
+      "gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx"
+    ],
+    "scope": "This is the only .onnx under gear_sonic_deploy/planner; no V3 or other target_vel ONNX was present there. No claim is made about unrelated repositories."
+  }
+}

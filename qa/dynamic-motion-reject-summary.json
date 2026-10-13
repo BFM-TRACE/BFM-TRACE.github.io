@@ -1,0 +1,274 @@
+{
+  "generatedAt": "2026-10-10T15:11:00.979133+00:00",
+  "scope": "Candidate screening with unchanged production H2 native encoder and decoder and original MuJoCo physics; complete source sequence plus at least 2 seconds terminal hold. Installed selections are separately rerun in dynamic-motions.json.",
+  "selected": [
+    "broad_jump_003__A360",
+    "high_jump_R_opt_2_001__A477",
+    "neutral_kick_trash_R_003__A098",
+    "neutral_kick_trash_R_003__A098_M"
+  ],
+  "rejected": [
+    {
+      "id": "broad_jump_002__A359",
+      "kind": "long_jump",
+      "sourceSHA256": "55c67663636d5022e2df2265151c6f23ce984d599907593136258d96efa64758",
+      "referenceFrames": 263,
+      "referenceSeconds": 5.24,
+      "completedReference": false,
+      "completedHold": false,
+      "actualHoldSeconds": null,
+      "minRootHeight": 0.2756868755048148,
+      "maxTorsoTiltDeg": 94.2399889679661,
+      "maxNonFootGroundContactSeconds": 0.1,
+      "actualForwardDisplacement": 0.7908463766885961,
+      "terminal": {
+        "samples": 0,
+        "horizontalSpeed": null,
+        "verticalSpeed": null,
+        "minRootHeight": null,
+        "maxTorsoTiltDeg": null,
+        "groundContactFraction": null
+      },
+      "failures": [
+        "Controller detected a fall",
+        "Did not complete full reference",
+        "Did not complete terminal hold",
+        "Root below fall threshold",
+        "Sustained non-foot contact with floor",
+        "Incomplete final one-second stability window"
+      ],
+      "report": "jumps-batch1.json",
+      "flightDurations": [
+        0.5
+      ],
+      "reason": "Actual forward flight occurred, but the robot fell below 0.28 m root height at 4.54 s before the full sequence ended; reject the full action."
+    },
+    {
+      "id": "one_leg_jumping_R_001__A361",
+      "kind": "jump",
+      "sourceSHA256": "60960793a190bba30b24d7aede22919b0d2e47f11d84a58508f693f5c1315c5a",
+      "referenceFrames": 237,
+      "referenceSeconds": 4.72,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 2.000000000000668,
+      "minRootHeight": 0.9497412755536925,
+      "maxTorsoTiltDeg": 20.6944196450125,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": -0.3486997791900092,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.01637494305458293,
+        "verticalSpeed": 0.0034203754400807342,
+        "minRootHeight": 1.0240171515967447,
+        "maxTorsoTiltDeg": 6.462562442508883,
+        "groundContactFraction": 1
+      },
+      "failures": [
+        "No actual flight and landing"
+      ],
+      "report": "jumps-batch1.json",
+      "flightDurations": [],
+      "reason": "It completed stably but the supporting foot did not actually leave the ground enough for a verified jump; do not label this a successful jump."
+    },
+    {
+      "id": "broad_jump_004__A360",
+      "kind": "long_jump",
+      "sourceSHA256": "0d2e92c90bd2c1ed153e0f5748f69a132b2281f47e74e6653ea2dfc0c7b4c685",
+      "referenceFrames": 321,
+      "referenceSeconds": 6.4,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 2.000000000000294,
+      "minRootHeight": 0.7641907342332075,
+      "maxTorsoTiltDeg": 93.74722345181037,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": 2.4143902517238427,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.027976171549219584,
+        "verticalSpeed": 0.0039041766035577785,
+        "minRootHeight": 1.012394671468507,
+        "maxTorsoTiltDeg": 1.2614010153512951,
+        "groundContactFraction": 1
+      },
+      "failures": [
+        "Sustained near-horizontal/inverted torso"
+      ],
+      "report": "broad-batch2.json",
+      "flightDurations": [
+        0.3
+      ],
+      "reason": "Despite eventual recovery, the torso stayed over 85 degrees from upright longer than 0.2 s; a successful final hold does not erase this failure."
+    }
+  ],
+  "passingAlternatives": [
+    {
+      "id": "jump_and_land_light_002__A001",
+      "kind": "jump",
+      "sourceSHA256": "d9f5f1a319b3daefa129df71b63d58ab2c15b0bdb330bb48900313ea6110bca5",
+      "referenceFrames": 437,
+      "referenceSeconds": 8.72,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 1.9999999999988916,
+      "minRootHeight": 0.9309703247887913,
+      "maxTorsoTiltDeg": 34.76195515409566,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": -0.0005435814725457671,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.0060615037006634485,
+        "verticalSpeed": 0.0052383905169589105,
+        "minRootHeight": 1.0129521281625105,
+        "maxTorsoTiltDeg": 4.912972312327358,
+        "groundContactFraction": 1
+      },
+      "failures": [],
+      "report": "jumps-batch1.json",
+      "flightDurations": [
+        0.12
+      ],
+      "reason": "Passed physical screening, but omitted to keep the installed selection focused on one standing long jump, one high jump, and left/right high kicks."
+    },
+    {
+      "id": "jump_twice_R_002__A533",
+      "kind": "jump",
+      "sourceSHA256": "5a85b3ace0f090bebc7e255db73dd69ae7cacd0c68bfda6290fb7f69c6cffb11",
+      "referenceFrames": 164,
+      "referenceSeconds": 3.26,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 2.0000000000003393,
+      "minRootHeight": 0.9404296687770267,
+      "maxTorsoTiltDeg": 29.340313791953946,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": 1.6939570453319814,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.006389850272637196,
+        "verticalSpeed": 0.0015551906272730145,
+        "minRootHeight": 1.0128060085444748,
+        "maxTorsoTiltDeg": 4.683850438072095,
+        "groundContactFraction": 1
+      },
+      "failures": [],
+      "report": "jumps-batch1.json",
+      "flightDurations": [
+        0.04,
+        0.08
+      ],
+      "reason": "Passed physical screening, but omitted to keep the installed selection focused on one standing long jump, one high jump, and left/right high kicks."
+    },
+    {
+      "id": "broad_jump_002__A360",
+      "kind": "long_jump",
+      "sourceSHA256": "a3e9bc13cbd18d2a4ca454bf4523f73270d600abc5a4ebcbc44ce9715b775cc6",
+      "referenceFrames": 181,
+      "referenceSeconds": 3.6,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 2.0000000000004903,
+      "minRootHeight": 0.7471047846349254,
+      "maxTorsoTiltDeg": 48.37875427585804,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": 2.427118350601973,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.025156372731899912,
+        "verticalSpeed": 0.003009218605670815,
+        "minRootHeight": 1.017050377473399,
+        "maxTorsoTiltDeg": 2.9798956224581494,
+        "groundContactFraction": 1
+      },
+      "failures": [],
+      "report": "broad-batch2.json",
+      "flightDurations": [
+        0.34,
+        0.14
+      ],
+      "reason": "Passed physical screening, but omitted to keep the installed selection focused on one standing long jump, one high jump, and left/right high kicks."
+    },
+    {
+      "id": "neutral_kick_trash_R_001__A098",
+      "kind": "kick",
+      "sourceSHA256": "4f4dbf0bf84e42f4d20a9895417732c891143dafc32862b41d636e71ae0a3691",
+      "referenceFrames": 326,
+      "referenceSeconds": 6.5,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 2.000000000000205,
+      "minRootHeight": 0.9659171145286373,
+      "maxTorsoTiltDeg": 26.976135768023436,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": 3.403981755979296,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.050620232639213995,
+        "verticalSpeed": 0.011278485196374454,
+        "minRootHeight": 1.0095307254029635,
+        "maxTorsoTiltDeg": 2.8832334729643048,
+        "groundContactFraction": 1
+      },
+      "failures": [],
+      "report": "kicks-batch1.json",
+      "flightDurations": [],
+      "reason": "Passed physical screening, but omitted to keep the installed selection focused on one standing long jump, one high jump, and left/right high kicks."
+    },
+    {
+      "id": "neutral_kick_trash_R_001__A098_M",
+      "kind": "kick",
+      "sourceSHA256": "1c6f6ab6abbe22d6419bfac8bfea633d5176f3c2dc4743201f1be059b8a64fff",
+      "referenceFrames": 326,
+      "referenceSeconds": 6.5,
+      "completedReference": true,
+      "completedHold": true,
+      "actualHoldSeconds": 2.000000000000205,
+      "minRootHeight": 0.9529470728872428,
+      "maxTorsoTiltDeg": 32.28590539267491,
+      "maxNonFootGroundContactSeconds": 0,
+      "actualForwardDisplacement": 3.5064736801527148,
+      "terminal": {
+        "samples": 50,
+        "horizontalSpeed": 0.05815463565747736,
+        "verticalSpeed": 0.006100545136298594,
+        "minRootHeight": 1.0220126907328186,
+        "maxTorsoTiltDeg": 5.412891397030417,
+        "groundContactFraction": 1
+      },
+      "failures": [],
+      "report": "kicks-batch1.json",
+      "flightDurations": [],
+      "reason": "Passed physical screening, but omitted to keep the installed selection focused on one standing long jump, one high jump, and left/right high kicks."
+    }
+  ],
+  "reports": [
+    {
+      "name": "jumps-batch1.json",
+      "description": "Initial native H2 jump candidates",
+      "sha256": "3de96900737365ff281a04236df8f5ec508fa010d218ecb0560a1176e1bd4f49",
+      "scriptSHA256": "b1a1cc988208740d1c90787da3d0a68f4ea388d0ecd75617f9fc1449620592a2",
+      "candidateCount": 5
+    },
+    {
+      "name": "broad-batch2.json",
+      "description": "Alternate original broad-jump takes",
+      "sha256": "1c01e739fb2050a043d26e2123bf91d494399811067fe9c3743674ae9b0a6fa5",
+      "scriptSHA256": "6d14908a306c9e0be5b8139204ca0610f37e01606247838592f2a29270ac488e",
+      "candidateCount": 3
+    },
+    {
+      "name": "kicks-batch1.json",
+      "description": "Original native H2 right/left kicks",
+      "sha256": "34e8653070c94ff847d262ae65099a7de24a60ff3dfdf331b54b0fbdd671eb68",
+      "scriptSHA256": "6d14908a306c9e0be5b8139204ca0610f37e01606247838592f2a29270ac488e",
+      "candidateCount": 4
+    }
+  ],
+  "limitations": [
+    "This is bounded simulation evidence, not a hardware deployment result.",
+    "Rejected trajectories were not cropped, retargeted, clamped, or reinitialized to make them pass.",
+    "Original detailed screening traces remain in the development workspace; this small public report preserves source hashes and material failure evidence.",
+    "Screening evolved to reject reset-settling bounce as flight and measure standing takeoff from grounded foot advance rather than natural root shift during crouch. Final installed QA uses one frozen script and checks source hashes again after execution."
+  ]
+}

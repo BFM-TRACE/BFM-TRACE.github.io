@@ -1,0 +1,67 @@
+{
+  "archivedAt": "2026-10-09T17:32:01.278308+00:00",
+  "clips": {
+    "left": {
+      "id": "planner_run_left",
+      "file": "planner_run_left.json",
+      "frames": 106,
+      "recommendedLoop": {
+        "startFrame": 3,
+        "endFrame": 101,
+        "frames": 98,
+        "score": 0.006588350759818947,
+        "qMeanSquaredError": 0.003209344917938682,
+        "dqMeanSquaredError": 0.32697358978252283,
+        "orientationSeamRadians": 0.04674825003249567,
+        "meanVelocity": [
+          0.04071042245748094,
+          1.4061914171491365,
+          -0.002408495971134742
+        ],
+        "meanDirectionalSpeed": 1.4061914171491365
+      },
+      "movement": [
+        0,
+        1,
+        0
+      ],
+      "facing": [
+        1,
+        0,
+        0
+      ],
+      "validation": "not yet tested in H2 closed-loop physics"
+    },
+    "forward": {
+      "id": "planner_run_forward",
+      "file": "planner_run_forward.json",
+      "frames": 106,
+      "recommendedLoop": {
+        "startFrame": 2,
+        "endFrame": 100,
+        "frames": 98,
+        "score": 0.004056230709273491,
+        "qMeanSquaredError": 0.0014744449460258797,
+        "dqMeanSquaredError": 0.2525900197809066,
+        "orientationSeamRadians": 0.03343218970948339,
+        "meanVelocity": [
+          1.3942233883604704,
+          0.004152065637160315,
+          0.0008362105914524737
+        ],
+        "meanDirectionalSpeed": 1.3942233883604704
+      },
+      "movement": [
+        1,
+        0,
+        0
+      ],
+      "facing": [
+        1,
+        0,
+        0
+      ],
+      "validation": "not yet tested in H2 closed-loop physics"
+    }
+  }
+}

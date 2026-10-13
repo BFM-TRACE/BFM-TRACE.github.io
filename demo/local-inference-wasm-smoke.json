@@ -1,0 +1,60 @@
+{
+  "provider": "wasm",
+  "runtimeVersion": "1.30.0",
+  "runtimeVariant": "CPU-only WASM SIMD, one thread",
+  "iterations": 20,
+  "combinedMeanMs": 2.3073251000000026,
+  "metadata": {
+    "encoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoded_tokens",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            64
+          ]
+        }
+      ],
+      "loadMs": 169.70487500000002
+    },
+    "decoder": {
+      "inputs": [
+        {
+          "name": "obs_dict",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            994
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "action",
+          "isTensor": true,
+          "type": "float32",
+          "shape": [
+            1,
+            29
+          ]
+        }
+      ],
+      "loadMs": 35.710999999999984
+    }
+  },
+  "boundary": "Real encoder and decoder with synthetic inputs in Node. This checks runtime replacement, not browser compatibility or closed-loop behavior."
+}

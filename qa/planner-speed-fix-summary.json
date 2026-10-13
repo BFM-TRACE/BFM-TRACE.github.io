@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-09T18:41:42.318676+00:00",
+  "status": "pass",
+  "sources": {
+    "demo/demo.js": "130ea5a746fe578c5714df9427f762f9201cf4d57f35f14f69ac6e715a6f41bb",
+    "demo/index.html": "0332ba900590e642cebf42f4e755441de818344dcfa022d185f25ed31e77f467",
+    "demo/local-policy.js": "0d6e9869e76f24c1674aee5f7381f229ce0e9d06a782b5d9b5dc51351771c8b4",
+    "demo/local-planner.js": "82821828079b734c254e1a34d92022b696b2ae91db0da6f000e6dad3c0a82119",
+    "demo/local-worker.js": "44336bc47749865af8cf19f392c40ab6e1ae2cb5d6a5a431ea14f949c219d24b",
+    "demo/local-inference.js": "5849ac4bba5a8775dd22b5976516b2b28ba450212d930e1a13c082b247cd9159",
+    "demo/local-assets/planner-bank/manifest.json": "436f6c4463ac17793bfa108c18763870efa7c5657e4da35f6bcc49ca6bf10aea"
+  },
+  "reports": {
+    "planner-quality.json": {
+      "status": "pass",
+      "cases": 16,
+      "longRunSeconds": 60,
+      "rawReportSHA256": "0ea1dbfb408f33c216a0b3f66f0fd83b1cc4f591827f825f1f1d5e365ad3a063",
+      "rawReportBytes": 25238144,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/planner-quality.json",
+      "archivePathBase": "repository root",
+      "rawArchiveRequiredForRuntime": false,
+      "summaryPath": "planner-quality.json",
+      "summaryPathBase": "homepage/qa",
+      "summarySHA256": "cc8d605e94bfea88d06c95067483fed5bb4580f747d5e18e887304093d545449",
+      "summaryBytes": 632372
+    },
+    "planner-boundaries.json": {
+      "status": "pass",
+      "cases": 20,
+      "rawReportSHA256": "15c5285922e5471dc5ac7022a7cc878719215602c84a07f8d794d14c65d73423",
+      "rawReportBytes": 12191605,
+      "rawReportArchivePath": ".work/archive/homepage-qa-20261011/planner-boundaries.json",
+      "archivePathBase": "repository root",
+      "rawArchiveRequiredForRuntime": false,
+      "summaryPath": "planner-boundaries.json",
+      "summaryPathBase": "homepage/qa",
+      "summarySHA256": "10693904ec277db568ab528c73d08dd842502331f41d4a50df8061edb6e55621",
+      "summaryBytes": 291747
+    },
+    "planner-bank.json": {
+      "status": "pass",
+      "sha256": "436969c7f3fa82f75b133c9bd2f48b77e5284d724d47d213174ba94ccf2546ff",
+      "cases": 15
+    },
+    "planner-combinations.json": {
+      "status": "pass",
+      "sha256": "955363ee5a7a511219217af0dbb70c33ce94f3aa1fd96b2eb32ece11ec98ac91",
+      "cases": 6
+    },
+    "planner-controls.json": {
+      "status": "pass",
+      "sha256": "e3083de85134913dfcbed53e94eb588844ccd29da8690a9754202665f7f96418",
+      "checks": 23
+    },
+    "planner-browser.json": {
+      "status": "pass",
+      "sha256": "fdfc2e9284ea5a3ddbc90f3ed775f95cd8ddca829886b479a0853e92d0db8902"
+    },
+    "walk-stop-fix.json": {
+      "status": "pass",
+      "sha256": "42d23fee6e14ef2491caf066ab1abe3ca09dc01b6eb4b716c5fd0613bbcbe0ce"
+    },
+    "planner-compaction-parity.json": {
+      "status": "pass",
+      "sha256": "61a7d5ac4240e858c8ce59bf9c8d758fae61984122e7091061dcce194d74e043"
+    }
+  },
+  "limits": {
+    "slow_walk": {
+      "forward": [
+        0.1,
+        0.8
+      ],
+      "sidewaysBackwardMaximum": 0.8
+    },
+    "walk": {
+      "forward": [
+        0.8,
+        2.5
+      ],
+      "sidewaysBackwardMaximum": 1.6
+    },
+    "run": {
+      "forward": [
+        2.5,
+        4
+      ],
+      "sidewaysBackwardMaximum": 2.5
+    }
+  },
+  "scope": "Requested speeds; measured speed can differ. Engineering simulated-motion checks at recorded conditions, not a universal guarantee or hardware validation."
+}

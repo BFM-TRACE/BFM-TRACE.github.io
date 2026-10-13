@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-09",
+  "autoConnectVerified": true,
+  "livePlaybackControlsHidden": true,
+  "keyboardPlannerTest": {
+    "before": {
+      "mode": "planner",
+      "root_position": [
+        34.00656591416635,
+        29.621334012627834,
+        1.0210023366483845
+      ],
+      "sim_time": 31199.999005897524,
+      "command": {
+        "vx": 0,
+        "vy": 0,
+        "yaw": 0
+      }
+    },
+    "after": {
+      "mode": "planner",
+      "root_position": [
+        34.95648747667016,
+        29.66554411986852,
+        1.0222041919270541
+      ],
+      "sim_time": 31215.40100590066,
+      "command": {
+        "vx": 0,
+        "vy": 0,
+        "yaw": 0
+      },
+      "status": "running",
+      "source": "live_mujoco_policy"
+    },
+    "displacement": 0.9509497928344659,
+    "durationHeldMs": 2200
+  },
+  "offline": {
+    "isolatedSite": "http://127.0.0.1:4187/demo/index.html",
+    "upstream": "intentionally unavailable",
+    "initialModelStatic": true,
+    "motionSelectDisabled": true,
+    "holdResetDisabled": true,
+    "allFiveDirectionButtonsDisabled": true,
+    "explicitReferenceOptInVerified": true
+  },
+  "browser": "Codex in-app browser",
+  "tunnelSurvivesAgentCompletion": true,
+  "finalScreenshot": "qa/screenshots/live-first-fixed.jpg"
+}
