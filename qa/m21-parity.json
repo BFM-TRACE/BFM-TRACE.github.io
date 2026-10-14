@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "cases": 114,
+  "source": "SONIC_unitree_h2 Motion.sample + released observations.hpp layout",
+  "maxObservationError": 1.8612195457263538e-14,
+  "maxTokenError": 0,
+  "maxActionError": 8.344650268554688e-7,
+  "spaces": {
+    "h2": 24,
+    "g1": 66,
+    "smpl": 24
+  }
+}

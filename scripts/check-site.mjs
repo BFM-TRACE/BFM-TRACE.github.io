@@ -45,7 +45,7 @@ for (const motion of motionCatalog.motions) {
   assert.equal(prepared.referenceSpace, motion.referenceSpace || "h2");
   if (motion.previewAvailable === false) {
     assert.equal(motion.file, null, `${motion.id}: preview must be explicitly absent`);
-    assert.equal(prepared.referenceSpace, "g1");
+    assert.ok(["g1", "smpl"].includes(prepared.referenceSpace));
   } else {
     assert.ok(typeof motion.file === "string" && !path.isAbsolute(motion.file) && !motion.file.includes(".."));
     const previewPath = `demo/assets/${motion.file}`;

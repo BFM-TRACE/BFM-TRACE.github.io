@@ -15,9 +15,8 @@
 
 const VENDOR = new URL('./vendor/ort/', import.meta.url);
 const DEFAULT_MODELS = {
-  encoder: new URL('./local-assets/models/encoder_native.onnx', import.meta.url).href,
-  decoder: new URL('./local-assets/models/decoder.onnx', import.meta.url).href,
-  plannerEncoder: new URL('./local-assets/models/encoder_g1.onnx', import.meta.url).href,
+  encoderFull: new URL('./local-assets/models/encoder_full.onnx?v=c0938bb3da2f', import.meta.url).href,
+  decoder: new URL('./local-assets/models/decoder.onnx?v=6d44817fc666', import.meta.url).href,
 };
 let runtimePromise;
 
@@ -75,14 +74,15 @@ function tensorFor(ort, metadata, value) {
 }
 
 /**
- * Load the H2 tracking encoder, decoder, and compact G1 reference encoder.
- * The G1 branch is exactly full-encoder selector 3; its 640D input uses raw G1
- * q/qd in semantic order, followed by orientation, without hip projection.
+ * Load the exact released universal encoder and H2 decoder from SONIC_unitree_h2.
+ * H2/G1 compact observation buffers are placed in selectors 0/3 of the 1751D
+ * source layout. SMPL selector 2 carries 720 joints, 60 orientations and 60 wrists.
+ * No model graph extraction, weight conversion or CDN dependency is used.
  *
  * models entries can be a URL/Uint8Array or {url, externalData, options}.
  * External data entries follow ORT: {path: modelEmbeddedPath, data: localURL}.
- * plannerEncoder encodes already planned reference targets; it is not the
- * 739 MiB neural planner. A full planner is loaded only if explicitly supplied.
+ * encodePlanner encodes already planned G1 targets with selector 3. The
+ * approximately 739 MiB neural planner is not bundled in this browser demo.
  * onProgress receives {phase, model, provider, elapsedMs?}; it is not a
  * download-percentage estimate. Sessions are initialized sequentially to
  * avoid peak memory from several model compilations at once.
@@ -158,11 +158,28 @@ export async function createLocalInference({
     for (const output of Object.values(outputs)) output.dispose();
     return data;
   }
+  function encodeReference(input, selector) {
+    const full = new Float32Array(1751);
+    full[0] = selector;
+    if (selector < 3) full[1 + selector] = 1;
+    if (selector === 2) {
+      if (input.length !== 840) throw new Error('SMPL observations require 720 joints, 60 orientations and 60 wrist values.');
+      full.set(input.subarray(0, 720), 911);
+      full.set(input.subarray(720, 780), 1631);
+      full.set(input.subarray(780, 840), 1691);
+    } else {
+      if (input.length !== 640) throw new Error('Robot reference observations require 640 values.');
+      full.set(input.subarray(0, 580), 4);
+      full.set(input.subarray(580, 640), 590);
+    }
+    return firstOutput('encoderFull', full);
+  }
   return {
     provider, runtimeVersion: ort.env.versions.web || '1.30.0', metadata, sessions,
     run,
-    encode: input => firstOutput('encoder', input),
-    encodePlanner: input => firstOutput('plannerEncoder', input),
+    encode: input => encodeReference(input, 0),
+    encodePlanner: input => encodeReference(input, 3),
+    encodeSMPL: input => encodeReference(input, 2),
     decode: input => firstOutput('decoder', input),
     plan: input => run('planner', input),
     tensor: (type, data, dims) => new ort.Tensor(type, data, dims),

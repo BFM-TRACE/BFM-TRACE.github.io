@@ -15,7 +15,11 @@ export function orientation6([w,x,y,z]) {
 export function gravityLocal([w,x,y,z]) {return [2*(w*y-x*z),-2*(y*z+w*x),2*(x*x+y*y)-1];}
 function blendQuaternion(a,b,t) {
   const sign = a.reduce((s,v,i)=>s+v*b[i],0)<0 ? -1 : 1;
-  const q = a.map((v,i)=>v*(1-t)+sign*b[i]*t), norm = Math.hypot(...q);
+  const cosine = clamp(a.reduce((s,v,i)=>s+v*b[i]*sign,0),-1,1);
+  const angle = Math.acos(cosine), sine = Math.sin(angle);
+  const wa = cosine>.9995 ? 1-t : Math.sin((1-t)*angle)/sine;
+  const wb = cosine>.9995 ? t : Math.sin(t*angle)/sine;
+  const q = a.map((v,i)=>v*wa+sign*b[i]*wb), norm = Math.hypot(...q);
   return q.map(v=>v/norm);
 }
 function pushHistory(history,value) {
@@ -32,6 +36,7 @@ export class LocalPolicy {
     this.commandVelocity={vx:0,vy:0,yaw:0}; this.commandAt=performance.now();
     this.history={omega:new Float32Array(30),q:new Float32Array(290),dq:new Float32Array(290),action:new Float32Array(290),gravity:new Float32Array(30)};
     this.lastAction=new Float32Array(29); this.encoderInput=new Float32Array(640); this.decoderInput=new Float32Array(994);
+    this.smplInput=new Float32Array(840);
     this.target=new Float64Array(31); this.inferenceMs=0; this.steps=0; this.status='starting';
     this.planner=config.planner.bank ? new LocalGaitPlanner(config.planner.bank,motions) : null;
     this.plannerStyle='slow_walk';
@@ -41,12 +46,16 @@ export class LocalPolicy {
     const ref=this.motions[motion];
     const at=clamp(frame,0,ref.frames.length-1), i=Math.floor(at), next=Math.min(i+1,ref.frames.length-1), t=at-i;
     const a=ref.frames[i], b=ref.frames[next];
+    if (ref.referenceSpace==='smpl') {
+      const quat=blendQuaternion(a.quat,b.quat,t);
+      return {joints:a.joints.map((v,j)=>v+(b.joints[j]-v)*t),wrists:a.wrists.map((v,j)=>v+(b.wrists[j]-v)*t),quat,rootQuat:quat};
+    }
     const positions=ref.referenceSpace==='g1'?'policyQ':'q', velocities=ref.referenceSpace==='g1'?'policyDq':'dq';
     return {[positions]:a[positions].map((v,j)=>v+(b[positions][j]-v)*t),[velocities]:a[velocities].map((v,j)=>v+(b[velocities][j]-v)*t),quat:blendQuaternion(a.quat,b.quat,t)};
   }
 
   get referenceSpace() {return this.mode==='planner'?'g1':this.motions[this.motion].referenceSpace || 'h2';}
-  get encoderBranch() {return this.referenceSpace==='g1'?'g1_selector_3':'h2_native';}
+  get encoderBranch() {return this.referenceSpace==='g1'?'g1_selector_3':this.referenceSpace==='smpl'?'smpl_selector_2':'h2_native';}
   get motionPreparing() {return this.mode==='tracking' && this.startupStepsRemaining>0;}
 
   reset(motion=this.motion) {
@@ -55,7 +64,7 @@ export class LocalPolicy {
     this.commandVelocity={vx:0,vy:0,yaw:0}; this.commandAt=performance.now();
     const ref=this.motions[motion];
     this.startupStepsRemaining=this.mode==='tracking'?Math.round((ref.startupHoldSeconds || 0)*50):0;
-    this.physics.reset({qpos:this.mode==='planner' || ref.referenceSpace==='g1'?this.config.initialQpos:ref.initialQpos || this.config.initialQpos});
+    this.physics.reset({qpos:this.mode==='planner' || ref.referenceSpace!=='h2'?this.config.initialQpos:ref.initialQpos || this.config.initialQpos});
     this.lastAction.fill(0);
     this.headingOffset=yawOf(this.physics.data.qpos.subarray(3,7))-yawOf(ref.frames[0].quat);
     this.plannerHeading=yawOf(this.physics.data.qpos.subarray(3,7)); this.movementHeading=this.plannerHeading;
@@ -117,7 +126,7 @@ export class LocalPolicy {
   reference(future) {
     if(this.mode==='tracking') {
       const sample=this.sample(this.motion,this.motionPreparing?0:(this.time+future)*(this.motions[this.motion].fps || 50));
-      if(this.motionPreparing || this.complete) (sample.policyDq || sample.dq).fill(0);
+      if(this.motionPreparing || this.complete || this.time+future >= (this.motions[this.motion].frames.length-1)/this.motions[this.motion].fps) (sample.policyDq || sample.dq)?.fill(0);
       sample.quat=multiply(yawQuaternion(this.headingOffset),sample.quat);
       return sample;
     }
@@ -143,8 +152,20 @@ export class LocalPolicy {
     const observation=this.observe();
     for (const [name,history] of Object.entries(this.history)) pushHistory(history,name==='action'?this.lastAction:observation[name]);
     const baseInverse=conjugate(d.qpos.subarray(3,7));
+    const smpl=this.referenceSpace==='smpl';
     for (let f=0;f<10;f++) {
-      const ref=this.reference(f*.1);
+      const ref=this.reference(f*(smpl?.02:.1));
+      if (smpl) {
+        const inverse=conjugate(ref.rootQuat);
+        for(let j=0;j<24;j++) {
+          const point=ref.joints.slice(j*3,j*3+3);
+          const rotated=multiply(multiply(inverse,[0,...point]),ref.rootQuat).slice(1);
+          this.smplInput.set(rotated,f*72+j*3);
+        }
+        this.smplInput.set(orientation6(multiply(baseInverse,ref.quat)),720+f*6);
+        this.smplInput.set(ref.wrists,780+f*6);
+        continue;
+      }
       for(let i=0;i<29;i++) {
         const local=c.policyToLocal[i];
         this.encoderInput[f*29+i]=ref.policyQ ? ref.policyQ[i] : ref.q[local];
@@ -152,7 +173,7 @@ export class LocalPolicy {
       }
       this.encoderInput.set(orientation6(multiply(baseInverse,ref.quat)),580+f*6);
     }
-    const tokens=await (this.referenceSpace==='g1'?this.inference.encodePlanner(this.encoderInput):this.inference.encode(this.encoderInput));
+    const tokens=await (smpl?this.inference.encodeSMPL(this.smplInput):this.referenceSpace==='g1'?this.inference.encodePlanner(this.encoderInput):this.inference.encode(this.encoderInput));
     this.decoderInput.set(tokens,0);
     let offset=64;
     for(const history of Object.values(this.history)) {this.decoderInput.set(history,offset);offset+=history.length;}

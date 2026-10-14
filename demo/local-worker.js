@@ -50,7 +50,7 @@ async function init() {
     progress(phase==='runtime'?'Loading browser inference runtime…':phase==='loading'?`Loading H2 ${model} model…`:`H2 ${model} ready`);
   }});
   controller=new LocalPolicy(physics,inference,config,motions);
-  controller.reset('squat_001__A359');
+  controller.reset(visibleMotions.motions[0].id);
   await controller.step();
   initialized=true;
   publish();

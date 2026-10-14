@@ -2,7 +2,8 @@
   "schema": "trace-h2-native-controller-v1",
   "policyHz": 50,
   "physicsHz": 1000,
-  "sourceCheckpoint": "gpu3_20260907_stage2_step009450",
+  "sourceCheckpoint": "SONIC_unitree_h2/models/sonic_h2_released",
+  "sourceRevision": "e02d270ad99515839af643da8c842134f157dd4b",
   "policyToLocal": [
     0,
     6,
@@ -428,30 +429,14 @@
     0.0
   ],
   "encoder": {
-    "input": "obs_dict",
-    "inputSize": 640,
-    "output": "encoded_tokens",
+    "inputSize": 1751,
     "outputSize": 64,
     "futureFrames": 10,
-    "futureFrameStep": 5,
-    "referenceFPS": 50,
     "orientationContract": "sonic_full_root_relative_v0"
   },
   "decoder": {
-    "input": "obs_dict",
     "inputSize": 994,
-    "output": "action",
-    "outputSize": 29,
-    "historyFrames": 10,
-    "historyOrder": "oldest-first",
-    "features": [
-      "token64",
-      "omega30",
-      "q_minus_default290",
-      "qd290",
-      "action290",
-      "gravity30"
-    ]
+    "outputSize": 29
   },
   "motionsManifest": "references/manifest.json",
   "physicsManifest": "physics/manifest.json",

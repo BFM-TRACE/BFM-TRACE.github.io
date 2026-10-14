@@ -188,7 +188,7 @@ try {
   config = await localJSON('demo/local-assets/controller.json'); assert.equal(config.policyHz, 50);
   const manifest = await localJSON('demo/local-assets/physics/manifest.json');
   physics = await createPhysics({ manifest, config: await localJSON('demo/local-assets/physics/physics-config.json'), files: await Promise.all(manifest.files.map(async file => ({ path: file.path, data: await localBytes(`demo/local-assets/physics/${file.url || file.path}`) }))), engineOptions: { wasmBinary: await localBytes('demo/vendor/mujoco/mujoco.wasm') } });
-  inference = await createLocalInference({ models: { encoder: await localBytes('demo/local-assets/models/encoder_native.onnx'), decoder: await localBytes('demo/local-assets/models/decoder.onnx'), plannerEncoder: await localBytes('demo/local-assets/models/encoder_g1.onnx') } });
+  inference = await createLocalInference({ models: { encoderFull: await localBytes('demo/local-assets/models/encoder_full.onnx'), decoder: await localBytes('demo/local-assets/models/decoder.onnx') } });
   const motions = {};
   for (const entry of (await localJSON('demo/local-assets/references/manifest.json')).motions) {
     const ref = await localJSON(`demo/local-assets/references/${entry.file}`);

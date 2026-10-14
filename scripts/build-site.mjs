@@ -49,6 +49,8 @@ export async function collectSiteFiles(root = homepageRoot, {modelCatalog} = {})
     add(decodeURIComponent(value.split(/[?#]/)[0]), base);
   }
   add('index.html'); add('demo/index.html'); add('THIRD_PARTY_NOTICES.md'); add('demo/local-assets/controller.json');
+  for (const file of ['manifest.json','source-deployment.json','SOURCE-LICENSE','SOURCE-NOTICE']) add(`demo/local-assets/models/${file}`);
+  add('demo/local-assets/source-inventory.json');
   Object.values(catalogPaths).forEach(relative => add(relative));
   engineFiles.forEach(relative => add(relative));
   const [media, visible, targets, bank, physics] = await Promise.all(Object.values(catalogPaths).map(json));

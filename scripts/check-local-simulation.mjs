@@ -118,7 +118,7 @@ async function checkTracking(id, motions) {
   let last = metrics.initial;
   try {
     while (!policy.complete) {
-      assert.ok(policy.steps <= reference.frames.length + 2, 'Reference did not reach its last frame');
+      assert.ok(policy.steps <= reference.frames.length + Math.round(reference.startupHoldSeconds*50) + 2, 'Reference did not reach its last frame');
       await checkedStep();
       const current = snapshot();
       accumulate(metrics, last, current); last = current;
@@ -186,7 +186,7 @@ try {
     'demo/local-policy.js', 'demo/local-reference.js', 'demo/local-planner.js', 'demo/local-physics.js', 'demo/local-inference.js',
     'demo/local-assets/controller.json', 'demo/local-assets/physics/model.xml',
     'demo/local-assets/physics/physics-config.json',
-    'demo/local-assets/models/encoder_native.onnx', 'demo/local-assets/models/decoder.onnx', 'demo/local-assets/models/encoder_g1.onnx',
+    'demo/local-assets/models/encoder_full.onnx', 'demo/local-assets/models/decoder.onnx',
     'demo/vendor/mujoco/mujoco.wasm', 'demo/vendor/ort/ort.wasm.min.mjs',
     'demo/vendor/ort/ort-wasm-simd-threaded.wasm',
   ];
@@ -203,9 +203,8 @@ try {
     engineOptions: { wasmBinary: await bytes('demo/vendor/mujoco/mujoco.wasm') },
   });
   inference = await createLocalInference({ provider: 'wasm', models: {
-    encoder: await bytes('demo/local-assets/models/encoder_native.onnx'),
-    decoder: await bytes('demo/local-assets/models/decoder.onnx'),
-    plannerEncoder: await bytes('demo/local-assets/models/encoder_g1.onnx'),
+    encoderFull: await bytes('demo/local-assets/models/encoder_full.onnx'),
+    decoder: await bytes('demo/local-assets/models/decoder.onnx')
   } });
   report.engines = { mujoco: physics.mujoco.mj_versionString(), onnxRuntime: inference.runtimeVersion, provider: inference.provider, onnxThreads: 1 };
   report.modelMetadata = inference.metadata;

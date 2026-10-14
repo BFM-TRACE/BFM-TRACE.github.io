@@ -165,9 +165,8 @@ try {
     engineOptions: { wasmBinary: await source('demo/vendor/mujoco/mujoco.wasm') },
   });
   inference = await createLocalInference({ models: {
-    encoder: await source('demo/local-assets/models/encoder_native.onnx'),
-    decoder: await source('demo/local-assets/models/decoder.onnx'),
-    plannerEncoder: await source('demo/local-assets/models/encoder_g1.onnx'),
+    encoderFull: await source('demo/local-assets/models/encoder_full.onnx'),
+    decoder: await source('demo/local-assets/models/decoder.onnx')
   } });
   const motions = {};
   for (const entry of (await json('demo/local-assets/references/manifest.json')).motions) {

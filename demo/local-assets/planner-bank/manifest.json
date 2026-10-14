@@ -52,13 +52,13 @@
                 "startFrame": 0,
                 "endFrame": 50,
                 "frames": 50,
-                "score": 0.00009939573011410785,
+                "score": 9.939573011410785e-05,
                 "meanVelocity": [
                   0.002679593861103058,
                   0.8763084411621094,
                   -0.00017625093460083008
                 ],
-                "qMeanSquaredError": 0.00006616809905409547,
+                "qMeanSquaredError": 6.616809905409547e-05,
                 "dqMeanSquaredError": 0.0033227631060012367,
                 "seamVelocityErrorRMS": 0.4067188803525584,
                 "rootRPYMinDegrees": [
@@ -132,13 +132,13 @@
             "startFrame": 0,
             "endFrame": 50,
             "frames": 50,
-            "score": 0.00003991102532799055,
+            "score": 3.991102532799055e-05,
             "meanVelocity": [
               -0.011863067746162415,
               -0.3240211009979248,
               0.0012126564979553223
             ],
-            "qMeanSquaredError": 0.000035195506964862456,
+            "qMeanSquaredError": 3.5195506964862456e-05,
             "dqMeanSquaredError": 0.00047155183631280916,
             "seamVelocityErrorRMS": 0.29662900635668815,
             "rootRPYMinDegrees": [
@@ -177,7 +177,7 @@
                   -0.8124194145202637,
                   0.0012533068656921387
                 ],
-                "qMeanSquaredError": 0.000071493223484178,
+                "qMeanSquaredError": 7.1493223484178e-05,
                 "dqMeanSquaredError": 0.0052071637491443844,
                 "seamVelocityErrorRMS": 0.42276832746841975,
                 "rootRPYMinDegrees": [
@@ -211,13 +211,13 @@
                 "startFrame": 0,
                 "endFrame": 50,
                 "frames": 50,
-                "score": 0.00003991102532799055,
+                "score": 3.991102532799055e-05,
                 "meanVelocity": [
                   -0.011863067746162415,
                   -0.3240211009979248,
                   0.0012126564979553223
                 ],
-                "qMeanSquaredError": 0.000035195506964862456,
+                "qMeanSquaredError": 3.5195506964862456e-05,
                 "dqMeanSquaredError": 0.00047155183631280916,
                 "seamVelocityErrorRMS": 0.29662900635668815,
                 "rootRPYMinDegrees": [
@@ -290,14 +290,14 @@
                 "startFrame": 0,
                 "endFrame": 50,
                 "frames": 50,
-                "score": 0.0000017457508182707799,
+                "score": 1.7457508182707799e-06,
                 "meanVelocity": [
                   0.6893267631530762,
                   -0.03162062168121338,
                   0.00010818243026733398
                 ],
-                "qMeanSquaredError": 0.0000011620745154003373,
-                "dqMeanSquaredError": 0.000058367630287044276,
+                "qMeanSquaredError": 1.1620745154003373e-06,
+                "dqMeanSquaredError": 5.8367630287044276e-05,
                 "seamVelocityErrorRMS": 0.05389978004130298,
                 "rootRPYMinDegrees": [
                   -2.658745336968375,
@@ -499,13 +499,13 @@
             "startFrame": 0,
             "endFrame": 50,
             "frames": 50,
-            "score": 0.00009939573011410785,
+            "score": 9.939573011410785e-05,
             "meanVelocity": [
               0.002679593861103058,
               0.8763084411621094,
               -0.00017625093460083008
             ],
-            "qMeanSquaredError": 0.00006616809905409547,
+            "qMeanSquaredError": 6.616809905409547e-05,
             "dqMeanSquaredError": 0.0033227631060012367,
             "seamVelocityErrorRMS": 0.4067188803525584,
             "rootRPYMinDegrees": [
@@ -585,7 +585,7 @@
               -0.8124194145202637,
               0.0012533068656921387
             ],
-            "qMeanSquaredError": 0.000071493223484178,
+            "qMeanSquaredError": 7.1493223484178e-05,
             "dqMeanSquaredError": 0.0052071637491443844,
             "seamVelocityErrorRMS": 0.42276832746841975,
             "rootRPYMinDegrees": [
@@ -698,14 +698,14 @@
             "startFrame": 0,
             "endFrame": 50,
             "frames": 50,
-            "score": 0.0000017422470475769892,
+            "score": 1.7422470475769892e-06,
             "meanVelocity": [
               0.689326286315918,
               -0.03162142634391785,
               0.00010818243026733398
             ],
-            "qMeanSquaredError": 0.0000011594014379748912,
-            "dqMeanSquaredError": 0.000058284560960209795,
+            "qMeanSquaredError": 1.1594014379748912e-06,
+            "dqMeanSquaredError": 5.8284560960209795e-05,
             "seamVelocityErrorRMS": 0.053837752506370726,
             "rootRPYMinDegrees": [
               -2.65871397547083,
@@ -1165,12 +1165,12 @@
             "endFrame": 101,
             "frames": 101,
             "score": 0.00013455169959588522,
-            "qMeanSquaredError": 0.000046677178704770004,
+            "qMeanSquaredError": 4.6677178704770004e-05,
             "dqMeanSquaredError": 0.00876898312201789,
             "orientationSeamRadians": 0.001921924405049819,
             "meanVelocity": [
               -0.00016366133908971676,
-              -0.000028257076121350563,
+              -2.8257076121350563e-05,
               -0.0004005668186905141
             ],
             "meanDirectionalSpeed": 0
@@ -1207,5 +1207,12 @@
     "beforeBytes": 38525305,
     "afterBytes": 3920548
   },
-  "walkStopBlendSeconds": 0.4
+  "walkStopBlendSeconds": 0.4,
+  "sourceRelease": {
+    "repository": "QinnyuLan/SONIC_unitree_h2",
+    "revision": "e02d270ad99515839af643da8c842134f157dd4b",
+    "planner": "models/motion_planner_g1/planner_sonic.onnx",
+    "sha256": "39b553e197f62f077975ba38512bc04781a3fc37c2af7c6756e04629f760edea",
+    "note": "Source planner bytes are identical to the generator used for this validated reference bank."
+  }
 }

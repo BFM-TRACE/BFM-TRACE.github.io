@@ -150,9 +150,8 @@ try {
     engineOptions: { wasmBinary: await bytes('demo/vendor/mujoco/mujoco.wasm') },
   });
   inference = await createLocalInference({ provider: 'wasm', models: {
-    encoder: await source('demo/local-assets/models/encoder_native.onnx'),
-    decoder: await source('demo/local-assets/models/decoder.onnx'),
-    plannerEncoder: await source('demo/local-assets/models/encoder_g1.onnx'),
+    encoderFull: await source('demo/local-assets/models/encoder_full.onnx'),
+    decoder: await source('demo/local-assets/models/decoder.onnx')
   } });
   report.engines = { mujoco: physics.mujoco.mj_versionString(), onnxRuntime: inference.runtimeVersion, provider: inference.provider };
   const motions = {};

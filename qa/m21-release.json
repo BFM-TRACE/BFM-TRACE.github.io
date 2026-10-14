@@ -1,0 +1,556 @@
+{
+  "testedAt": "2026-10-14T19:41:17.203Z",
+  "scope": "Source integrity and complete 38-motion closed-loop execution using production browser WASM; finite bounded tests, not hardware validation.",
+  "motions": [
+    {
+      "id": "forward_lunge_R_001__A359_M",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 399,
+      "minRootHeight": 0.6438487261472672,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.021821923682782,
+      "wallSeconds": 2.209610209,
+      "controlSteps": 524
+    },
+    {
+      "id": "squat_001__A359",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 425,
+      "minRootHeight": 0.539511996474344,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0148146900526573,
+      "wallSeconds": 2.2138679590000003,
+      "controlSteps": 550
+    },
+    {
+      "id": "walking_quip_360_R_002__A428",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 456,
+      "minRootHeight": 0.9405066181973619,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0237609282905886,
+      "wallSeconds": 2.3144517499999995,
+      "controlSteps": 581
+    },
+    {
+      "id": "walking_quip_360_R_002__A428_M",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 456,
+      "minRootHeight": 0.9427459890871681,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0232365112618729,
+      "wallSeconds": 2.289866542000001,
+      "controlSteps": 581
+    },
+    {
+      "id": "dance_in_da_party_001__A464",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 498,
+      "minRootHeight": 0.9013350857974626,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0168675514330359,
+      "wallSeconds": 2.473620167000001,
+      "controlSteps": 623
+    },
+    {
+      "id": "dance_in_da_party_001__A464_M",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 498,
+      "minRootHeight": 0.8867021044121216,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0152623895208304,
+      "wallSeconds": 2.484492332999998,
+      "controlSteps": 623
+    },
+    {
+      "id": "macarena_001__A545",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 1376,
+      "minRootHeight": 0.913896686715494,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0093627945807941,
+      "wallSeconds": 6.237711959,
+      "controlSteps": 1501
+    },
+    {
+      "id": "macarena_001__A545_M",
+      "referenceSpace": "h2",
+      "encoderBranch": "h2_native",
+      "frames": 1376,
+      "minRootHeight": 0.9056764551916326,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0103119760618327,
+      "wallSeconds": 6.206817082999998,
+      "controlSteps": 1501
+    },
+    {
+      "id": "g1_dance_in_da_party_001__A464",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 497,
+      "minRootHeight": 0.894112160221796,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0307930698749521,
+      "wallSeconds": 2.553813250000003,
+      "controlSteps": 622
+    },
+    {
+      "id": "g1_dance_in_da_party_001__A464_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 497,
+      "minRootHeight": 0.8773785932702919,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0318784015966072,
+      "wallSeconds": 2.512353583,
+      "controlSteps": 622
+    },
+    {
+      "id": "g1_forward_lunge_R_001__A359_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 399,
+      "minRootHeight": 0.6875561297127921,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0247394528341838,
+      "wallSeconds": 2.110359457999999,
+      "controlSteps": 524
+    },
+    {
+      "id": "g1_macarena_001__A545",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 1375,
+      "minRootHeight": 0.8536786629493864,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.016675563136844,
+      "wallSeconds": 6.1974717079999975,
+      "controlSteps": 1500
+    },
+    {
+      "id": "g1_macarena_001__A545_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 1375,
+      "minRootHeight": 0.8600756302577941,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0168155810818655,
+      "wallSeconds": 6.186007458,
+      "controlSteps": 1500
+    },
+    {
+      "id": "g1_neutral_kick_R_001__A543",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 165,
+      "minRootHeight": 0.9457828705015316,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0265612628602128,
+      "wallSeconds": 1.1539002080000065,
+      "controlSteps": 289
+    },
+    {
+      "id": "g1_neutral_kick_R_001__A543_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 165,
+      "minRootHeight": 0.9615582897592507,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0272544334640086,
+      "wallSeconds": 1.1643136249999952,
+      "controlSteps": 289
+    },
+    {
+      "id": "g1_squat_001__A359",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 424,
+      "minRootHeight": 0.5614225329660513,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0274799938482093,
+      "wallSeconds": 2.2409427920000016,
+      "controlSteps": 549
+    },
+    {
+      "id": "g1_tired_forward_lunge_R_001__A359_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 810,
+      "minRootHeight": 0.6260929211232057,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0277744204096562,
+      "wallSeconds": 3.7851642920000015,
+      "controlSteps": 935
+    },
+    {
+      "id": "g1_tired_one_leg_jumping_R_001__A359",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 500,
+      "minRootHeight": 0.8401594937679604,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0247141141365832,
+      "wallSeconds": 3.2568129160000003,
+      "controlSteps": 650
+    },
+    {
+      "id": "g1_tired_one_leg_jumping_R_001__A359_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 500,
+      "minRootHeight": 0.7885862443416558,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0251428411175831,
+      "wallSeconds": 2.547865375000001,
+      "controlSteps": 625
+    },
+    {
+      "id": "g1_walking_quip_360_R_002__A428",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 455,
+      "minRootHeight": 0.9411679888427051,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0294204656966697,
+      "wallSeconds": 2.329949790999999,
+      "controlSteps": 580
+    },
+    {
+      "id": "g1_walking_quip_360_R_002__A428_M",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 455,
+      "minRootHeight": 0.927677659664588,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.030412813643234,
+      "wallSeconds": 2.3419272090000014,
+      "controlSteps": 580
+    },
+    {
+      "id": "g1_explore_prayer_R_001__A430",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 381,
+      "minRootHeight": 0.5261088409531657,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0259884151792422,
+      "wallSeconds": 2.0434068750000005,
+      "controlSteps": 506
+    },
+    {
+      "id": "g1_explore_dejection_R_001__A430",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 764,
+      "minRootHeight": 0.41775314491510596,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0174758021907089,
+      "wallSeconds": 3.6443727919999946,
+      "controlSteps": 889
+    },
+    {
+      "id": "g1_explore_show_bicep_R_on_all_fours_360_start_R_idle_right_R_002__A474",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 780,
+      "minRootHeight": 0.45744489042342285,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0041087233025565,
+      "wallSeconds": 3.6444362499999987,
+      "controlSteps": 905
+    },
+    {
+      "id": "g1_explore_jump_and_land_light_002__A001",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 439,
+      "minRootHeight": 0.8784689418931755,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0242894421128483,
+      "wallSeconds": 2.318484165999995,
+      "controlSteps": 564
+    },
+    {
+      "id": "g1_explore_broad_jump_002__A359",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 264,
+      "minRootHeight": 0.5335355562551489,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0172324040938001,
+      "wallSeconds": 1.5696761249999982,
+      "controlSteps": 389
+    },
+    {
+      "id": "g1_explore_jump_twice_R_002__A533",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 165,
+      "minRootHeight": 0.8919515318006644,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0214947570476183,
+      "wallSeconds": 1.1555666249999923,
+      "controlSteps": 289
+    },
+    {
+      "id": "g1_explore_high_jump_R_opt_2_001__A477",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 157,
+      "minRootHeight": 0.925906204706081,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.018486661019975,
+      "wallSeconds": 1.1485334579999908,
+      "controlSteps": 281
+    },
+    {
+      "id": "smpl_forward_lunge_R_001__A359_M",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 399,
+      "minRootHeight": 0.5898725985760713,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.022841356680561,
+      "wallSeconds": 2.109599166999993,
+      "controlSteps": 524
+    },
+    {
+      "id": "smpl_squat_001__A359",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 425,
+      "minRootHeight": 0.49539459092758176,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0238772528526696,
+      "wallSeconds": 2.249780958000003,
+      "controlSteps": 550
+    },
+    {
+      "id": "smpl_walking_quip_360_R_002__A428",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 456,
+      "minRootHeight": 0.9423677260665202,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0292208134049865,
+      "wallSeconds": 2.6853194999999976,
+      "controlSteps": 581
+    },
+    {
+      "id": "smpl_walking_quip_360_R_002__A428_M",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 456,
+      "minRootHeight": 0.9430270815237013,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0289727064379954,
+      "wallSeconds": 2.345588917000001,
+      "controlSteps": 581
+    },
+    {
+      "id": "smpl_dance_in_da_party_001__A464",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 498,
+      "minRootHeight": 0.9096844157499157,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0276391957391762,
+      "wallSeconds": 2.542047041999991,
+      "controlSteps": 623
+    },
+    {
+      "id": "smpl_dance_in_da_party_001__A464_M",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 498,
+      "minRootHeight": 0.8779739833220743,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0269562564237762,
+      "wallSeconds": 2.5097701249999953,
+      "controlSteps": 623
+    },
+    {
+      "id": "smpl_macarena_001__A545",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 1376,
+      "minRootHeight": 0.8948313805336467,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.012293147783528,
+      "wallSeconds": 6.263323417000007,
+      "controlSteps": 1501
+    },
+    {
+      "id": "smpl_macarena_001__A545_M",
+      "referenceSpace": "smpl",
+      "encoderBranch": "smpl_selector_2",
+      "frames": 1376,
+      "minRootHeight": 0.8947835637035382,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.0193317393989596,
+      "wallSeconds": 6.2228273329999935,
+      "controlSteps": 1501
+    },
+    {
+      "id": "text2motion_echo_g_en",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 177,
+      "minRootHeight": 0.9938879236399055,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 1.018996797410286,
+      "wallSeconds": 1.2181432090000017,
+      "controlSteps": 301
+    },
+    {
+      "id": "text2motion_echo_g_zh",
+      "referenceSpace": "g1",
+      "encoderBranch": "g1_selector_3",
+      "frames": 163,
+      "minRootHeight": 0.9673076242847131,
+      "status": "pass",
+      "completedReference": true,
+      "finalRootHeight": 0.9787011058418374,
+      "wallSeconds": 1.139055999999997,
+      "controlSteps": 287
+    }
+  ],
+  "planner": [
+    {
+      "style": "idle",
+      "vx": 0,
+      "vy": 0,
+      "yaw": 0,
+      "status": "pass",
+      "displacement": [
+        -0.03720893826479995,
+        -0.021045931842209348,
+        0.03132852953396936
+      ],
+      "finalRootHeight": 1.0296209084487116
+    },
+    {
+      "style": "slow_walk",
+      "vx": 0.4,
+      "vy": 0,
+      "yaw": 0,
+      "status": "pass",
+      "displacement": [
+        3.1017767552895728,
+        -0.004467609030601815,
+        0.0322466907318093
+      ],
+      "finalRootHeight": 1.0305390696465515
+    },
+    {
+      "style": "slow_walk",
+      "vx": 0,
+      "vy": 0.4,
+      "yaw": 0,
+      "status": "pass",
+      "displacement": [
+        -0.022045487211295116,
+        4.26659550130697,
+        0.03195194068282259
+      ],
+      "finalRootHeight": 1.0302443195975648
+    },
+    {
+      "style": "walk",
+      "vx": 0.9,
+      "vy": 0,
+      "yaw": 0,
+      "status": "pass",
+      "displacement": [
+        7.592250940165108,
+        0.2697887109289524,
+        0.030648919445577905
+      ],
+      "finalRootHeight": 1.0289412983603201
+    },
+    {
+      "style": "run",
+      "vx": 2.5,
+      "vy": 0,
+      "yaw": 0,
+      "status": "pass",
+      "displacement": [
+        26.90463726695714,
+        0.524068055436683,
+        0.031345396205996856
+      ],
+      "finalRootHeight": 1.029637775120739
+    },
+    {
+      "style": "walk",
+      "vx": 0,
+      "vy": 0,
+      "yaw": 0.3,
+      "status": "pass",
+      "displacement": [
+        0.019794607761935788,
+        -0.01808342736284722,
+        0.03044205885077611
+      ],
+      "finalRootHeight": 1.0287344377655183
+    }
+  ],
+  "modelHashes": {
+    "encoder_full": "c0938bb3da2f9b10d3e3a518ede0fd5d77b5c4c23a7fbc3c6c2fcddbf1cbac48",
+    "encoder_native": "6c9d7536726237eb889162b3b3b6ea410bf891eb5b9fc16b5c2e1edbabc4bfba",
+    "decoder": "6d44817fc666d83537df0caac13a8d46fb1574f0283bdb7e7b9f12e839474433"
+  },
+  "sourceRevision": "e02d270ad99515839af643da8c842134f157dd4b",
+  "failedMotions": [],
+  "failedPlanner": [],
+  "status": "pass",
+  "targetedRecheck": {
+    "id": "g1_tired_one_leg_jumping_R_001__A359",
+    "startupHoldSeconds": 1.0,
+    "note": "Initial complete matrix used 0.5 s preparation. Only the changed hopping protocol was rerun; other references, models and physics were unchanged."
+  }
+}

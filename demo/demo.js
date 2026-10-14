@@ -166,6 +166,7 @@ function syncControls() {
   }
   $('motion-reference-note').textContent = state.motion?.referenceSpace === 'g1'
     ? 'G1 reference targets for the H2 controller. No reference-only preview.'
+    : state.motion?.referenceSpace === 'smpl' ? 'SMPL reference targets for the H2 controller. No reference-only preview.'
     : state.referenceOnly ? 'H2 reference motion · view only.' : 'H2 reference targets for the H2 controller.';
   $('live-telemetry').hidden = !state.liveConfirmed;
   if (!state.live && !state.referenceOnly) $('play').textContent = 'Pause';

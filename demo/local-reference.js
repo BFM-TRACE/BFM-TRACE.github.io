@@ -5,8 +5,8 @@ export function prepareTrackingReference(ref, entry = {}) {
   const fail = message => { throw new Error(`${name}: ${message}`); };
   const declared = [ref.referenceSpace, ref.referenceType, entry.referenceSpace, entry.referenceType].filter(value => value !== undefined);
   const referenceSpace = declared[0] ?? 'h2';
-  if (!['h2', 'g1'].includes(referenceSpace) || declared.some(value => value !== referenceSpace)) fail('invalid or conflicting reference space');
-  const encoderMode = referenceSpace === 'g1' ? 3 : 0;
+  if (!['h2', 'g1', 'smpl'].includes(referenceSpace) || declared.some(value => value !== referenceSpace)) fail('invalid or conflicting reference space');
+  const encoderMode = {h2:0, g1:3, smpl:2}[referenceSpace];
   for (const value of [ref.encoderMode, entry.encoderMode]) if (value !== undefined && value !== encoderMode) fail('encoder mode does not match reference space');
   if (entry.id !== undefined && ref.id !== undefined && entry.id !== ref.id) fail('manifest id does not match reference id');
   const fps = ref.fps ?? entry.fps ?? 50;
@@ -15,16 +15,17 @@ export function prepareTrackingReference(ref, entry = {}) {
   const startupHoldSeconds = ref.startupHoldSeconds ?? entry.startupHoldSeconds ?? 0;
   if (!Number.isFinite(startupHoldSeconds) || startupHoldSeconds < 0) fail('startup hold must be a nonnegative finite number of seconds');
   if (ref.startupHoldSeconds !== undefined && entry.startupHoldSeconds !== undefined && ref.startupHoldSeconds !== entry.startupHoldSeconds) fail('manifest startup hold does not match reference startup hold');
-  const q = referenceSpace === 'g1' ? ref.q29G1 : ref.q31;
-  const dq = referenceSpace === 'g1' ? ref.qd29G1 : ref.qd31;
-  const width = referenceSpace === 'g1' ? 29 : 31;
-  if (referenceSpace === 'g1' && (ref.q31 !== undefined || ref.qd31 !== undefined || ref.initialQpos !== undefined)) fail('G1 targets must not contain H2 joint data or a physics initial pose');
+  const q = referenceSpace === 'smpl' ? ref.smplJoints : referenceSpace === 'g1' ? ref.q29G1 : ref.q31;
+  const dq = referenceSpace === 'smpl' ? ref.wristJoints : referenceSpace === 'g1' ? ref.qd29G1 : ref.qd31;
+  const width = referenceSpace === 'smpl' ? 72 : referenceSpace === 'g1' ? 29 : 31;
+  if (referenceSpace !== 'h2' && (ref.q31 !== undefined || ref.qd31 !== undefined || ref.initialQpos !== undefined)) fail('G1/SMPL targets must not contain H2 joint data or a physics initial pose');
   const count = ref.rootQuat?.length;
   if (!Array.isArray(ref.rootQuat) || !count || !Array.isArray(q) || !Array.isArray(dq) || q.length !== count || dq.length !== count) fail('joint and root quaternion frame counts must match');
   for (const frames of [ref.frames, entry.frames]) if (frames !== undefined && (!Number.isInteger(frames) || frames !== count)) fail('declared frame count does not match reference arrays');
   const validRow = (row, size) => Array.isArray(row) && row.length === size && row.every(Number.isFinite);
   const frames = ref.rootQuat.map((quat, i) => {
-    if (!validRow(quat, 4) || Math.hypot(...quat) < 1e-8 || !validRow(q[i], width) || !validRow(dq[i], width)) fail(`invalid numeric target at frame ${i}`);
+    if (!validRow(quat, 4) || Math.hypot(...quat) < 1e-8 || !validRow(q[i], width) || !validRow(dq[i], referenceSpace === 'smpl' ? 6 : width)) fail(`invalid numeric target at frame ${i}`);
+    if (referenceSpace === 'smpl') return {quat, joints:q[i], wrists:dq[i]};
     return referenceSpace === 'g1' ? {quat, policyQ:q[i], policyDq:dq[i]} : {quat, q:q[i], dq:dq[i]};
   });
   return {...ref, id:ref.id ?? entry.id, fps, referenceSpace, encoderMode, startupHoldSeconds, frames};
