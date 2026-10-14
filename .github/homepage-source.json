@@ -6,9 +6,9 @@
     ".gitattributes": "8d9b9ea448eeb4c72d1c357ec0ab1aaa4be577d65895efe51520c17a048463f7",
     ".gitignore": "d20f3a9f002ba1071bae3ce3965f099d709e32a3dbf55be5cc79d005541f90ab",
     "README.md": "5be6eee7dbb64d03221c58950fa8cf84b7d64bea5d6119a9c2a83a59e36f2cc5",
-    "THIRD_PARTY_NOTICES.md": "232ed05385691caeda65d27c773443aa5f81f61e1563c39e8f032e7eb2b39249",
+    "THIRD_PARTY_NOTICES.md": "bc4e450422960382abe5aa4c99608940061c1516bef07b010f65a6a7c63a7d5f",
     "app.js": "0537001319b276a2b104ac7e5384a7633a60864a4a8afd963c51c17f19b4a111",
-    "assets/arxiv-logomark.jpg": "deee1e08ef17db9f06342e1188b07ec1adfe2d5e574c1712efa313b118631f98",
+    "assets/arxiv-logomark.svg": "c51b0982488661ecb75fb8cf6a7672c0a7959ea3734023a8e715bcef026a57c2",
     "assets/data-curation.webp": "8dcc1104b38c6b23206748f4beeeaf4b9d3f2073fcedff2db2feacb9ecf5f8b4",
     "assets/hero-loop.mp4": "61260d2e73baf0a47d7d89f55d78144d035338dc1295aafa6d33abee45776a7a",
     "assets/hero-poster.jpg": "8e5319aa40f41409aafd1846f196ad3bee581ee746e6d828f6378fc2b2ff93db",
@@ -62,7 +62,7 @@
     "backend/qa.json": "e43d5404649f6fae54d98687df37611f7d732d0cdfd54c5f73c0e38dd7fd51e7",
     "backend/tunnel-qa.json": "9eaccf43dd91c32bbef64346257ab741d254b9aa3b50477751c4b3a2380d6c87",
     "backend/tunnel.py": "a28ae54076406a00f46b039fcb1ba7bfeae3164def19842bb317d247dd0f8529",
-    "content/asset-validation.json": "34f3816dedbd2aeb07af08cb6aa32cb3dbed207425d9ef6b15060af6a073e1c8",
+    "content/asset-validation.json": "578ab93e1549063e4c918ad3d6ca9e1360ce9caa61d41a12b6aca4ab17cf13c5",
     "content/media.json": "004d018215869e845487bfff3e0e9a3b394fa2c46f87b03f7e59701dc3df507d",
     "content/research.json": "e9be90566c2a8116cfeabd98b92de5ac04f08979838c90b7a9151dd604ba5ae9",
     "demo/LOCAL-PHYSICS.md": "39bddcd4aff376c1c20b14f64fb33ca53ba2b06c11efdfd3aff7eae8de393191",
@@ -293,7 +293,7 @@
     "demo/vendor/three.core.min.js": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
     "demo/vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
     "favicon.svg": "3d25b82265607251dbc9be30f74c690346231b8b8d37adb6694ffb73fad5c0bd",
-    "index.html": "3b18a559d60f4eb712db317a04ff3fad91adac50f2bb92b8e5690706ba08f5f2",
+    "index.html": "51ae778678eeff1b20af85e85f848891de753f3a6be2950d12f5435c950c543e",
     "package.json": "962190157a0a7d63faf6700a16360dbb6b2c566d6afece4fc7d56dca48a4c018",
     "qa/archive-index.json": "7d635953e8163a769d5e94237004f994a08d7af73de4b8a13ae059721da8e18d",
     "qa/browser-isolation.html": "4677819e898188dc89161effb8684185396f58d523899b695d613ed495ec9a4f",
@@ -391,6 +391,6 @@
     "server.mjs": "05f6ffbc18c4d932014be1b08f93e5907de0182f625c8857ccead8fa80d5f258",
     "start-macos.command": "1519f78cf95b1ded12ccb776ff6fdb46a412d2a262797cf7ecb933b07cc857ba",
     "start-windows.cmd": "52ff0b178ecd76382d83995786accb0b95d6d17ff91d4aebd0139f1bf28d00e4",
-    "styles.css": "4bc5270ee19b58ffe02772e740fe4bf2686099f40b7474392db98663b1626aa8"
+    "styles.css": "136842c4c9a8ca401c78f3ded6d08af0dc552771c42398ccaae25efdd328be0e"
   }
 }

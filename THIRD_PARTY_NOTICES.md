@@ -29,7 +29,7 @@ The repository records these assets' origins, transformations and hashes. A sepa
 
 ## Paper and demonstration media
 
-The navigation's [arXiv logomark](assets/arxiv-logomark.jpg) is the unmodified small primary logomark from arXiv's [official brand assets](https://info.arxiv.org/brand/brand-guidelines.html), used to identify the link to this project's arXiv paper. arXiv retains its trademark rights.
+The navigation's [arXiv logomark](assets/arxiv-logomark.svg) is the unmodified monochrome pinned-tab icon from the [official arXiv website](https://arxiv.org/static/browse/0.3.4/images/icons/safari-pinned-tab.svg), displayed as a CSS mask to identify the link to this project's arXiv paper. arXiv retains its trademark rights.
 
 The included manuscript, figures and demonstration clips come from this project's compiled paper and v33 presentation. Their source files, extraction steps and existing privacy treatment are recorded in source checkout: `content/research.json`, [media.json](content/media.json) and source checkout: `content/asset-validation.json`. The browser runtime licenses above do not license these research materials.
 

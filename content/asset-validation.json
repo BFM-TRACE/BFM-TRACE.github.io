@@ -17,9 +17,9 @@
   },
   "files": [
     {
-      "path": "assets/arxiv-logomark.jpg",
-      "bytes": 3126,
-      "sha256": "deee1e08ef17db9f06342e1188b07ec1adfe2d5e574c1712efa313b118631f98"
+      "path": "assets/arxiv-logomark.svg",
+      "bytes": 4298,
+      "sha256": "c51b0982488661ecb75fb8cf6a7672c0a7959ea3734023a8e715bcef026a57c2"
     },
     {
       "path": "assets/data-curation.webp",
