@@ -17,6 +17,11 @@
   },
   "files": [
     {
+      "path": "assets/arxiv-logomark.jpg",
+      "bytes": 3126,
+      "sha256": "deee1e08ef17db9f06342e1188b07ec1adfe2d5e574c1712efa313b118631f98"
+    },
+    {
       "path": "assets/data-curation.webp",
       "bytes": 76838,
       "sha256": "8dcc1104b38c6b23206748f4beeeaf4b9d3f2073fcedff2db2feacb9ecf5f8b4"
@@ -182,6 +187,11 @@
       "sha256": "2c79f22a30c8bdc5e20c80d473b8934ed9d477151cdda98c153b33193c4c7c06"
     },
     {
+      "path": "assets/trace-overview.jpg",
+      "bytes": 243079,
+      "sha256": "b1e7dc51dba0e51409aeaa0b3351c19c526e3fde1f73ddd7e5fd05268168931c"
+    },
+    {
       "path": "assets/trace-overview.mp4",
       "bytes": 18545956,
       "sha256": "129050e6ade833aa4a5fda970b9b080a1db20240166104219aeb2e29f4774178"
@@ -245,11 +255,6 @@
       "path": "assets/vla-trash.mp4",
       "bytes": 772308,
       "sha256": "5e71bbd48844c2a9b3956aaaa5b2bd9bbd3f261337be7a9c58061608a9e5de70"
-    },
-    {
-      "path": "assets/trace-overview.jpg",
-      "bytes": 243079,
-      "sha256": "b1e7dc51dba0e51409aeaa0b3351c19c526e3fde1f73ddd7e5fd05268168931c"
     }
   ],
   "heroFullSequence": {

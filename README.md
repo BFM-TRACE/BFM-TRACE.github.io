@@ -104,6 +104,8 @@ The site serves `assets/trace-paper.pdf`, synchronized from `build/en/main_en.pd
 
 `content/research.json` records scientific values and source provenance; `content/media.json` indexes the videos. `content/asset-validation.json` records media hashes and extraction checks. The website's headline values and result tables are explicit HTML for search indexing, so update them together with `research.json` when revising results. Browser policy and physics provenance is stored in `demo/local-assets/` and `demo/vendor/`.
 
+The top-right **Arxiv** entry links to [arXiv:2610.17999](https://arxiv.org/abs/2610.17999). The hero's **Read the paper** button keeps its bundled PDF link. The bottom Citation section uses the [official arXiv BibTeX export](https://arxiv.org/bibtex/2610.17999), with a copy button supporting both HTTPS hosting and the HTTP LAN deployment.
+
 ## Rebuild media and verify
 
 The delivered website already includes all media. Regenerating media requires Python with Pillow, FFmpeg/FFprobe, Poppler's `pdftoppm`, and the original v33 PPT and compiled paper in their project locations. These are development dependencies only.

@@ -104,6 +104,7 @@
     "Gallery task labels and benchmark task definitions are recorded separately."
   ],
   "downloads": {
+    "arxiv": "https://arxiv.org/abs/2610.17999",
     "paper": "assets/trace-paper.pdf?v=e32038752c7a",
     "video": "assets/trace-overview.mp4",
     "captions": "assets/trace-overview.vtt"

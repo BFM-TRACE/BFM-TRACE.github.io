@@ -1,6 +1,42 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const copyCitation = $("#copy-citation");
+const citationCode = $("#citation-bibtex");
+const citationStatus = $("#citation-status");
+
+function copyCitationLocally(text) {
+  // Clipboard API requires HTTPS; retain copying on the HTTP LAN deployment.
+  const field = document.createElement("textarea");
+  field.value = text;
+  field.style.cssText = "position:fixed;left:-9999px;top:0";
+  field.setAttribute("readonly", "");
+  document.body.append(field);
+  field.select();
+  try {
+    return document.execCommand("copy");
+  } finally {
+    field.remove();
+    copyCitation.focus({ preventScroll: true });
+  }
+}
+
+copyCitation.addEventListener("click", async () => {
+  const text = citationCode.textContent.trim();
+  let copied = false;
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch {
+      copied = copyCitationLocally(text);
+    }
+  } else copied = copyCitationLocally(text);
+  citationStatus.textContent = copied
+    ? "BibTeX copied to clipboard."
+    : "Select the citation above and copy it manually.";
+});
+
 const hero = $("#hero-video");
 const heroPause = $("#hero-pause");
 let heroManuallyPaused = reduceMotion.matches;

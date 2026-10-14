@@ -5,9 +5,10 @@
   "files": {
     ".gitattributes": "8d9b9ea448eeb4c72d1c357ec0ab1aaa4be577d65895efe51520c17a048463f7",
     ".gitignore": "d20f3a9f002ba1071bae3ce3965f099d709e32a3dbf55be5cc79d005541f90ab",
-    "README.md": "5a66801edb6ca7c350482e0c5e6c1cf621eb18663354f0a07ccfb3a65dca51bd",
-    "THIRD_PARTY_NOTICES.md": "76358413e89d3e116391d8294a65d8440137dfe9ed820326e65178482bef19cc",
-    "app.js": "152d8d10ccad88ee9a577bc8b40ffa54eec487abbe73c7c1fedb069468944030",
+    "README.md": "5be6eee7dbb64d03221c58950fa8cf84b7d64bea5d6119a9c2a83a59e36f2cc5",
+    "THIRD_PARTY_NOTICES.md": "232ed05385691caeda65d27c773443aa5f81f61e1563c39e8f032e7eb2b39249",
+    "app.js": "0537001319b276a2b104ac7e5384a7633a60864a4a8afd963c51c17f19b4a111",
+    "assets/arxiv-logomark.jpg": "deee1e08ef17db9f06342e1188b07ec1adfe2d5e574c1712efa313b118631f98",
     "assets/data-curation.webp": "8dcc1104b38c6b23206748f4beeeaf4b9d3f2073fcedff2db2feacb9ecf5f8b4",
     "assets/hero-loop.mp4": "61260d2e73baf0a47d7d89f55d78144d035338dc1295aafa6d33abee45776a7a",
     "assets/hero-poster.jpg": "8e5319aa40f41409aafd1846f196ad3bee581ee746e6d828f6378fc2b2ff93db",
@@ -61,9 +62,9 @@
     "backend/qa.json": "e43d5404649f6fae54d98687df37611f7d732d0cdfd54c5f73c0e38dd7fd51e7",
     "backend/tunnel-qa.json": "9eaccf43dd91c32bbef64346257ab741d254b9aa3b50477751c4b3a2380d6c87",
     "backend/tunnel.py": "a28ae54076406a00f46b039fcb1ba7bfeae3164def19842bb317d247dd0f8529",
-    "content/asset-validation.json": "b41fc0c328a6741c77f34408b67d6a035c511b3a80e8391146b1f419e7e7b2ad",
+    "content/asset-validation.json": "34f3816dedbd2aeb07af08cb6aa32cb3dbed207425d9ef6b15060af6a073e1c8",
     "content/media.json": "004d018215869e845487bfff3e0e9a3b394fa2c46f87b03f7e59701dc3df507d",
-    "content/research.json": "763e573534c7aebd39e3abe3f2f3e46d2148e054a891ef93a64234250e0a4003",
+    "content/research.json": "e9be90566c2a8116cfeabd98b92de5ac04f08979838c90b7a9151dd604ba5ae9",
     "demo/LOCAL-PHYSICS.md": "39bddcd4aff376c1c20b14f64fb33ca53ba2b06c11efdfd3aff7eae8de393191",
     "demo/README.md": "158d531cd16268263ae5a95e09f32e96d54601cce7a2d6de1ae0837ce4a3b080",
     "demo/assets/broad_jump_003__A360.bin": "6934cf044a32ac7f23e10f735328cf9897f777333981db0d1745b827c862215e",
@@ -292,7 +293,7 @@
     "demo/vendor/three.core.min.js": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
     "demo/vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
     "favicon.svg": "3d25b82265607251dbc9be30f74c690346231b8b8d37adb6694ffb73fad5c0bd",
-    "index.html": "3def8da5868827e20ec409739c4dc31dfb3b81043df82e4aac31da216df36278",
+    "index.html": "3b18a559d60f4eb712db317a04ff3fad91adac50f2bb92b8e5690706ba08f5f2",
     "package.json": "962190157a0a7d63faf6700a16360dbb6b2c566d6afece4fc7d56dca48a4c018",
     "qa/archive-index.json": "7d635953e8163a769d5e94237004f994a08d7af73de4b8a13ae059721da8e18d",
     "qa/browser-isolation.html": "4677819e898188dc89161effb8684185396f58d523899b695d613ed495ec9a4f",
@@ -390,6 +391,6 @@
     "server.mjs": "05f6ffbc18c4d932014be1b08f93e5907de0182f625c8857ccead8fa80d5f258",
     "start-macos.command": "1519f78cf95b1ded12ccb776ff6fdb46a412d2a262797cf7ecb933b07cc857ba",
     "start-windows.cmd": "52ff0b178ecd76382d83995786accb0b95d6d17ff91d4aebd0139f1bf28d00e4",
-    "styles.css": "74d4f1c0a48bbf135ad376059fd2c9bb85a0fb9c68e08e4110581aab086765b2"
+    "styles.css": "4bc5270ee19b58ffe02772e740fe4bf2686099f40b7474392db98663b1626aa8"
   }
 }
