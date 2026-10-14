@@ -175,9 +175,7 @@ h3 {
 .arxiv-mark {
   width: 18px;
   height: 20px;
-  background: currentColor;
-  -webkit-mask: url(assets/arxiv-logomark.svg) center / contain no-repeat;
-  mask: url(assets/arxiv-logomark.svg) center / contain no-repeat;
+  background: url(assets/arxiv-logomark.svg?v=fc8d1a95690f) center / contain no-repeat;
 }
 .hero {
   position: relative;
