@@ -273,15 +273,9 @@ h3 {
   font-size: 12px;
   line-height: 1.5;
 }
-.hero-description {
-  font-size: 15px;
-  color: #dce1df;
-  line-height: 1.8;
-  margin: 15px 0 23px;
-  letter-spacing: 0.1px;
-}
 .hero-links {
   display: flex;
+  margin-top: 23px;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
@@ -380,9 +374,6 @@ h3 {
   background: #ffffff0d;
   border-radius: 50%;
   font-size: 14px;
-}
-.mobile-break {
-  display: none;
 }
 .intro {
   padding: 96px 0 66px;
@@ -1113,18 +1104,10 @@ tbody td:last-child {
   .hero-author-note {
     font-size: 11px;
   }
-  .hero-description {
-    font-size: 13px;
-    line-height: 1.8;
-    margin-top: 16px;
-  }
-  .mobile-break {
-    display: block;
-  }
   .hero-links {
     gap: 8px;
     max-width: 340px;
-    margin: auto;
+    margin: 23px auto 0;
   }
   .button {
     font-size: 11px;

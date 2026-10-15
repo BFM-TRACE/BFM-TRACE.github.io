@@ -328,7 +328,7 @@
     "demo/vendor/three.core.min.js": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
     "demo/vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
     "favicon.svg": "3d25b82265607251dbc9be30f74c690346231b8b8d37adb6694ffb73fad5c0bd",
-    "index.html": "a89e2ccfc533294e5decc664c1516153d3a4a43a024dc7de6df8289bc4ebd661",
+    "index.html": "0484e42a2008e0a432fcc62148ea218449645878406267f33e5b120832cebcdd",
     "package.json": "87e81dd7f200275aef15ab093d3afd0047f6581012e2ba497d3d9825147c3b80",
     "qa/archive-index.json": "7d635953e8163a769d5e94237004f994a08d7af73de4b8a13ae059721da8e18d",
     "qa/browser-isolation.html": "4677819e898188dc89161effb8684185396f58d523899b695d613ed495ec9a4f",
@@ -432,6 +432,6 @@
     "server.mjs": "05f6ffbc18c4d932014be1b08f93e5907de0182f625c8857ccead8fa80d5f258",
     "start-macos.command": "1519f78cf95b1ded12ccb776ff6fdb46a412d2a262797cf7ecb933b07cc857ba",
     "start-windows.cmd": "52ff0b178ecd76382d83995786accb0b95d6d17ff91d4aebd0139f1bf28d00e4",
-    "styles.css": "35348d165d901cf04c0b8e8dc5fbb16ace54a45a21ea17782d21a62d27bc7ebb"
+    "styles.css": "3deb965a50196776d27f1fcd0c8af30994016f8dec4dedda4510c285bd98bc4f"
   }
 }
