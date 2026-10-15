@@ -64,7 +64,7 @@
     "backend/tunnel.py": "a28ae54076406a00f46b039fcb1ba7bfeae3164def19842bb317d247dd0f8529",
     "content/asset-validation.json": "47fbc45156414a003d5272920120c0d7c70b9ea3f27d544928f2833ad5e8651d",
     "content/media.json": "c95894266e2298aaa2a9d94793801fba72746dc46aca6c0186e7ee2baa5f8f76",
-    "content/research.json": "e9be90566c2a8116cfeabd98b92de5ac04f08979838c90b7a9151dd604ba5ae9",
+    "content/research.json": "89875c006f4026ffcea911f5f26c8cd6f7a48b2e17aaf6faff301df33d7151d7",
     "demo/LOCAL-PHYSICS.md": "39bddcd4aff376c1c20b14f64fb33ca53ba2b06c11efdfd3aff7eae8de393191",
     "demo/README.md": "c1ec3c226e5ab3dfbd1634ec01fd8beba1525e5f949a53dba850e5868261d437",
     "demo/assets/broad_jump_003__A360.bin": "6934cf044a32ac7f23e10f735328cf9897f777333981db0d1745b827c862215e",
@@ -328,7 +328,7 @@
     "demo/vendor/three.core.min.js": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
     "demo/vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
     "favicon.svg": "3d25b82265607251dbc9be30f74c690346231b8b8d37adb6694ffb73fad5c0bd",
-    "index.html": "530aaa6f60b68dd2025592efab446cbf63e017aaa418843e45c7bfeb24751581",
+    "index.html": "a89e2ccfc533294e5decc664c1516153d3a4a43a024dc7de6df8289bc4ebd661",
     "package.json": "87e81dd7f200275aef15ab093d3afd0047f6581012e2ba497d3d9825147c3b80",
     "qa/archive-index.json": "7d635953e8163a769d5e94237004f994a08d7af73de4b8a13ae059721da8e18d",
     "qa/browser-isolation.html": "4677819e898188dc89161effb8684185396f58d523899b695d613ed495ec9a4f",
@@ -432,6 +432,6 @@
     "server.mjs": "05f6ffbc18c4d932014be1b08f93e5907de0182f625c8857ccead8fa80d5f258",
     "start-macos.command": "1519f78cf95b1ded12ccb776ff6fdb46a412d2a262797cf7ecb933b07cc857ba",
     "start-windows.cmd": "52ff0b178ecd76382d83995786accb0b95d6d17ff91d4aebd0139f1bf28d00e4",
-    "styles.css": "8e51cba6a689a8ca26d5cb7ff2e7d1d3ae5bf1ec8b6732b1497e07237936c8ff"
+    "styles.css": "35348d165d901cf04c0b8e8dc5fbb16ace54a45a21ea17782d21a62d27bc7ebb"
   }
 }

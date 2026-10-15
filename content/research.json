@@ -4,8 +4,17 @@
   "title": "TRACE: Efficient Transfer Learning for Neural Whole-Body Control Across Humanoid Embodiments",
   "subtitle": "Transfer the motion knowledge. Adapt the body.",
   "summary": "From Unitree G1 to full-scale H2: one adapted controller for dynamic motion tracking, whole-body teleoperation, and downstream VLA tasks.",
-  "authors": [],
-  "authorNote": "The current manuscript has an empty author field. No author names or affiliations are inferred.",
+  "authors": [
+    {"name": "Qingyu Lan", "affiliations": [1]},
+    {"name": "Zhihao Tian", "affiliations": [1]},
+    {"name": "Zifan Wang", "affiliations": [1]},
+    {"name": "Junwei Liang", "affiliations": [1, 2], "corresponding": true}
+  ],
+  "affiliations": [
+    {"id": 1, "name": "The Hong Kong University of Science and Technology (Guangzhou)"},
+    {"id": 2, "name": "The Hong Kong University of Science and Technology"}
+  ],
+  "authorNote": "Authors, affiliations and corresponding-author marker transcribed from main_en.tex.",
   "abstract": "Humanoid behavior foundation models enable diverse whole-body control, but transferring a pretrained controller to a new body requires handling changes in kinematics and dynamics. TRACE preserves the pretrained motion representation while adapting feedback control to the target robot. It combines kinematic priors and nominal joint-response alignment with encoder distillation and low-rank reinforcement learning on a compact motion set. A two-phase curriculum first establishes stable tracking, then refines difficult motions. Transferring SONIC from Unitree G1 to Unitree H2 takes approximately eight hours on a single RTX PRO 6000 GPU using 10 million motion frames. The adapted controller achieves 96.08% success on 67,953 evaluation motions under a height-scaled tracking criterion, and supports dynamic motion tracking, teleoperation, and downstream VLA applications on physical H2 hardware.",
   "metrics": [
     {
