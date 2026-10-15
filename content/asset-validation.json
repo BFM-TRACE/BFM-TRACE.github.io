@@ -12,7 +12,7 @@
   "visualChecks": {
     "heroPoster": "passed; existing task-label crop and source 4-second opening pose inspected",
     "methodOverview": "passed; all four stages visible, G1 1.32m and command-space distribution overlays retained",
-    "overviewPoster": "passed; title fully revealed at 2.0 seconds",
+    "overviewPoster": "passed; v41 title frame sampled at 2.0 seconds and visually inspected",
     "heroFullSequence": "passed; all 619 original frames retained through the final doorway passage, with original partial occlusion at the end"
   },
   "files": [
@@ -188,18 +188,13 @@
     },
     {
       "path": "assets/trace-overview.jpg",
-      "bytes": 243079,
-      "sha256": "b1e7dc51dba0e51409aeaa0b3351c19c526e3fde1f73ddd7e5fd05268168931c"
+      "bytes": 383977,
+      "sha256": "beed927e75bb164ff87044edb0a6b25c8140dab4c5f2411b3ae48f07425ba452"
     },
     {
       "path": "assets/trace-overview.mp4",
-      "bytes": 18545956,
-      "sha256": "129050e6ade833aa4a5fda970b9b080a1db20240166104219aeb2e29f4774178"
-    },
-    {
-      "path": "assets/trace-overview.vtt",
-      "bytes": 2862,
-      "sha256": "460ee1c1d475c8fe31e978e0ed0f7134daeaca0e55ec527957d002e75da3d937"
+      "bytes": 80717143,
+      "sha256": "bb4bd2e65c4d210d1e9697990cbab264abd64c3334b3d817ff412bf3d0b072f0"
     },
     {
       "path": "assets/trace-paper.pdf",
@@ -264,5 +259,16 @@
     "durationSeconds": 20.633008,
     "audioStreams": 0,
     "decode": "ffmpeg -xerror full decode passed"
+  },
+  "overviewV41": {
+    "sourceFilename": "TRACE_demo_v41.mp4",
+    "sha256": "bb4bd2e65c4d210d1e9697990cbab264abd64c3334b3d817ff412bf3d0b072f0",
+    "bytes": 80717143,
+    "duration": 165.466667,
+    "width": 1920,
+    "height": 1080,
+    "copy": "byte-identical original file stored in project assets",
+    "fastStart": true,
+    "legacyCaptions": "Not attached to the new video because the old timeline differs."
   }
 }

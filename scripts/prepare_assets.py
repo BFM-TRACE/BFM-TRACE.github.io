@@ -121,14 +121,14 @@ def main():
     # Use the updated compiled paper. The root TRACE.pdf is an earlier draft
     # that still reports six hours; it is intentionally not served by the site.
     shutil.copyfile(PAPER, ASSETS / "trace-paper.pdf")
-    shutil.copyfile(ROOT / "demo_video/deliverables/TRACE_demo_submission_720p.mp4",
-                    ASSETS / "trace-overview.mp4")
-    ffmpeg("-ss", 2, "-i", ASSETS / "trace-overview.mp4", "-frames:v", 1,
-           "-q:v", 2, ASSETS / "trace-overview.jpg")
-    srt = (ROOT / "demo_video/deliverables/TRACE_demo.srt").read_text()
-    import re
-    vtt = "WEBVTT\n\n" + re.sub(r"(\d\d:\d\d:\d\d),(\d{3})", r"\1.\2", srt)
-    (ASSETS / "trace-overview.vtt").write_text(vtt)
+    # Preserve the installed, versioned overview video and its source record.
+    # Do not restore the historical 720p export or attach its old subtitle timeline.
+    overview = json.loads((CONTENT / "media.json").read_text())["overview"]
+    overview_video = HOME / overview["src"].split("?", 1)[0]
+    overview_poster = HOME / overview["poster"].split("?", 1)[0]
+    if not overview_video.is_file():
+        raise FileNotFoundError(f"Installed project overview is missing: {overview_video}")
+    ffmpeg("-ss", 2, "-i", overview_video, "-frames:v", 1, "-q:v", 2, overview_poster)
 
     # Render the formal, corrected Fig. 2 rather than its stale backing PNG.
     # This includes the LaTeX overlays (G1 1.32 m, command-space distribution).
@@ -156,8 +156,7 @@ def main():
     manifest = {
         "version": 1,
         "hero": hero,
-        "overview": {"src": "assets/trace-overview.mp4", "poster": "assets/trace-overview.jpg", "captions": "assets/trace-overview.vtt",
-                     "description": "Approved narrated project overview (2 min 50 sec)."},
+        "overview": overview,
         "items": items,
         "provenance": {
             "deck": str(DECK.relative_to(ROOT)), "deckSha256": sha(DECK),

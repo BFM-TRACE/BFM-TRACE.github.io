@@ -122,3 +122,5 @@ From `homepage`, run `node demo/check_g1_encoder.mjs`, `node scripts/check-plann
 | `qa/generated/` | New validation output; ignored by Git |
 
 The website does not modify the existing paper, presentation, or demonstration deliverables. Public deployment is separate from local startup.
+
+项目介绍视频当前为 `TRACE_demo_v41.mp4`，原文件已完整复制到 `assets/trace-overview.mp4`，不是指向工程外的链接。保留 1920×1080、30 fps 和原始音轨，时长约 165.47 秒。封面从新版第 2 秒提取；旧版独立字幕没有挂载到新版视频。`content/media.json` 记录来源文件名、SHA-256 和版本。

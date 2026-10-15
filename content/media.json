@@ -27,9 +27,19 @@
   },
   "overview": {
     "src": "assets/trace-overview.mp4",
-    "captions": "assets/trace-overview.vtt",
-    "description": "Approved narrated project overview (2 min 50 sec).",
-    "poster": "assets/trace-overview.jpg"
+    "description": "TRACE v41 project overview (2 min 45 sec, 1080p).",
+    "poster": "assets/trace-overview.jpg",
+    "duration": 165.466667,
+    "width": 1920,
+    "height": 1080,
+    "version": "v41",
+    "source": {
+      "filename": "TRACE_demo_v41.mp4",
+      "sha256": "bb4bd2e65c4d210d1e9697990cbab264abd64c3334b3d817ff412bf3d0b072f0",
+      "installation": "Exact byte-for-byte copy into homepage/assets/trace-overview.mp4"
+    },
+    "cacheVersion": "bb4bd2e65c4d",
+    "posterCacheVersion": "beed927e75bb"
   },
   "items": [
     {
